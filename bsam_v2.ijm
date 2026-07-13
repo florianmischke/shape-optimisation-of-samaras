@@ -2,12 +2,12 @@
 
 
 // Ordner auswählen
-//inputDir = getDirectory("Wähle den Bildordner");
-//macroDir = getDirectory("Wähle den Makroordner");
+inputDir = getDirectory("Wähle den Bildordner");
+macroDir = getDirectory("Wähle den Makroordner");
 
-inputDir = "/Users/florianmischke/Library/Mobile Documents/com~apple~CloudDocs/Studium/Bachelorarbeit/Test/";
+//inputDir = "/Users/florianmischke/Library/Mobile Documents/com~apple~CloudDocs/Studium/Bachelorarbeit/Test/";
 outputDir = inputDir + "processed/";
-macroDir = "/Users/florianmischke/Library/Mobile Documents/com~apple~CloudDocs/Studium/Bachelorarbeit/GitHub/shape-optimisation-of-samaras/";
+//macroDir = "/Users/florianmischke/Library/Mobile Documents/com~apple~CloudDocs/Studium/Bachelorarbeit/GitHub/shape-optimisation-of-samaras/";
 File.makeDirectory(outputDir);
 
 // Dateiliste
