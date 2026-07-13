@@ -2,7 +2,9 @@
 title: "Bachelorarbeit-Florian-Mischke"
 author: "Florian Mischke"
 date: "`r Sys.Date()`"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -15,27 +17,38 @@ library(kableExtra)
 ```
 
 ```{r}
-results <- read.csv("~/Library/Mobile Documents/com~apple~CloudDocs/Studium/Bachelorarbeit/Test/processed/Results.csv")
+results <- read.csv("data/Results.csv")
 
 str(results)
 summary(results)
 ```
 
 ```{r}
-samples_images <- readxl::read_excel("~/Library/Mobile Documents/com~apple~CloudDocs/Studium/Bachelorarbeit/samples_images.xlsx") 
+samples_images <- readxl::read_excel("data/samples_images.xlsx") 
 ```
 
 ```{r}
 my_data <- merge(x = results, y = samples_images, by = "FileName", all = TRUE)
+my_data_longer <- my_data |> pivot_longer(cols = c(Feret,maxWidth), names_to = "unit_cm", values_to = "value")
 ```
 
 
 ```{r}
-my_data |> ggplot(
+my_data_longer |> ggplot(
   mapping = aes(
     x = Species,
-    y = Feret
+    y = value,
+    color = unit_cm
   )
 ) + geom_boxplot()
 ```
 
+```{r}
+my_data_longer |> filter(Species == "Acer platanoides") |> ggplot(
+  mapping = aes(
+    x = Location,
+    y = value,
+    color = unit_cm
+  )
+) + geom_boxplot()
+```
