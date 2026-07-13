@@ -9,4 +9,33 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r, include=FALSE}
+library(tidyverse)
+library(kableExtra)
+```
+
+```{r}
+results <- read.csv("~/Library/Mobile Documents/com~apple~CloudDocs/Studium/Bachelorarbeit/Test/processed/Results.csv")
+
+str(results)
+summary(results)
+```
+
+```{r}
+samples_images <- readxl::read_excel("~/Library/Mobile Documents/com~apple~CloudDocs/Studium/Bachelorarbeit/samples_images.xlsx") 
+```
+
+```{r}
+my_data <- merge(x = results, y = samples_images, by = "FileName", all = TRUE)
+```
+
+
+```{r}
+my_data |> ggplot(
+  mapping = aes(
+    x = Species,
+    y = Feret
+  )
+) + geom_boxplot()
+```
 
