@@ -217,6 +217,7 @@ print("Breite real:", widthPixel*pixelWidth, unit);
 print("----------------");
 
 setResult("maxWidth", nResults-1, widthPixel*pixelWidth);
+setResult("FileName", nResults-1, getTitle());
 updateResults();
 
 // ROI-Manager leeren
