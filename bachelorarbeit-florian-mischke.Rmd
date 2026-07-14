@@ -16,39 +16,88 @@ library(tidyverse)
 library(kableExtra)
 ```
 
-```{r}
-results <- read.csv("data/Results.csv")
+```{r echo=FALSE}
+source("inc/functions.R")
+```
+
+```{r echo=FALSE}
+results <- read.csv("data/2026-07-14--09-56--Results.csv")
+
+results <- results |> mutate(
+  FeretLength_mm = Feret*10,
+  maxWidth_mm = maxWidth*10,
+  ratio = FeretLength_mm / maxWidth_mm)
 
 #str(results)
 summary(results)
+
+results |> summarise(
+  'var_feret_mm' = var(FeretLength_mm), # variance
+  'sd_feret_mm' = sd(FeretLength_mm), # standard deviation
+  'se_feret_mm' = fm_se(FeretLength_mm), # standard error
+  'var_width_mm' = var(maxWidth_mm), # variance
+  'sd_width_mm' = sd(maxWidth_mm), # standard deviation
+  'se_width_mm' = fm_se(maxWidth_mm) # standard error
+)
 ```
 
-```{r}
+```{r echo=FALSE}
 samples_images <- readxl::read_excel("data/samples_images.xlsx") 
 ```
 
-```{r}
+```{r echo=FALSE}
 my_data <- merge(x = results, y = samples_images, by = "FileName", all = TRUE)
-my_data_longer <- my_data |> pivot_longer(cols = c(Feret,maxWidth), names_to = "unit_cm", values_to = "value")
+my_data <- my_data |> mutate(
+  sample = paste(Species, Location, sep = "\n")
+)
+my_data_longer <- my_data |> pivot_longer(cols = c(FeretLength_mm,maxWidth_mm), names_to = "unit_mm", values_to = "value")
 ```
 
 
-```{r}
+```{r echo=FALSE}
 my_data_longer |> ggplot(
   mapping = aes(
     x = Species,
     y = value,
-    color = unit_cm
+    color = factor(unit_mm, labels = c("Feret length", "maximum width"))
   )
-) + geom_boxplot()
+) + geom_boxplot() +
+  ggtitle("Feret lengths and maximum widths of three Acer species.") +
+  labs(x = "Species", y = "[mm]", color = "")
 ```
 
-```{r}
+```{r echo=FALSE}
 my_data_longer |> filter(Species == "Acer platanoides") |> ggplot(
   mapping = aes(
     x = Location,
     y = value,
-    color = unit_cm
+    color = factor(unit_mm, labels = c("Feret length", "maximum width"))
   )
-) + geom_boxplot()
+) + geom_boxplot() +
+  ggtitle("Feret lengths and maximum widths of two samples of Acer platanoides.") +
+  labs(x = "Location", y = "[mm]", color = "")
+```
+
+```{r echo=FALSE}
+my_data_longer |> ggplot(
+  mapping = aes(
+    x = sample,
+    y = value,
+    color = factor(unit_mm, labels = c("Feret length", "maximum width"))
+  )
+) + geom_boxplot() +
+  ggtitle("Feret lengths and maximum widths of four samples of Acer species") +
+  labs(x = "Species and Location", y = "[mm]", color = "") +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+```
+```{r echo=FALSE}
+my_data_longer |> ggplot(
+  mapping = aes(
+    x = sample,
+    y = ratio,
+  )
+) + geom_boxplot() +
+  ggtitle("Length/width ratios of four samples of Acer species") +
+  labs(x = "Species and Location", y = "Ratio", color = "") +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
