@@ -19,7 +19,7 @@ library(kableExtra)
 ```{r}
 results <- read.csv("data/Results.csv")
 
-str(results)
+#str(results)
 summary(results)
 ```
 
