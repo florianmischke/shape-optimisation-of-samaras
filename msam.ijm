@@ -20,7 +20,8 @@ run("Convert to Mask");
 run("Fill Holes");
 
 // Zuschneiden
-makeRectangle(1320,1170,2934,1002);
+//makeRectangle(1320,1170,2934,1002);
+makeRectangle(1320, 1170, 2934, 1146);
 run("Crop");
 
 // Messungen
