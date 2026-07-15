@@ -29,7 +29,7 @@ results <- results |> mutate(
   ratio = FeretLength_mm / maxWidth_mm)
 
 #str(results)
-summary(results)
+#summary(results)
 
 results |> summarise(
   'var_feret_mm' = var(FeretLength_mm), # variance
@@ -49,27 +49,37 @@ samples_images <- readxl::read_excel("data/samples_images.xlsx")
 my_data <- merge(x = results, y = samples_images, by = "FileName", all = TRUE)
 my_data <- my_data |> mutate(
   sample = paste(Species, Location, sep = "\n")
+) |> group_by(sample) |> mutate(
+  n = n(),
+  label = paste0(sample,'\nn = ',n)
 )
 my_data_longer <- my_data |> pivot_longer(cols = c(FeretLength_mm,maxWidth_mm), names_to = "unit_mm", values_to = "value")
+```
+
+```{r echo=FALSE, include=FALSE}
+my_data |> group_by(Species, Location) |> summarize(
+  n = n()
+)
 ```
 
 
 ```{r echo=FALSE}
 my_data_longer |> ggplot(
   mapping = aes(
-    x = Species,
+    x = label,
     y = value,
     color = factor(unit_mm, labels = c("Feret length", "maximum width"))
   )
 ) + geom_boxplot() +
   ggtitle("Feret lengths and maximum widths of three Acer species.") +
-  labs(x = "Species", y = "[mm]", color = "")
+  labs(x = "Species", y = "[mm]", color = "") +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
 
 ```{r echo=FALSE}
 my_data_longer |> filter(Species == "Acer platanoides") |> ggplot(
   mapping = aes(
-    x = Location,
+    x = label,
     y = value,
     color = factor(unit_mm, labels = c("Feret length", "maximum width"))
   )
@@ -81,7 +91,7 @@ my_data_longer |> filter(Species == "Acer platanoides") |> ggplot(
 ```{r echo=FALSE}
 my_data_longer |> ggplot(
   mapping = aes(
-    x = sample,
+    x = label,
     y = value,
     color = factor(unit_mm, labels = c("Feret length", "maximum width"))
   )
@@ -93,7 +103,7 @@ my_data_longer |> ggplot(
 ```{r echo=FALSE}
 my_data_longer |> ggplot(
   mapping = aes(
-    x = sample,
+    x = label,
     y = ratio,
   )
 ) + geom_boxplot() +
