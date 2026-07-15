@@ -3,7 +3,13 @@ title: "Bachelorarbeit-Florian-Mischke"
 author: "Florian Mischke"
 date: "`r Sys.Date()`"
 output:
-  pdf_document: default
+  pdf_document: 
+    includes:
+      #in_header: includes/import.sty
+      #before_body: includes/title.sty
+      #after_body: includes/tail.sty
+    fig_caption: yes
+    extra_dependencies: ["float"]
   html_document: default
 ---
 
@@ -63,7 +69,7 @@ my_data |> group_by(Species, Location) |> summarize(
 ```
 
 
-```{r echo=FALSE}
+```{r feret_width_three_acer_species, fig.cap="\\label{fig:feret_width_three_acer_species}Feret lengths and maximum widths of three Acer species."}
 my_data_longer |> ggplot(
   mapping = aes(
     x = label,
@@ -71,12 +77,12 @@ my_data_longer |> ggplot(
     color = factor(unit_mm, labels = c("Feret length", "maximum width"))
   )
 ) + geom_boxplot() +
-  ggtitle("Feret lengths and maximum widths of three Acer species.") +
+  #ggtitle("Feret lengths and maximum widths of three Acer species.") +
   labs(x = "Species", y = "[mm]", color = "") +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
 
-```{r echo=FALSE}
+```{r feret_width_two_platanoides_samples, fig.cap="\\label{fig:feret_width_two_platanoides_samples}Feret lengths and maximum widths of two samples of Acer platanoides."}
 my_data_longer |> filter(Species == "Acer platanoides") |> ggplot(
   mapping = aes(
     x = label,
@@ -84,11 +90,11 @@ my_data_longer |> filter(Species == "Acer platanoides") |> ggplot(
     color = factor(unit_mm, labels = c("Feret length", "maximum width"))
   )
 ) + geom_boxplot() +
-  ggtitle("Feret lengths and maximum widths of two samples of Acer platanoides.") +
+  #ggtitle("Feret lengths and maximum widths of two samples of Acer platanoides.") +
   labs(x = "Location", y = "[mm]", color = "")
 ```
 
-```{r echo=FALSE}
+```{r feret_width_four_acer_samples, fig.cap="\\label{fig:feret_width_two_platanoides_samples}Feret lengths and maximum widths of four samples of Acer species."}
 my_data_longer |> ggplot(
   mapping = aes(
     x = label,
@@ -96,18 +102,18 @@ my_data_longer |> ggplot(
     color = factor(unit_mm, labels = c("Feret length", "maximum width"))
   )
 ) + geom_boxplot() +
-  ggtitle("Feret lengths and maximum widths of four samples of Acer species") +
+  #ggtitle("Feret lengths and maximum widths of four samples of Acer species.") +
   labs(x = "Species and Location", y = "[mm]", color = "") +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
-```{r echo=FALSE}
+```{r Ratio, fig.cap="\\label{fig:Ratio}Length/width ratios of four samples of Acer species"}
 my_data_longer |> ggplot(
   mapping = aes(
     x = label,
     y = ratio,
   )
 ) + geom_boxplot() +
-  ggtitle("Length/width ratios of four samples of Acer species") +
+  #ggtitle("Length/width ratios of four samples of Acer species") +
   labs(x = "Species and Location", y = "Ratio", color = "") +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
