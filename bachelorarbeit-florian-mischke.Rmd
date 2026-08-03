@@ -117,9 +117,9 @@ knitr::include_graphics(
 
 ### Samples
 
-1. _Acer campestre_ - Loki Schmidt Garten, Hamburg - what three words: ///verbunden.ergriffen.umwandeln
-2. _Acer pseudoplatanus_ - Stadtpark, Hamburg - what three words: ///halbzeit.hebamme.forschte
-3. _Acer platanoides_ - Spannskamp, Hamburg - what three words: ///vortritt.erkannt.teig
+1. _Acer campestre_ - Loki Schmidt Garten, Hamburg - what3words:  [///kennels.slippery.hears](https://w3w.co/kennels.slippery.hears)
+2. _Acer pseudoplatanus_ - Stadtpark, Hamburg - what3words:  [///engaging.survey.spout](https://w3w.co/engaging.survey.spout)
+3. _Acer platanoides_ - Spannskamp, Hamburg - what3words:  [///bristle.ruins.curated](https://w3w.co/bristle.ruins.curated)
 
 ## Stained sections
 
