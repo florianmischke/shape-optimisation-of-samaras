@@ -97,11 +97,23 @@ Test [@lentink_leading-edge_2009].
 
 ## Photos for measuring and geometry experiments
 
-More than 150 (more or less) intact samaras were gathered (>50 per species).  
+More than 150 (more or less) intact samaras were gathered (>50 per species).
+
 An A3 sheet of millimeter paper was placed on the ground and secured with transparent sticky tape. A 10x4 cm cutout of white printer paper was taped on it. One samara at a time was placed on that paper and a sticky note with date/time and species name was placed below.  
-A digital camera (Panasonic Lumix G, Model No. DC-FZ100002) was secured on a tripod stand, pointed down and leveled via spirit level. Distance from ground to camera lens was measured 134cm. The following settings were chosen to take photos: Focal length 400, S 4, F 11, ISO 125; manual mode.  
-50 photos for _Acer pseudoplatanus_ and _A. campestre_ and 100 photos for _A. platanoides_, 50 for each of the two samples were taken by remote control with the Panasonic Image App. The photos were copied to a Laptop and backed up to cloud storage and an external SSD.  
-(Photos of the setup were taken, see below ==to be done==)
+A digital camera (Panasonic Lumix G, Model No. DC-FZ100002) was secured on a tripod stand, pointed down and leveled via spirit level. Distance from ground to camera lens was measured 134cm. The following settings were chosen to take photos: Focal length 400, S 4, F 11, ISO 125; manual mode. Photos of the setup were taken, see figure \ref{fig:camera_setup}.
+
+50 photos for _Acer pseudoplatanus_ and _A. campestre_ and 100 photos for _A. platanoides_, 50 for each of the two samples were taken by remote control with the Panasonic Image App. The photos were copied to a Laptop and backed up to cloud storage and an external SSD.
+
+```{r, echo=FALSE, out.width="45%", fig.align = "center", fig.show='hold', fig.cap="\\label{fig:camera_setup}Camera on tripod pointed down on millimeter sheet of paper. Samara is positioned on the white paper strip (left). View of the camera display (right). Source: own work"}
+# Source - https://stackoverflow.com/a/63866499
+# Posted by Werner Hertzog, modified by community. See post 'Timeline' for change history
+# Retrieved 2026-08-03, License - CC BY-SA 4.0
+knitr::include_graphics(
+  c("img/setup/IMG_4753.jpeg",
+    "img/setup/IMG_4754.jpeg")
+)
+```
+
 
 ### Samples
 
