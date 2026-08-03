@@ -40,7 +40,7 @@ source("inc/functions.R")
 
 \begin{center}
 \vspace*{4\baselineskip}
-{\Huge Shape optimisation of winged nuts (samaras), using maple species as an example} \\
+{\Huge Topology optimisation in samaras:\\ using maple species as an example} \\
 \vspace*{2\baselineskip}
 von \\
 \vspace*{1\baselineskip}
