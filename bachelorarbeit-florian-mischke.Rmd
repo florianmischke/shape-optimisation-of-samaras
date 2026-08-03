@@ -12,6 +12,9 @@ output:
   html_document: default
 editor_options:
   chunk_output_type: console
+linkcolor: Cerulean
+urlcolor: Cerulean
+citecolor: Cerulean
 ---
 
 ```{r setup, include=FALSE}
