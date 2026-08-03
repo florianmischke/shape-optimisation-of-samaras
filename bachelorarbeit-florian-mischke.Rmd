@@ -1,20 +1,25 @@
 ---
-title: "Bachelorarbeit-Florian-Mischke"
-author: "Florian Mischke"
-date: "`r Sys.Date()`"
+bibliography: bib/literature.bib
 output:
   pdf_document: 
+    latex_engine: xelatex
     includes:
       #in_header: includes/import.sty
       #before_body: includes/title.sty
       #after_body: includes/tail.sty
     fig_caption: yes
-    extra_dependencies: ["float"]
+    extra_dependencies: ["float", "acronym"]
   html_document: default
+editor_options:
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, fig.pos = "H", out.extra = "")
+options(knitr.table.format = function() {
+  if (knitr::is_latex_output())
+    "latex" else "html"
+})
 ```
 
 ```{r, include=FALSE}
@@ -25,6 +30,90 @@ library(kableExtra)
 ```{r echo=FALSE}
 source("inc/functions.R")
 ```
+\renewcommand{\listfigurename}{}
+\renewcommand{\listtablename}{}
+
+\pagenumbering{gobble}
+
+\begin{center}
+\vspace*{4\baselineskip}
+{\Huge Shape optimisation of winged nuts (samaras), using maple species as an example} \\
+\vspace*{2\baselineskip}
+von \\
+\vspace*{1\baselineskip}
+{\huge Florian Mischke} \\
+\vspace*{2\baselineskip}
+geboren am \\
+\vspace*{1\baselineskip}
+{\large 11.01.1990} \\
+\vspace*{2\baselineskip}
+{\Large Bachelorarbeit im Studiengang Bachelor of Science Biologie\\der Universität Hamburg} \\
+\vspace*{2\baselineskip}
+2026
+\vspace*{2\baselineskip}
+
+
+{\large Gutachterin: Prof. Dr. Linnea Hesse} \\
+{\large Gutachter: Noah Knorr}
+\end{center}
+
+
+\newpage
+
+\hypersetup{linkcolor = black}
+
+\pagenumbering{roman}
+\renewcommand*\contentsname{Inhalt}
+\tableofcontents
+
+\newpage
+
+\hypersetup{linkcolor = blue}
+
+\pagenumbering{arabic}
+
+# Statutory declaration
+```{r}
+# Source - https://stackoverflow.com/a/52687040
+# Posted by Rob Smith, modified by community. See post 'Timeline' for change history
+# Retrieved 2026-07-15, License - CC BY-SA 4.0
+```
+![Eidesstattliche Versicherung](./inc/eidesstattliche-versicherung.pdf){width=100%}
+\newpage
+
+\section{List of acronyms}
+\begin{acronym}
+    \acro{l}[L.]{Carl von \underline{Linné}}
+\end{acronym}
+
+# Abstract
+Something, something, something, Samaras.
+
+# Introduction
+
+Test [@lentink_leading-edge_2009].
+
+# Methods and materials
+
+## Photos for measuring and geometry experiments
+
+More than 150 (more or less) intact samaras were gathered (>50 per species).  
+An A3 sheet of millimeter paper was placed on the ground and secured with transparent sticky tape. A 10x4 cm cutout of white printer paper was taped on it. One samara at a time was placed on that paper and a sticky note with date/time and species name was placed below.  
+A digital camera (Panasonic Lumix G, Model No. DC-FZ100002) was secured on a tripod stand, pointed down and leveled via spirit level. Distance from ground to camera lens was measured 134cm. The following settings were chosen to take photos: Focal length 400, S 4, F 11, ISO 125; manual mode.  
+50 photos for _Acer pseudoplatanus_ and _A. campestre_ and 100 photos for _A. platanoides_, 50 for each of the two samples were taken by remote control with the Panasonic Image App. The photos were copied to a Laptop and backed up to cloud storage and an external SSD.  
+(Photos of the setup were taken, see below ==to be done==)
+
+### Samples
+
+1. _Acer campestre_ - Loki Schmidt Garten, Hamburg - what three words: ///verbunden.ergriffen.umwandeln
+2. _Acer pseudoplatanus_ - Stadtpark, Hamburg - what three words: ///halbzeit.hebamme.forschte
+3. _Acer platanoides_ - Spannskamp, Hamburg - what three words: ///vortritt.erkannt.teig
+
+## Stained sections
+
+Two fresh samaras each of _Acer campestre_ and _A. pseudoplatanus_ were conserved in 60% Ethanol.
+
+# Results
 
 ```{r echo=FALSE}
 results <- read.csv("data/2026-07-14--09-56--Results.csv")
@@ -94,7 +183,7 @@ my_data_longer |> filter(Species == "Acer platanoides") |> ggplot(
   labs(x = "Location", y = "[mm]", color = "")
 ```
 
-```{r feret_width_four_acer_samples, fig.cap="\\label{fig:feret_width_two_platanoides_samples}Feret lengths and maximum widths of four samples of Acer species."}
+```{r feret_width_four_acer_samples, fig.cap="\\label{fig:feret_width_four_acer_samples}Feret lengths and maximum widths of four samples of Acer species."}
 my_data_longer |> ggplot(
   mapping = aes(
     x = label,
@@ -106,8 +195,11 @@ my_data_longer |> ggplot(
   labs(x = "Species and Location", y = "[mm]", color = "") +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
-```{r Ratio, fig.cap="\\label{fig:Ratio}Length/width ratios of four samples of Acer species"}
-my_data_longer |> ggplot(
+
+## Length/width ratios
+
+```{r ratios_boxplot, fig.cap="\\label{fig:ratios_boxplot}Length/width ratios of four samples of Acer species"}
+my_data |> ggplot(
   mapping = aes(
     x = label,
     y = ratio,
@@ -117,3 +209,77 @@ my_data_longer |> ggplot(
   labs(x = "Species and Location", y = "Ratio", color = "") +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
+
+```{r ratios_hist, fig.cap="\\label{fig:ratios_hist}Length/width ratios of four samples of Acer species"}
+my_data |> ggplot(
+  mapping = aes(
+    x = ratio
+  )
+) + geom_histogram(bins=50) +
+  facet_wrap(~label)
+```
+
+
+## Kolmogorov–Smirnov test
+(also K–S test or KS test) 
+nonparametric test of the equality of continuous (or discontinuous) one-dimensional probability distributions.
+```{r}
+sample1 <- my_data |> filter(Species == "Acer campestre")
+sample2 <- my_data |> filter(Species == "Acer platanoides", Location == "IPM")
+sample3 <- my_data |> filter(Species == "Acer platanoides", Location == "Spannskamp")
+sample4 <- my_data |> filter(Species == "Acer pseudoplatanus")
+
+ks.test(sample1$ratio, "pnorm", mean = mean(sample1$ratio), sd = sd(sample1$ratio))
+ks.test(sample2$ratio, "pnorm", mean = mean(sample2$ratio), sd = sd(sample2$ratio))
+ks.test(sample3$ratio, "pnorm", mean = mean(sample3$ratio), sd = sd(sample3$ratio))
+ks.test(sample4$ratio, "pnorm", mean = mean(sample4$ratio), sd = sd(sample4$ratio))
+```
+
+## Shapiro-Wilk test
+```{r}
+shapiro.test(my_data$ratio[my_data$Species == "Acer campestre"])
+shapiro.test(my_data$ratio[my_data$Species == "Acer platanoides" & my_data$Location == "IPM"])
+shapiro.test(my_data$ratio[my_data$Species == "Acer platanoides" & my_data$Location == "Spannskamp"])
+shapiro.test(my_data$ratio[my_data$Species == "Acer pseudoplatanus"])
+```
+
+## Levene test
+```{r}
+car::leveneTest(ratio ~ sample, my_data)
+```
+
+## ANOVA
+Ratio ~ sample
+```{r}
+mod <- aov(formula = my_data$ratio ~ my_data$sample, data = my_data)
+
+summary(mod)
+```
+
+
+# Discussion
+
+Probleme: 
+
+- beim Messen: Übergang zwischen Same und Flügel nicht immer gleich. Mal klar abgegrenzt, mal mit fließendem Übergang; Lösung: ganze Frucht ausmessen
+- Auslösen an der Kamera führt zu verwackeltem Bild, Remote Control App löst das Problem. (Verzögerung auch Option, aber Zeitverlust.)
+- Stichprobe mit 50 Früchten pro Spezies groß genug, besser wären unabhängiere Daten. Z.B. 5 Bäume pro Spezies, jeweils 10 Früchte aus verschiedenen Blütenständen. 
+
+# Conclusion
+
+# Acknowledgements
+
+# Bibliography
+\bibliographystyle{alpha}
+::: {#refs}
+:::
+
+## Use of AI/GenAI (generative Artificial Intelligence)
+- ChatGPT for help at coding a FIJI macro
+- DeepL for translating German to English
+
+# List of Figures
+\listoffigures
+
+# List of Tables
+\listoftables
