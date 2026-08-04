@@ -284,10 +284,20 @@ summary(mod)
 
 ## Bézier curves
 
-Figure \ref{fig:P1116384_bezier} shows that the shape of a sample of _Acer Pseudoplatanus_ can be described by a Bézier curve.
+Figure \ref{fig:P1116384_bezier} shows that the shape of a sample of _Acer pseudoplatanus_ can be described by a Bézier curve.
+Figure \ref{fig:P1116641_bezier} shows the same for _Acer platanoides_.
+Figure \ref{fig:P1116588_bezier} shows the same for _Acer campestre_.
 
 ```{r P1116384_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer pseudoplatanus. Source: own work"}
 knitr::include_graphics("img/bezier/P1116384.JPG-bezier.png")
+```
+
+```{r P1116641_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer platanoides Source: own work"}
+knitr::include_graphics("img/bezier/P1116641.JPG-bezier.png")
+```
+
+```{r P1116588_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer campestre Source: own work"}
+knitr::include_graphics("img/bezier/P1116588.JPG-bezier.png")
 ```
 
 # Discussion
