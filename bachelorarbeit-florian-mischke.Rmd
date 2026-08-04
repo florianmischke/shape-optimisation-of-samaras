@@ -4,6 +4,7 @@ output:
   pdf_document: 
     latex_engine: xelatex
     includes:
+      in_header: inc/preamble.tex
       #in_header: includes/import.sty
       #before_body: includes/title.sty
       #after_body: includes/tail.sty
@@ -302,7 +303,10 @@ Probleme: 
 - DeepL for translating German to English
 
 # List of Figures {-}
+\bgroup
+\hypersetup{linkcolor = Cerulean}
 \listoffigures
+\egroup
 
 # List of Tables {-}
 \listoftables
