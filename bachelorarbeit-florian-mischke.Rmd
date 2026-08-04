@@ -280,6 +280,13 @@ mod <- aov(formula = my_data$ratio ~ my_data$sample, data = my_data)
 summary(mod)
 ```
 
+## Bézier curves
+
+Figure \ref{fig:labelx} shows ...
+
+```{r, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer pseudoplatanus\\label{fig:labelx}. Source: own work"}
+knitr::include_graphics("img/bezier/P1116384.JPG-bezier.png")
+```
 
 # Discussion
 
