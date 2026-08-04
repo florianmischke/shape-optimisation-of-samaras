@@ -284,9 +284,9 @@ summary(mod)
 
 ## Bézier curves
 
-Figure \ref{fig:labelx} shows ...
+Figure \ref{fig:P1116384_bezier} shows that the shape of a sample of _Acer Pseudoplatanus_ can be described by a Bézier curve.
 
-```{r, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer pseudoplatanus\\label{fig:labelx}. Source: own work"}
+```{r P1116384_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer pseudoplatanus. Source: own work"}
 knitr::include_graphics("img/bezier/P1116384.JPG-bezier.png")
 ```
 
