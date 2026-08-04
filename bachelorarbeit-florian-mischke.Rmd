@@ -129,6 +129,8 @@ knitr::include_graphics(
 1. _Acer campestre_ - Loki Schmidt Garten, Hamburg - what3words:  [///kennels.slippery.hears](https://w3w.co/kennels.slippery.hears)
 2. _Acer pseudoplatanus_ - Stadtpark, Hamburg - what3words:  [///engaging.survey.spout](https://w3w.co/engaging.survey.spout)
 3. _Acer platanoides_ - Spannskamp, Hamburg - what3words:  [///bristle.ruins.curated](https://w3w.co/bristle.ruins.curated)
+4. _Acer platanoides_ - IPM, Hamburg - what3words:
+[///gardens.rattled.yappy](https://w3w.co/gardens.rattled.yappy)
 
 ## Stained sections
 
