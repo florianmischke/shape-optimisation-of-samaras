@@ -95,7 +95,7 @@ geboren am \\
 ```
 # List of acronyms {-}
 \begin{acronym}
-    \acro{l}[L.]{Carl von \underline{Linné}}
+    \acro{l}[L.]{Carl Linnaeus, also known as Carl von Linné}
 \end{acronym}
 
 # Abstract
