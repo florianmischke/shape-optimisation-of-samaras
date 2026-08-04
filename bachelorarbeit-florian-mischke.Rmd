@@ -244,7 +244,7 @@ my_data |> ggplot(
 ```
 
 
-## Kolmogorov–Smirnov test
+### Kolmogorov–Smirnov test
 (also K–S test or KS test) 
 nonparametric test of the equality of continuous (or discontinuous) one-dimensional probability distributions.
 ```{r}
@@ -259,7 +259,7 @@ ks.test(sample3$ratio, "pnorm", mean = mean(sample3$ratio), sd = sd(sample3$rati
 ks.test(sample4$ratio, "pnorm", mean = mean(sample4$ratio), sd = sd(sample4$ratio))
 ```
 
-## Shapiro-Wilk test
+### Shapiro-Wilk test
 ```{r}
 shapiro.test(my_data$ratio[my_data$Species == "Acer campestre"])
 shapiro.test(my_data$ratio[my_data$Species == "Acer platanoides" & my_data$Location == "IPM"])
@@ -267,12 +267,12 @@ shapiro.test(my_data$ratio[my_data$Species == "Acer platanoides" & my_data$Locat
 shapiro.test(my_data$ratio[my_data$Species == "Acer pseudoplatanus"])
 ```
 
-## Levene test
+### Levene test
 ```{r}
 car::leveneTest(ratio ~ sample, my_data)
 ```
 
-## ANOVA
+### ANOVA
 Ratio ~ sample
 ```{r}
 mod <- aov(formula = my_data$ratio ~ my_data$sample, data = my_data)
