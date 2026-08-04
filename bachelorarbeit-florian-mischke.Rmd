@@ -104,9 +104,17 @@ Test [@lentink_leading-edge_2009].
 
 # Methods and materials
 
-## Photos for measuring and geometry experiments
+## Samples
 
 More than 150 (more or less) intact samaras were gathered (>50 per species).
+
+1. _Acer campestre_ - Loki Schmidt Garten, Hamburg - what3words:  [///kennels.slippery.hears](https://w3w.co/kennels.slippery.hears)
+2. _Acer pseudoplatanus_ - Stadtpark, Hamburg - what3words:  [///engaging.survey.spout](https://w3w.co/engaging.survey.spout)
+3. _Acer platanoides_ - Spannskamp, Hamburg - what3words:  [///bristle.ruins.curated](https://w3w.co/bristle.ruins.curated)
+4. _Acer platanoides_ - IPM, Hamburg - what3words:
+[///gardens.rattled.yappy](https://w3w.co/gardens.rattled.yappy)
+
+## Photos for measuring and geometry experiments
 
 An A3 sheet of millimeter paper was placed on the ground and secured with transparent sticky tape. A 10x4 cm cutout of white printer paper was taped on it. One samara at a time was placed on that paper and a sticky note with date/time and species name was placed below.  
 A digital camera (Panasonic Lumix G, Model No. DC-FZ100002) was secured on a tripod stand, pointed down and leveled via spirit level. Distance from ground to camera lens was measured 134cm. The following settings were chosen to take photos: Focal length 400, S 4, F 11, ISO 125; manual mode. Photos of the setup were taken, see figure \ref{fig:camera_setup}.
@@ -123,14 +131,6 @@ knitr::include_graphics(
 )
 ```
 
-
-### Samples
-
-1. _Acer campestre_ - Loki Schmidt Garten, Hamburg - what3words:  [///kennels.slippery.hears](https://w3w.co/kennels.slippery.hears)
-2. _Acer pseudoplatanus_ - Stadtpark, Hamburg - what3words:  [///engaging.survey.spout](https://w3w.co/engaging.survey.spout)
-3. _Acer platanoides_ - Spannskamp, Hamburg - what3words:  [///bristle.ruins.curated](https://w3w.co/bristle.ruins.curated)
-4. _Acer platanoides_ - IPM, Hamburg - what3words:
-[///gardens.rattled.yappy](https://w3w.co/gardens.rattled.yappy)
 
 ## Stained sections
 
