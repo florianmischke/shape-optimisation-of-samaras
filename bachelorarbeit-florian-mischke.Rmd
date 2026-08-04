@@ -9,6 +9,7 @@ output:
       #after_body: includes/tail.sty
     fig_caption: yes
     extra_dependencies: ["float", "acronym"]
+    number_sections: true
   html_document: default
 editor_options:
   chunk_output_type: console
@@ -41,6 +42,8 @@ source("inc/functions.R")
 \begin{center}
 \vspace*{4\baselineskip}
 {\Huge Topology optimisation in samaras:\\ using maple species as an example} \\
+\vspace*{1\baselineskip}
+{\large Topologieoptimierung von Samaras (Flügelnussfrüchten) am Beispiel von Ahornarten} \\
 \vspace*{2\baselineskip}
 von \\
 \vspace*{1\baselineskip}
@@ -66,7 +69,7 @@ geboren am \\
 \hypersetup{linkcolor = black}
 
 \pagenumbering{roman}
-\renewcommand*\contentsname{Inhalt}
+\renewcommand*\contentsname{Table of Contents}
 \tableofcontents
 
 \newpage
@@ -75,7 +78,7 @@ geboren am \\
 
 \pagenumbering{arabic}
 
-# Statutory declaration
+# Statutory declaration {-}
 ```{r}
 # Source - https://stackoverflow.com/a/52687040
 # Posted by Rob Smith, modified by community. See post 'Timeline' for change history
@@ -84,7 +87,10 @@ geboren am \\
 ![Eidesstattliche Versicherung](./inc/eidesstattliche-versicherung.pdf){width=100%}
 \newpage
 
-\section{List of acronyms}
+```{r}
+# \section{List of acronyms}
+```
+# List of acronyms {-}
 \begin{acronym}
     \acro{l}[L.]{Carl von \underline{Linné}}
 \end{acronym}
@@ -282,9 +288,9 @@ Probleme: 
 
 # Conclusion
 
-# Acknowledgements
+# Acknowledgements {-}
 
-# Bibliography
+# Bibliography {-}
 \bibliographystyle{alpha}
 ::: {#refs}
 :::
@@ -293,8 +299,8 @@ Probleme: 
 - ChatGPT for help at coding a FIJI macro
 - DeepL for translating German to English
 
-# List of Figures
+# List of Figures {-}
 \listoffigures
 
-# List of Tables
+# List of Tables {-}
 \listoftables
