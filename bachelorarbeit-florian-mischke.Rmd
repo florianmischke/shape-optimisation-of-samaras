@@ -182,7 +182,7 @@ my_data |> group_by(Species, Location) |> summarize(
 ```
 
 
-```{r feret_width_three_acer_species, fig.cap="\\label{fig:feret_width_three_acer_species}Feret lengths and maximum widths of three Acer species."}
+```{r feret_width_three_acer_species, fig.cap="\\label{fig:feret_width_three_acer_species_label}Feret lengths and maximum widths of three Acer species."}
 my_data_longer |> ggplot(
   mapping = aes(
     x = label,
@@ -195,7 +195,7 @@ my_data_longer |> ggplot(
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
 
-```{r feret_width_two_platanoides_samples, fig.cap="\\label{fig:feret_width_two_platanoides_samples}Feret lengths and maximum widths of two samples of Acer platanoides."}
+```{r feret_width_two_platanoides_samples, fig.cap="\\label{fig:feret_width_two_platanoides_samples_label}Feret lengths and maximum widths of two samples of Acer platanoides."}
 my_data_longer |> filter(Species == "Acer platanoides") |> ggplot(
   mapping = aes(
     x = label,
@@ -207,7 +207,7 @@ my_data_longer |> filter(Species == "Acer platanoides") |> ggplot(
   labs(x = "Location", y = "[mm]", color = "")
 ```
 
-```{r feret_width_four_acer_samples, fig.cap="\\label{fig:feret_width_four_acer_samples}Feret lengths and maximum widths of four samples of Acer species."}
+```{r feret_width_four_acer_samples, fig.cap="\\label{fig:feret_width_four_acer_samples_label}Feret lengths and maximum widths of four samples of Acer species."}
 my_data_longer |> ggplot(
   mapping = aes(
     x = label,
@@ -222,7 +222,7 @@ my_data_longer |> ggplot(
 
 ## Length/width ratios
 
-```{r ratios_boxplot, fig.cap="\\label{fig:ratios_boxplot}Length/width ratios of four samples of Acer species"}
+```{r ratios_boxplot, fig.cap="\\label{fig:ratios_boxplot_label}Length/width ratios of four samples of Acer species"}
 my_data |> ggplot(
   mapping = aes(
     x = label,
@@ -234,7 +234,7 @@ my_data |> ggplot(
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
 
-```{r ratios_hist, fig.cap="\\label{fig:ratios_hist}Length/width ratios of four samples of Acer species"}
+```{r ratios_hist, fig.cap="\\label{fig:ratios_hist_label}Length/width ratios of four samples of Acer species"}
 my_data |> ggplot(
   mapping = aes(
     x = ratio
