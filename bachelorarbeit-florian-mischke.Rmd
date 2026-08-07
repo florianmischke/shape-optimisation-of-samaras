@@ -282,6 +282,14 @@ mod <- aov(formula = my_data$ratio ~ my_data$sample, data = my_data)
 summary(mod)
 ```
 
+## Topology Optimization after Mattheck
+
+Triangle-of-forces method
+
+```{r mattheck1, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Mattheck method applied to wing tip of a sample of A. platanoides. Source: own work"}
+knitr::include_graphics("img/mattheck/A platanoides Mattheck 1.png")
+```
+
 ## Bézier curves
 
 Figure \ref{fig:P1116384_bezier} shows that the shape of a sample of _Acer pseudoplatanus_ can be described by a Bézier curve.
