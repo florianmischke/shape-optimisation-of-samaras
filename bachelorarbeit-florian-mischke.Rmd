@@ -335,6 +335,66 @@ df_bezier_points |> ggplot(
   coord_fixed(ratio = 1)
 ```
 
+```{r}
+data_curve_points <- readxl::read_excel("data/bezier_points.xlsx")
+
+#data_curve_points_wider <- data_curve_points |> pivot_wider(names_from = Point, values_from = c(X,Y))
+
+data_curve_points_adjusted <- data_curve_points |> 
+  group_by(FileName) |> 
+  mutate(
+    X_A = X[Point == "A"],
+    Y_A = Y[Point == "A"],
+    X = X - X_A,
+    Y = Y - Y_A
+  ) |> 
+  ungroup() |> 
+  select(-X_A, -Y_A)
+
+bezier_df <- data_curve_points_adjusted |> 
+  group_by(FileName, Species) |> 
+  group_modify(~ {
+
+    # Kontrollpunkte A, B, C, D
+    # Jede Zeile = ein Kontrollpunkt
+    control_points <- as.matrix(.x[, c("X", "Y")])
+
+    # Parameter t
+    t <- seq(0, 1, length.out = 100)
+
+    # Kubische Bézier-Kurve aus 4 Kontrollpunkten
+    curve <- bezier(
+      t = t,
+      p = control_points
+    )
+
+    # Als Dataframe zurückgeben
+    data.frame(
+      t = t,
+      X = curve[, 1],
+      Y = curve[, 2]
+    )
+  }) |> 
+  ungroup()
+
+
+# Kurven plotten
+ggplot(bezier_df, aes(x = X, y = Y, group = FileName, color = FileName, linetype = Species)) +
+  geom_path(linewidth = 0.5, alpha = 0.75) +
+  coord_equal() +
+  theme_minimal() +
+  theme(legend.position = 'bottom') +
+  guides(color = "none")
+
+# Kurven plotten
+ggplot(bezier_df, aes(x = X, y = Y, group = FileName, color = Species, linetype = FileName)) +
+  geom_path(linewidth = 0.75, alpha = 0.5) +
+  coord_equal() +
+  theme_minimal() +
+  theme(legend.position = 'bottom') +
+  guides(linetype = "none")
+```
+
 
 # Discussion
 
