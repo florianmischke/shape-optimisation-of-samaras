@@ -293,13 +293,8 @@ knitr::include_graphics("img/mattheck/A platanoides Mattheck 1.png")
 
 ## Bézier curves
 
-Figure \ref{fig:P1116384_bezier} shows that the shape of a sample of _Acer pseudoplatanus_ can be described by a Bézier curve.
-Figure \ref{fig:P1116641_bezier} shows the same for _Acer platanoides_.
-Figure \ref{fig:P1116588_bezier} shows the same for _Acer campestre_.
-
-```{r P1116384_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer pseudoplatanus. Source: own work"}
-knitr::include_graphics("img/bezier/P1116384.JPG-bezier.png")
-```
+Figure \ref{fig:P1116641_bezier} shows that the shape of a sample of _Acer platanoides_ can be described by a Bézier curve.
+Figures \ref{fig:P1116588_bezier} and \ref{fig:P1116384_bezier} show the same for _Acer campestre_ and _Acer pseudoplatanus_.
 
 ```{r P1116641_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer platanoides Source: own work"}
 knitr::include_graphics("img/bezier/P1116641.JPG-bezier.png")
@@ -308,6 +303,38 @@ knitr::include_graphics("img/bezier/P1116641.JPG-bezier.png")
 ```{r P1116588_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer campestre Source: own work"}
 knitr::include_graphics("img/bezier/P1116588.JPG-bezier.png")
 ```
+
+```{r P1116384_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer pseudoplatanus. Source: own work"}
+knitr::include_graphics("img/bezier/P1116384.JPG-bezier.png")
+```
+### Bezier curve simulation
+
+```{r}
+library(bezier)
+t <- seq(0, 1, length=100)
+p <- matrix(c(0.48,6.04, 9.56,13.54, 9.22,-4.65, 25.58,6.54), nrow=4, ncol=2, byrow=TRUE)
+bezier_points <- bezier(t=t, p=p)
+
+df_bezier_points <- data.frame(bezier_points)
+colnames(df_bezier_points) <- c("X","Y")
+
+print(p)
+```
+
+Figure \ref{fig:bezier_curve_simulation}
+
+```{r bezier_curve_simulation, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve simulation. Source: own work"}
+
+df_bezier_points |> ggplot(
+  mapping = aes(
+    x = X,
+    y = Y
+  )
+) + 
+  geom_line(color = "red") + 
+  coord_fixed(ratio = 1)
+```
+
 
 # Discussion
 
