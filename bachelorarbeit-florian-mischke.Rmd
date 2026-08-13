@@ -63,7 +63,7 @@ geboren am \\
 
 
 {\large Gutachterin: Prof. Dr. Linnea Hesse} \\
-{\large Gutachter: Noah Knorr}
+{\large Gutachter: Prof. Dr. Dominik Begerow}
 \end{center}
 
 
@@ -337,11 +337,17 @@ df_bezier_points |> ggplot(
 
 ```{r}
 data_curve_points <- readxl::read_excel("data/bezier_points.xlsx")
-
+data_curve_points_merged <- data_curve_points |> mutate(
+  key = str_remove(FileName, "\\.[^.]+$")
+) |> left_join(
+  samples_images |> mutate(
+    key = str_remove(FileName, "\\.[^.]+$")
+), by = "key"
+)
 #data_curve_points_wider <- data_curve_points |> pivot_wider(names_from = Point, values_from = c(X,Y))
 
-data_curve_points_adjusted <- data_curve_points |> 
-  group_by(FileName) |> 
+data_curve_points_adjusted <- data_curve_points_merged |> 
+  group_by(FileName.x) |> 
   mutate(
     X_A = X[Point == "A"],
     Y_A = Y[Point == "A"],
@@ -352,7 +358,7 @@ data_curve_points_adjusted <- data_curve_points |>
   select(-X_A, -Y_A)
 
 bezier_df <- data_curve_points_adjusted |> 
-  group_by(FileName, Species) |> 
+  group_by(FileName.x, Species) |> 
   group_modify(~ {
 
     # Kontrollpunkte A, B, C, D
@@ -379,7 +385,7 @@ bezier_df <- data_curve_points_adjusted |>
 
 
 # Kurven plotten
-ggplot(bezier_df, aes(x = X, y = Y, group = FileName, color = FileName, linetype = Species)) +
+ggplot(bezier_df, aes(x = X, y = Y, group = FileName.x, color = FileName.x, linetype = Species)) +
   geom_path(linewidth = 0.5, alpha = 0.75) +
   coord_equal() +
   theme_minimal() +
@@ -387,7 +393,7 @@ ggplot(bezier_df, aes(x = X, y = Y, group = FileName, color = FileName, linetype
   guides(color = "none")
 
 # Kurven plotten
-ggplot(bezier_df, aes(x = X, y = Y, group = FileName, color = Species, linetype = FileName)) +
+ggplot(bezier_df, aes(x = X, y = Y, group = FileName.x, color = Species, linetype = FileName.x)) +
   geom_path(linewidth = 0.75, alpha = 0.5) +
   coord_equal() +
   theme_minimal() +
