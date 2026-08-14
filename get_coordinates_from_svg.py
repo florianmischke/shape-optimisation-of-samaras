@@ -6,7 +6,7 @@ from svg.path import parse_path, CubicBezier
 print("Ordner mit SVG-Dateien:")
 folder = input().strip()
 
-output_file = os.path.join(folder, "svg_punkte.csv")
+output_file = os.path.join(folder, "svg_points.csv")
 rows = []
 
 for filename in sorted(os.listdir(folder)):
@@ -40,8 +40,8 @@ for filename in sorted(os.listdir(folder)):
     doc.unlink()
 
 with open(output_file, "w", newline="", encoding="utf-8-sig") as f:
-    writer = csv.writer(f, delimiter=";")
-    writer.writerow(["Dateiname", "Punkt", "X", "Y"])
+    writer = csv.writer(f, delimiter=",")
+    writer.writerow(["FileName", "Point", "X", "Y"])
     writer.writerows(rows)
 
 print(f"Fertig: {output_file}")
