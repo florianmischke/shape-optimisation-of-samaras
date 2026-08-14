@@ -384,22 +384,32 @@ bezier_df <- data_curve_points_adjusted |>
   }) |> 
   ungroup()
 
+bezier_df <- bezier_df %>%
+  group_by(Species) %>%
+  mutate(
+    Sample = dense_rank(FileName.x)
+  ) %>%
+  ungroup()
 
 # Kurven plotten
-ggplot(bezier_df, aes(x = X, y = Y, group = FileName.x, color = FileName.x, linetype = Species)) +
-  geom_path(linewidth = 0.5, alpha = 0.75) +
+bezier_df |> group_by(Species) |> mutate(
+  n = n_distinct(FileName.x),
+  label = paste0(Species,'\nn = ',n)
+) |> ggplot(aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample))) +
+  geom_path(linewidth = 0.5, alpha = 0.5) +
   coord_equal() +
   theme_minimal() +
   theme(legend.position = 'bottom') +
-  guides(color = "none")
-
-# Kurven plotten
-ggplot(bezier_df, aes(x = X, y = Y, group = FileName.x, color = Species, linetype = FileName.x)) +
-  geom_path(linewidth = 0.75, alpha = 0.5) +
-  coord_equal() +
-  theme_minimal() +
-  theme(legend.position = 'bottom') +
-  guides(linetype = "none")
+  guides(linetype = "none") +
+  scale_linetype_manual(
+    values = c(
+      "1" = "solid",
+      "2" = "dashed",
+      "3" = "dotted",
+      "4" = "dotdash",
+      "5" = "longdash"
+    )
+  )
 ```
 
 
