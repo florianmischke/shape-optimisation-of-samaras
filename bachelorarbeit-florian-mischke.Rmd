@@ -336,7 +336,8 @@ df_bezier_points |> ggplot(
 ```
 
 ```{r}
-data_curve_points <- readxl::read_excel("data/bezier_points.xlsx")
+#data_curve_points <- readxl::read_excel("data/bezier_points.xlsx")
+data_curve_points <- read.csv("svg/svg_points.csv")
 data_curve_points_merged <- data_curve_points |> mutate(
   key = str_remove(FileName, "\\.[^.]+$")
 ) |> left_join(
