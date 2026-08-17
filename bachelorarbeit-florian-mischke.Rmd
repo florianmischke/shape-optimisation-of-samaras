@@ -332,7 +332,8 @@ df_bezier_points |> ggplot(
   )
 ) + 
   geom_line(color = "red") + 
-  coord_fixed(ratio = 1)
+  coord_fixed(ratio = 1) + 
+  theme_minimal()
 ```
 
 ```{r}
