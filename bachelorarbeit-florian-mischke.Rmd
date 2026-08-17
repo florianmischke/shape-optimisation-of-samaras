@@ -643,6 +643,7 @@ $$
 100\\0
 \end{pmatrix}
 $$
+Because $A=\begin{pmatrix}0\\0\end{pmatrix}$, it can be omitted.
 
 Or in two terms:
 
