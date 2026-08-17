@@ -37,6 +37,7 @@ library(kableExtra)
 ```{r echo=FALSE}
 source("inc/functions.R")
 ```
+
 \renewcommand{\listfigurename}{}
 \renewcommand{\listtablename}{}
 
@@ -66,7 +67,6 @@ geboren am \\
 {\large Gutachter: Prof. Dr. Dominik Begerow}
 \end{center}
 
-
 \newpage
 
 \hypersetup{linkcolor = black}
@@ -81,25 +81,29 @@ geboren am \\
 
 \pagenumbering{arabic}
 
-# Statutory declaration {-}
+# Statutory declaration {.unnumbered}
+
 ```{r}
 # Source - https://stackoverflow.com/a/52687040
 # Posted by Rob Smith, modified by community. See post 'Timeline' for change history
 # Retrieved 2026-07-15, License - CC BY-SA 4.0
 ```
-![Eidesstattliche Versicherung](./inc/eidesstattliche-versicherung.pdf){width=100%}
-\newpage
+
+![Eidesstattliche Versicherung](./inc/eidesstattliche-versicherung.pdf){width="100%"} \newpage
 
 ```{r}
 # \section{List of acronyms}
 ```
-# List of acronyms {-}
+
+# List of acronyms {.unnumbered}
+
 \begin{acronym}
     \acro{l}[L.]{Carl Linnaeus, also known as Carl von Linné}
     \acro{A}[A.]{Acer, scientific name of Maple}
 \end{acronym}
 
 # Abstract
+
 Something, something, something, Samaras.
 
 # Introduction
@@ -110,20 +114,19 @@ Test [@lentink_leading-edge_2009].
 
 ## Samples
 
-More than 150 (more or less) intact samaras were gathered (>50 per species).
+More than 150 (more or less) intact samaras were gathered (\>50 per species).
 
-1. _Acer campestre_ \acs{l}- Loki Schmidt Garten, Hamburg - what3words:  [///kennels.slippery.hears](https://w3w.co/kennels.slippery.hears)
-2. _Acer pseudoplatanus_ \acs{l}- Stadtpark, Hamburg - what3words:  [///engaging.survey.spout](https://w3w.co/engaging.survey.spout)
-3. _Acer platanoides_ \acs{l}- Spannskamp, Hamburg - what3words:  [///bristle.ruins.curated](https://w3w.co/bristle.ruins.curated)
-4. _Acer platanoides_ \acs{l}- IPM, Hamburg - what3words:
-[///gardens.rattled.yappy](https://w3w.co/gardens.rattled.yappy)
+1.  *Acer campestre* \acs{l}- Loki Schmidt Garten, Hamburg - what3words: [///kennels.slippery.hears](https://w3w.co/kennels.slippery.hears)
+2.  *Acer pseudoplatanus* \acs{l}- Stadtpark, Hamburg - what3words: [///engaging.survey.spout](https://w3w.co/engaging.survey.spout)
+3.  *Acer platanoides* \acs{l}- Spannskamp, Hamburg - what3words: [///bristle.ruins.curated](https://w3w.co/bristle.ruins.curated)
+4.  *Acer platanoides* \acs{l}- IPM, Hamburg - what3words: [///gardens.rattled.yappy](https://w3w.co/gardens.rattled.yappy)
 
 ## Photos for measuring and geometry experiments
 
-An A3 sheet of millimeter paper was placed on the ground and secured with transparent sticky tape. A 10x4 cm cutout of white printer paper was taped on it. One samara at a time was placed on that paper and a sticky note with date/time and species name was placed below.  
+An A3 sheet of millimeter paper was placed on the ground and secured with transparent sticky tape. A 10x4 cm cutout of white printer paper was taped on it. One samara at a time was placed on that paper and a sticky note with date/time and species name was placed below.\
 A digital camera (Panasonic Lumix G, Model No. DC-FZ100002) was secured on a tripod stand at maximum height, pointed down and leveled via spirit level. Distance from ground to camera lens was measured 134cm. The following settings were chosen to take photos: Focal length 400, S 4, F 11, ISO 125; manual mode. Photos of the setup were taken, see figure \ref{fig:camera_setup}.
 
-50 photos for _Acer pseudoplatanus_ and _\acs{A} campestre_ and 100 photos for _A. platanoides_, 50 for each of the two samples were taken by remote control with the Panasonic Image App. The photos were copied to a Laptop and backed up to cloud storage and an external SSD.
+50 photos for *Acer pseudoplatanus* and \acs{A} campestre and 100 photos for *A. platanoides*, 50 for each of the two samples were taken by remote control with the Panasonic Image App. The photos were copied to a Laptop and backed up to cloud storage and an external SSD.
 
 ```{r, echo=FALSE, out.width="45%", fig.align = "center", fig.show='hold', fig.cap="\\label{fig:camera_setup}Camera on tripod pointed down on millimeter sheet of paper. Samara is positioned on the white paper strip (left). View of the camera display (right). Source: own work"}
 # Source - https://stackoverflow.com/a/63866499
@@ -135,10 +138,9 @@ knitr::include_graphics(
 )
 ```
 
-
 ## Stained sections
 
-Two fresh samaras each of _Acer campestre_ and _A. pseudoplatanus_ were conserved in 60% Ethanol.
+Two fresh samaras each of *Acer campestre* and *A. pseudoplatanus* were conserved in 60% Ethanol.
 
 # Results
 
@@ -183,7 +185,6 @@ my_data |> group_by(Species, Location) |> summarize(
   n = n()
 )
 ```
-
 
 ```{r feret_width_three_acer_species, fig.cap="\\label{fig:feret_width_three_acer_species_label}Feret lengths and maximum widths of three Acer species."}
 my_data_longer |> ggplot(
@@ -246,10 +247,10 @@ my_data |> ggplot(
   facet_wrap(~label)
 ```
 
-
 ### Kolmogorov–Smirnov test
-(also K–S test or KS test) 
-nonparametric test of the equality of continuous (or discontinuous) one-dimensional probability distributions.
+
+(also K–S test or KS test) nonparametric test of the equality of continuous (or discontinuous) one-dimensional probability distributions.
+
 ```{r}
 sample1 <- my_data |> filter(Species == "Acer campestre")
 sample2 <- my_data |> filter(Species == "Acer platanoides", Location == "IPM")
@@ -263,6 +264,7 @@ ks.test(sample4$ratio, "pnorm", mean = mean(sample4$ratio), sd = sd(sample4$rati
 ```
 
 ### Shapiro-Wilk test
+
 ```{r}
 shapiro.test(my_data$ratio[my_data$Species == "Acer campestre"])
 shapiro.test(my_data$ratio[my_data$Species == "Acer platanoides" & my_data$Location == "IPM"])
@@ -271,12 +273,15 @@ shapiro.test(my_data$ratio[my_data$Species == "Acer pseudoplatanus"])
 ```
 
 ### Levene test
+
 ```{r}
 car::leveneTest(ratio ~ sample, my_data)
 ```
 
 ### ANOVA
-Ratio ~ sample
+
+Ratio \~ sample
+
 ```{r}
 mod <- aov(formula = my_data$ratio ~ my_data$sample, data = my_data)
 
@@ -293,8 +298,7 @@ knitr::include_graphics("img/mattheck/A platanoides Mattheck 1.png")
 
 ## Bézier curves
 
-Figure \ref{fig:P1116641_bezier} shows that the shape of a sample of _Acer platanoides_ can be described by a Bézier curve.
-Figures \ref{fig:P1116588_bezier} and \ref{fig:P1116384_bezier} show the same for _Acer campestre_ and _Acer pseudoplatanus_.
+Figure \ref{fig:P1116641_bezier} shows that the shape of a sample of *Acer platanoides* can be described by a Bézier curve. Figures \ref{fig:P1116588_bezier} and \ref{fig:P1116384_bezier} show the same for *Acer campestre* and *Acer pseudoplatanus*.
 
 ```{r P1116641_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer platanoides Source: own work"}
 knitr::include_graphics("img/bezier/P1116641.JPG-bezier.png")
@@ -307,6 +311,7 @@ knitr::include_graphics("img/bezier/P1116588.JPG-bezier.png")
 ```{r P1116384_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer pseudoplatanus. Source: own work"}
 knitr::include_graphics("img/bezier/P1116384.JPG-bezier.png")
 ```
+
 ### Bezier curve simulation
 
 ```{r}
@@ -414,7 +419,7 @@ bezier_df |> group_by(Species) |> mutate(
 ```
 
 ```{r bezier_curves_transformed, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve simulation with transformed data of three Acer species. Source: own work"}
-target_length <- 1000
+target_length <- 100
 
 data_curve_points_transformed <- data_curve_points_merged |> 
   group_by(FileName.x) |> 
@@ -501,6 +506,159 @@ bezier_df_transformed |> group_by(Species) |> mutate(
   )
 ```
 
+```{r bezier_curves_transformed_with_lines, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Horizontal lines with mean amplitudes (dotted), vertical lines with mean x values of amplitudes (dashed). Source: own work"}
+bezier_extrema <- bezier_df_transformed |> group_by(FileName.x) |> summarise(
+  minY = min(Y),
+  maxY = max(Y),
+  X_at_minY = X[which.min(Y)],
+  X_at_maxY = X[which.max(Y)]
+)
+mean_minY = mean(bezier_extrema$minY)
+mean_maxY = mean(bezier_extrema$maxY)
+
+vlines = c(mean(bezier_extrema$X_at_minY),mean(bezier_extrema$X_at_maxY))
+
+
+# Kurven plotten
+bezier_df_transformed |> group_by(Species) |> mutate(
+  n = n_distinct(FileName.x),
+  label = paste0(Species,'\nn = ',n)
+) |> ggplot(aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample))) +
+  geom_path(linewidth = 0.5, alpha = 0.25) +
+  geom_vline(xintercept = vlines, color = "#666", linetype = "dashed") +
+  geom_hline(yintercept = c(mean_minY,mean_maxY), color = "#666", linetype = "dotted") +
+  coord_equal() +
+  theme_minimal() +
+  theme(legend.position = 'bottom') +
+  guides(linetype = "none") +
+  scale_linetype_manual(
+    values = c(
+      "1" = "solid",
+      "2" = "dashed",
+      "3" = "dotted",
+      "4" = "dotdash",
+      "5" = "longdash"
+    )
+  )
+```
+
+```{r bezier_mean_curve, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Mean curve (red) calculated by means of control points of transformed data. Source: own work"}
+mean_curve_points <- data_curve_points_transformed |> 
+  group_by(Point) |>
+  summarise(
+    X = mean(X, na.rm = TRUE),
+    Y = mean(Y, na.rm = TRUE),
+    .groups = "drop"
+  ) 
+
+mean_curve <- mean_curve_points |> group_modify(~ {
+
+    # Kontrollpunkte A, B, C, D
+    # Jede Zeile = ein Kontrollpunkt
+    control_points <- as.matrix(.x[, c("X", "Y")])
+
+    # Parameter t
+    t <- seq(0, 1, length.out = 100)
+
+    # Kubische Bézier-Kurve aus 4 Kontrollpunkten
+    curve <- bezier(
+      t = t,
+      p = control_points
+    )
+
+    # Als Dataframe zurückgeben
+    data.frame(
+      t = t,
+      X = curve[, 1],
+      Y = curve[, 2]
+    )
+  }) |> 
+  ungroup()
+
+# Kurven plotten
+bezier_df_transformed <- bezier_df_transformed |>
+  group_by(Species) |> mutate(
+    n = n_distinct(FileName.x),
+    label = paste0(Species,'\nn = ',n)
+  )
+
+ggplot() +
+  geom_path(data = bezier_df_transformed,
+            aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample)),
+            linewidth = 0.5, alpha = 0.25) +
+  geom_vline(xintercept = vlines, color = "#666", linetype = "dashed", alpha = 0.75) +
+  geom_hline(yintercept = c(mean_minY,mean_maxY), color = "#666", linetype = "dotted", alpha = 0.75) +
+  geom_path(data = mean_curve,
+            aes(x = X, y = Y), color = "red", linewidth = 1) +
+  coord_equal() +
+  theme_minimal() +
+  theme(legend.position = 'bottom') +
+  guides(linetype = "none") +
+  scale_linetype_manual(
+    values = c(
+      "1" = "solid",
+      "2" = "dashed",
+      "3" = "dotted",
+      "4" = "dotdash",
+      "5" = "longdash"
+    )
+  )
+```
+
+### Variance of amplitudes
+
+Variance of maxima: `r var(bezier_extrema$maxY)`
+
+Variance of minima: `r var(bezier_extrema$minY)`
+
+### Distances of mean amplitudes
+
+Horizontal distance between mean amplitudes: `r vlines[1] - vlines[2]`
+
+Vertical distance between mean amplitudes: `r mean_maxY - mean_minY`
+
+### Bezier forumula
+
+$$
+P(t)=(1-t)^3A+3(1-t)^2tB+3(1-t)t^2C+t^3D,
+\qquad 0\leq t\leq1.
+$$
+
+```{r}
+kable(mean_curve_points, format = "latex", caption = "Control points of mean bezier curve") |> kable_styling(latex_options = "HOLD_position")
+```
+
+Put into a Bézier formula:
+$$
+\mathbf{P}(t) = 3(1-t)^2t
+\begin{pmatrix}
+42.46019\\16.16898
+\end{pmatrix}
++ 3(1-t)t^2
+\begin{pmatrix}
+48.01771\\-31.50774
+\end{pmatrix}
++ t^3
+\begin{pmatrix}
+100\\0
+\end{pmatrix}
+$$
+
+Or in two terms:
+
+$$x(t)=3(1-t)^2t(42.46019)+3(1-t)t^2(48.01771)+100t^3$$
+
+$$y(t)=3(1-t)^2t(16.16898)+3(1-t)t^2(-31.50774)$$
+
+Can also be written as:
+
+$$
+x(t)=127.38057t-104.20764t^2+76.82707t^3
+$$
+
+$$
+y(t)=48.50694t-142.80717t^2+94.30029t^3
+$$
 
 # Discussion
 
@@ -508,26 +666,31 @@ Probleme: 
 
 - beim Messen: Übergang zwischen Same und Flügel nicht immer gleich. Mal klar abgegrenzt, mal mit fließendem Übergang; Lösung: ganze Frucht ausmessen
 - Auslösen an der Kamera führt zu verwackeltem Bild, Remote Control App löst das Problem. (Verzögerung auch Option, aber Zeitverlust.)
-- Stichprobe mit 50 Früchten pro Spezies groß genug, besser wären unabhängiere Daten. Z.B. 5 Bäume pro Spezies, jeweils 10 Früchte aus verschiedenen Blütenständen. 
+- Stichprobe mit 50 Früchten pro Spezies groß genug, besser wären unabhängiere Daten. Z.B. 5 Bäume pro Spezies, jeweils 10 Früchte aus verschiedenen Blütenständen.
 
 # Conclusion
 
-# Acknowledgements {-}
+# Acknowledgements {.unnumbered}
 
-# Bibliography {-}
+# Bibliography {.unnumbered}
+
 \bibliographystyle{alpha}
+
 ::: {#refs}
 :::
 
 ## Use of AI/GenAI (generative Artificial Intelligence)
+
 - ChatGPT for help at coding a FIJI macro
 - DeepL for translating German to English
 
-# List of Figures {-}
+# List of Figures {.unnumbered}
+
 \bgroup
 \hypersetup{linkcolor = Cerulean}
 \listoffigures
 \egroup
 
-# List of Tables {-}
+# List of Tables {.unnumbered}
+
 \listoftables
