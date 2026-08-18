@@ -354,7 +354,6 @@ df_bezier_points |> ggplot(
 ```
 
 ```{r bezier_curves_3species, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve simulation of three Acer species. Source: own work"}
-#data_curve_points <- readxl::read_excel("data/bezier_points.xlsx")
 data_curve_points <- read.csv("svg/svg_points.csv")
 data_curve_points_merged <- data_curve_points |> mutate(
   key = str_remove(FileName, "\\.[^.]+$")
@@ -363,7 +362,6 @@ data_curve_points_merged <- data_curve_points |> mutate(
     key = str_remove(FileName, "\\.[^.]+$")
 ), by = "key"
 )
-#data_curve_points_wider <- data_curve_points |> pivot_wider(names_from = Point, values_from = c(X,Y))
 
 data_curve_points_adjusted <- data_curve_points_merged |> 
   group_by(FileName.x) |> 
