@@ -315,6 +315,18 @@ knitr::include_graphics("img/bezier/P1116384.JPG-bezier.png")
 ### Bezier curve simulation
 
 ```{r}
+v_linetypes = c(
+      "1" = "solid",
+      "2" = "dashed",
+      "3" = "dotted",
+      "4" = "dotdash",
+      "5" = "longdash",
+      "6" = "twodash"
+    )
+```
+
+
+```{r}
 library(bezier)
 t <- seq(0, 1, length=100)
 p <- matrix(c(0.48,6.04, 9.56,13.54, 9.22,-4.65, 25.58,6.54), nrow=4, ncol=2, byrow=TRUE)
@@ -408,13 +420,7 @@ bezier_df |> group_by(Species) |> mutate(
   theme(legend.position = 'bottom') +
   guides(linetype = "none") +
   scale_linetype_manual(
-    values = c(
-      "1" = "solid",
-      "2" = "dashed",
-      "3" = "dotted",
-      "4" = "dotdash",
-      "5" = "longdash"
-    )
+    values = v_linetypes
   )
 ```
 
@@ -496,13 +502,7 @@ bezier_df_transformed |> group_by(Species) |> mutate(
   theme(legend.position = 'bottom') +
   guides(linetype = "none") +
   scale_linetype_manual(
-    values = c(
-      "1" = "solid",
-      "2" = "dashed",
-      "3" = "dotted",
-      "4" = "dotdash",
-      "5" = "longdash"
-    )
+    values = v_linetypes
   )
 ```
 
@@ -532,13 +532,7 @@ bezier_df_transformed |> group_by(Species) |> mutate(
   theme(legend.position = 'bottom') +
   guides(linetype = "none") +
   scale_linetype_manual(
-    values = c(
-      "1" = "solid",
-      "2" = "dashed",
-      "3" = "dotted",
-      "4" = "dotdash",
-      "5" = "longdash"
-    )
+    values = v_linetypes
   )
 ```
 
@@ -595,13 +589,7 @@ ggplot() +
   theme(legend.position = 'bottom') +
   guides(linetype = "none") +
   scale_linetype_manual(
-    values = c(
-      "1" = "solid",
-      "2" = "dashed",
-      "3" = "dotted",
-      "4" = "dotdash",
-      "5" = "longdash"
-    )
+    values = v_linetypes
   )
 ```
 
