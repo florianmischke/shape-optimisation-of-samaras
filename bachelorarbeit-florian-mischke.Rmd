@@ -91,6 +91,8 @@ geboren am \\
 
 ![Eidesstattliche Versicherung](./inc/eidesstattliche-versicherung.pdf){width="100%"} \newpage
 
+\ifoot{Florian Mischke - Topology optimisation in samaras: using maple species as an example}
+
 ```{r}
 # \section{List of acronyms}
 ```
@@ -716,6 +718,14 @@ Probleme: 
 - Stichprobe mit 50 Früchten pro Spezies groß genug, besser wären unabhängiere Daten. Z.B. 5 Bäume pro Spezies, jeweils 10 Früchte aus verschiedenen Blütenständen.
 
 # Conclusion
+
+## Outlook
+
+More research needed:
+
+- better data, multiple trees of same species
+- compare to fall velocity / stability
+- print artificial samara after these design parameters and compare
 
 # Acknowledgements {.unnumbered}
 
