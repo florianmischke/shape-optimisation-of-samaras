@@ -300,6 +300,8 @@ knitr::include_graphics("img/mattheck/A platanoides Mattheck 1.png")
 
 ## Bézier curves
 
+### Trailing Edge
+
 Figure \ref{fig:P1116641_bezier} shows that the shape of a sample of *Acer platanoides* can be described by a Bézier curve. Figures \ref{fig:P1116588_bezier} and \ref{fig:P1116384_bezier} show the same for *Acer campestre* and *Acer pseudoplatanus*.
 
 ```{r P1116641_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer platanoides Source: own work"}
@@ -314,7 +316,7 @@ knitr::include_graphics("img/bezier/P1116588.JPG-bezier.png")
 knitr::include_graphics("img/bezier/P1116384.JPG-bezier.png")
 ```
 
-### Bezier curve simulation
+#### Bezier curve simulation
 
 ```{r}
 v_linetypes = c(
@@ -668,19 +670,19 @@ ggplot() +
   )
 ```
 
-### Variance of amplitudes
+#### Variance of amplitudes
 
 Variance of maxima: `r var(bezier_extrema$maxY)`
 
 Variance of minima: `r var(bezier_extrema$minY)`
 
-### Distances of mean amplitudes
+#### Distances of mean amplitudes
 
 Horizontal distance between mean amplitudes: `r vlines[1] - vlines[2]`
 
 Vertical distance between mean amplitudes: `r mean_maxY - mean_minY`
 
-### Bezier forumula
+#### Bezier forumula
 
 Formula \ref{basic_bezier}
 
@@ -753,6 +755,9 @@ y(t)&=3(1-t)^2t(`r v["B_Y"]`)+3(1-t)t^2(`r v["C_Y"]`)
 \label{mean_bezier_xy}
 \end{align}
 $$
+
+### Leading Edge
+
 
 
 # Discussion
