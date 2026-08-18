@@ -620,7 +620,7 @@ Vertical distance between mean amplitudes: `r mean_maxY - mean_minY`
 ### Bezier forumula
 
 $$
-P(t)=(1-t)^3A+3(1-t)^2tB+3(1-t)t^2C+t^3D,
+\mathbf{P}(t)=(1-t)^3A+3(1-t)^2tB+3(1-t)t^2C+t^3D,
 \qquad 0\leq t\leq1.
 $$
 
