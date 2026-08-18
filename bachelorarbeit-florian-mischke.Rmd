@@ -2,7 +2,7 @@
 bibliography: bib/literature.bib
 output:
   pdf_document: 
-    latex_engine: xelatex
+    latex_engine: pdflatex
     includes:
       in_header: inc/preamble.tex
       #in_header: includes/import.sty
@@ -336,8 +336,33 @@ bezier_points <- bezier(t=t, p=p)
 df_bezier_points <- data.frame(bezier_points)
 colnames(df_bezier_points) <- c("X","Y")
 
-print(p)
+colnames(p) <- c("X","Y")
+rownames(p) <- c("A","B","C","D")
+kable(p, format = "latex", caption = "Control points of first attempt of bezier curve on sample of A. pseudoplatanus") |> kable_styling(latex_options = "HOLD_position")
 ```
+
+Formula \ref{bezier_dummy}
+
+$$
+\begin{equation}
+\mathbf{P}(t) = (1-t)^3
+\begin{pmatrix}
+`r p["A","X"]`\\`r p["A","Y"]`
+\end{pmatrix}
++3(1-t)^2t
+\begin{pmatrix}
+`r p["B","X"]`\\`r p["B","Y"]`
+\end{pmatrix}
++ 3(1-t)t^2
+\begin{pmatrix}
+`r p["C","X"]`\\`r p["C","Y"]`
+\end{pmatrix}
++ t^3
+\begin{pmatrix}
+`r p["D","X"]`\\`r p["D","Y"]`
+\end{pmatrix}
+\label{bezier_dummy}\end{equation}
+$$
 
 Figure \ref{fig:bezier_curve_simulation}
 
@@ -657,8 +682,13 @@ Vertical distance between mean amplitudes: `r mean_maxY - mean_minY`
 
 ### Bezier forumula
 
-$$\mathbf{P}(t)=(1-t)^3A+3(1-t)^2tB+3(1-t)t^2C+t^3D,
-\qquad 0\leq t\leq1.$$
+Formula \ref{basic_bezier}
+
+$$
+\begin{equation}
+\mathbf{P}(t)=(1-t)^3A+3(1-t)^2tB+3(1-t)t^2C+t^3D,
+\qquad 0\leq t\leq1.\label{basic_bezier}\end{equation}
+$$
 
 ```{r}
 kable(mean_curve_points, format = "latex", caption = "Control points of mean bezier curve") |> kable_styling(latex_options = "HOLD_position")
@@ -671,8 +701,11 @@ v <- c(
 )
 ```
 
-Put into a Bézier formula:
-$$\mathbf{P}(t) = (1-t)^3
+Put into a Bézier formula (Formula \ref{mean_bezier}):
+
+$$
+\begin{equation}
+\mathbf{P}(t) = (1-t)^3
 \begin{pmatrix}
 `r v["A_X"]`\\`r v["A_Y"]`
 \end{pmatrix}
@@ -687,10 +720,15 @@ $$\mathbf{P}(t) = (1-t)^3
 + t^3
 \begin{pmatrix}
 `r v["D_X"]`\\`r v["D_Y"]`
-\end{pmatrix}$$
+\end{pmatrix}
+\label{mean_bezier}
+\end{equation}
+$$
 Because $A=\begin{pmatrix}0\\0\end{pmatrix}$, it can be omitted:
 
-$$\mathbf{P}(t) = 3(1-t)^2t
+$$
+\begin{align}
+\mathbf{P}(t) = 3(1-t)^2t
 \begin{pmatrix}
 `r v["B_X"]`\\`r v["B_Y"]`
 \end{pmatrix}
@@ -701,13 +739,21 @@ $$\mathbf{P}(t) = 3(1-t)^2t
 + t^3
 \begin{pmatrix}
 `r v["D_X"]`\\`r v["D_Y"]`
-\end{pmatrix}$$
+\end{pmatrix}
+\label{mean_bezier_Aomitted}
+\end{align}
+$$
 
 Or in two terms:
 
-$$x(t)=3(1-t)^2t(`r v["B_X"]`)+3(1-t)t^2(`r v["C_X"]`)+`r v["D_X"]`t^3$$
+$$
+\begin{align}
+x(t)&=3(1-t)^2t(`r v["B_X"]`)+3(1-t)t^2(`r v["C_X"]`)+`r v["D_X"]`t^3 \\
+y(t)&=3(1-t)^2t(`r v["B_Y"]`)+3(1-t)t^2(`r v["C_Y"]`)
+\label{mean_bezier_xy}
+\end{align}
+$$
 
-$$y(t)=3(1-t)^2t(`r v["B_Y"]`)+3(1-t)t^2(`r v["C_Y"]`)$$
 
 # Discussion
 
