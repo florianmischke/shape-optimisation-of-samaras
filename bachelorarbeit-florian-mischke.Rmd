@@ -353,7 +353,7 @@ df_bezier_points |> ggplot(
   theme_minimal()
 ```
 
-```{r bezier_curves_3species, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve simulation of three Acer species. Source: own work"}
+```{r}
 data_curve_points <- read.csv("svg/svg_points.csv")
 data_curve_points_merged <- data_curve_points |> mutate(
   key = str_remove(FileName, "\\.[^.]+$")
@@ -362,7 +362,58 @@ data_curve_points_merged <- data_curve_points |> mutate(
     key = str_remove(FileName, "\\.[^.]+$")
 ), by = "key"
 )
+```
 
+```{r bezier_curves_3species_raw, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve simulation of three Acer species, raw data - not adjusted to same origin. Source: own work"}
+bezier_df_unadjusted <- data_curve_points_merged |> 
+  group_by(FileName.x, Species) |> 
+  group_modify(~ {
+
+    # Kontrollpunkte A, B, C, D
+    # Jede Zeile = ein Kontrollpunkt
+    control_points <- as.matrix(.x[, c("X", "Y")])
+
+    # Parameter t
+    t <- seq(0, 1, length.out = 100)
+
+    # Kubische Bézier-Kurve aus 4 Kontrollpunkten
+    curve <- bezier(
+      t = t,
+      p = control_points
+    )
+
+    # Als Dataframe zurückgeben
+    data.frame(
+      t = t,
+      X = curve[, 1],
+      Y = curve[, 2]
+    )
+  }) |> 
+  ungroup()
+
+bezier_df_unadjusted <- bezier_df_unadjusted |> 
+  group_by(Species) |> 
+  mutate(
+    Sample = dense_rank(FileName.x)
+  ) |> 
+  ungroup()
+
+# Kurven plotten
+bezier_df_unadjusted |> group_by(Species) |> mutate(
+  n = n_distinct(FileName.x),
+  label = paste0(Species,'\nn = ',n)
+) |> ggplot(aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample))) +
+  geom_path(linewidth = 0.5, alpha = 0.5) +
+  coord_equal() +
+  theme_minimal() +
+  theme(legend.position = 'bottom') +
+  guides(linetype = "none") +
+  scale_linetype_manual(
+    values = v_linetypes
+  )
+```
+
+```{r bezier_curves_3species, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve simulation of three Acer species. Source: own work"}
 data_curve_points_adjusted <- data_curve_points_merged |> 
   group_by(FileName.x) |> 
   mutate(
