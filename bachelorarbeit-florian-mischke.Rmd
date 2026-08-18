@@ -628,28 +628,55 @@ $$
 kable(mean_curve_points, format = "latex", caption = "Control points of mean bezier curve") |> kable_styling(latex_options = "HOLD_position")
 ```
 
+```{r}
+v <- c(
+  setNames(round(mean_curve_points$X, 3), paste0(mean_curve_points$Point, "_X")),
+  setNames(round(mean_curve_points$Y, 3), paste0(mean_curve_points$Point, "_Y"))
+)
+```
+
+
 Put into a Bézier formula:
 $$
-\mathbf{P}(t) = 3(1-t)^2t
+\mathbf{P}(t) = (1-t)^3
 \begin{pmatrix}
-42.46019\\16.16898
+`r v["A_X"]`\\`r v["A_Y"]`
+\end{pmatrix}
++3(1-t)^2t
+\begin{pmatrix}
+`r v["B_X"]`\\`r v["B_Y"]`
 \end{pmatrix}
 + 3(1-t)t^2
 \begin{pmatrix}
-48.01771\\-31.50774
+`r v["C_X"]`\\`r v["C_Y"]`
 \end{pmatrix}
 + t^3
 \begin{pmatrix}
-100\\0
+`r v["D_X"]`\\`r v["D_Y"]`
 \end{pmatrix}
 $$
-Because $A=\begin{pmatrix}0\\0\end{pmatrix}$, it can be omitted.
+Because $A=\begin{pmatrix}0\\0\end{pmatrix}$, it can be omitted:
+
+$$
+\mathbf{P}(t) = 3(1-t)^2t
+\begin{pmatrix}
+`r v["B_X"]`\\`r v["B_Y"]`
+\end{pmatrix}
++ 3(1-t)t^2
+\begin{pmatrix}
+`r v["C_X"]`\\`r v["C_Y"]`
+\end{pmatrix}
++ t^3
+\begin{pmatrix}
+`r v["D_X"]`\\`r v["D_Y"]`
+\end{pmatrix}
+$$
 
 Or in two terms:
 
-$$x(t)=3(1-t)^2t(42.46019)+3(1-t)t^2(48.01771)+100t^3$$
+$$x(t)=3(1-t)^2t(`r v["B_X"]`)+3(1-t)t^2(`r v["C_X"]`)+`r v["D_X"]`t^3$$
 
-$$y(t)=3(1-t)^2t(16.16898)+3(1-t)t^2(-31.50774)$$
+$$y(t)=3(1-t)^2t(`r v["B_Y"]`)+3(1-t)t^2(`r v["C_Y"]`)$$
 
 Can also be written as:
 
