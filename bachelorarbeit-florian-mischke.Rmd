@@ -325,7 +325,6 @@ v_linetypes = c(
     )
 ```
 
-
 ```{r}
 library(bezier)
 t <- seq(0, 1, length=100)
@@ -656,10 +655,8 @@ Vertical distance between mean amplitudes: `r mean_maxY - mean_minY`
 
 ### Bezier forumula
 
-$$
-\mathbf{P}(t)=(1-t)^3A+3(1-t)^2tB+3(1-t)t^2C+t^3D,
-\qquad 0\leq t\leq1.
-$$
+$$\mathbf{P}(t)=(1-t)^3A+3(1-t)^2tB+3(1-t)t^2C+t^3D,
+\qquad 0\leq t\leq1.$$
 
 ```{r}
 kable(mean_curve_points, format = "latex", caption = "Control points of mean bezier curve") |> kable_styling(latex_options = "HOLD_position")
@@ -672,10 +669,8 @@ v <- c(
 )
 ```
 
-
 Put into a Bézier formula:
-$$
-\mathbf{P}(t) = (1-t)^3
+$$\mathbf{P}(t) = (1-t)^3
 \begin{pmatrix}
 `r v["A_X"]`\\`r v["A_Y"]`
 \end{pmatrix}
@@ -690,12 +685,10 @@ $$
 + t^3
 \begin{pmatrix}
 `r v["D_X"]`\\`r v["D_Y"]`
-\end{pmatrix}
-$$
+\end{pmatrix}$$
 Because $A=\begin{pmatrix}0\\0\end{pmatrix}$, it can be omitted:
 
-$$
-\mathbf{P}(t) = 3(1-t)^2t
+$$\mathbf{P}(t) = 3(1-t)^2t
 \begin{pmatrix}
 `r v["B_X"]`\\`r v["B_Y"]`
 \end{pmatrix}
@@ -706,8 +699,7 @@ $$
 + t^3
 \begin{pmatrix}
 `r v["D_X"]`\\`r v["D_Y"]`
-\end{pmatrix}
-$$
+\end{pmatrix}$$
 
 Or in two terms:
 
