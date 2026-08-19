@@ -31,6 +31,7 @@ options(knitr.table.format = function() {
 
 ```{r, include=FALSE}
 library(tidyverse)
+library(gridExtra)
 library(kableExtra)
 ```
 
@@ -758,7 +759,290 @@ $$
 
 ### Leading Edge
 
+```{r}
+data_curve_points_le <- read.csv("svg/le/svg_points.csv")
+data_curve_points_le_merged <- data_curve_points_le |> mutate(
+  key = str_remove(FileName, "\\.[^.]+$")
+) |> left_join(
+  samples_images |> mutate(
+    key = str_remove(FileName, "\\.[^.]+$")
+), by = "key"
+)
+```
 
+```{r}
+bezier_df_le_unadjusted <- data_curve_points_le_merged |> 
+  group_by(FileName.x, Species) |> 
+  group_modify(~ {
+
+    # Kontrollpunkte A, B, C, D
+    # Jede Zeile = ein Kontrollpunkt
+    control_points <- as.matrix(.x[, c("X", "Y")])
+
+    # Parameter t
+    t <- seq(0, 1, length.out = 100)
+
+    # Kubische Bézier-Kurve aus 4 Kontrollpunkten
+    curve <- bezier(
+      t = t,
+      p = control_points
+    )
+
+    # Als Dataframe zurückgeben
+    data.frame(
+      t = t,
+      X = curve[, 1],
+      Y = curve[, 2]
+    )
+  }) |> 
+  ungroup()
+
+bezier_df_le_unadjusted <- bezier_df_le_unadjusted |> 
+  group_by(Species) |> 
+  mutate(
+    Sample = dense_rank(FileName.x)
+  ) |> 
+  ungroup()
+
+# Kurven plotten
+plot_bezier_df_le_unadjusted <- bezier_df_le_unadjusted |> group_by(Species) |> mutate(
+  n = n_distinct(FileName.x),
+  label = paste0(Species,'\nn = ',n)
+) |> ggplot(aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample))) +
+  geom_path(linewidth = 0.5, alpha = 0.5) +
+  coord_equal() +
+  theme_minimal() +
+  theme(legend.position = 'bottom') +
+  guides(linetype = "none") +
+  scale_linetype_manual(
+    values = v_linetypes
+  )
+
+data_curve_points_le_adjusted <- data_curve_points_le_merged |> 
+  group_by(FileName.x) |> 
+  mutate(
+    X_A = X[Point == "A"],
+    Y_A = Y[Point == "A"],
+    X = X - X_A,
+    Y = Y - Y_A
+  ) |> 
+  ungroup() |> 
+  select(-X_A, -Y_A)
+
+bezier_df_le <- data_curve_points_le_adjusted |> 
+  group_by(FileName.x, Species) |> 
+  group_modify(~ {
+
+    # Kontrollpunkte A, B, C, D
+    # Jede Zeile = ein Kontrollpunkt
+    control_points <- as.matrix(.x[, c("X", "Y")])
+
+    # Parameter t
+    t <- seq(0, 1, length.out = 100)
+
+    # Kubische Bézier-Kurve aus 4 Kontrollpunkten
+    curve <- bezier(
+      t = t,
+      p = control_points
+    )
+
+    # Als Dataframe zurückgeben
+    data.frame(
+      t = t,
+      X = curve[, 1],
+      Y = curve[, 2]
+    )
+  }) |> 
+  ungroup()
+
+bezier_df_le <- bezier_df_le |> 
+  group_by(Species) |> 
+  mutate(
+    Sample = dense_rank(FileName.x)
+  ) |> 
+  ungroup()
+
+# Kurven plotten
+plot_bezier_df_le <- bezier_df_le |> group_by(Species) |> mutate(
+  n = n_distinct(FileName.x),
+  label = paste0(Species,'\nn = ',n)
+) |> ggplot(aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample))) +
+  geom_path(linewidth = 0.5, alpha = 0.5) +
+  coord_equal() +
+  theme_minimal() +
+  theme(legend.position = 'bottom') +
+  guides(linetype = "none") +
+  scale_linetype_manual(
+    values = v_linetypes
+  )
+
+target_length <- 100
+
+data_curve_points_le_transformed <- data_curve_points_le_merged |> 
+  group_by(FileName.x) |> 
+  mutate(
+    # Startpunkt A auf (0,0)
+    X_A = X[Point == "A"],
+    Y_A = Y[Point == "A"],
+    
+    X = X - X_A,
+    Y = Y - Y_A,
+    
+    # Endpunkt D
+    X_D = X[Point == "D"],
+    Y_D = Y[Point == "D"],
+    
+    # Länge A -> D
+    length_AD = sqrt(X_D^2 + Y_D^2),
+    
+    # Winkel der Verbindung A -> D
+    angle_AD = atan2(Y_D, X_D),
+    
+    # Rotation, sodass A -> D horizontal wird
+    X_rot = X * cos(angle_AD) + Y * sin(angle_AD),
+    Y_rot = -X * sin(angle_AD) + Y * cos(angle_AD),
+    
+    # Skalierung auf gemeinsame Endposition
+    X = X_rot / length_AD * target_length,
+    Y = Y_rot / length_AD * target_length
+  ) |> 
+  ungroup() |> 
+  select(-X_A, -Y_A, -X_D, -Y_D, -length_AD, -angle_AD, -X_rot, -Y_rot)
+
+bezier_df_le_transformed <- data_curve_points_le_transformed |> 
+  group_by(FileName.x, Species) |> 
+  group_modify(~ {
+
+    # Kontrollpunkte A, B, C, D
+    # Jede Zeile = ein Kontrollpunkt
+    control_points <- as.matrix(.x[, c("X", "Y")])
+
+    # Parameter t
+    t <- seq(0, 1, length.out = 100)
+
+    # Kubische Bézier-Kurve aus 4 Kontrollpunkten
+    curve <- bezier(
+      t = t,
+      p = control_points
+    )
+
+    # Als Dataframe zurückgeben
+    data.frame(
+      t = t,
+      X = curve[, 1],
+      Y = curve[, 2]
+    )
+  }) |> 
+  ungroup()
+
+bezier_df_le_transformed <- bezier_df_le_transformed %>%
+  group_by(Species) %>%
+  mutate(
+    Sample = dense_rank(FileName.x)
+  ) %>%
+  ungroup()
+
+# Kurven plotten
+plot_bezier_df_le_transformed <- bezier_df_le_transformed |> group_by(Species) |> mutate(
+  n = n_distinct(FileName.x),
+  label = paste0(Species,'\nn = ',n)
+) |> ggplot(aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample))) +
+  geom_path(linewidth = 0.5, alpha = 0.5) +
+  coord_equal() +
+  theme_minimal() +
+  theme(legend.position = 'bottom') +
+  guides(linetype = "none") +
+  scale_linetype_manual(
+    values = v_linetypes
+  )
+
+bezier_extrema_le <- bezier_df_le_transformed |> group_by(FileName.x) |> summarise(
+  minY = min(Y),
+  maxY = max(Y),
+  X_at_minY = X[which.min(Y)],
+  X_at_maxY = X[which.max(Y)]
+)
+mean_minY_le = mean(bezier_extrema_le$minY)
+mean_maxY_le = mean(bezier_extrema_le$maxY)
+
+vlines_le = c(mean(bezier_extrema$X_at_minY),mean(bezier_extrema$X_at_maxY))
+
+
+# Kurven plotten
+plot_bezier_df_le_transformed2 <- bezier_df_le_transformed |> group_by(Species) |> mutate(
+  n = n_distinct(FileName.x),
+  label = paste0(Species,'\nn = ',n)
+) |> ggplot(aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample))) +
+  geom_path(linewidth = 0.5, alpha = 0.25) +
+  geom_vline(xintercept = vlines_le, color = "#666", linetype = "dashed") +
+  geom_hline(yintercept = c(mean_minY_le,mean_maxY_le), color = "#666", linetype = "dotted") +
+  coord_equal() +
+  theme_minimal() +
+  theme(legend.position = 'bottom') +
+  guides(linetype = "none") +
+  scale_linetype_manual(
+    values = v_linetypes
+  )
+
+grid.arrange(plot_bezier_df_le_unadjusted, plot_bezier_df_le, plot_bezier_df_le_transformed, plot_bezier_df_le_transformed2, nrow=2, ncol=2)
+```
+
+```{r bezier_mean_curve_le, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Mean curve (red) calculated by means of control points of transformed data. Source: own work"}
+mean_curve_points_le <- data_curve_points_le_transformed |> 
+  group_by(Point) |>
+  summarise(
+    X = mean(X, na.rm = TRUE),
+    Y = mean(Y, na.rm = TRUE),
+    .groups = "drop"
+  ) 
+
+mean_curve_le <- mean_curve_points_le |> group_modify(~ {
+
+    # Kontrollpunkte A, B, C, D
+    # Jede Zeile = ein Kontrollpunkt
+    control_points <- as.matrix(.x[, c("X", "Y")])
+
+    # Parameter t
+    t <- seq(0, 1, length.out = 100)
+
+    # Kubische Bézier-Kurve aus 4 Kontrollpunkten
+    curve <- bezier(
+      t = t,
+      p = control_points
+    )
+
+    # Als Dataframe zurückgeben
+    data.frame(
+      t = t,
+      X = curve[, 1],
+      Y = curve[, 2]
+    )
+  }) |> 
+  ungroup()
+
+# Kurven plotten
+bezier_df_le_transformed <- bezier_df_le_transformed |>
+  group_by(Species) |> mutate(
+    n = n_distinct(FileName.x),
+    label = paste0(Species,'\nn = ',n)
+  )
+
+ggplot() +
+  geom_path(data = bezier_df_le_transformed,
+            aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample)),
+            linewidth = 0.5, alpha = 0.25) +
+  geom_vline(xintercept = vlines_le, color = "#666", linetype = "dashed", alpha = 0.75) +
+  geom_hline(yintercept = c(mean_minY_le,mean_maxY_le), color = "#666", linetype = "dotted", alpha = 0.75) +
+  geom_path(data = mean_curve_le,
+            aes(x = X, y = Y), color = "red", linewidth = 1) +
+  coord_equal() +
+  theme_minimal() +
+  theme(legend.position = 'bottom') +
+  guides(linetype = "none") +
+  scale_linetype_manual(
+    values = v_linetypes
+  )
+```
 
 # Discussion
 
