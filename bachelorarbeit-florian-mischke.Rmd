@@ -812,7 +812,7 @@ plot_bezier_df_le_unadjusted <- bezier_df_le_unadjusted |> group_by(Species) |> 
   geom_path(linewidth = 0.5, alpha = 0.5) +
   coord_equal() +
   theme_minimal() +
-  theme(legend.position = 'bottom') +
+  theme(legend.position = 'none') +
   guides(linetype = "none") +
   scale_linetype_manual(
     values = v_linetypes
@@ -870,7 +870,7 @@ plot_bezier_df_le <- bezier_df_le |> group_by(Species) |> mutate(
   geom_path(linewidth = 0.5, alpha = 0.5) +
   coord_equal() +
   theme_minimal() +
-  theme(legend.position = 'bottom') +
+  theme(legend.position = 'none') +
   guides(linetype = "none") +
   scale_linetype_manual(
     values = v_linetypes
@@ -950,7 +950,7 @@ plot_bezier_df_le_transformed <- bezier_df_le_transformed |> group_by(Species) |
   geom_path(linewidth = 0.5, alpha = 0.5) +
   coord_equal() +
   theme_minimal() +
-  theme(legend.position = 'bottom') +
+  theme(legend.position = 'none') +
   guides(linetype = "none") +
   scale_linetype_manual(
     values = v_linetypes
@@ -974,20 +974,18 @@ plot_bezier_df_le_transformed2 <- bezier_df_le_transformed |> group_by(Species) 
   label = paste0(Species,'\nn = ',n)
 ) |> ggplot(aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample))) +
   geom_path(linewidth = 0.5, alpha = 0.25) +
-  geom_vline(xintercept = vlines_le, color = "#666", linetype = "dashed") +
-  geom_hline(yintercept = c(mean_minY_le,mean_maxY_le), color = "#666", linetype = "dotted") +
+  geom_vline(xintercept = vlines_le[1], color = "#666", linetype = "dashed") +
+  geom_hline(yintercept = c(mean_maxY_le), color = "#666", linetype = "dotted") +
   coord_equal() +
   theme_minimal() +
-  theme(legend.position = 'bottom') +
+  theme(legend.position = 'none') +
   guides(linetype = "none") +
   scale_linetype_manual(
     values = v_linetypes
   )
-
-grid.arrange(plot_bezier_df_le_unadjusted, plot_bezier_df_le, plot_bezier_df_le_transformed, plot_bezier_df_le_transformed2, nrow=2, ncol=2)
 ```
 
-```{r bezier_mean_curve_le, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Mean curve (red) calculated by means of control points of transformed data. Source: own work"}
+```{r bezier_mean_curve_le, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Plots of leading edge bezier curves. A. raw data; B. data adjusted to common origin; C. transformed data; D. mean amplitude; E. Mean curve (red) calculated by means of control points of transformed data. Source: own work"}
 mean_curve_points_le <- data_curve_points_le_transformed |> 
   group_by(Point) |>
   summarise(
@@ -1027,12 +1025,12 @@ bezier_df_le_transformed <- bezier_df_le_transformed |>
     label = paste0(Species,'\nn = ',n)
   )
 
-ggplot() +
+plot_bezier_df_le_mean_curve <- ggplot() +
   geom_path(data = bezier_df_le_transformed,
             aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample)),
             linewidth = 0.5, alpha = 0.25) +
-  geom_vline(xintercept = vlines_le, color = "#666", linetype = "dashed", alpha = 0.75) +
-  geom_hline(yintercept = c(mean_minY_le,mean_maxY_le), color = "#666", linetype = "dotted", alpha = 0.75) +
+  geom_vline(xintercept = vlines_le[1], color = "#666", linetype = "dashed", alpha = 0.75) +
+  geom_hline(yintercept = c(mean_maxY_le), color = "#666", linetype = "dotted", alpha = 0.75) +
   geom_path(data = mean_curve_le,
             aes(x = X, y = Y), color = "red", linewidth = 1) +
   coord_equal() +
@@ -1042,6 +1040,15 @@ ggplot() +
   scale_linetype_manual(
     values = v_linetypes
   )
+
+grid.arrange(
+  arrangeGrob(
+    plot_bezier_df_le_unadjusted + labs(tag = "A") + theme(plot.tag = element_text(),plot.tag.position = c(0.045, 1)),
+    plot_bezier_df_le + labs(tag = "B") + theme(plot.tag = element_text(),plot.tag.position = c(0.045, 1)),
+    plot_bezier_df_le_transformed + labs(tag = "C") + theme(plot.tag = element_text(),plot.tag.position = c(0.045, 1.1)),
+    plot_bezier_df_le_transformed2 + labs(tag = "D") + theme(plot.tag = element_text(),plot.tag.position = c(0.045, 1.1)),
+    nrow=2, ncol=2), 
+  plot_bezier_df_le_mean_curve + labs(tag = "E") + theme(plot.tag = element_text(),plot.tag.position = c(0.0225, 1)), ncol = 1.2)
 ```
 
 # Discussion
