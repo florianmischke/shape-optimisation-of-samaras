@@ -131,13 +131,13 @@ A digital camera (Panasonic Lumix G, Model No. DC-FZ100002) was secured on a tr
 
 50 photos for *Acer pseudoplatanus* and \acs{A} campestre and 100 photos for *A. platanoides*, 50 for each of the two samples were taken by remote control with the Panasonic Image App. The photos were copied to a Laptop and backed up to cloud storage and an external SSD.
 
-```{r, echo=FALSE, out.width="45%", fig.align = "center", fig.show='hold', fig.cap="\\label{fig:camera_setup}Camera on tripod pointed down on millimeter sheet of paper. Samara is positioned on the white paper strip (left). View of the camera display (right). Source: own work"}
+```{r, echo=FALSE, out.width="45%", fig.align = "center", fig.show='hold', fig.cap="\\label{fig:camera_setup}Camera on tripod pointed down on millimeter sheet of paper. Samara is positioned on the white paper strip (left). View of a samara (A. platanoides) through the camera lens/display (right). Source: own work"}
 # Source - https://stackoverflow.com/a/63866499
 # Posted by Werner Hertzog, modified by community. See post 'Timeline' for change history
 # Retrieved 2026-08-03, License - CC BY-SA 4.0
 knitr::include_graphics(
   c("img/setup/IMG_4753.jpeg",
-    "img/setup/IMG_4754.jpeg")
+    "img/setup/IMG_4594.jpeg")
 )
 ```
 
@@ -1085,4 +1085,8 @@ More research needed:
 
 # List of Tables {.unnumbered}
 
+\bgroup
+\hypersetup{linkcolor = Cerulean}
 \listoftables
+\egroup
+
