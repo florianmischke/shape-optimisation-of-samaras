@@ -1059,6 +1059,8 @@ Probleme: 
 - Auslösen an der Kamera führt zu verwackeltem Bild, Remote Control App löst das Problem. (Verzögerung auch Option, aber Zeitverlust.)
 - Stichprobe mit 50 Früchten pro Spezies groß genug, besser wären unabhängiere Daten. Z.B. 5 Bäume pro Spezies, jeweils 10 Früchte aus verschiedenen Blütenständen.
 
+- Since Geogebra can't handle large images and downscales them, screenshots were taken and experiments done on them. As the screenshots were not the same size, Geogebra treated them differently. From then on, Affinity suite was used for all measurements. Cubic Beziér curves were drawn manually with the Pen tool and fitted to the shape of the samara's trailing edge and leading edge respectively with the Node tool. The curve was exported as SVG and all SVG files handled by a custom Python script, resulting in a machine-readable CSV file, that was imported by R.
+
 # Conclusion
 
 ## Outlook
