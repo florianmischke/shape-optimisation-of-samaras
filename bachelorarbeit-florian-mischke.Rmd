@@ -1029,17 +1029,31 @@ plot_bezier_df_le_transformed <- bezier_df_le_transformed |> group_by(Species) |
     values = v_linetypes
   )
 
-bezier_extrema_le <- bezier_df_le_transformed |> group_by(FileName.x) |> summarise(
-  minY = min(Y),
-  maxY = max(Y),
-  X_at_minY = X[which.min(Y)],
-  X_at_maxY = X[which.max(Y)]
-)
-mean_minY_le = mean(bezier_extrema_le$minY)
-mean_maxY_le = mean(bezier_extrema_le$maxY)
+bezier_extrema_le <- bezier_df_le_transformed |>
+  group_by(FileName.x) |>
+  arrange(X) |>
+  mutate(
+    slope = c(NA, diff(Y) / diff(X)),
+    slope_change = c(NA, diff(sign(slope)))
+  ) |>
+  summarise(
+    # oberes Extremum: Steigung wechselt von + nach -
+    X_upper = X[which(slope_change < 0)[1] + 1],
+    Y_upper = Y[which(slope_change < 0)[1] + 1],
 
-vlines_le = c(mean(bezier_extrema$X_at_minY),mean(bezier_extrema$X_at_maxY))
+    # unteres Extremum: Steigung wechselt von - nach +
+    X_lower = X[which(slope_change > 0)[1] + 1],
+    Y_lower = Y[which(slope_change > 0)[1] + 1]
+  )
 
+mean_lower_X_le <- mean(bezier_extrema_le$X_lower, na.rm = TRUE)
+mean_lower_Y_le <- mean(bezier_extrema_le$Y_lower, na.rm = TRUE)
+
+mean_upper_X_le <- mean(bezier_extrema_le$X_upper, na.rm = TRUE)
+mean_upper_Y_le <- mean(bezier_extrema_le$Y_upper, na.rm = TRUE)
+
+vlines_le = c(mean_lower_X_le,mean_upper_X_le)
+hlines_le = c(mean_lower_Y_le,mean_upper_Y_le)
 
 # Kurven plotten
 plot_bezier_df_le_transformed2 <- bezier_df_le_transformed |> group_by(Species) |> mutate(
@@ -1047,8 +1061,8 @@ plot_bezier_df_le_transformed2 <- bezier_df_le_transformed |> group_by(Species) 
   label = paste0(Species,'\nn = ',n)
 ) |> ggplot(aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample))) +
   geom_path(linewidth = 0.5, alpha = 0.25) +
-  geom_vline(xintercept = vlines_le[1], color = "#666", linetype = "dashed") +
-  geom_hline(yintercept = c(mean_maxY_le), color = "#666", linetype = "dotted") +
+  geom_vline(xintercept = vlines_le[2], color = "#666", linetype = "dashed") +
+  geom_hline(yintercept = hlines_le[2], color = "#666", linetype = "dotted") +
   coord_equal() +
   theme_minimal() +
   theme(legend.position = 'none') +
@@ -1102,8 +1116,8 @@ plot_bezier_df_le_mean_curve <- ggplot() +
   geom_path(data = bezier_df_le_transformed,
             aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample)),
             linewidth = 0.5, alpha = 0.25) +
-  geom_vline(xintercept = vlines_le[1], color = "#666", linetype = "dashed", alpha = 0.75) +
-  geom_hline(yintercept = c(mean_maxY_le), color = "#666", linetype = "dotted", alpha = 0.75) +
+  geom_vline(xintercept = vlines_le[2], color = "#666", linetype = "dashed", alpha = 0.75) +
+  geom_hline(yintercept = hlines_le[2], color = "#666", linetype = "dotted", alpha = 0.75) +
   geom_path(data = mean_curve_le,
             aes(x = X, y = Y), color = "red", linewidth = 1) +
   coord_equal() +
