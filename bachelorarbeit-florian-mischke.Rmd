@@ -1138,6 +1138,23 @@ grid.arrange(
   plot_bezier_df_le_mean_curve + labs(tag = "(E)") + theme(plot.tag = element_text(size = 8),plot.tag.position = c(0.01, 1)), ncol = 1.2)
 ```
 
+## Both edges in one plot
+
+```{r}
+plot_bezier_df_mean_curves <- ggplot() +
+  geom_path(data = mean_curve,
+            aes(x = X, y = Y), color = "red", linewidth = 1) +
+  geom_path(data = mean_curve_le,
+            aes(x = X+160, y = Y+190), color = "red", linewidth = 1) +
+  coord_equal() +
+  theme_minimal() +
+  theme(legend.position = 'bottom') +
+  guides(linetype = "none")
+
+plot_bezier_df_mean_curves
+```
+
+
 # Discussion
 
 Probleme: 
