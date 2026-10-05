@@ -608,17 +608,32 @@ bezier_df_transformed |> group_by(Species) |> mutate(
 ```
 
 ```{r bezier_curves_transformed_with_lines, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Horizontal lines with mean amplitudes (dotted), vertical lines with mean x values of amplitudes (dashed). Source: own work"}
-bezier_extrema <- bezier_df_transformed |> group_by(FileName.x) |> summarise(
-  minY = min(Y),
-  maxY = max(Y),
-  X_at_minY = X[which.min(Y)],
-  X_at_maxY = X[which.max(Y)]
-)
-mean_minY = mean(bezier_extrema$minY)
-mean_maxY = mean(bezier_extrema$maxY)
 
-vlines = c(mean(bezier_extrema$X_at_minY),mean(bezier_extrema$X_at_maxY))
+bezier_extrema <- bezier_df_transformed |>
+  group_by(FileName.x) |>
+  arrange(X) |>
+  mutate(
+    slope = c(NA, diff(Y) / diff(X)),
+    slope_change = c(NA, diff(sign(slope)))
+  ) |>
+  summarise(
+    # oberes Extremum: Steigung wechselt von + nach -
+    X_upper = X[which(slope_change < 0)[1] + 1],
+    Y_upper = Y[which(slope_change < 0)[1] + 1],
 
+    # unteres Extremum: Steigung wechselt von - nach +
+    X_lower = X[which(slope_change > 0)[1] + 1],
+    Y_lower = Y[which(slope_change > 0)[1] + 1]
+  )
+
+mean_lower_X <- mean(bezier_extrema$X_lower, na.rm = TRUE)
+mean_lower_Y <- mean(bezier_extrema$Y_lower, na.rm = TRUE)
+
+mean_upper_X <- mean(bezier_extrema$X_upper, na.rm = TRUE)
+mean_upper_Y <- mean(bezier_extrema$Y_upper, na.rm = TRUE)
+
+vlines = c(mean_lower_X,mean_upper_X)
+hlines = c(mean_lower_Y,mean_upper_Y)
 
 # Kurven plotten
 bezier_df_transformed |> group_by(Species) |> mutate(
@@ -627,7 +642,7 @@ bezier_df_transformed |> group_by(Species) |> mutate(
 ) |> ggplot(aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample))) +
   geom_path(linewidth = 0.5, alpha = 0.25) +
   geom_vline(xintercept = vlines, color = "#666", linetype = "dashed") +
-  geom_hline(yintercept = c(mean_minY,mean_maxY), color = "#666", linetype = "dotted") +
+  geom_hline(yintercept = hlines, color = "#666", linetype = "dotted") +
   coord_equal() +
   theme_minimal() +
   theme(legend.position = 'bottom') +
@@ -682,7 +697,7 @@ ggplot() +
             aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample)),
             linewidth = 0.5, alpha = 0.25) +
   geom_vline(xintercept = vlines, color = "#666", linetype = "dashed", alpha = 0.75) +
-  geom_hline(yintercept = c(mean_minY,mean_maxY), color = "#666", linetype = "dotted", alpha = 0.75) +
+  geom_hline(yintercept = hlines, color = "#666", linetype = "dotted", alpha = 0.75) +
   geom_path(data = mean_curve,
             aes(x = X, y = Y), color = "red", linewidth = 1) +
   coord_equal() +
@@ -696,15 +711,15 @@ ggplot() +
 
 #### Variance of amplitudes
 
-Variance of maxima: `r var(bezier_extrema$maxY)`
+Variance of maxima: `r var(bezier_extrema$Y_upper)`
 
-Variance of minima: `r var(bezier_extrema$minY)`
+Variance of minima: `r var(bezier_extrema$Y_lower)`
 
 #### Distances of mean amplitudes
 
-Horizontal distance between mean amplitudes: `r vlines[1] - vlines[2]`
+Horizontal distance between mean amplitudes: `r mean_upper_X - mean_lower_Y`
 
-Vertical distance between mean amplitudes: `r mean_maxY - mean_minY`
+Vertical distance between mean amplitudes: `r mean_upper_Y - mean_lower_Y`
 
 #### Bezier forumula
 
