@@ -505,36 +505,59 @@ bezier_df |> group_by(Species) |> mutate(
 ```{r bezier_curves_transformed, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve simulation with transformed data of three Acer species. Source: own work"}
 target_length <- 100
 
-data_curve_points_transformed <- data_curve_points_merged |> 
+mean_end <- data_curve_points_adjusted |> 
+  filter(Point == "D") |> 
+  summarise(
+    X_D_mean = mean(X),
+    Y_D_mean = mean(Y)
+  )
+
+mean_angle <- atan2(
+  mean_end$Y_D_mean,
+  mean_end$X_D_mean
+)
+
+mean_length <- sqrt(
+  mean_end$X_D_mean^2 +
+  mean_end$Y_D_mean^2
+)
+
+data_curve_points_transformed <- data_curve_points_adjusted |> 
   group_by(FileName.x) |> 
   mutate(
-    # Startpunkt A auf (0,0)
-    X_A = X[Point == "A"],
-    Y_A = Y[Point == "A"],
     
-    X = X - X_A,
-    Y = Y - Y_A,
-    
-    # Endpunkt D
+    # eigener Endpunkt D
     X_D = X[Point == "D"],
     Y_D = Y[Point == "D"],
     
-    # Länge A -> D
-    length_AD = sqrt(X_D^2 + Y_D^2),
+    # Winkel der aktuellen Kurve A -> D
+    angle_D = atan2(Y_D, X_D),
     
-    # Winkel der Verbindung A -> D
-    angle_AD = atan2(Y_D, X_D),
+    # Rotation von aktuellem Winkel -> mittlerer Winkel
+    rotation = mean_angle - angle_D,
     
-    # Rotation, sodass A -> D horizontal wird
-    X_rot = X * cos(angle_AD) + Y * sin(angle_AD),
-    Y_rot = -X * sin(angle_AD) + Y * cos(angle_AD),
+    # aktuelle Länge A -> D
+    length_D = sqrt(X_D^2 + Y_D^2),
     
-    # Skalierung auf gemeinsame Endposition
-    X = X_rot / length_AD * target_length,
-    Y = Y_rot / length_AD * target_length
+    # Rotation
+    X_rot = X * cos(rotation) - Y * sin(rotation),
+    Y_rot = X * sin(rotation) + Y * cos(rotation),
+    
+    # anschließend auf mittlere Länge skalieren
+    X = X_rot * mean_length / length_D,
+    Y = Y_rot * mean_length / length_D
+    
   ) |> 
   ungroup() |> 
-  select(-X_A, -Y_A, -X_D, -Y_D, -length_AD, -angle_AD, -X_rot, -Y_rot)
+  select(
+    -X_D,
+    -Y_D,
+    -angle_D,
+    -rotation,
+    -length_D,
+    -X_rot,
+    -Y_rot
+  )
 
 bezier_df_transformed <- data_curve_points_transformed |> 
   group_by(FileName.x, Species) |> 
@@ -876,40 +899,75 @@ plot_bezier_df_le <- bezier_df_le |> group_by(Species) |> mutate(
     values = v_linetypes
   )
 
-target_length <- 100
+# ------------------------------------------------------------
+# 2. Mittleren Endpunkt D bestimmen
+# ------------------------------------------------------------
 
-data_curve_points_le_transformed <- data_curve_points_le_merged |> 
+mean_end_le <- data_curve_points_le_adjusted |> 
+  filter(Point == "D") |> 
+  summarise(
+    X_D_mean = mean(X),
+    Y_D_mean = mean(Y)
+  )
+
+
+# ------------------------------------------------------------
+# 3. Mittlere Richtung und Länge des Endpunkts
+# ------------------------------------------------------------
+
+mean_angle_le <- atan2(
+  mean_end_le$Y_D_mean,
+  mean_end_le$X_D_mean
+)
+
+mean_length_le <- sqrt(
+  mean_end_le$X_D_mean^2 +
+  mean_end_le$Y_D_mean^2
+)
+
+
+# ------------------------------------------------------------
+# 4. Jede Kurve drehen und skalieren
+# ------------------------------------------------------------
+
+data_curve_points_adjusted_le <- data_curve_points_le_adjusted |> 
   group_by(FileName.x) |> 
   mutate(
-    # Startpunkt A auf (0,0)
-    X_A = X[Point == "A"],
-    Y_A = Y[Point == "A"],
     
-    X = X - X_A,
-    Y = Y - Y_A,
-    
-    # Endpunkt D
+    # eigener Endpunkt D
     X_D = X[Point == "D"],
     Y_D = Y[Point == "D"],
     
-    # Länge A -> D
-    length_AD = sqrt(X_D^2 + Y_D^2),
+    # Winkel der aktuellen Kurve A -> D
+    angle_D = atan2(Y_D, X_D),
     
-    # Winkel der Verbindung A -> D
-    angle_AD = atan2(Y_D, X_D),
+    # Rotation von aktuellem Winkel -> mittlerer Winkel
+    rotation = mean_angle_le - angle_D,
     
-    # Rotation, sodass A -> D horizontal wird
-    X_rot = X * cos(angle_AD) + Y * sin(angle_AD),
-    Y_rot = -X * sin(angle_AD) + Y * cos(angle_AD),
+    # aktuelle Länge A -> D
+    length_D = sqrt(X_D^2 + Y_D^2),
     
-    # Skalierung auf gemeinsame Endposition
-    X = X_rot / length_AD * target_length,
-    Y = Y_rot / length_AD * target_length
+    # Rotation
+    X_rot = X * cos(rotation) - Y * sin(rotation),
+    Y_rot = X * sin(rotation) + Y * cos(rotation),
+    
+    # anschließend auf mittlere Länge skalieren
+    X = X_rot * mean_length_le / length_D,
+    Y = Y_rot * mean_length_le / length_D
+    
   ) |> 
   ungroup() |> 
-  select(-X_A, -Y_A, -X_D, -Y_D, -length_AD, -angle_AD, -X_rot, -Y_rot)
+  select(
+    -X_D,
+    -Y_D,
+    -angle_D,
+    -rotation,
+    -length_D,
+    -X_rot,
+    -Y_rot
+  )
 
-bezier_df_le_transformed <- data_curve_points_le_transformed |> 
+bezier_df_le_transformed <- data_curve_points_adjusted_le |> 
   group_by(FileName.x, Species) |> 
   group_modify(~ {
 
@@ -935,11 +993,11 @@ bezier_df_le_transformed <- data_curve_points_le_transformed |>
   }) |> 
   ungroup()
 
-bezier_df_le_transformed <- bezier_df_le_transformed %>%
-  group_by(Species) %>%
+bezier_df_le_transformed <- bezier_df_le_transformed |> 
+  group_by(Species) |> 
   mutate(
     Sample = dense_rank(FileName.x)
-  ) %>%
+  ) |> 
   ungroup()
 
 # Kurven plotten
@@ -986,7 +1044,7 @@ plot_bezier_df_le_transformed2 <- bezier_df_le_transformed |> group_by(Species) 
 ```
 
 ```{r bezier_mean_curve_le, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Plots of leading edge bezier curves. (A) raw data; (B) data adjusted to common origin; (C) transformed data; (D) mean amplitude; (E) Mean curve (red) calculated by means of control points of transformed data. Source: own work"}
-mean_curve_points_le <- data_curve_points_le_transformed |> 
+mean_curve_points_le <- data_curve_points_le_adjusted |> 
   group_by(Point) |>
   summarise(
     X = mean(X, na.rm = TRUE),
