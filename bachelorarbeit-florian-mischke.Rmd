@@ -1191,8 +1191,8 @@ More research needed:
 # Acknowledgements {.unnumbered}
 
 First and foremost, many thanks to Noah Knorr for his scientific guidance and support. 
-Also many thanks to Linnea Hesse for being an awesome professor and for encouraging me to live my potential. 
-Additional thanks go to Dominik Begerow for being the second examiner of this work and for asking good questions about my research.
+Also many thanks to Prof. Linnea Hesse for being an awesome professor and for encouraging me to live my potential. 
+Additional thanks go to Prof. Dominik Begerow for being the second examiner of this work and for asking good questions about my research.
 I thank Johannes Beruda for his assistance in my camera setup - I still owe you cake for the hint with the smartphone app for remote control. 
 I thank Olaf Polak for his help in the lab. 
 Thanks go to Niklas Groth for his tip regarding FIJI macros. 
