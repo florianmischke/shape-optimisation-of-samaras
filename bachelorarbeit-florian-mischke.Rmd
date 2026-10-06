@@ -213,6 +213,7 @@ my_data_longer |> ggplot(
 ) + geom_boxplot(na.rm=TRUE) +
   #ggtitle("Feret lengths and maximum widths of three Acer species.") +
   labs(x = "Species", y = "[mm]", color = "") +
+  theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
 
@@ -224,6 +225,7 @@ my_data_longer |> filter(Species == "Acer platanoides") |> ggplot(
     color = factor(unit_mm, labels = c("Feret length", "maximum width"))
   )
 ) + geom_boxplot(na.rm=TRUE) +
+  theme_minimal() +
   #ggtitle("Feret lengths and maximum widths of two samples of Acer platanoides.") +
   labs(x = "Location", y = "[mm]", color = "")
 ```
@@ -238,6 +240,7 @@ my_data_longer |> ggplot(
 ) + geom_boxplot(na.rm=TRUE) +
   #ggtitle("Feret lengths and maximum widths of four samples of Acer species.") +
   labs(x = "Species and Location", y = "[mm]", color = "") +
+  theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
 
@@ -252,6 +255,7 @@ my_data |> ggplot(
 ) + geom_boxplot(na.rm=TRUE) +
   #ggtitle("Length/width ratios of four samples of Acer species") +
   labs(x = "Species and Location", y = "Ratio", color = "") +
+  theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
 
@@ -261,7 +265,8 @@ my_data |> ggplot(
     x = ratio
   )
 ) + geom_histogram(bins=50,na.rm = TRUE) +
-  facet_wrap(~label)
+  facet_wrap(~label) +
+  theme_minimal()
 ```
 
 ### Kolmogorov–Smirnov test
