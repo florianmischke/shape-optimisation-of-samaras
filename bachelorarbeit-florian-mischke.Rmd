@@ -269,22 +269,6 @@ my_data |> ggplot(
   theme_minimal()
 ```
 
-### Kolmogorov–Smirnov test
-
-(also K–S test or KS test) nonparametric test of the equality of continuous (or discontinuous) one-dimensional probability distributions.
-
-```{r}
-sample1 <- my_data |> filter(Species == "Acer campestre")
-sample2 <- my_data |> filter(Species == "Acer platanoides", Location == "IPM")
-sample3 <- my_data |> filter(Species == "Acer platanoides", Location == "Spannskamp")
-sample4 <- my_data |> filter(Species == "Acer pseudoplatanus")
-
-ks.test(sample1$ratio, "pnorm", mean = mean(sample1$ratio), sd = sd(sample1$ratio))
-ks.test(sample2$ratio, "pnorm", mean = mean(sample2$ratio), sd = sd(sample2$ratio))
-ks.test(sample3$ratio, "pnorm", mean = mean(sample3$ratio), sd = sd(sample3$ratio))
-ks.test(sample4$ratio, "pnorm", mean = mean(sample4$ratio), sd = sd(sample4$ratio))
-```
-
 ### Shapiro-Wilk test
 
 ```{r}
