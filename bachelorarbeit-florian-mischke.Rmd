@@ -300,7 +300,14 @@ Ratio \~ sample
 ```{r}
 mod <- aov(formula = my_data$ratio ~ my_data$sample, data = my_data)
 
-summary(mod)
+#summary(mod)
+
+anova_tab <- summary(mod)[[1]]
+kable(anova_tab,
+  format = "latex",
+  booktabs = TRUE,
+  digits = 3,
+  caption = "Ergebnisse der Varianzanalyse")
 ```
 
 ## Topology Optimization after Mattheck
