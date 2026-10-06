@@ -272,10 +272,25 @@ my_data |> ggplot(
 ### Shapiro-Wilk test
 
 ```{r}
-shapiro.test(my_data$ratio[my_data$Species == "Acer campestre"])
-shapiro.test(my_data$ratio[my_data$Species == "Acer platanoides" & my_data$Location == "IPM"])
-shapiro.test(my_data$ratio[my_data$Species == "Acer platanoides" & my_data$Location == "Spannskamp"])
-shapiro.test(my_data$ratio[my_data$Species == "Acer pseudoplatanus"])
+shapiro_Acampestre <- shapiro.test(my_data$ratio[my_data$Species == "Acer campestre"])
+
+shapiro_Aplatanoides_IPM <- shapiro.test(my_data$ratio[my_data$Species == "Acer platanoides" & my_data$Location == "IPM"])
+
+shapiro_Aplatanoides_Spannskamp <- shapiro.test(my_data$ratio[my_data$Species == "Acer platanoides" & my_data$Location == "Spannskamp"])
+
+shapiro_Apseudoplatanus <- shapiro.test(my_data$ratio[my_data$Species == "Acer pseudoplatanus"])
+
+shapiro_table <- data.frame(
+  Sample = c("Acer campestre", "Acer platanoides (IPM)", "Acer platanoides (Spannskamp)", "Acer pseudoplatanus"),
+  Statistic = c(shapiro_Acampestre$statistic, shapiro_Aplatanoides_IPM$statistic, shapiro_Aplatanoides_Spannskamp$statistic, shapiro_Apseudoplatanus$statistic),
+  p = c(shapiro_Acampestre$p.value, shapiro_Aplatanoides_IPM$p.value, shapiro_Aplatanoides_Spannskamp$p.value, shapiro_Apseudoplatanus$p.value),
+  normality = c("no, p < 0.001","no, p < 0.01", "yes, p > 0.5", "no, p < 0.01")
+)
+
+kable(shapiro_table,
+  format = "latex",
+  booktabs = TRUE,
+  caption = "Results of Shapiro-Wilk tests") |> kable_styling(latex_options = "HOLD_position")
 ```
 
 ### Levene test
@@ -297,7 +312,7 @@ anova_tab <- summary(mod)[[1]]
 kable(anova_tab,
   format = "latex",
   booktabs = TRUE,
-  caption = "Ergebnisse der Varianzanalyse")
+  caption = "ANOVA results") |> kable_styling(latex_options = "HOLD_position")
 ```
 
 ## Topology Optimization after Mattheck
