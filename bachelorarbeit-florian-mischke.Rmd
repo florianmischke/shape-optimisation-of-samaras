@@ -19,6 +19,8 @@ urlcolor: Cerulean
 citecolor: Cerulean
 header-includes:
   - \usepackage[printonlyused,nohyperlinks]{acronym}
+  - \usepackage{titlesec}
+  - \titleformat{\paragraph}[block]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
 ---
 
 ```{r setup, include=FALSE}
