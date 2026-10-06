@@ -1199,6 +1199,9 @@ Probleme: 
 
 - Since Geogebra can't handle large images and downscales them, screenshots were taken and experiments done on them. As the screenshots were not the same size, Geogebra treated them differently. From then on, Affinity suite was used for all measurements. Cubic Beziér curves were drawn manually with the Pen tool and fitted to the shape of the samara's trailing edge and leading edge respectively with the Node tool. The curve was exported as SVG and all SVG files handled by a custom Python script, resulting in a machine-readable CSV file, that was imported by R.
 
+- ties in Kolmogorov-Smirnov test, so Shapiro-Wilk test was used
+
+
 # Conclusion
 
 ## Outlook
