@@ -162,14 +162,22 @@ results <- results |> mutate(
 #str(results)
 #summary(results)
 
-results |> summarise(
+summary <- results |> summarise(
+  'mean_feret_mm' = mean(FeretLength_mm),
   'var_feret_mm' = var(FeretLength_mm), # variance
   'sd_feret_mm' = sd(FeretLength_mm), # standard deviation
   'se_feret_mm' = fm_se(FeretLength_mm), # standard error
+  'mean_width_mm' = mean(maxWidth_mm),
   'var_width_mm' = var(maxWidth_mm), # variance
   'sd_width_mm' = sd(maxWidth_mm), # standard deviation
   'se_width_mm' = fm_se(maxWidth_mm) # standard error
 )
+
+colnames(summary) <- c("Mean Feret length", "Variance of Feret lengths", "SD of Feret lengths", "SE of Feret lengths",
+                       "Mean max width", "Variance of max widths", "SD of max widths", "SE of max widths")
+
+kable(summary[1:4], format = "latex", caption = "Results of Feret lengths (mm), SD = standard deviation, SE = standard error") |> kable_styling(latex_options = "HOLD_position")
+kable(summary[5:8], format = "latex", caption = "Results of max widths (mm), SD = standard deviation, SE = standard error") |> kable_styling(latex_options = "HOLD_position")
 ```
 
 ```{r echo=FALSE}
