@@ -1209,6 +1209,7 @@ I also thank x and y from Leibniz Institute for showing me the 3D scanner and al
 ## Use of AI/GenAI (generative Artificial Intelligence) {.unnumbered}
 
 - ChatGPT for help at coding a FIJI macro
+- ChatGPT for help at R coding
 - DeepL for translating German to English
 
 # List of Figures {.unnumbered}
