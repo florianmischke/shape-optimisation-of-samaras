@@ -1196,7 +1196,7 @@ More research needed:
 ::: {#refs}
 :::
 
-## Use of AI/GenAI (generative Artificial Intelligence)
+## Use of AI/GenAI (generative Artificial Intelligence) {.unnumbered}
 
 - ChatGPT for help at coding a FIJI macro
 - DeepL for translating German to English
