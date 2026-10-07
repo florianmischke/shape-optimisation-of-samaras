@@ -29,6 +29,7 @@ options(knitr.table.format = function() {
   if (knitr::is_latex_output())
     "latex" else "html"
 })
+options(knitr.kable.NA = '')
 ```
 
 ```{r, include=FALSE}
