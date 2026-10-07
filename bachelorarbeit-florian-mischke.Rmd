@@ -145,6 +145,15 @@ knitr::include_graphics(
 
 ## Measuring samaras in FIJI
 
+// Skalierung
+run("Set Scale...", "distance=1457.0124 known=4 unit=cm");
+
+```{r}
+px_per_mm <- 1457.0124/40
+mm_per_px <- 40/1457.0124
+```
+
+
 ```{r P1116384, echo=FALSE, out.width="50%", fig.align = "center", fig.show='hold', fig.cap="Photo of a sample of A. pseudoplatanus. Source: own work"}
 knitr::include_graphics("img/fiji/P1116384.JPG")
 ```
@@ -1210,6 +1219,16 @@ plot_bezier_df_mean_curves <- ggplot() +
             aes(x = X, y = Y), color = "red", linewidth = 1) +
   geom_path(data = mean_curve_le,
             aes(x = X+160, y = Y+190), color = "red", linewidth = 1) +
+  scale_x_continuous(
+    name = "X (pixel)",
+    # Add a second axis and specify its features
+    sec.axis = sec_axis( trans = ~ (. - min(mean_curve$X)) * mm_per_px, name="[mm]")
+  ) +
+  scale_y_continuous(
+    name = "Y (pixel)",
+    # Add a second axis and specify its features
+    sec.axis = sec_axis( trans = ~ (. - min(mean_curve$Y)) * mm_per_px, name="[mm]")
+  ) +
   coord_equal() +
   theme_minimal() +
   theme(legend.position = 'bottom') +
