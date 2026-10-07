@@ -145,6 +145,14 @@ knitr::include_graphics(
 
 ## Measuring samaras in FIJI
 
+```{r P1116384, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Photo of a sample of A. pseudoplatanus. Source: own work"}
+knitr::include_graphics("img/fiji/P1116384.JPG")
+```
+
+```{r P1116384_processed, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Sample of A. pseudoplatanus after processing with FIJI macro. Source: own work"}
+knitr::include_graphics("img/fiji/P1116384_processed.jpg")
+```
+
 ## Geometry experiments in geogebra and Affinity
 
 ## Stained sections
