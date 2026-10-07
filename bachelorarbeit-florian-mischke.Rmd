@@ -145,7 +145,7 @@ knitr::include_graphics(
 
 ## Measuring samaras in FIJI
 
-```{r P1116384, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Photo of a sample of A. pseudoplatanus. Source: own work"}
+```{r P1116384, echo=FALSE, out.width="50%", fig.align = "center", fig.show='hold', fig.cap="Photo of a sample of A. pseudoplatanus. Source: own work"}
 knitr::include_graphics("img/fiji/P1116384.JPG")
 ```
 
