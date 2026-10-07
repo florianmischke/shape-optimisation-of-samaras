@@ -186,8 +186,8 @@ summary <- results |> summarise(
 colnames(summary) <- c("Mean Feret length", "Variance of Feret lengths", "SD of Feret lengths", "SE of Feret lengths",
                        "Mean max width", "Variance of max widths", "SD of max widths", "SE of max widths")
 
-kable(summary[1:4], format = "latex", booktabs = TRUE, caption = "Results of Feret lengths (mm), SD = standard deviation, SE = standard error \\label{tab:feret}") |> kable_styling(latex_options = "HOLD_position")
-kable(summary[5:8], format = "latex", booktabs = TRUE, caption = "Results of max widths (mm), SD = standard deviation, SE = standard error \\label{tab:widths}") |> kable_styling(latex_options = "HOLD_position")
+kable(summary[1:4], format = "latex", booktabs = TRUE, caption = "Results of Feret lengths (mm), SD = standard deviation, SE = standard error", label = "feret") |> kable_styling(latex_options = "HOLD_position")
+kable(summary[5:8], format = "latex", booktabs = TRUE, caption = "Results of max widths (mm), SD = standard deviation, SE = standard error", label = "widths") |> kable_styling(latex_options = "HOLD_position")
 ```
 
 ```{r echo=FALSE}
@@ -301,7 +301,8 @@ shapiro_table <- data.frame(
 kable(shapiro_table,
   format = "latex",
   booktabs = TRUE,
-  caption = "Results of Shapiro-Wilk tests \\label{tab:shapiro}") |> kable_styling(latex_options = "HOLD_position")
+  caption = "Results of Shapiro-Wilk tests",
+  label = "shapiro") |> kable_styling(latex_options = "HOLD_position")
 ```
 
 ### Levene test
@@ -321,7 +322,8 @@ kable(
   format = "latex",
   booktabs = TRUE,
   digits = 3,
-  caption = "Levene test results \\label{tab:levene}"
+  caption = "Levene test results",
+  label = "levene"
 ) |> kable_styling(latex_options = "HOLD_position")
 ```
 
@@ -338,7 +340,8 @@ anova_tab <- summary(mod)[[1]]
 kable(anova_tab,
   format = "latex",
   booktabs = TRUE,
-  caption = "ANOVA results \\label{tab:anova}") |> kable_styling(latex_options = "HOLD_position")
+  caption = "ANOVA results",
+  label = "anova") |> kable_styling(latex_options = "HOLD_position")
 ```
 
 Table \ref{tab:anova} shows Anova results.
@@ -394,7 +397,7 @@ colnames(df_bezier_points) <- c("X","Y")
 
 colnames(p) <- c("X","Y")
 rownames(p) <- c("A","B","C","D")
-kable(p, format = "latex", booktabs = TRUE, caption = "Control points of first attempt of bezier curve on sample of A. pseudoplatanus \\label{tab:control_points}") |> kable_styling(latex_options = "HOLD_position")
+kable(p, format = "latex", booktabs = TRUE, caption = "Control points of first attempt of bezier curve on sample of A. pseudoplatanus", label = "control_points") |> kable_styling(latex_options = "HOLD_position")
 ```
 
 Formula \ref{bezier_dummy}
@@ -796,7 +799,7 @@ $$
 $$
 
 ```{r}
-kable(mean_curve_points, format = "latex", booktabs = TRUE, caption = "Control points of mean bezier curve \\label{tab:mean_curve_points}") |> kable_styling(latex_options = "HOLD_position")
+kable(mean_curve_points, format = "latex", booktabs = TRUE, caption = "Control points of mean bezier curve", label = "mean_curve_points") |> kable_styling(latex_options = "HOLD_position")
 ```
 
 ```{r}
