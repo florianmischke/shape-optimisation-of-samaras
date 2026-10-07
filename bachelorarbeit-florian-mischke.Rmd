@@ -1211,6 +1211,22 @@ grid.arrange(
   plot_bezier_df_le_mean_curve + labs(tag = "(E)") + theme(plot.tag = element_text(size = 8),plot.tag.position = c(0.01, 1)), ncol = 1.2)
 ```
 
+## All in one plot
+
+```{r, eval=FALSE}
+ggplot() +
+  geom_path(data = bezier_df_unadjusted, aes(x = X, y = Y, group = FileName.x, linetype = factor(Sample)),linewidth = 0.5, alpha = 0.5) +
+  geom_path(data = bezier_df_le_unadjusted, aes(x = X, y = Y, group = FileName.x, linetype = factor(Sample)),linewidth = 0.5, alpha = 0.5) +
+  coord_equal() +
+  theme_minimal() +
+  theme(legend.position = 'none') +
+  guides(linetype = "none") +
+  scale_linetype_manual(
+    values = v_linetypes
+  )
+```
+
+
 ## Both mean edges in one plot
 
 ```{r bezier_mean_curves_both_edges, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Plots of leading and trailing edge mean bezier curves. Source: own work"}
