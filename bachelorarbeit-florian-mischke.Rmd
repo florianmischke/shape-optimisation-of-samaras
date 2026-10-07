@@ -164,6 +164,26 @@ knitr::include_graphics("img/fiji/P1116384_processed.jpg")
 
 ## Geometry experiments in geogebra and Affinity
 
+### Tensile triangles
+
+```{r mattheck1, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Mattheck method applied to wing tip of a sample of A. platanoides. Source: own work"}
+knitr::include_graphics("img/mattheck/A platanoides Mattheck 1.png")
+```
+
+### Bezier curves
+
+```{r P1116641_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer platanoides Source: own work"}
+knitr::include_graphics("img/bezier/P1116641.JPG-bezier.png")
+```
+
+```{r P1116588_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer campestre Source: own work"}
+knitr::include_graphics("img/bezier/P1116588.JPG-bezier.png")
+```
+
+```{r P1116384_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer pseudoplatanus. Source: own work"}
+knitr::include_graphics("img/bezier/P1116384.JPG-bezier.png")
+```
+
 ## Stained sections
 
 Two fresh samaras each of *Acer campestre* and *A. pseudoplatanus* were conserved in 60% Ethanol.
@@ -357,30 +377,11 @@ Table \ref{tab:anova} shows Anova results.
 
 ## Topology Optimization after Mattheck
 
-Triangle-of-forces method
-Tensile triangles
-
-```{r mattheck1, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Mattheck method applied to wing tip of a sample of A. platanoides. Source: own work"}
-knitr::include_graphics("img/mattheck/A platanoides Mattheck 1.png")
-```
-
 ## Bézier curves
 
 ### Trailing Edge
 
 Figure \ref{fig:P1116641_bezier} shows that the shape of a sample of *Acer platanoides* can be described by a Bézier curve. Figures \ref{fig:P1116588_bezier} and \ref{fig:P1116384_bezier} show the same for *Acer campestre* and *Acer pseudoplatanus*.
-
-```{r P1116641_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer platanoides Source: own work"}
-knitr::include_graphics("img/bezier/P1116641.JPG-bezier.png")
-```
-
-```{r P1116588_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer campestre Source: own work"}
-knitr::include_graphics("img/bezier/P1116588.JPG-bezier.png")
-```
-
-```{r P1116384_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer pseudoplatanus. Source: own work"}
-knitr::include_graphics("img/bezier/P1116384.JPG-bezier.png")
-```
 
 #### Bezier curve simulation
 
