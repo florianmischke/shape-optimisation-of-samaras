@@ -1239,12 +1239,12 @@ plot_bezier_df_mean_curves <- ggplot() +
   scale_x_continuous(
     name = "X (pixel)",
     # Add a second axis and specify its features
-    sec.axis = sec_axis( trans = ~ (. - min(mean_curve$X)) * mm_per_px, name="[mm]")
+    sec.axis = sec_axis( transform = ~ (. - min(mean_curve$X)) * mm_per_px, name="[mm]")
   ) +
   scale_y_continuous(
     name = "Y (pixel)",
     # Add a second axis and specify its features
-    sec.axis = sec_axis( trans = ~ (. - min(mean_curve$Y)) * mm_per_px, name="[mm]")
+    sec.axis = sec_axis( transform = ~ (. - min(mean_curve$Y)) * mm_per_px, name="[mm]")
   ) +
   coord_equal() +
   theme_minimal() +
