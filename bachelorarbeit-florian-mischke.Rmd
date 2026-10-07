@@ -296,7 +296,19 @@ kable(shapiro_table,
 ### Levene test
 
 ```{r}
-car::leveneTest(ratio ~ sample, my_data)
+my_data$sample <- as.factor(my_data$sample)
+levene_results <- car::leveneTest(ratio ~ sample, my_data)
+
+#levene_table <- data.frame(
+#  c("Df", "F value", "Pr(>F)")
+#)
+kable(
+  levene_results,
+  format = "latex",
+  booktabs = TRUE,
+  digits = 3,
+  caption = "Levene test results"
+) |> kable_styling(latex_options = "HOLD_position")
 ```
 
 ### ANOVA
