@@ -517,6 +517,13 @@ A_global <- data_curve_points_merged |>
     Y_A = mean(Y, na.rm = TRUE)
   )
 
+D_global <- data_curve_points_merged |> 
+  filter(Point == "D") |> 
+  summarise(
+    X_D = mean(X, na.rm = TRUE),
+    Y_D = mean(Y, na.rm = TRUE)
+  )
+
 
 # Für jede Kurve den individuellen A-Punkt bestimmen
 data_curve_points_adjusted <- data_curve_points_merged |> 
@@ -581,13 +588,6 @@ bezier_df |> group_by(Species) |> mutate(
 
 ```{r bezier_curves_transformed, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve simulation with transformed data of three Acer species. Source: own work"}
 target_length <- 100
-
-D_global <- data_curve_points_adjusted |> 
-  filter(Point == "D") |> 
-  summarise(
-    X_D = mean(X, na.rm = TRUE),
-    Y_D = mean(Y, na.rm = TRUE)
-  )
 
 mean_angle <- atan2(
   D_global$Y_D - A_global$Y_A,
@@ -941,6 +941,12 @@ A_global_le <- data_curve_points_le_merged |>
     Y_A = mean(Y, na.rm = TRUE)
   )
 
+D_global_le <- data_curve_points_le_merged |> 
+  filter(Point == "D") |> 
+  summarise(
+    X_D = mean(X, na.rm = TRUE),
+    Y_D = mean(Y, na.rm = TRUE)
+  )
 
 # Für jede Kurve den individuellen A-Punkt bestimmen
 data_curve_points_le_adjusted <- data_curve_points_le_merged |> 
@@ -1000,13 +1006,6 @@ plot_bezier_df_le <- bezier_df_le |> group_by(Species) |> mutate(
   guides(linetype = "none") +
   scale_linetype_manual(
     values = v_linetypes
-  )
-
-D_global_le <- data_curve_points_le_adjusted |> 
-  filter(Point == "D") |> 
-  summarise(
-    X_D = mean(X, na.rm = TRUE),
-    Y_D = mean(Y, na.rm = TRUE)
   )
 
 mean_angle_le <- atan2(
