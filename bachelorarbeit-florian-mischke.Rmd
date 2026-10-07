@@ -271,6 +271,9 @@ my_data |> ggplot(
 
 ### Shapiro-Wilk test
 
+H0: sample comes from a normally distributed population.
+HA: no normal distribution.
+
 ```{r}
 shapiro_Acampestre <- shapiro.test(my_data$ratio[my_data$Species == "Acer campestre"])
 
@@ -294,6 +297,9 @@ kable(shapiro_table,
 ```
 
 ### Levene test
+
+H0: homogeneity of variance.
+HA: at least one group with variance unequal to others.
 
 ```{r}
 my_data$sample <- as.factor(my_data$sample)
