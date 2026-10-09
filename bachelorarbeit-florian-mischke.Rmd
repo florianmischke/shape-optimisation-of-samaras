@@ -1267,6 +1267,14 @@ Probleme: 
 
 - ties in Kolmogorov-Smirnov test, so Shapiro-Wilk test was used
 
+- nur eine Stichprobe normalverteilt
+
+- keine Varianzhomogenität
+
+- ANOVA nicht aussagekräftig, trotzdem gemacht
+
+- erneut: bessere Stichproben für weitere Untersuchungen
+
 
 # Conclusion
 
