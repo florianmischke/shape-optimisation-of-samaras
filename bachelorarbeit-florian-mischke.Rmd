@@ -235,10 +235,95 @@ my_data <- my_data |> mutate(
 my_data_longer <- my_data |> pivot_longer(cols = c(FeretLength_mm,maxWidth_mm), names_to = "unit_mm", values_to = "value")
 ```
 
-```{r echo=FALSE, include=FALSE}
-my_data |> group_by(Species, Location) |> summarize(
+```{r echo=FALSE}
+summary_detailed <- my_data |> group_by(Species, Location) |> drop_na() |> summarize(
+  'mean_feret_mm' = mean(FeretLength_mm),
+  'var_feret_mm' = var(FeretLength_mm), # variance
+  'sd_feret_mm' = sd(FeretLength_mm), # standard deviation
+  'se_feret_mm' = fm_se(FeretLength_mm), # standard error
+  'mean_width_mm' = mean(maxWidth_mm),
+  'var_width_mm' = var(maxWidth_mm), # variance
+  'sd_width_mm' = sd(maxWidth_mm), # standard deviation
+  'se_width_mm' = fm_se(maxWidth_mm), # standard error
   n = n()
 )
+```
+
+```{r echo=FALSE}
+
+t_summary_detailed <- t(summary_detailed)
+
+# Arten und Standorte aus der bereits transponierten Matrix auslesen
+species  <- as.character(t_summary_detailed["Species", ])
+location <- as.character(t_summary_detailed["Location", ])
+
+# Messgrößen auswählen und in einen Data Frame umwandeln
+tab <- as.data.frame(
+  t_summary_detailed[
+    c(
+      "mean_feret_mm",
+      "var_feret_mm",
+      "sd_feret_mm",
+      "se_feret_mm",
+      "mean_width_mm",
+      "var_width_mm",
+      "sd_width_mm",
+      "se_width_mm",
+      "n"
+    ),
+    ,
+    drop = FALSE
+  ],
+  stringsAsFactors = FALSE
+)
+
+# Messwerte numerisch konvertieren
+tab[] <- lapply(tab, as.numeric)
+
+# Zeilenbezeichnungen lesbar gestalten
+rownames(tab) <- c(
+  "Mean Feret diameter (mm)",
+  "Variance Feret diameter (mm)",
+  "SD Feret diameter (mm)",
+  "SE Feret diameter (mm)",
+  "Mean width (mm)",
+  "Variance width (mm)",
+  "SD width (mm)",
+  "SE width (mm)",
+  "Sample size (n)"
+)
+
+# Arten gruppieren
+species_groups <- rle(species)
+
+header <- c(
+  " " = 1,
+  setNames(
+    as.numeric(species_groups$lengths),
+    species_groups$values
+  )
+)
+
+# Tabelle erstellen
+kbl(
+  tab,
+  format = "latex",
+  booktabs = TRUE,
+  linesep = "",
+  caption = "Summary of Fiji measurements by species and location",
+  label = "tab:summary_detailed",
+  col.names = location,
+  align = c("l", rep("c", ncol(tab))),
+  digits = 3
+) |>
+  add_header_above(header, escape = TRUE) |>
+  row_spec(4, extra_latex_after = "\\addlinespace") |>
+  row_spec(8, extra_latex_after = "\\addlinespace") |>
+  kable_styling(
+    latex_options = c("HOLD_position", "scale_down"),
+    full_width = FALSE,
+    font_size = 9
+  )
 ```
 
 ```{r feret_width_three_acer_species, fig.cap="\\label{fig:feret_width_three_acer_species_label}Feret lengths and maximum widths of three Acer species."}
