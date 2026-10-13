@@ -1499,7 +1499,7 @@ plot_bezier_df_mean_curves <- ggplot() +
   scale_y_continuous(
     name = "Y (pixel)",
     # Add a second axis and specify its features
-    sec.axis = sec_axis( transform = ~ (. - min(mean_curve$Y)) * mm_per_px, name="[mm]")
+    sec.axis = sec_axis( transform = ~ (. - min(mean_curve$Y)) * mm_per_px, name="[mm]", breaks = seq(0,11, by = 1))
   ) +
   coord_equal() +
   theme_minimal() +
@@ -1507,6 +1507,33 @@ plot_bezier_df_mean_curves <- ggplot() +
   guides(linetype = "none")
 
 plot_bezier_df_mean_curves
+```
+
+```{r}
+target_upper <- data.frame(
+  X = mean_upper_X,
+  Y = approx(x = mean_curve_le$X, y = mean_curve_le$Y, xout = mean_upper_X)$y
+)
+target_lower <- data.frame(
+  X = mean_lower_X,
+  Y = approx(x = mean_curve_le$X, y = mean_curve_le$Y, xout = mean_lower_X)$y
+)
+label_upper <- paste(round((target_upper$Y-mean_upper_Y)/px_per_mm, 1), " mm")
+label_lower <- paste(round((target_lower$Y-mean_lower_Y)/px_per_mm, 1), " mm")
+
+plot_bezier_df_mean_curves +
+  annotate("point", x = mean_upper_X, y = mean_upper_Y) + 
+  annotate("point", x = mean_lower_X, y = mean_lower_Y) +
+  
+  annotate("point", x = target_upper$X, y = target_upper$Y) +
+  annotate("point", x = target_lower$X, y = target_lower$Y) +
+  
+  geom_segment(aes(x = mean_upper_X, y = mean_upper_Y, xend = target_upper$X, yend = target_upper$Y), alpha = 0.5) +
+  geom_segment(aes(x = mean_lower_X, y = mean_lower_Y, xend = target_lower$X, yend = target_lower$Y), alpha = 0.5) +
+  
+  annotate("text", x = mean_upper_X, y = (target_upper$Y+mean_upper_Y)/2, label = label_upper) +
+  annotate("text", x = mean_lower_X, y = (target_lower$Y+mean_lower_Y)/2, label = label_lower)
+  
 ```
 
 
