@@ -883,6 +883,165 @@ ggplot() +
   )
 ```
 
+```{r bezier_mean_curves2, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Mean curve (black) calculated by means of control points of transformed data. Mean curves of A. campestre (red), A. platanoides (green) and A. pseudoplatanus (blue). Source: own work"}
+mean_curve_points <- data_curve_points_transformed |> 
+  group_by(Point) |>
+  summarise(
+    X = mean(X, na.rm = TRUE),
+    Y = mean(Y, na.rm = TRUE),
+    .groups = "drop"
+  ) 
+
+mean_curve_points_campestre <- data_curve_points_transformed |> filter(Species == "Acer campestre") |> 
+  group_by(Point) |>
+  summarise(
+    X = mean(X, na.rm = TRUE),
+    Y = mean(Y, na.rm = TRUE),
+    .groups = "drop"
+  ) 
+
+mean_curve_points_platanoides <- data_curve_points_transformed |> filter(Species == "Acer platanoides") |> 
+  group_by(Point) |>
+  summarise(
+    X = mean(X, na.rm = TRUE),
+    Y = mean(Y, na.rm = TRUE),
+    .groups = "drop"
+  ) 
+
+mean_curve_points_pseudoplatanus <- data_curve_points_transformed |> filter(Species == "Acer pseudoplatanus") |> 
+  group_by(Point) |>
+  summarise(
+    X = mean(X, na.rm = TRUE),
+    Y = mean(Y, na.rm = TRUE),
+    .groups = "drop"
+  ) 
+
+mean_curve <- mean_curve_points |> group_modify(~ {
+
+    # Kontrollpunkte A, B, C, D
+    # Jede Zeile = ein Kontrollpunkt
+    control_points <- as.matrix(.x[, c("X", "Y")])
+
+    # Parameter t
+    t <- seq(0, 1, length.out = 100)
+
+    # Kubische Bézier-Kurve aus 4 Kontrollpunkten
+    curve <- bezier(
+      t = t,
+      p = control_points
+    )
+
+    # Als Dataframe zurückgeben
+    data.frame(
+      t = t,
+      X = curve[, 1],
+      Y = curve[, 2]
+    )
+  }) |> 
+  ungroup()
+
+mean_curve_campestre <- mean_curve_points_campestre |> group_modify(~ {
+
+    # Kontrollpunkte A, B, C, D
+    # Jede Zeile = ein Kontrollpunkt
+    control_points <- as.matrix(.x[, c("X", "Y")])
+
+    # Parameter t
+    t <- seq(0, 1, length.out = 100)
+
+    # Kubische Bézier-Kurve aus 4 Kontrollpunkten
+    curve <- bezier(
+      t = t,
+      p = control_points
+    )
+
+    # Als Dataframe zurückgeben
+    data.frame(
+      t = t,
+      X = curve[, 1],
+      Y = curve[, 2]
+    )
+  }) |> 
+  ungroup()
+
+mean_curve_platanoides <- mean_curve_points_platanoides |> group_modify(~ {
+
+    # Kontrollpunkte A, B, C, D
+    # Jede Zeile = ein Kontrollpunkt
+    control_points <- as.matrix(.x[, c("X", "Y")])
+
+    # Parameter t
+    t <- seq(0, 1, length.out = 100)
+
+    # Kubische Bézier-Kurve aus 4 Kontrollpunkten
+    curve <- bezier(
+      t = t,
+      p = control_points
+    )
+
+    # Als Dataframe zurückgeben
+    data.frame(
+      t = t,
+      X = curve[, 1],
+      Y = curve[, 2]
+    )
+  }) |> 
+  ungroup()
+
+mean_curve_pseudoplatanus <- mean_curve_points_pseudoplatanus |> group_modify(~ {
+
+    # Kontrollpunkte A, B, C, D
+    # Jede Zeile = ein Kontrollpunkt
+    control_points <- as.matrix(.x[, c("X", "Y")])
+
+    # Parameter t
+    t <- seq(0, 1, length.out = 100)
+
+    # Kubische Bézier-Kurve aus 4 Kontrollpunkten
+    curve <- bezier(
+      t = t,
+      p = control_points
+    )
+
+    # Als Dataframe zurückgeben
+    data.frame(
+      t = t,
+      X = curve[, 1],
+      Y = curve[, 2]
+    )
+  }) |> 
+  ungroup()
+
+# Kurven plotten
+bezier_df_transformed <- bezier_df_transformed |>
+  group_by(Species) |> mutate(
+    n = n_distinct(FileName.x),
+    label = paste0(Species,'\nn = ',n)
+  )
+
+ggplot() +
+  geom_path(data = bezier_df_transformed,
+            aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample)),
+            linewidth = 0.5, alpha = 0.25) +
+  geom_vline(xintercept = vlines, color = "#666", linetype = "dashed", alpha = 0.75) +
+  geom_hline(yintercept = hlines, color = "#666", linetype = "dotted", alpha = 0.75) +
+  geom_path(data = mean_curve,
+            aes(x = X, y = Y), color = "black", linewidth = 1, alpha = 0.75) +
+  geom_path(data = mean_curve_campestre,
+            aes(x = X, y = Y), color = "red", linewidth = 0.5, alpha = 0.75) +
+  geom_path(data = mean_curve_platanoides,
+            aes(x = X, y = Y), color = "green", linewidth = 0.5, alpha = 0.75) +
+  geom_path(data = mean_curve_pseudoplatanus,
+            aes(x = X, y = Y), color = "blue", linewidth = 0.5, alpha = 0.75) +
+  coord_equal() +
+  theme_minimal() +
+  theme(legend.position = 'bottom') +
+  guides(linetype = "none") +
+  scale_linetype_manual(
+    values = v_linetypes
+  )
+```
+
 #### Variance of amplitudes
 
 Variance of maxima: `r var(bezier_extrema$Y_upper)`
