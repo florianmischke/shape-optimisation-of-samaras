@@ -1494,13 +1494,15 @@ plot_bezier_df_mean_curves <- ggplot() +
   scale_x_continuous(
     name = "X (pixel)",
     # Add a second axis and specify its features
-    sec.axis = sec_axis( transform = ~ (. - min(mean_curve$X)) * mm_per_px, name="[mm]")
+    sec.axis = sec_axis( transform = ~ (. - min(mean_curve$X)) * mm_per_px, name="Length [mm]", breaks = seq(0,30, by = 2))
   ) +
   scale_y_continuous(
     name = "Y (pixel)",
     # Add a second axis and specify its features
-    sec.axis = sec_axis( transform = ~ (. - min(mean_curve$Y)) * mm_per_px, name="[mm]", breaks = seq(0,11, by = 1))
+    sec.axis = sec_axis( transform = ~ (. - min(mean_curve$Y)) * mm_per_px, name="Width [mm]", breaks = seq(0,10, by = 2))
   ) +
+  geom_hline(yintercept = seq(min(mean_curve$Y), max(mean_curve_le$Y), by=px_per_mm), color="steelblue", alpha=0.35) +
+  geom_vline(xintercept = seq(min(mean_curve$X), max(mean_curve_le$X), by=px_per_mm), color="steelblue", alpha=0.35) +
   coord_equal() +
   theme_minimal() +
   theme(legend.position = 'bottom') +
@@ -1509,7 +1511,7 @@ plot_bezier_df_mean_curves <- ggplot() +
 plot_bezier_df_mean_curves
 ```
 
-```{r}
+```{r bezier_mean_curves_both_edges_with_measurements, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Plots of leading and trailing edge mean bezier curves. Distances between leading edge and upper amplitude of trailing edge as well as leading edge and lower amplitude of trailing edge were drawn in. Source: own work"}
 target_upper <- data.frame(
   X = mean_upper_X,
   Y = approx(x = mean_curve_le$X, y = mean_curve_le$Y, xout = mean_upper_X)$y
