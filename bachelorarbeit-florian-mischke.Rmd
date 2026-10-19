@@ -115,6 +115,9 @@ Something, something, something, Samaras.
 
 # Introduction
 
+## Samaras 
+*Samaras* are winged autorotating diaspores (dispersal units) of maple trees, among other plants [@fauli_effect_2019]. 
+
 ## Native maple species in Germany
 
 ```{r, echo=FALSE, out.width="30%", fig.align = "center", fig.show='hold', fig.cap="\\label{fig:leaves_maple_species}Leaves of native maple species in Germany. Acer campestre (left), A. platanoides (middle), A. pseudoplatanus (right)."}
@@ -149,7 +152,7 @@ All samples were gathered between June 22nd and June 28th 2026.
 An A3 sheet of millimeter paper was placed on the ground and secured with transparent sticky tape. A 10x4 cm cutout of white printer paper was taped on it. One samara at a time was placed on that paper and a sticky note with date/time and species name was placed below.\
 A digital camera (Panasonic Lumix G, Model No. DC-FZ100002) was secured on a tripod stand at maximum height, pointed down and leveled via spirit level. Distance from ground to camera lens was measured 134cm. The following settings were chosen to take photos: Focal length 400, S 4, F 11, ISO 125; manual mode. Photos of the setup were taken, see figure \ref{fig:camera_setup}.
 
-50 photos for *Acer pseudoplatanus* and \acs{A} campestre and 100 photos for *A. platanoides*, 50 for each of the two samples were taken by remote control with the Panasonic Image App. The photos were copied to a Laptop and backed up to cloud storage and an external SSD.
+50 photos for *Acer pseudoplatanus* and *\acs{A} campestre* and 100 photos for *\acs{A} platanoides* (50 for each of the two samples) were taken by remote control with the Panasonic Image App. The photos were copied to a Laptop and backed up to cloud storage and an external SSD.
 
 ```{r, echo=FALSE, out.width="45%", fig.align = "center", fig.show='hold', fig.cap="\\label{fig:camera_setup}Camera on tripod pointed down on millimeter sheet of paper. Samara is positioned on the white paper strip (left). View of a samara (A. platanoides) through the camera lens/display (right). Source: own work"}
 # Source - https://stackoverflow.com/a/63866499
