@@ -190,7 +190,7 @@ knitr::include_graphics("img/fiji/P1116384_processed.jpg")
 
 The results were processed in R code in a `.Rmd` file in RStudio by Posit Software. Mean, standard deviation, standard error and variance were calculated for all samples and for each species/sample separately. Length/width ratios were calculated and tests (Shapiro-Wilk, Levene, ANOVA, Kruskal-Wallis) performed.
 
-## Geometry experiments in geogebra and Affinity
+## Geometry experiments in GeoGebra and Affinity
 
 ### Tensile triangles
 
