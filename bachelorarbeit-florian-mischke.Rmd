@@ -14,6 +14,7 @@ output:
   html_document: default
 editor_options:
   chunk_output_type: console
+link-citations: true
 linkcolor: Cerulean
 urlcolor: Cerulean
 citecolor: Cerulean
@@ -113,6 +114,19 @@ geboren am \\
 Something, something, something, Samaras.
 
 # Introduction
+
+## Native maple species in Germany
+
+```{r, echo=FALSE, out.width="30%", fig.align = "center", fig.show='hold', fig.cap="\\label{fig:leaves_maple_species}Leaves of native maple species in Germany. Acer campestre (left), A. platanoides (middle), A. pseudoplatanus (right)."}
+knitr::include_graphics(
+  c("img/introduction/leaf_a_campestre.png",
+    "img/introduction/leaf_a_platanoides.png",
+    "img/introduction/leaf_a_pseudoplatanus.png")
+)
+```
+\vspace{-2em}Image source: [@roloff_enzyklopaholzgewachse_2014]
+
+## Leading edge vortex (LEV)
 
 Test [@lentink_leading-edge_2009].
 
