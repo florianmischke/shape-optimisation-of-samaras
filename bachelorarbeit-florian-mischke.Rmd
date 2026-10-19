@@ -496,6 +496,7 @@ mod <- aov(formula = my_data$ratio ~ my_data$sample, data = my_data)
 #summary(mod)
 
 anova_tab <- summary(mod)[[1]]
+anova_tab$`Pr(>F)` <- format.pval(anova_tab$`Pr(>F)`, digits = 4, na.form="")
 kable(anova_tab,
   format = "latex",
   booktabs = TRUE,
@@ -504,6 +505,29 @@ kable(anova_tab,
 ```
 
 Table \ref{tab:anova} shows Anova results.
+
+### Kruskal-Wallis test
+
+```{r}
+kruskal <- kruskal.test(ratio ~ sample, data = my_data)
+
+kruskal_table <- data.frame(
+  Method = kruskal$method,
+  Statistic = unname(kruskal$statistic),
+  Degrees_of_Freedom = unname(kruskal$parameter),
+  P_value = format.pval(kruskal$p.value, digits = 4)
+)
+
+kable(kruskal_table,
+  format = "latex",
+  booktabs = TRUE,
+  digits = 3,
+  caption = "Kruskal-Wallis test",
+  label = "kruskal") |> kable_styling(latex_options = "HOLD_position")
+```
+
+* p-value $< 0.05$: Evidence of a statistically significant difference between at least two groups.
+* p-value $\geq 0.05$: Insufficient evidence to conclude that the groups differ.
 
 ## Topology Optimization after Mattheck
 
