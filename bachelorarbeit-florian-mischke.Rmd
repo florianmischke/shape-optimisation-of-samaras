@@ -120,7 +120,7 @@ Test [@lentink_leading-edge_2009].
 
 ## Samples
 
-More than 150 (more or less) intact samaras were gathered (\>50 per species).
+More than 200 mostly intact samaras of native maple species were gathered (\>50 per species/location), defective samaras have been discarded so that at least 50 intact samples could be used. The sample's species were identified based on the shape of the leaves (FIGURE!) of the closest tree and it was made sure that no other species of maple was near the gathering site. The four species and locations were as follows:
 
 1.  *Acer campestre* \acs{l}- Loki Schmidt Garten, Hamburg - what3words: [///kennels.slippery.hears](https://w3w.co/kennels.slippery.hears)
 2.  *Acer pseudoplatanus* \acs{l}- Stadtpark, Hamburg - what3words: [///engaging.survey.spout](https://w3w.co/engaging.survey.spout)
