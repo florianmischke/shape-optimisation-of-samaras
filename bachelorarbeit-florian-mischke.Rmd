@@ -133,6 +133,12 @@ knitr::include_graphics(
 
 Test [@lentink_leading-edge_2009].
 
+## Tensile triangles after Mattheck
+
+## Bezier curves
+
+## Space travel / sensor packages on Mars
+
 # Methods and materials
 
 ## Samples
