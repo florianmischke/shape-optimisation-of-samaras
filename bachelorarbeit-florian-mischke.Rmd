@@ -1,4 +1,5 @@
 ---
+lang: en
 bibliography: bib/literature.bib
 output:
   pdf_document: 
@@ -22,6 +23,7 @@ header-includes:
   - \usepackage[printonlyused,nohyperlinks]{acronym}
   - \usepackage{titlesec}
   - \titleformat{\paragraph}[block]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+  #- \usepackage{wrapfig}
 ---
 
 ```{r setup, include=FALSE}
@@ -107,18 +109,72 @@ geboren am \\
 \begin{acronym}
     \acro{l}[L.]{Carl Linnaeus, also known as Carl von Linné}
     \acro{A}[A.]{Acer, scientific name of Maple}
+    \acro{engl}[engl.]{English}
+    \acro{ger}[ger.]{German}
+    \acro{eg}[e.g.]{abbreviation for exempli gratia, a Latin phrase meaning "for example"}
 \end{acronym}
 
 # Abstract
+
+Abstract english
+
+Zusammenfassung deutsch 
 
 Something, something, something, Samaras.
 
 # Introduction
 
-## Samaras 
-*Samaras* are winged autorotating diaspores (dispersal units) of maple trees, among other plants [@fauli_effect_2019]. 
+## Samaras and their potential use in biomimetics
+*Samaras* are winged autorotating diaspores (dispersal units) [@fauli_effect_2019]. Examples of these dispersal units can be found in maple species, among other plants.
+The term biomimetics is derived from the greek word biomimesis: [βίος (bios)]{.class lang="el"}, life, and [μίμησις (mīmēsis)]{.class lang="el"} [@noauthor_biomimetics_2026], imitation, meaning mimicking or imitating biology or living nature or organisms [@bhushan_introduction_2018].
+
+A way to define biomimetics is to say it is a scientific discipline that combines biology and engineering aiming to solve technical problems or challenges through the abstraction, transfer, and application of insights derived from biological models. The German term *Bionik* (not to be confused with *bionics*, which describes biomimetic electronics or robotics) is a portmanteau from the German words **Bio**logie (biology) and Tech**nik** (engineering).
+According to Wikipedia, *bionics* is the application of biological systems in engineering and technology whereas the term *biomimetics* describes chemical reactions in a lab where smaller molecules than the macromolecules found in nature are used while being able to replicate the biochemistry of living organisms.
+In this thesis though, the first definition is being used.
+
+```{=latex}
+\noindent
+\begin{minipage}[t]{0.33\textwidth}
+\vspace{-\baselineskip}
+```
+
+```{r Ezra_et_al__tipuana_tipu, echo=FALSE, out.width="100%", fig.align="left", fig.cap="Parts of a samara, using \\textit{Tipuana tipu} as an example: \\textbf{seed} at the bottom, sometimes referred to as \\textit{root}; \\textbf{rib} on the left side, referred to from here on as \\textit{leading edge}; \\textbf{wing} on the right side."}
+knitr::include_graphics("img/introduction/Ezra_et_al__tipuana_tipu.png")
+```
+
+```{=latex}
+\vspace{-\baselineskip}
+```
+
+Source: [@ezra_load-bearing_2023]
+
+```{=latex}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.65\textwidth}
+\vspace{0pt}
+```
+
+When looking at samaras flying or rather falling while autorotating thus slowing down the fall, one can easily come to the conclusion humankind can learn from these objects. Potential use cases are substitutes for parachutes, differently designed rotor blades for \acs{eg} helicopters, or a way to safely land sensor packages on the surface of the planet Mars. The latter is the reason for this bachelor thesis.\
+
+Figure \ref{fig:Ezra_et_al__tipuana_tipu} shows what samaras consist of, using *Tipuana tipu* (not a species of maple) as an example. 
+
+```{=latex}
+\end{minipage}
+```
+
+There has already been done a lot of work on this. Liu et al designed an abstracted rectangular artificial samara, which they call *maple-seed_inspired (MSI) rotochute*, claiming it had better efficacy than a natural maple seed (figure \ref{fig:Liu_et_al__msi_rotochute}). The maple samara's leading edge was replaced by a counterweight, the seed (or *root* as seen in figure \ref{fig:Liu_et_al__msi_rotochute}) by the *payload*.
+
+```{r Liu_et_al__msi_rotochute, echo=FALSE, out.width="50%", fig.align = "center", fig.show='hold', fig.cap="Fabrication of the MSI rotochute. (a) Images of maple seed (Acer); (b) mass distribution of maple seed; (c) design of the fabrication of the MSI rotochute; and (d) fabrication of the MSI rotochute."}
+knitr::include_graphics("img/introduction/Liu_et_al__msi_rotochute.png")
+```
+\vspace{-2em}Source: [@liu_maple-seed-inspired_2026]
+
+
 
 ## Native maple species in Germany
+
+Three maple species of the family Sapindaceae are considered to be native in Germany: *Acer campestre* (\acs{engl} Field maple, \acs{ger} Feld-Ahorn), *\acs{A} platanoides* (\acs{engl} Norway maple, \acs{ger} Spitz-Ahorn) and *\acs{A} pseudoplatanus* (\acs{engl} sycamore, \acs{ger} Berg-Ahorn) [@schmeil_flora_2024; @roloff_enzyklopaholzgewachse_2014].
 
 ```{r, echo=FALSE, out.width="30%", fig.align = "center", fig.show='hold', fig.cap="\\label{fig:leaves_maple_species}Leaves of native maple species in Germany. Acer campestre (left), A. platanoides (middle), A. pseudoplatanus (right)."}
 knitr::include_graphics(
