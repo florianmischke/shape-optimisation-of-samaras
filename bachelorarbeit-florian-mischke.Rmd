@@ -112,6 +112,8 @@ geboren am \\
     \acro{engl}[engl.]{English}
     \acro{ger}[ger.]{German}
     \acro{eg}[e.g.]{abbreviation for exempli gratia, a Latin phrase meaning "for example"}
+    \acro{lev}[LEV]{leading-edge vortex}
+    \acroplural{lev}[LEV]{leading-edge vortices}
 \end{acronym}
 
 # Abstract
@@ -170,7 +172,9 @@ knitr::include_graphics("img/introduction/Liu_et_al__msi_rotochute.png")
 ```
 \vspace{-2em}Source: [@liu_maple-seed-inspired_2026]
 
+## Leading-edge vortex (LEV)
 
+Samara-bearing trees and shrubs depend on wind to succesfully disperse their seeds (*anemochory*). Samaras generate an unusually high lift that can be explained by the autorotation resulting in a \ac{lev} [@lentink_leading-edge_2009] and thus a reduced rate of descent, giving the samara more air time to be affected by the wind and reaching higher dispersal distances. The \acs{lev} is most prominent near the base of the samara, where the seed is located, at around 25% span, and merges with another vortex formed by the tip of the wing [@lentink_leading-edge_2009]. 
 
 ## Native maple species in Germany
 
@@ -184,10 +188,6 @@ knitr::include_graphics(
 )
 ```
 \vspace{-2em}Image source: [@roloff_enzyklopaholzgewachse_2014]
-
-## Leading edge vortex (LEV)
-
-Test [@lentink_leading-edge_2009].
 
 ## Tensile triangles after Mattheck
 
