@@ -342,7 +342,8 @@ summary_detailed <- my_data |> group_by(Species, Location) |> drop_na() |> summa
   'var_width_mm' = var(maxWidth_mm), # variance
   'sd_width_mm' = sd(maxWidth_mm), # standard deviation
   'se_width_mm' = fm_se(maxWidth_mm), # standard error
-  n = n()
+  n = n(),
+  .groups = "drop"
 )
 ```
 
