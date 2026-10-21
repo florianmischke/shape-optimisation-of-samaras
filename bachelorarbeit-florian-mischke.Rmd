@@ -128,9 +128,7 @@ Something, something, something, Samaras.
 
 ## Samaras and their potential use in biomimetics
 *Samaras* are winged autorotating diaspores (dispersal units) [@fauli_effect_2019]. Examples of these dispersal units can be found in maple species, among other plants.
-The term biomimetics is derived from the greek word biomimesis: [βίος (bios)]{.class lang="el"}, life, and [μίμησις (mīmēsis)]{.class lang="el"} [@noauthor_biomimetics_2026], imitation, meaning mimicking or imitating biology or living nature or organisms [@bhushan_introduction_2018].
-
-A way to define biomimetics is to say it is a scientific discipline that combines biology and engineering aiming to solve technical problems or challenges through the abstraction, transfer, and application of insights derived from biological models. The German term *Bionik* (not to be confused with *bionics*, which describes biomimetic electronics or robotics) is a portmanteau from the German words **Bio**logie (biology) and Tech**nik** (engineering).
+The term biomimetics is derived from the greek word biomimesis: [βίος (bios)]{.class lang="el"}, life, and [μίμησις (mīmēsis)]{.class lang="el"} [@noauthor_biomimetics_2026], imitation, meaning mimicking or imitating biology or living nature or organisms [@bhushan_introduction_2018]. Biomimetics is an interdisciplinary field at the interface of biology and engineering that seeks to address technical challenges through the abstraction, transfer, and application of insights derived from biological systems. The German term *Bionik* (not to be confused with *bionics*, which describes biomimetic electronics or robotics) is a portmanteau from the German words **Bio**logie (biology) and Tech**nik** (engineering).
 According to Wikipedia, *bionics* is the application of biological systems in engineering and technology whereas the term *biomimetics* describes chemical reactions in a lab where smaller molecules than the macromolecules found in nature are used while being able to replicate the biochemistry of living organisms.
 In this thesis though, the first definition is being used.
 
@@ -159,13 +157,13 @@ Source: [@ezra_load-bearing_2023]
 
 When looking at samaras flying or rather falling while autorotating thus slowing down the fall, one can easily come to the conclusion humankind can learn from these objects. Potential use cases are substitutes for parachutes, differently designed rotor blades for \acs{eg} helicopters, or a way to safely land sensor packages on the surface of the planet Mars. The latter is the reason for this bachelor thesis.\
 
-Figure \ref{fig:Ezra_et_al__tipuana_tipu} shows what samaras consist of, using *Tipuana tipu* (not a species of maple) as an example. 
+Figure \ref{fig:Ezra_et_al__tipuana_tipu} shows what samaras consist of, using *Tipuana tipu* (not a species of maple) as an example.\
+
+There has already been done a lot of work on this. Liu et al designed an abstracted rectangular artificial samara, which they call *maple-seed_inspired (MSI) rotochute*, claiming it had better efficacy than a natural maple seed (figure \ref{fig:Liu_et_al__msi_rotochute}). The maple samara's leading edge was replaced by a counterweight, the seed (or *root* as seen in figure \ref{fig:Liu_et_al__msi_rotochute}) by the *payload*.
 
 ```{=latex}
 \end{minipage}
 ```
-
-There has already been done a lot of work on this. Liu et al designed an abstracted rectangular artificial samara, which they call *maple-seed_inspired (MSI) rotochute*, claiming it had better efficacy than a natural maple seed (figure \ref{fig:Liu_et_al__msi_rotochute}). The maple samara's leading edge was replaced by a counterweight, the seed (or *root* as seen in figure \ref{fig:Liu_et_al__msi_rotochute}) by the *payload*.
 
 ```{r Liu_et_al__msi_rotochute, echo=FALSE, out.width="50%", fig.align = "center", fig.show='hold', fig.cap="Design process of an artificial samara-like flyer. (Original caption: 'Fabrication of the MSI rotochute.') (a) CT-Image of maple samara; (b) mass distribution of the three parts of a samara; (c) two level of abstraction of a maple samara; and (d) images of a constructed MSI rotochute."}
 knitr::include_graphics("img/introduction/Liu_et_al__msi_rotochute.png")
