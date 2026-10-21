@@ -127,7 +127,12 @@ Something, something, something, Samaras.
 # Introduction
 
 ## Samaras and their potential use in biomimetics
-*Samaras* are winged autorotating diaspores (dispersal units) [@fauli_effect_2019]. Examples of these dispersal units can be found in maple species, among other plants.
+*Samaras* (figure \ref{fig:samara_denmark}) are winged autorotating diaspores (dispersal units) [@fauli_effect_2019]. Examples of these dispersal units can be found in maple species, among other plants.
+
+```{r samara_denmark, echo=FALSE, out.width="100%", fig.align="left", fig.cap="Photo of a ripe samara found in Denmark, \\textit{Acer} sp., probably \\textit{A. pseudoplatanus}. Own work"}
+knitr::include_graphics("img/introduction/maple_samara.png")
+```
+
 The term biomimetics is derived from the greek word biomimesis: [βίος (bios)]{.class lang="el"}, life, and [μίμησις (mīmēsis)]{.class lang="el"} [@noauthor_biomimetics_2026], imitation, meaning mimicking or imitating biology or living nature or organisms [@bhushan_introduction_2018]. Biomimetics is an interdisciplinary field at the interface of biology and engineering that seeks to address technical challenges through the abstraction, transfer, and application of insights derived from biological systems. The German term *Bionik* (not to be confused with *bionics*, which describes biomimetic electronics or robotics) is a portmanteau from the German words **Bio**logie (biology) and Tech**nik** (engineering).
 According to Wikipedia, *bionics* is the application of biological systems in engineering and technology whereas the term *biomimetics* describes chemical reactions in a lab where smaller molecules than the macromolecules found in nature are used while being able to replicate the biochemistry of living organisms.
 In this thesis though, the first definition is being used.
