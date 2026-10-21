@@ -191,6 +191,8 @@ knitr::include_graphics(
 
 ## Tensile triangles after Mattheck
 
+Prof. Dr. Claus Mattheck found out that a significant number of biological structures and other structures found in nature can be described using tensile triangles.
+
 ## Bezier curves
 
 ## Space travel / sensor packages on Mars
