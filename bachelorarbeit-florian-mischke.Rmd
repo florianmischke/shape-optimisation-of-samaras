@@ -182,9 +182,9 @@ Samara-bearing trees and shrubs depend on wind to succesfully disperse their see
 
 ## Native maple species in Germany
 
-Three maple species of the family Sapindaceae are considered to be native in Germany: *Acer campestre* (\acs{engl} Field maple, \acs{ger} Feld-Ahorn), *\acs{A} platanoides* (\acs{engl} Norway maple, \acs{ger} Spitz-Ahorn) and *\acs{A} pseudoplatanus* (\acs{engl} sycamore, \acs{ger} Berg-Ahorn) [@schmeil_flora_2024; @roloff_enzyklopaholzgewachse_2014].
+Three maple species (figure \ref{fig:leaves_maple_species}) of the family Sapindaceae are considered to be native in Germany: *\acs{A} campestre* (\acs{engl} field maple, \acs{ger} Feld-Ahorn), *\acs{A} platanoides* (\acs{engl} Norway maple, \acs{ger} Spitz-Ahorn) and *\acs{A} pseudoplatanus* (\acs{engl} sycamore, \acs{ger} Berg-Ahorn) [@schmeil_flora_2024; @roloff_enzyklopaholzgewachse_2014].
 
-```{r, echo=FALSE, out.width="30%", fig.align = "center", fig.show='hold', fig.cap="\\label{fig:leaves_maple_species}Leaves of native maple species in Germany. (A) \\textit{A. campestre}, (B) \\textit{A. platanoides}, (C) \\textit{A. pseudoplatanus}."}
+```{r leaves_maple_species, echo=FALSE, out.width="30%", fig.align = "center", fig.show='hold', fig.cap="Leaves of native maple species in Germany. (A) \\textit{A. campestre}, (B) \\textit{A. platanoides}, (C) \\textit{A. pseudoplatanus}."}
 knitr::include_graphics(
   c("img/introduction/leaf_a_campestre.png",
     "img/introduction/leaf_a_platanoides.png",
@@ -192,6 +192,18 @@ knitr::include_graphics(
 )
 ```
 \vspace{-2em}Images modified from: [@roloff_enzyklopaholzgewachse_2014]
+
+All *Acer* fruits are schizocarp: when ripe, the individual carpels separate along their sutures and break down into single-seeded, nut-like, winged mericarps  [@schmeil_flora_2024] - the two (sometimes three) samaras.
+All three maple species in this study are *incompletely monoecious*; the flowers are hermaphroditic or functionally unisexual, while rudiments of the opposite sex are usually present [@schmeil_flora_2024].
+
+### *\acs{A} campestre* (field maple)
+*\acs{A} campestre* occurs in dry to moist deciduous forests, riparian forests, and shrublands [@schmeil_flora_2024]. It presents as shrub or tree, blossoms in May, is 2-15 (sometimes up to 20) m high [@schmeil_flora_2024].
+
+### *\acs{A} platanoides* (Norway maple)
+*\acs{A} platanoides* occurs in mixed deciduous forests, but in some areas it is only naturalized and is commonly used as park or street tree [@schmeil_flora_2024]. It presents as tree, blossoms April to May, usually up to 20 (sometimes up to 35) m high [@schmeil_flora_2024].
+
+### *\acs{A} pseudoplatanus* (sycamore)
+*\acs{A} pseudoplatanus* occurs in gorge forests and mountain forests, but in some areas it is only naturalized and is used as forest, park, or street tree [@schmeil_flora_2024]. It presents as tree, blossoms April to May, usually up to 25 (sometimes up to 30) m high [@schmeil_flora_2024].
 
 ## Tensile triangles after Mattheck
 
