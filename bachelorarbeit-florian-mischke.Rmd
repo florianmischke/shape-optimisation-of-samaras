@@ -54,7 +54,7 @@ source("inc/functions.R")
 \vspace*{4\baselineskip}
 {\Huge Topology optimisation in samaras:\\ using maple species as an example} \\
 \vspace*{1\baselineskip}
-{\large Topologieoptimierung von Samaras (Flügelnussfrüchten) am Beispiel von Ahornarten} \\
+{\large Topologieoptimierung bei Samaras (Flügelnussfrüchten) am Beispiel von Ahornarten} \\
 \vspace*{2\baselineskip}
 von \\
 \vspace*{1\baselineskip}
