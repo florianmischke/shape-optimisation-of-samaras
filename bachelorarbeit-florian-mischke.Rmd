@@ -164,7 +164,7 @@ When looking at samaras flying or rather falling while autorotating thus slowing
 
 Figure \ref{fig:Ezra_et_al__tipuana_tipu} shows what samaras consist of, using *Tipuana tipu* (not a species of maple) as an example.\
 
-There has already been done a lot of work on this. Liu et al designed an abstracted rectangular artificial samara, which they call *maple-seed_inspired (MSI) rotochute*, claiming it had better efficacy than a natural maple seed (figure \ref{fig:Liu_et_al__msi_rotochute}). The maple samara's leading edge was replaced by a counterweight, the seed (or *root* as seen in figure \ref{fig:Liu_et_al__msi_rotochute}) by the *payload*.
+There has already been done a lot of work on this. Liu et al designed an abstracted rectangular artificial samara, which they call *maple-seed-inspired (MSI) rotochute*, claiming it had better efficacy than a natural maple seed (figure \ref{fig:Liu_et_al__msi_rotochute}). The maple samara's leading edge was replaced by a counterweight, the seed (or *root* as seen in figure \ref{fig:Liu_et_al__msi_rotochute}) by the *payload*.
 
 ```{=latex}
 \end{minipage}
