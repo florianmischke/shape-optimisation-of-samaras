@@ -106,15 +106,19 @@ geboren am \\
 
 # List of acronyms {.unnumbered}
 
-\begin{acronym}
-    \acro{l}[L.]{Carl Linnaeus, also known as Carl von Linné}
+\begin{acronym} 
+    \setlength{\parskip}{0ex}
+    \setlength{\itemsep}{0ex}
     \acro{A}[A.]{Acer, scientific name of Maple}
+    \acro{eg}[e.g.]{abbreviation for exempli gratia, a Latin phrase meaning "for example"}
     \acro{engl}[engl.]{English}
     \acro{ger}[ger.]{German}
-    \acro{eg}[e.g.]{abbreviation for exempli gratia, a Latin phrase meaning "for example"}
+    \acro{l}[L.]{Carl Linnaeus, also known as Carl von Linné}
+    \acro{le}[LE]{leading edge}
     \acro{lev}[LEV]{leading-edge vortex}
     \acroplural{lev}[LEV]{leading-edge vortices}
     \acro{vdi}[VDI]{Verein Deutscher Ingenieure e.V. - The Association of German Engineers e.V.}
+    \acro{te}[TE]{trailing edge}
 \end{acronym}
 
 # Abstract
