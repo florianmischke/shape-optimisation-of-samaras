@@ -180,14 +180,14 @@ Samara-bearing trees and shrubs depend on wind to succesfully disperse their see
 
 Three maple species of the family Sapindaceae are considered to be native in Germany: *Acer campestre* (\acs{engl} Field maple, \acs{ger} Feld-Ahorn), *\acs{A} platanoides* (\acs{engl} Norway maple, \acs{ger} Spitz-Ahorn) and *\acs{A} pseudoplatanus* (\acs{engl} sycamore, \acs{ger} Berg-Ahorn) [@schmeil_flora_2024; @roloff_enzyklopaholzgewachse_2014].
 
-```{r, echo=FALSE, out.width="30%", fig.align = "center", fig.show='hold', fig.cap="\\label{fig:leaves_maple_species}Leaves of native maple species in Germany. Acer campestre (left), A. platanoides (middle), A. pseudoplatanus (right)."}
+```{r, echo=FALSE, out.width="30%", fig.align = "center", fig.show='hold', fig.cap="\\label{fig:leaves_maple_species}Leaves of native maple species in Germany. (A) \\textit{A. campestre}, (B) \\textit{A. platanoides}, (C) \\textit{A. pseudoplatanus}."}
 knitr::include_graphics(
   c("img/introduction/leaf_a_campestre.png",
     "img/introduction/leaf_a_platanoides.png",
     "img/introduction/leaf_a_pseudoplatanus.png")
 )
 ```
-\vspace{-2em}Image source: [@roloff_enzyklopaholzgewachse_2014]
+\vspace{-2em}Images modified from: [@roloff_enzyklopaholzgewachse_2014]
 
 ## Tensile triangles after Mattheck
 
