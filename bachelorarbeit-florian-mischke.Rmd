@@ -18,7 +18,7 @@ editor_options:
 link-citations: true
 linkcolor: Cerulean
 urlcolor: Cerulean
-citecolor: Cerulean
+citecolor: black
 header-includes:
   - \usepackage[printonlyused,nohyperlinks]{acronym}
   - \usepackage{titlesec}
