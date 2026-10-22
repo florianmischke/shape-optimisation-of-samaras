@@ -218,7 +218,7 @@ Prof. Dr. Claus Mattheck found out that a significant number of biological struc
 "For every Bezier curve, the control points are uniquely defined" [@baydas_defining_2019]
 "a Bezier curve is established by the control points. When the control points are given, using the Bernstein polynomial and De Castaljeu algorithm we can write the Bezier curve" [@baydas_defining_2019]
 
-```{r basic_bezier, echo=FALSE, out.width="100%", fig.align="left", fig.cap="Simple bezier curve in GeoGebra. Source: geogebra.org"}
+```{r basic_bezier, echo=FALSE, out.width="100%", fig.align="left", fig.cap="Simple cubic bezier curve with four control points in GeoGebra. Source: geogebra.org"}
 knitr::include_graphics("img/introduction/basic_bezier.png")
 ```
 
