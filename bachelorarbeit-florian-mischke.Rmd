@@ -175,7 +175,7 @@ There has already been done a lot of work on this. Liu et al designed an abstrac
 \end{minipage}
 ```
 
-```{r Liu_et_al__msi_rotochute, echo=FALSE, out.width="50%", fig.align = "center", fig.show='hold', fig.cap="Design process of an artificial samara-like flyer. (Original caption: 'Fabrication of the MSI rotochute.') (a) CT-Image of maple samara; (b) mass distribution of the three parts of a samara; (c) two level of abstraction of a maple samara; and (d) images of a constructed MSI rotochute."}
+```{r Liu_et_al__msi_rotochute, echo=FALSE, out.width="75%", fig.align = "center", fig.show='hold', fig.cap="Design process of an artificial samara-like flyer. (Original caption: 'Fabrication of the MSI rotochute.') (a) CT-Image of a maple samara; (b) mass distribution \"root\" (seed), \"counterweight\" (leading edge), and wing of a samara; (c) two level of abstraction of a maple samara; and (d) images of a constructed MSI rotochute."}
 knitr::include_graphics("img/introduction/Liu_et_al__msi_rotochute.png")
 ```
 \vspace{-2em}Source: [@liu_maple-seed-inspired_2026]
