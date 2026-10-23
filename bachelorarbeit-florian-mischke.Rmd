@@ -640,7 +640,7 @@ kable(kruskal_table,
 
 ### Trailing Edge
 
-Figure \ref{fig:P1116641_bezier} shows that the shape of a sample of *Acer platanoides* can be described by a Bézier curve. Figures \ref{fig:P1116588_bezier} and \ref{fig:P1116384_bezier} show the same for *Acer campestre* and *Acer pseudoplatanus*.
+Figures \ref{fig:bezier_pseudoplatanus_affinity} and \ref{fig:geogebra_bezier} shows that the shapes of all three maple species can be described by Bézier curves.
 
 #### Bézier curve simulation
 
