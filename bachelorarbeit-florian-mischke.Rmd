@@ -24,6 +24,7 @@ header-includes:
   - \usepackage{titlesec}
   - \titleformat{\paragraph}[block]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
   #- \usepackage{wrapfig}
+  - \usepackage{subcaption}
 ---
 
 ```{r setup, include=FALSE}
@@ -213,10 +214,10 @@ All three maple species in this study are *incompletely monoecious*; the flowers
 
 Prof. Dr. Claus Mattheck found out that a significant number of biological structures and other structures found in nature can be described using tensile triangles.
 
-## Bezier curves
+## Bézier curves
 
-"For every Bezier curve, the control points are uniquely defined" [@baydas_defining_2019]
-"a Bezier curve is established by the control points. When the control points are given, using the Bernstein polynomial and De Castaljeu algorithm we can write the Bezier curve" [@baydas_defining_2019]
+"For every Bézier curve, the control points are uniquely defined" [@baydas_defining_2019]
+"a Bézier curve is established by the control points. When the control points are given, using the Bernstein polynomial and De Castaljeu algorithm we can write the Bézier curve" [@baydas_defining_2019]
 
 ```{r basic_bezier, echo=FALSE, out.width="100%", fig.align="left", fig.cap="Simple cubic bezier curve with four control points in GeoGebra. Source: geogebra.org"}
 knitr::include_graphics("img/introduction/basic_bezier.png")
@@ -289,21 +290,33 @@ The results were processed in R code in a `.Rmd` file in RStudio by Posit Softwa
 knitr::include_graphics("img/mattheck/A platanoides Mattheck 1.png")
 ```
 
-### Bezier curves
+### Bézier curves
 
-The first bezier curve experiments were done in Geogebra (figures \ref{fig:P1116641_bezier},\ref{fig:P1116588_bezier},\ref{fig:P1116384_bezier}; [geogebra.org](https://www.geogebra.org/)). Since this web service can't handle large images and downscales them, cropped sections were used. As the sections were not the same size, Geogebra treated them differently. Therefore the results were not comparable. \par
-\indent From then on, Affinity suite ([affinity.studio](https://www.affinity.studio/)) was used for all measurements. Cubic Beziér curves were drawn manually with the Pen tool and fitted to the shape of the samara's trailing edge and leading edge respectively with the Node tool. The curve was exported as SVG and all SVG files handled by a custom Python script, resulting in a machine-readable CSV file, that was imported by R code.
+The first Bézier curve experiments were done in Geogebra (figure \ref{fig:geogebra_bezier}; [geogebra.org](https://www.geogebra.org/)). Since this web service can't handle large images and downscales them, cropped sections were used. As the sections were not the same size, Geogebra treated them differently. Therefore the results were not comparable. \par
+\indent From then on, Affinity suite ([affinity.studio](https://www.affinity.studio/)) was used for all measurements. Cubic Beziér curves were drawn manually with the Pen tool and fitted to the shape of the samara's trailing edge and leading edge respectively with the Node tool (figure \ref{fig:bezier_pseudoplatanus_affinity}). The curve was exported as SVG and all SVG files handled by a custom Python script, resulting in a machine-readable CSV file, that was imported by R code.
 
 ```{r P1116641_bezier, echo=FALSE, out.width="70%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer platanoides Source: own work"}
-knitr::include_graphics("img/bezier/P1116641.JPG-bezier.png")
+#knitr::include_graphics("img/bezier/P1116641.JPG-bezier.png")
 ```
 
 ```{r P1116588_bezier, echo=FALSE, out.width="70%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer campestre Source: own work"}
-knitr::include_graphics("img/bezier/P1116588.JPG-bezier.png")
+#knitr::include_graphics("img/bezier/P1116588.JPG-bezier.png")
 ```
 
 ```{r P1116384_bezier, echo=FALSE, out.width="70%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer pseudoplatanus. Source: own work"}
-knitr::include_graphics("img/bezier/P1116384.JPG-bezier.png")
+#nitr::include_graphics("img/bezier/P1116384.JPG-bezier.png")
+```
+
+```{r geogebra_bezier, echo=FALSE, out.width="32%", fig.align = "center", fig.show='hold', fig.cap="Bézier curves on samples of (A) \\textit{A. campestre}; (B) \\textit{A. platanoides}; and (C) \\textit{A. pseudoplatanus}; in GeoGebra. Source: own work"}
+knitr::include_graphics(
+  c("img/geogebra/bezier_campestre_geogebra_.png",
+    "img/geogebra/bezier_platanoides_geogebra_.png",
+    "img/geogebra/bezier_pseudoplatanus_geogebra_.png")
+)
+```
+
+```{r bezier_pseudoplatanus_affinity, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Sample of \\textit{A. pseudoplatanus} with drawn in Bézier curves in Affinity. Source: own work"}
+knitr::include_graphics("img/affinity/bezier_pseudoplatanus_affinity.png")
 ```
 
 ## Stained sections
@@ -626,7 +639,7 @@ kable(kruskal_table,
 
 Figure \ref{fig:P1116641_bezier} shows that the shape of a sample of *Acer platanoides* can be described by a Bézier curve. Figures \ref{fig:P1116588_bezier} and \ref{fig:P1116384_bezier} show the same for *Acer campestre* and *Acer pseudoplatanus*.
 
-#### Bezier curve simulation
+#### Bézier curve simulation
 
 ```{r}
 v_linetypes = c(
@@ -1200,7 +1213,7 @@ Horizontal distance between mean amplitudes: `r mean_upper_X - mean_lower_Y`
 
 Vertical distance between mean amplitudes: `r mean_upper_Y - mean_lower_Y`
 
-#### Bezier forumula
+#### Bézier forumula
 
 Formula \ref{basic_bezier}
 
