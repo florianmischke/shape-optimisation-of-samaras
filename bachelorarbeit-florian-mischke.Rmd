@@ -291,15 +291,18 @@ knitr::include_graphics("img/mattheck/A platanoides Mattheck 1.png")
 
 ### Bezier curves
 
-```{r P1116641_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer platanoides Source: own work"}
+The first bezier curve experiments were done in Geogebra (figures \ref{fig:P1116641_bezier},\ref{fig:P1116588_bezier},\ref{fig:P1116384_bezier}; [geogebra.org](https://www.geogebra.org/)). Since this web service can't handle large images and downscales them, cropped sections were used. As the sections were not the same size, Geogebra treated them differently. Therefore the results were not comparable. \par
+\indent From then on, Affinity suite ([affinity.studio](https://www.affinity.studio/)) was used for all measurements. Cubic Beziér curves were drawn manually with the Pen tool and fitted to the shape of the samara's trailing edge and leading edge respectively with the Node tool. The curve was exported as SVG and all SVG files handled by a custom Python script, resulting in a machine-readable CSV file, that was imported by R code.
+
+```{r P1116641_bezier, echo=FALSE, out.width="70%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer platanoides Source: own work"}
 knitr::include_graphics("img/bezier/P1116641.JPG-bezier.png")
 ```
 
-```{r P1116588_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer campestre Source: own work"}
+```{r P1116588_bezier, echo=FALSE, out.width="70%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer campestre Source: own work"}
 knitr::include_graphics("img/bezier/P1116588.JPG-bezier.png")
 ```
 
-```{r P1116384_bezier, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer pseudoplatanus. Source: own work"}
+```{r P1116384_bezier, echo=FALSE, out.width="70%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer pseudoplatanus. Source: own work"}
 knitr::include_graphics("img/bezier/P1116384.JPG-bezier.png")
 ```
 
