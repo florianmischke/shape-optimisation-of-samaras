@@ -118,6 +118,8 @@ geboren am \\
     \acro{le}[LE]{leading edge}
     \acro{lev}[LEV]{leading-edge vortex}
     \acroplural{lev}[LEV]{leading-edge vortices}
+    \acro{sd}[SD]{standard deviation}
+    \acro{se}[SE]{standard error}
     \acro{vdi}[VDI]{Verein Deutscher Ingenieure e.V. - The Association of German Engineers e.V.}
     \acro{te}[TE]{trailing edge}
 \end{acronym}
@@ -352,9 +354,10 @@ summary <- results |> summarise(
 colnames(summary) <- c("Mean Feret length", "Variance of Feret lengths", "SD of Feret lengths", "SE of Feret lengths",
                        "Mean max width", "Variance of max widths", "SD of max widths", "SE of max widths")
 
-kable(summary[1:4], format = "latex", booktabs = TRUE, caption = "Results of Feret lengths (mm), SD = standard deviation, SE = standard error", label = "feret") |> kable_styling(latex_options = "HOLD_position")
-kable(summary[5:8], format = "latex", booktabs = TRUE, caption = "Results of max widths (mm), SD = standard deviation, SE = standard error", label = "widths") |> kable_styling(latex_options = "HOLD_position")
+kable(summary[1:4], format = "latex", booktabs = TRUE, caption = "Results of Feret lengths (mm)", label = "feret") |> kable_styling(latex_options = "HOLD_position")
+kable(summary[5:8], format = "latex", booktabs = TRUE, caption = "Results of max widths (mm)", label = "widths") |> kable_styling(latex_options = "HOLD_position")
 ```
+\ac{sd}; \ac{se} 
 
 ```{r echo=FALSE}
 samples_images <- readxl::read_excel("data/samples_images.xlsx") 
