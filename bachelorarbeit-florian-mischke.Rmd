@@ -1705,6 +1705,9 @@ Probleme: 
 
 # Conclusion
 
+## Dual-use concerns
+While this research could support improving artificial samara-like flyers and thereby optimize the deployment and distribution of monitoring stations and sensors, it could in principle be adapted for military applications, \acs{eg} in development of drones or airdropped explosives. This thesis doesn't provide any instructions on construction, and the findings are presented at a level of abstraction intended to limit misuse while preserving scientific value. The residual risk is assessed low, since a slow rate of descent and a  non-self-propelled aircraft are unlikely to be of much use in warfare. The potential benefits outweigh the minor risks mentioned here. 
+
 ## Outlook
 
 More research needed:
