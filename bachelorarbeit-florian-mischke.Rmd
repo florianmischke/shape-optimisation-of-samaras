@@ -204,15 +204,27 @@ All *Acer* fruits are schizocarp: when ripe, the individual carpels separate alo
 All three maple species in this study are *incompletely monoecious*; the flowers are hermaphroditic or functionally unisexual, while rudiments of the opposite sex are usually present [@schmeil_flora_2024].
 
 ### *\acs{A} campestre* (field maple)
-*\acs{A} campestre* occurs in dry to moist deciduous forests, riparian forests, and shrublands [@schmeil_flora_2024]. It presents as shrub or tree, blossoms in May, is 2-15 (sometimes up to 20) m high [@schmeil_flora_2024].
+*\acs{A} campestre* occurs in dry to moist deciduous forests, riparian forests, and shrublands [@schmeil_flora_2024]. It presents as shrub or tree, blossoms in May, is 2-15 (sometimes up to 20) m high [@schmeil_flora_2024]. It can live to be between 150 and 200 years old, flowers start to develop at an age of about 25 years [@roloff_enzyklopaholzgewachse_2014]. 
 
-It can live to be between 150 and 200 years old [@roloff_enzyklopaholzgewachse_2014].
+Samaras ripen in late September/early October, get to be about 2.5 cm long,  face each other horizontally, and are usually covered with downy hairs, but are sometimes hairless [@roloff_enzyklopaholzgewachse_2014].
+
+With 5,500 seeds per kilogram, the seed weight falls between that of *\acs{A} platanoides* and *\acs{A} pseudoplatanus* [@roloff_enzyklopaholzgewachse_2014].
+The fruits therefore have a thousand-grain weight of about 182 g.
 
 ### *\acs{A} platanoides* (Norway maple)
-*\acs{A} platanoides* occurs in mixed deciduous forests, but in some areas it is only naturalized and is commonly used as park or street tree [@schmeil_flora_2024]. It presents as tree, blossoms April to May, usually up to 20 (sometimes up to 35) m high [@schmeil_flora_2024].
+*\acs{A} platanoides* occurs in mixed deciduous forests, but in some areas it is only naturalized and is commonly used as park or street tree [@schmeil_flora_2024]. It presents as tree, blossoms April to May, usually grows up to 20 (sometimes up to 35) m high [@schmeil_flora_2024], and gets to live for about 180 years [@roloff_enzyklopaholzgewachse_2014]. When growing in open areas, *\acs{A} platanoides* reaches sexual maturity as early as 10 to 15 years, but not until 25 to 30 years when growing in a stand [@roloff_enzyklopaholzgewachse_2014].
+
+*\acs{A} platanoides* bears fruit abundantly almost every year and the samaras ripen in fall [@roloff_enzyklopaholzgewachse_2014]. They get to be about 5 cm long, hang down in pairs (sometimes in groups of three or more), and the upper edges of the two wings form an obtuse angle, which is a distinguishing feature from *\acs{A} campestre* (horizontal) and *\acs{A} pseudoplatanus* (acute angle) [@roloff_enzyklopaholzgewachse_2014].
+
+The fruits have a thousand-grain weight (without wings) of 120 to 150 g [@roloff_enzyklopaholzgewachse_2014].
 
 ### *\acs{A} pseudoplatanus* (sycamore)
 *\acs{A} pseudoplatanus* occurs in gorge forests and mountain forests, but in some areas it is only naturalized and is used as forest, park, or street tree [@schmeil_flora_2024]. It presents as tree, blossoms April to May, usually up to 25 (sometimes up to 30) m high [@schmeil_flora_2024].
+In lowland areas, it can live to be between 150 years old, and 400-500 (up to 600) years in mountain areas, flowers start to develop at an age of about 30 years [@roloff_enzyklopaholzgewachse_2014]. 
+
+The inflorescence is racemose with 40.000–170.000 fruits per 40 year old tree [@roloff_enzyklopaholzgewachse_2014]. The samara's wings get to be 3-6 cm long and have a usually distinctly rounded trailing edge [@roloff_enzyklopaholzgewachse_2014]. The samaras are always connected in pairs on the tree, forming an acute to right angle with each other [@roloff_enzyklopaholzgewachse_2014].
+
+The fruits have a thousand-grain weight of 800 g, the average fruit weight is 128 mg and consists of 63% embryo, 22% pericarp, and 14% wing [@roloff_enzyklopaholzgewachse_2014].
 
 ## Tensile triangles after Mattheck
 
