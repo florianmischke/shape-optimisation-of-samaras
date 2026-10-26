@@ -114,6 +114,7 @@ geboren am \\
     \acro{eg}[e.g.]{abbreviation for exempli gratia, a Latin phrase meaning "for example"}
     \acro{engl}[engl.]{English}
     \acro{ger}[ger.]{German}
+    \acro{kit}[KIT]{Karlsruhe Institute of Technology}
     \acro{l}[L.]{Carl Linnaeus, also known as Carl von Linné}
     \acro{le}[LE]{leading edge}
     \acro{lev}[LEV]{leading-edge vortex}
@@ -228,7 +229,7 @@ The fruits have a thousand-grain weight of 800 g, the average fruit weight is 12
 
 ## Tensile triangles after Mattheck
 
-Prof. Dr. Claus Mattheck found out that a significant number of biological structures and other structures found in nature can be described using tensile triangles.
+Prof. Dr. Claus Mattheck, \ac{kit}, found out that a significant number of biological structures and other structures found in nature can be described using tensile triangles.
 
 ## Bézier curves
 
