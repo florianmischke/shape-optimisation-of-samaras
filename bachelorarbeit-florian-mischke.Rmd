@@ -261,7 +261,9 @@ Prof. Dr. Claus Mattheck, \ac{kit}, found out that shapes of a significant numbe
 
 Shapes following the tensile triangles curve have shown to reduce stress in notches [@mattheck_pauli_2018] and allow for efficient use of \enquote{building material} (\acs{eg} wood), and thereby confirming nature's optimzed architecture through evolution.\
 
-In short, the method is as follows: an isosceles right triangle (figure \ref{fig:tensile_triangles_tree}, points EGF) is drawn at the base, \acs{eg} at the intercept of trunk and ground level. Using corner point G and center of the hypotenuse H, a second isosceles triangle is drawn. Repeating with corner point I and center point J, a third and final triangle is drawn.
+### Uniaxial loading
+
+In short, the method for uniaxial loading is as follows: an isosceles right triangle (figure \ref{fig:tensile_triangles_tree}, points EGF) is drawn at the base, \acs{eg} at the intercept of trunk and ground level. Using corner point G and center of the hypotenuse H, a second isosceles triangle is drawn. Repeating with corner point I and center point J, a third and final triangle is drawn.
 The method is further explained in [Methods and Materials](#methods-and-materials).
 
 ```{r tensile_triangles_tree, echo=FALSE, out.width="100%", fig.align="center", fig.cap="Example of tensile triangles at a tree. Own work."}
@@ -271,6 +273,8 @@ knitr::include_graphics("img/introduction/tensile_triangles_tree.png")
 ```{=latex}
 \end{minipage}
 ```
+
+### Biaxial loading
 
 ## Bézier curves
 
