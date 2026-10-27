@@ -229,7 +229,43 @@ The fruits have a thousand-grain weight of 800 g, the average fruit weight is 12
 
 ## Tensile triangles after Mattheck
 
-Prof. Dr. Claus Mattheck, \ac{kit}, found out that a significant number of biological structures and other structures found in nature can be described using tensile triangles.
+```{=latex}
+\noindent
+\begin{minipage}[t]{0.55\textwidth}
+\vspace{-\baselineskip}
+```
+
+```{r mattheck_tensile_triangles, echo=FALSE, out.width="100%", fig.align="center", fig.cap="Examples of tensile triangles in nature. (A) Transition from the root system to the tree trunk; (B) Bone; (C) rock formation due to erosion, gravity and breakage; (D) ??; (E) contour of a stone; (F) shape of a fish's head"}
+knitr::include_graphics("img/introduction/mattheck_tensile_triangles.jpg")
+```
+
+```{=latex}
+\vspace{-\baselineskip}
+```
+
+Images modified from: [@mattheck_mattheck_nodate]
+
+```{=latex}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.55\textwidth}
+\vspace{0pt}
+```
+
+Prof. Dr. Claus Mattheck, \ac{kit}, found out that shapes of a significant number of biological structures and other structures found in nature can be described using so-called **tensile triangles**:\
+
+\begin{quote}
+\enquote{The tensile triangles curve appears to be a general design rule in nature with yet unknown limitations and potential.} 
+\end{quote}
+\hfill [&ndash; [@mattheck_pauli_2018]]{style="float:right"}\
+
+Shapes following the tensile triangles curve have shown to reduce stress in notches [@mattheck_pauli_2018] and allow for efficient use of \enquote{building material} (\acs{eg} wood), and thereby confirming nature's optimzed architecture through evolution.\
+
+The method is explained in [Methods and Materials](#methods-and-materials)
+
+```{=latex}
+\end{minipage}
+```
 
 ## Bézier curves
 
