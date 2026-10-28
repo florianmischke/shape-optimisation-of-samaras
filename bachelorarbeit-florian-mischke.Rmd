@@ -293,7 +293,7 @@ knitr::include_graphics("img/introduction/basic_bezier.png")
 
 ## Samples
 
-More than 200 mostly intact samaras of native maple species were gathered (\>50 per species/location), defective samaras have been discarded so that at least 50 intact samples could be used. The sample's species were identified based on the shape of the leaves (figure \ref{fig:leaves_maple_species}) of the closest tree and it was made sure that no other species of maple were near the gathering site. The four species and locations were as follows:
+More than 200 mostly intact samaras of native maple species were gathered (\>50 per species/location), defective samaras have been discarded so that at least 50 intact samples could be used. The sample's species were identified based on the shape of the leaves (figures \ref{fig:leaves_maple_species}, \ref{fig:maple_leaves_schmeil}), cross-referenced with the samara topology (figure!!) of the closest tree, and it was made sure that no other species of maple were near the gathering site. The four species and locations were as follows:
 
 1.  *Acer campestre* \acs{l}- Loki Schmidt Garten, Hamburg - what3words: [///kennels.slippery.hears](https://w3w.co/kennels.slippery.hears)
 2.  *Acer pseudoplatanus* \acs{l}- Stadtpark, Hamburg - what3words: [///engaging.survey.spout](https://w3w.co/engaging.survey.spout)
@@ -302,6 +302,11 @@ More than 200 mostly intact samaras of native maple species were gathered (\>50 
 
 The web service what3words was used as an easy way to keep track of locations.
 All samples were gathered between June 22nd and June 28th 2026.
+
+```{r maple_leaves_schmeil, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Leaves of native maple species in Germany.} (A) \\textit{A. campestre}, (B) \\textit{A. platanoides}, (C) \\textit{A. pseudoplatanus}."}
+knitr::include_graphics("img/methods/maple_leaves_schmeil.png")
+```
+\vspace{-2em}Image modified from: [@schmeil_flora_2024]
 
 ## Photos for measuring and geometry experiments
 
