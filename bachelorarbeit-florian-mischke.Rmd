@@ -281,12 +281,27 @@ knitr::include_graphics("img/introduction/tensile_triangles_tree.png")
 
 ## Bézier curves
 
-"For every Bézier curve, the control points are uniquely defined" [@baydas_defining_2019]
-"a Bézier curve is established by the control points. When the control points are given, using the Bernstein polynomial and De Castaljeu algorithm we can write the Bézier curve" [@baydas_defining_2019]
+**Beziér curves** are commonly used in computer graphics because of their easy implementation and editing capabilities, their main use is in vector-based (opposed to pixel-based) graphics [@chang_vectorization_1998]. 
+
+Every Bézier curve has a unique set of **control points** [@baydas_defining_2019].
+Using the *Bernstein polynomial* and *De Castaljeu algorithm*, with given control points, a Bézier curve can be drawn [@baydas_defining_2019].
+
+**Cubic** Bézier curves are established by four control points (figure \ref{fig:basic_bezier}). 
 
 ```{r basic_bezier, echo=FALSE, out.width="100%", fig.align="left", fig.cap="\\textbf{Simple cubic bezier curve} with four control points in GeoGebra. Source: geogebra.org"}
 knitr::include_graphics("img/introduction/basic_bezier.png")
 ```
+
+Beziér curves can be described by a formula, formula \ref{basic_bezier} gives a cubic Beziér curve with control points A, B, C, and D.
+
+$$
+\begin{equation}
+\mathbf{P}(t)=(1-t)^3A+3(1-t)^2tB+3(1-t)t^2C+t^3D,
+\qquad 0\leq t\leq1.\label{basic_bezier}\end{equation}
+$$
+
+To the author's knowledge, describing samaras by Beziér curves has not yet been attempted.
+Sun et al designed microfliers by drawing Beziér curves at pappi [@sun_adaptive_2025].
 
 ## Motivation: space exploration / landing technologies on Mars and other bodies
 
@@ -1305,14 +1320,6 @@ Horizontal distance between mean amplitudes: `r mean_upper_X - mean_lower_Y`
 Vertical distance between mean amplitudes: `r mean_upper_Y - mean_lower_Y`
 
 #### Bézier forumula
-
-Formula \ref{basic_bezier}
-
-$$
-\begin{equation}
-\mathbf{P}(t)=(1-t)^3A+3(1-t)^2tB+3(1-t)t^2C+t^3D,
-\qquad 0\leq t\leq1.\label{basic_bezier}\end{equation}
-$$
 
 ```{r}
 kable(mean_curve_points, format = "latex", booktabs = TRUE, caption = "Control points of mean bezier curve", label = "mean_curve_points") |> kable_styling(latex_options = "HOLD_position")
