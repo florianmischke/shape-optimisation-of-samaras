@@ -391,6 +391,10 @@ The results were processed in R code in a `.Rmd` file in RStudio by Posit Softwa
 
 ### Tensile triangles
 
+For experiments with tensile triangles on maple fruits, [uniaxial](#uniaxial-loading) and [biaxial](#biaxial-loading) methods were attempted in GeoGebra.
+In the uniaxial attempt, a straight line was drawn at the \ac{le} and a line perpendicular to that, touching the tip. Tensile triangles were then drawn into the right angle.
+In the biaxial attempt, straight lines were drawn at the \ac{le} and the \ac{te}, fitted as close as possible. Then, an Angle Bisector was used to draw three triangles each on either sides perpendiculars, the angle then adjusted to best fit the tensile triangles (figure \ref{fig:mattheck1}).
+
 ```{r mattheck1, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Mattheck method applied to wing tip of a sample of \\textit{A. platanoides}.} Source: own work"}
 knitr::include_graphics("img/mattheck/A platanoides Mattheck 1.png")
 ```
@@ -423,6 +427,8 @@ knitr::include_graphics(
 ```{r bezier_pseudoplatanus_affinity, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Sample of \\textit{A. pseudoplatanus} with drawn in Bézier curves in Affinity.} Source: own work"}
 knitr::include_graphics("img/affinity/bezier_pseudoplatanus_affinity.png")
 ```
+
+For calculating and drawing of Bezíer curves, R packages [bezier](https://cran.r-project.org/web/packages/bezier/index.html) and [tidyverse](https://tidyverse.org/) were used.
 
 ## Stained sections
 
