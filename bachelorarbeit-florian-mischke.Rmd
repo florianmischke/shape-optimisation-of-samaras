@@ -123,6 +123,7 @@ geboren am \\
     \acro{se}[SE]{standard error}
     \acro{vdi}[VDI]{Verein Deutscher Ingenieure e.V. - The Association of German Engineers e.V.}
     \acro{te}[TE]{trailing edge}
+    \acro{zarm}[ZARM]{Zentrum für angewandte Raumfahrttechnologie und Mikrogravitation - Center of Applied Space Technology and Microgravity}
 \end{acronym}
 
 # Abstract
@@ -287,7 +288,27 @@ knitr::include_graphics("img/introduction/tensile_triangles_tree.png")
 knitr::include_graphics("img/introduction/basic_bezier.png")
 ```
 
-## Space travel / sensor packages on Mars
+## Motivation: space exploration / landing technologies on Mars and other bodies
+
+By simulating autorotational descend on multiple celestial bodies, Riegler et al came to the conclusion that \enquote{autorotation is not well suited to land large payloads on [Mars]} [@riegler_comparison_2025]. The simulation used vehicle parameters of 1000kg and a 4 rotor blade design. Experiments done in a drop tower at [\acs{zarm}](https://www.zarm.uni-bremen.de/en/) (\acl{zarm}) showed that samaras get into stable autoration in a Mars-like atmosphere (to be published).
+
+**Body**          **Mass** [$kg$]   **Diameter** [$km$]   **Gravity** [$m/s^2$]
+---------  ----------------------  --------------------  ----------------------
+Earth        $5.97 \cdot 10^{24}$                12,756                     9.8
+Mars        $0.642 \cdot 10^{24}$                  6792                     3.7
+Venus        $4.87 \cdot 10^{24}$                12,104                     8.9
+Titan$^1$   $0.135 \cdot 10^{24}$               5,149.4                     1.4
+      
+: Celestial body parameters [@noauthor_planetary_nodate]; [1] [@riegler_comparison_2025].  {#tab:planetary_parameters .class key="value"}
+
+Table \ref{tab:planetary_parameters} compares planetary (and other celestial body) parameters, \ref{fig:atmospheric_density_comparison} compares atmospheric density among planets and Titan. These parameters greatly impact samara behavior.
+
+This thesis aims to improve artificial samara design and thereby suggesting design parameters for novel experiments on landing technologies, mainly for Mars exploration.
+
+```{r atmospheric_density_comparison, echo=FALSE, out.width="80%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Atmospheric Density Comparison} of the planets Earth, Mars, Neptun, Venus, and Titan, one of Saturn's moons."}
+knitr::include_graphics("img/introduction/atmospheric_density_comparison.png")
+```
+\vspace{-2em}Source: [@justus_atmospheric_2007]
 
 # Methods and materials
 
