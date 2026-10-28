@@ -204,6 +204,8 @@ knitr::include_graphics(
 All *Acer* fruits are schizocarp: when ripe, the individual carpels separate along their sutures and break down into single-seeded, nut-like, winged mericarps  [@schmeil_flora_2024] - the two (or, less commonly, three) samaras.
 All three maple species in this study are *incompletely monoecious*; the flowers are hermaphroditic or functionally unisexual, while rudiments of the opposite sex are usually present [@schmeil_flora_2024].
 
+Roloff et al. provide a detailed, in-depth description of the three maple species, among other trees. Here is an excerpt of the most valuable information for this thesis.
+
 ### *\acs{A} campestre* (field maple)
 *\acs{A} campestre* occurs in dry to moist deciduous forests, riparian forests, and shrublands [@schmeil_flora_2024]. It presents as shrub or tree, blossoms in May, is 2-15 (sometimes up to 20) m high [@schmeil_flora_2024]. It can live to be between 150 and 200 years old, flowers start to develop at an age of about 25 years [@roloff_enzyklopaholzgewachse_2014]. 
 
@@ -235,7 +237,7 @@ The fruits have a thousand-grain weight of 800 g, the average fruit weight is 12
 \vspace{-\baselineskip}
 ```
 
-```{r mattheck_tensile_triangles, echo=FALSE, out.width="100%", fig.align="center", fig.cap="Examples of tensile triangles in nature. (A) Transition from the root system to the tree trunk; (B) Bone; (C) rock formation due to erosion, gravity and breakage; (D) ??; (E) contour of a stone; (F) shape of a fish's head"}
+```{r mattheck_tensile_triangles, echo=FALSE, out.width="100%", fig.align="center", fig.cap="Examples of tensile triangles in nature. (A) Transition from the root system to the tree trunk; (B) Bone; (C) rock formation due to erosion, gravity and breakage; (D) earth pyramids; (E) contour of a stone; (F) shape of a fish's head"}
 knitr::include_graphics("img/introduction/mattheck_tensile_triangles.jpg")
 ```
 
