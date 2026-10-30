@@ -119,6 +119,7 @@ geboren am \\
     \acro{le}[LE]{leading edge}
     \acro{lev}[LEV]{leading-edge vortex}
     \acroplural{lev}[LEV]{leading-edge vortices}
+    \acro{lib}[LIB]{Leibniz-Institut zur Analyse des Biodiversitätswandels - Leibniz Institute for the Analysis of Biodiversity Change}
     \acro{sd}[SD]{standard deviation}
     \acro{se}[SE]{standard error}
     \acro{vdi}[VDI]{Verein Deutscher Ingenieure e.V. - The Association of German Engineers e.V.}
@@ -1859,7 +1860,7 @@ I thank Olaf Polak for his help in the lab.
 Thanks go to Niklas Groth for his tip regarding FIJI macros. 
 Thank you, Lea, for drawing the most awesome and beautiful samaras. 
 Also thanks go to my friend Rebecca, who helped me gather maple samaras and ENTErtained (inside joke for you) me through the process. 
-I also thank x and y from Leibniz Institute for showing me the 3D scanner and allowing me to scan one of my samaras.
+I also thank Dr. Karina Lucas Silva-Brandão and Jan-Henrik Pamin from \ac{lib} for showing me the 3D scanner and allowing me to scan one of my samaras.
 
 # Bibliography {.unnumbered}
 
