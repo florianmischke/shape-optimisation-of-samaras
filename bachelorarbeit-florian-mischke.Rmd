@@ -329,7 +329,7 @@ Titan$^1$   $0.135 \cdot 10^{24}$               5,149.4                     1.4
       
 : Celestial body parameters [@noauthor_planetary_nodate]; [1] [@riegler_comparison_2025].  {#tab:planetary_parameters .class key="value"}
 
-Table \ref{tab:planetary_parameters} compares planetary (and other celestial body) parameters, \ref{fig:atmospheric_density_comparison} compares atmospheric density among planets and Titan. These parameters greatly impact samara behavior.
+Table \ref{tab:planetary_parameters} compares planetary (and other celestial body) parameters, figure \ref{fig:atmospheric_density_comparison} compares atmospheric density among planets and Titan. These parameters greatly impact samara behavior.
 
 This thesis aims to improve artificial samara design and thereby suggesting design parameters for novel experiments on landing technologies, mainly for Mars exploration.
 
