@@ -269,7 +269,7 @@ Prof. Dr. Claus Mattheck, \ac{kit}, found out that shapes of a significant numbe
 \end{quote}
 \hfill [&ndash; [@mattheck_pauli_2018]]{style="float:right"}\
 
-Shapes following the tensile triangles curve have shown to reduce stress in notches [@mattheck_pauli_2018] and allow for efficient use of \enquote{building material} (\acs{eg} wood), and thereby confirming nature's optimzed architecture through evolution.\
+Shapes following the tensile triangles curve have shown to reduce stress in notches [@mattheck_pauli_2018] and allow for efficient use of \enquote{building material} (\acs{eg} wood), and thereby confirming nature's optimized architecture through evolution.\
 
 ### Uniaxial loading
 
