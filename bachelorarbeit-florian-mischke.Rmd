@@ -218,7 +218,7 @@ The fruits therefore have a thousand-grain weight of about 182 g.
 ### *\acs{A} platanoides* (Norway maple)
 *\acs{A} platanoides* occurs in mixed deciduous forests, but in some areas it is only naturalized and is commonly used as park or street tree [@schmeil_flora_2024]. It presents as tree, blossoms April to May, usually grows up to 20 (sometimes up to 35) m high [@schmeil_flora_2024], and gets to live for about 180 years [@roloff_enzyklopaholzgewachse_2014]. When growing in open areas, *\acs{A} platanoides* reaches sexual maturity as early as 10 to 15 years, but not until 25 to 30 years when growing in a stand [@roloff_enzyklopaholzgewachse_2014].
 
-*\acs{A} platanoides* bears fruit abundantly almost every year and the samaras ripen in fall [@roloff_enzyklopaholzgewachse_2014]. They get to be about 5 cm long, hang down in pairs (sometimes in groups of three or more), and the upper edges of the two wings form an obtuse angle, which is a distinguishing feature from *\acs{A} campestre* (horizontal) and *\acs{A} pseudoplatanus* (acute angle) [@roloff_enzyklopaholzgewachse_2014].
+*\acs{A} platanoides* bears fruit abundantly almost every year and the samaras ripen in fall [@roloff_enzyklopaholzgewachse_2014]. They get to be about 5 cm long, hang down in pairs (sometimes in groups of three or more), and the upper edges of the two wings form an obtuse angle, which is a distinguishing feature from *\acs{A} campestre* (horizontal) and *\acs{A} pseudoplatanus* (acute angle), as seen in figure \ref{fig:maple_samaras_lea} [@roloff_enzyklopaholzgewachse_2014].
 
 The fruits have a thousand-grain weight (without wings) of 120 to 150 g [@roloff_enzyklopaholzgewachse_2014].
 
@@ -229,6 +229,13 @@ In lowland areas, it can live to be between 150 years old, and 400-500 (up to 60
 The inflorescence is racemose with 40.000–170.000 fruits per 40 year old tree [@roloff_enzyklopaholzgewachse_2014]. The samara's wings get to be 3-6 cm long and have a usually distinctly rounded trailing edge [@roloff_enzyklopaholzgewachse_2014]. The samaras are always connected in pairs on the tree, forming an acute to right angle with each other [@roloff_enzyklopaholzgewachse_2014].
 
 The fruits have a thousand-grain weight of 800 g, the average fruit weight is 128 mg and consists of 63% embryo, 22% pericarp, and 14% wing [@roloff_enzyklopaholzgewachse_2014].
+
+```{r maple_samaras_lea, echo=FALSE, out.width="70%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Samaras of native maple species in Germany.} (A) \\textit{A. campestre}, (B) \\textit{A. platanoides}, (C) \\textit{A. pseudoplatanus}."}
+knitr::include_graphics(
+  "img/introduction/maple_samaras_lea.png"
+)
+```
+\vspace{-2em}Drawing by Lea von Soosten, based on photos by: [@noauthor_baumkunde-_nodate]
 
 ## Tensile triangles after Mattheck
 
@@ -329,7 +336,7 @@ knitr::include_graphics("img/introduction/atmospheric_density_comparison.png")
 
 ## Samples
 
-More than 200 mostly intact samaras of native maple species were gathered (\>50 per species/location), defective samaras have been discarded so that at least 50 intact samples could be used. The sample's species were identified based on the shape of the leaves (figures \ref{fig:leaves_maple_species}, \ref{fig:maple_leaves_schmeil}), cross-referenced with the samara topology (figure!!) of the closest tree, and it was made sure that no other species of maple were near the gathering site. The four species and locations were as follows:
+More than 200 mostly intact samaras of native maple species were gathered (\>50 per species/location), defective samaras have been discarded so that at least 50 intact samples could be used. The sample's species were identified based on the shape of the leaves (figures \ref{fig:leaves_maple_species}, \ref{fig:maple_leaves_schmeil}), cross-referenced with the samara topology (figure \ref{fig:maple_samaras_lea}) of the closest tree, and it was made sure that no other species of maple were near the gathering site. The four species and locations were as follows:
 
 1.  *Acer campestre* \acs{l}- Loki Schmidt Garten, Hamburg - what3words: [///kennels.slippery.hears](https://w3w.co/kennels.slippery.hears)
 2.  *Acer pseudoplatanus* \acs{l}- Stadtpark, Hamburg - what3words: [///engaging.survey.spout](https://w3w.co/engaging.survey.spout)
