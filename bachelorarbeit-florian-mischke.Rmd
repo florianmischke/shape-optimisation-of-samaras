@@ -286,6 +286,12 @@ knitr::include_graphics("img/introduction/tensile_triangles_tree.png")
 
 ### Biaxial loading
 
+```{r tensile_triangles_prickle, echo=FALSE, out.width="100%", fig.align="center", fig.cap="\\textbf{Example of tensile triangles, biaxial loading method on a prickle of \\textit{Rosa} sp.} Own work."}
+knitr::include_graphics("img/introduction/tensile_triangles_prickle.png")
+```
+
+The method of tensile triangles on biaxial loading (figure \ref{fig:tensile_triangles_prickle}) requires lines drawn (thick black lines) at the structure to be examined, perpendicular lines (thin black lines), and an angle bisector (dashed line) passing the intersection of the perpendiculars. In case of symmetric forces, the bisected angles are equal. In an asymmetric case, the angles differ from another. Then tensile triangles are drawn as described above in the uniaxial loading method, but on either side of the angle bisector.
+
 ## Bézier curves
 
 **Beziér curves** are commonly used in computer graphics because of their easy implementation and editing capabilities, their main use is in vector-based (opposed to pixel-based) graphics [@chang_vectorization_1998]. 
