@@ -462,25 +462,7 @@ results <- results |> mutate(
 
 #str(results)
 #summary(results)
-
-summary <- results |> summarise(
-  'mean_feret_mm' = mean(FeretLength_mm),
-  'var_feret_mm' = var(FeretLength_mm), # variance
-  'sd_feret_mm' = sd(FeretLength_mm), # standard deviation
-  'se_feret_mm' = fm_se(FeretLength_mm), # standard error
-  'mean_width_mm' = mean(maxWidth_mm),
-  'var_width_mm' = var(maxWidth_mm), # variance
-  'sd_width_mm' = sd(maxWidth_mm), # standard deviation
-  'se_width_mm' = fm_se(maxWidth_mm) # standard error
-)
-
-colnames(summary) <- c("Mean Feret length", "Variance of Feret lengths", "SD of Feret lengths", "SE of Feret lengths",
-                       "Mean max width", "Variance of max widths", "SD of max widths", "SE of max widths")
-
-kable(summary[1:4], format = "latex", booktabs = TRUE, caption = "Results of Feret lengths (mm)", label = "feret") |> kable_styling(latex_options = "HOLD_position")
-kable(summary[5:8], format = "latex", booktabs = TRUE, caption = "Results of max widths (mm)", label = "widths") |> kable_styling(latex_options = "HOLD_position")
 ```
-\ac{sd}; \ac{se} 
 
 ```{r echo=FALSE}
 samples_images <- readxl::read_excel("data/samples_images.xlsx") 
@@ -511,6 +493,101 @@ summary_detailed <- my_data |> group_by(Species, Location) |> drop_na() |> summa
   .groups = "drop"
 )
 ```
+
+```{r feret_width_three_acer_species, fig.cap="\\label{fig:feret_width_three_acer_species_label}Feret lengths and maximum widths of three Acer species."}
+n_species <- my_data |>
+  group_by(Species) |>
+  summarise(n = n(), .groups = "drop")
+
+my_data_longer |> ggplot(
+  mapping = aes(
+    x = Species,
+    y = value,
+    color = factor(unit_mm, labels = c("Feret length", "maximum width"))
+  )
+) + geom_boxplot(na.rm=TRUE) +
+  #ggtitle("Feret lengths and maximum widths of three Acer species.") +
+  labs(x = "Species", y = "[mm]", color = "") +
+  scale_x_discrete(
+    labels = function(x) {
+      paste0(x, "\n(n = ", n_species$n[match(x, n_species$Species)], ")")
+    }
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+```
+
+```{r feret_width_two_platanoides_samples, fig.cap="\\label{fig:feret_width_two_platanoides_samples_label}Feret lengths and maximum widths of two samples of Acer platanoides."}
+my_data_longer |> filter(Species == "Acer platanoides") |> ggplot(
+  mapping = aes(
+    x = label,
+    y = value,
+    color = factor(unit_mm, labels = c("Feret length", "maximum width"))
+  )
+) + geom_boxplot(na.rm=TRUE) +
+  theme_minimal() +
+  #ggtitle("Feret lengths and maximum widths of two samples of Acer platanoides.") +
+  labs(x = "Location", y = "[mm]", color = "")
+```
+
+```{r feret_width_four_acer_samples, fig.cap="\\label{fig:feret_width_four_acer_samples_label}Feret lengths and maximum widths of four samples of Acer species."}
+my_data_longer |> ggplot(
+  mapping = aes(
+    x = label,
+    y = value,
+    color = factor(unit_mm, labels = c("Feret length", "maximum width"))
+  )
+) + geom_boxplot(na.rm=TRUE) +
+  #ggtitle("Feret lengths and maximum widths of four samples of Acer species.") +
+  labs(x = "Species and Location", y = "[mm]", color = "") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+```
+
+## Length/width ratios
+
+```{r ratios_boxplot, fig.cap="\\label{fig:ratios_boxplot_label}Length/width ratios of four samples of Acer species"}
+my_data |> ggplot(
+  mapping = aes(
+    x = label,
+    y = ratio,
+  )
+) + geom_boxplot(na.rm=TRUE) +
+  #ggtitle("Length/width ratios of four samples of Acer species") +
+  labs(x = "Species and Location", y = "Ratio", color = "") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+```
+
+```{r ratios_hist, fig.cap="\\label{fig:ratios_hist_label}Length/width ratios of four samples of Acer species"}
+my_data |> ggplot(
+  mapping = aes(
+    x = ratio
+  )
+) + geom_histogram(bins=50,na.rm = TRUE) +
+  facet_wrap(~label) +
+  theme_minimal()
+```
+
+```{r echo=FALSE}
+summary <- results |> summarise(
+  'mean_feret_mm' = mean(FeretLength_mm),
+  'var_feret_mm' = var(FeretLength_mm), # variance
+  'sd_feret_mm' = sd(FeretLength_mm), # standard deviation
+  'se_feret_mm' = fm_se(FeretLength_mm), # standard error
+  'mean_width_mm' = mean(maxWidth_mm),
+  'var_width_mm' = var(maxWidth_mm), # variance
+  'sd_width_mm' = sd(maxWidth_mm), # standard deviation
+  'se_width_mm' = fm_se(maxWidth_mm) # standard error
+)
+
+colnames(summary) <- c("Mean Feret length", "Variance of Feret lengths", "SD of Feret lengths", "SE of Feret lengths",
+                       "Mean max width", "Variance of max widths", "SD of max widths", "SE of max widths")
+
+kable(summary[1:4], format = "latex", booktabs = TRUE, caption = "Results of Feret lengths (mm)", label = "feret") |> kable_styling(latex_options = "HOLD_position")
+kable(summary[5:8], format = "latex", booktabs = TRUE, caption = "Results of max widths (mm)", label = "widths") |> kable_styling(latex_options = "HOLD_position")
+```
+\ac{sd}; \ac{se} 
 
 ```{r echo=FALSE}
 
@@ -587,81 +664,6 @@ kbl(
     full_width = FALSE,
     font_size = 9
   )
-```
-
-```{r feret_width_three_acer_species, fig.cap="\\label{fig:feret_width_three_acer_species_label}Feret lengths and maximum widths of three Acer species."}
-n_species <- my_data |>
-  group_by(Species) |>
-  summarise(n = n(), .groups = "drop")
-
-my_data_longer |> ggplot(
-  mapping = aes(
-    x = Species,
-    y = value,
-    color = factor(unit_mm, labels = c("Feret length", "maximum width"))
-  )
-) + geom_boxplot(na.rm=TRUE) +
-  #ggtitle("Feret lengths and maximum widths of three Acer species.") +
-  labs(x = "Species", y = "[mm]", color = "") +
-  scale_x_discrete(
-    labels = function(x) {
-      paste0(x, "\n(n = ", n_species$n[match(x, n_species$Species)], ")")
-    }
-  ) +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
-```
-
-```{r feret_width_two_platanoides_samples, fig.cap="\\label{fig:feret_width_two_platanoides_samples_label}Feret lengths and maximum widths of two samples of Acer platanoides."}
-my_data_longer |> filter(Species == "Acer platanoides") |> ggplot(
-  mapping = aes(
-    x = label,
-    y = value,
-    color = factor(unit_mm, labels = c("Feret length", "maximum width"))
-  )
-) + geom_boxplot(na.rm=TRUE) +
-  theme_minimal() +
-  #ggtitle("Feret lengths and maximum widths of two samples of Acer platanoides.") +
-  labs(x = "Location", y = "[mm]", color = "")
-```
-
-```{r feret_width_four_acer_samples, fig.cap="\\label{fig:feret_width_four_acer_samples_label}Feret lengths and maximum widths of four samples of Acer species."}
-my_data_longer |> ggplot(
-  mapping = aes(
-    x = label,
-    y = value,
-    color = factor(unit_mm, labels = c("Feret length", "maximum width"))
-  )
-) + geom_boxplot(na.rm=TRUE) +
-  #ggtitle("Feret lengths and maximum widths of four samples of Acer species.") +
-  labs(x = "Species and Location", y = "[mm]", color = "") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
-```
-
-## Length/width ratios
-
-```{r ratios_boxplot, fig.cap="\\label{fig:ratios_boxplot_label}Length/width ratios of four samples of Acer species"}
-my_data |> ggplot(
-  mapping = aes(
-    x = label,
-    y = ratio,
-  )
-) + geom_boxplot(na.rm=TRUE) +
-  #ggtitle("Length/width ratios of four samples of Acer species") +
-  labs(x = "Species and Location", y = "Ratio", color = "") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
-```
-
-```{r ratios_hist, fig.cap="\\label{fig:ratios_hist_label}Length/width ratios of four samples of Acer species"}
-my_data |> ggplot(
-  mapping = aes(
-    x = ratio
-  )
-) + geom_histogram(bins=50,na.rm = TRUE) +
-  facet_wrap(~label) +
-  theme_minimal()
 ```
 
 ### Shapiro-Wilk test
