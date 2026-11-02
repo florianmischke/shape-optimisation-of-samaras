@@ -452,6 +452,10 @@ Two fresh samaras each of *Acer campestre* and *A. pseudoplatanus* were cons
 
 ## FIJI measurements
 
+Figures \ref{fig:feret_width_three_acer_species}, \ref{fig:feret_width_two_platanoides_samples}, \ref{fig:feret_width_four_acer_samples}, \ref{fig:ratios_boxplot}, and \ref{fig:ratios_hist} show distributions of length and width measurements done by FIJI, as well as length/width ratios of those measurements.
+
+Figure \ref{fig:feret_width_three_acer_species} compares length and width of three maple species, figure \ref{fig:feret_width_two_platanoides_samples} compares two samples of *\acs{A} platanoides*, figure \ref{fig:feret_width_four_acer_samples} shows these comparisons in one plot.
+
 ```{r echo=FALSE}
 results <- read.csv("data/2026-07-14--09-56--Results.csv")
 
@@ -544,31 +548,6 @@ my_data_longer |> ggplot(
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
 
-## Length/width ratios
-
-```{r ratios_boxplot, fig.cap="\\label{fig:ratios_boxplot_label}Length/width ratios of four samples of Acer species"}
-my_data |> ggplot(
-  mapping = aes(
-    x = label,
-    y = ratio,
-  )
-) + geom_boxplot(na.rm=TRUE) +
-  #ggtitle("Length/width ratios of four samples of Acer species") +
-  labs(x = "Species and Location", y = "Ratio", color = "") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
-```
-
-```{r ratios_hist, fig.cap="\\label{fig:ratios_hist_label}Length/width ratios of four samples of Acer species"}
-my_data |> ggplot(
-  mapping = aes(
-    x = ratio
-  )
-) + geom_histogram(bins=50,na.rm = TRUE) +
-  facet_wrap(~label) +
-  theme_minimal()
-```
-
 ```{r echo=FALSE}
 summary <- results |> summarise(
   'mean_feret_mm' = mean(FeretLength_mm),
@@ -580,16 +559,6 @@ summary <- results |> summarise(
   'sd_width_mm' = sd(maxWidth_mm), # standard deviation
   'se_width_mm' = fm_se(maxWidth_mm) # standard error
 )
-
-colnames(summary) <- c("Mean Feret length", "Variance of Feret lengths", "SD of Feret lengths", "SE of Feret lengths",
-                       "Mean max width", "Variance of max widths", "SD of max widths", "SE of max widths")
-
-kable(summary[1:4], format = "latex", booktabs = TRUE, caption = "Results of Feret lengths (mm)", label = "feret") |> kable_styling(latex_options = "HOLD_position")
-kable(summary[5:8], format = "latex", booktabs = TRUE, caption = "Results of max widths (mm)", label = "widths") |> kable_styling(latex_options = "HOLD_position")
-```
-\ac{sd}; \ac{se} 
-
-```{r echo=FALSE}
 
 t_summary_detailed <- t(summary_detailed)
 
@@ -619,7 +588,25 @@ tab <- as.data.frame(
 
 # Messwerte numerisch konvertieren
 tab[] <- lapply(tab, as.numeric)
+```
 
+Tables \ref{tab:feret} and \ref{tab:widths} show mean, variance, \ac{sd}, and \ac{se} of feret length and perpendicular width, respectively: The measured samaras have a mean feret length of `r round(summary$mean_feret_mm, 2)` ± `r round(summary$sd_feret_mm, 2)` mm and a mean width of `r round(summary$mean_width_mm, 2)` ± `r round(summary$sd_width_mm, 2)` mm.
+
+```{r echo=FALSE}
+colnames(summary) <- c("Mean Feret length", "Variance of Feret lengths", "SD of Feret lengths", "SE of Feret lengths",
+                       "Mean max width", "Variance of max widths", "SD of max widths", "SE of max widths")
+
+kable(summary[1:4], format = "latex", booktabs = TRUE, caption = "Results of Feret lengths (mm)", label = "feret") |> kable_styling(latex_options = "HOLD_position")
+kable(summary[5:8], format = "latex", booktabs = TRUE, caption = "Results of max widths (mm)", label = "widths") |> kable_styling(latex_options = "HOLD_position")
+```
+
+Table \ref{tab:summary_detailed} shows mean, variance, \ac{sd}, and \ac{se} broken down by sample:\
+Samaras of *\acs{A} campestre* have a average feret length of `r round(summary_detailed$mean_feret_mm[1], 2)` ± `r round(summary_detailed$sd_feret_mm[1], 2)` mm and a average width of `r round(summary_detailed$mean_width_mm[1], 2)` ± `r round(summary_detailed$sd_width_mm[1], 2)` mm. 
+Samaras of *\acs{A} platanoides* (`r summary_detailed$Location[2]`) have a average feret length of `r round(summary_detailed$mean_feret_mm[2], 2)` ± `r round(summary_detailed$sd_feret_mm[2], 2)` mm and a average width of `r round(summary_detailed$mean_width_mm[2], 2)` ± `r round(summary_detailed$sd_width_mm[2], 2)` mm. 
+Samaras of *\acs{A} platanoides* (`r summary_detailed$Location[3]`) have a average feret length of `r round(summary_detailed$mean_feret_mm[3], 2)` ± `r round(summary_detailed$sd_feret_mm[3], 2)` mm and a average width of `r round(summary_detailed$mean_width_mm[3], 2)` ± `r round(summary_detailed$sd_width_mm[3], 2)` mm. 
+Samaras of *\acs{A} pseudoplatanus* have a average feret length of `r round(summary_detailed$mean_feret_mm[4], 2)` ± `r round(summary_detailed$sd_feret_mm[4], 2)` mm and a average width of `r round(summary_detailed$mean_width_mm[4], 2)` ± `r round(summary_detailed$sd_width_mm[4], 2)` mm. 
+
+```{r echo=FALSE}
 # Zeilenbezeichnungen lesbar gestalten
 rownames(tab) <- c(
   "Mean Feret diameter (mm)",
@@ -651,7 +638,7 @@ kbl(
   booktabs = TRUE,
   linesep = "",
   caption = "Summary of Fiji measurements by species and location",
-  label = "tab:summary_detailed",
+  label = "summary_detailed",
   col.names = location,
   align = c("l", rep("c", ncol(tab))),
   digits = 3
@@ -664,6 +651,33 @@ kbl(
     full_width = FALSE,
     font_size = 9
   )
+```
+
+## Length/width ratios
+
+Figures \ref{fig:ratios_boxplot} and \ref{fig:ratios_hist} show the distributions of the length-to-width ratios as a box plot and a histogram, respectively.
+
+```{r ratios_boxplot, fig.cap="\\label{fig:ratios_boxplot_label}Length/width ratios of four samples of Acer species"}
+my_data |> ggplot(
+  mapping = aes(
+    x = label,
+    y = ratio,
+  )
+) + geom_boxplot(na.rm=TRUE) +
+  #ggtitle("Length/width ratios of four samples of Acer species") +
+  labs(x = "Species and Location", y = "Ratio", color = "") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+```
+
+```{r ratios_hist, fig.cap="\\label{fig:ratios_hist_label}Length/width ratios of four samples of Acer species"}
+my_data |> ggplot(
+  mapping = aes(
+    x = ratio
+  )
+) + geom_histogram(bins=50,na.rm = TRUE) +
+  facet_wrap(~label) +
+  theme_minimal()
 ```
 
 ### Shapiro-Wilk test
