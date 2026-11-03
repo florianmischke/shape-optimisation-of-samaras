@@ -1893,7 +1893,20 @@ plot_bezier_df_mean_curves +
 
 ## FIJI measurements
 
+WORK IN PROGRESS!! \
+Measurements give a first impression. Better data needed: independent, e.g. 10 fruits from 5 trees per species. 
+
 ## Length/width ratios
+
+WORK IN PROGRESS!! \
+ties in Kolmogorov-Smirnov test, so Shapiro-Wilk test was used
+ 
+Homogeneity of variance and normal distribution preferred.
+
+WORK IN PROGRESS!! \
+ANOVA should not be used because of heterogeneity of variance and no normal distributed samples. Kruskal-Wallis test used, ANOVA to compare
+
+nur eine Stichprobe normalverteilt
 
 ## Tensile triangles after Mattheck
 
