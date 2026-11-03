@@ -427,7 +427,7 @@ HA: Difference between at least two groups.
 
 ### Tensile triangles
 
-For experiments with tensile triangles on maple fruits, [uniaxial](#uniaxial-loading) and [biaxial](#biaxial-loading) methods were attempted in GeoGebra.
+For experiments with tensile triangles on maple fruits, photos of samples were selected randomly, then [uniaxial](#uniaxial-loading) and [biaxial](#biaxial-loading) methods were attempted in GeoGebra.
 In the uniaxial attempt, a straight line was drawn at the \ac{le} and a line perpendicular to that, touching the tip. Tensile triangles were then drawn into the right angle.
 In the biaxial attempt, straight lines were drawn at the \ac{le} and the \ac{te}, fitted as close as possible. Then, an Angle Bisector was used to draw three triangles each on either sides perpendiculars, the angle then adjusted to best fit the tensile triangles (figure \ref{fig:mattheck1}).
 
@@ -797,7 +797,9 @@ kable(kruskal_table,
   label = "kruskal") |> kable_styling(latex_options = "HOLD_position")
 ```
 
-## Topology Optimization after Mattheck
+## Tensile triangles after Mattheck
+
+First positive results in experiments with tensile triangles (figures \ref{fig:mattheck1} and !!!) could not be reproduced.
 
 ## Bézier curves
 
