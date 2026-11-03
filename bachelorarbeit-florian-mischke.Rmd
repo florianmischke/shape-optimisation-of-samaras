@@ -1861,6 +1861,7 @@ target_lower <- data.frame(
 )
 label_upper <- paste(round((target_upper$Y-mean_upper_Y)/px_per_mm, 1), " mm")
 label_lower <- paste(round((target_lower$Y-mean_lower_Y)/px_per_mm, 1), " mm")
+label_horizontal <- paste(round((mean_lower_X-mean_upper_X)/px_per_mm, 1), " mm")
 
 plot_bezier_df_mean_curves +
   annotate("point", x = mean_upper_X, y = mean_upper_Y) + 
@@ -1869,11 +1870,19 @@ plot_bezier_df_mean_curves +
   annotate("point", x = target_upper$X, y = target_upper$Y) +
   annotate("point", x = target_lower$X, y = target_lower$Y) +
   
+  # vertical distance
   geom_segment(aes(x = mean_upper_X, y = mean_upper_Y, xend = target_upper$X, yend = target_upper$Y), alpha = 0.5) +
   geom_segment(aes(x = mean_lower_X, y = mean_lower_Y, xend = target_lower$X, yend = target_lower$Y), alpha = 0.5) +
   
+  # horizontal distance
+  geom_segment(aes(x = mean_upper_X, y = (2*target_upper$Y+mean_upper_Y)/3, xend = mean_lower_X, yend = (2*target_upper$Y+mean_upper_Y)/3), alpha = 0.5) +
+  
+  # vertical distance
   annotate("text", x = mean_upper_X, y = (target_upper$Y+mean_upper_Y)/2, label = label_upper) +
-  annotate("text", x = mean_lower_X, y = (target_lower$Y+mean_lower_Y)/2, label = label_lower)
+  annotate("text", x = mean_lower_X, y = (target_lower$Y+mean_lower_Y)/2, label = label_lower) +
+  
+  # horizontal distance
+  annotate("text", x = (mean_lower_X+mean_upper_X)/2, y = (2*target_upper$Y+mean_upper_Y)/3, label = label_horizontal)
   
 ```
 
