@@ -1860,6 +1860,14 @@ plot_bezier_df_mean_curves +
 
 # Discussion
 
+## FIJI measurements
+
+## Length/width ratios
+
+## Tensile triangles after Mattheck
+
+## Bézier curves
+
 Probleme: 
 
 - beim Messen: Übergang zwischen Same und Flügel nicht immer gleich. Mal klar abgegrenzt, mal mit fließendem Übergang; Lösung: ganze Frucht ausmessen
