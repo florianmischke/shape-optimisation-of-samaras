@@ -1404,7 +1404,7 @@ Horizontal distance between mean amplitudes: `r mean_upper_X - mean_lower_Y`
 
 Vertical distance between mean amplitudes: `r mean_upper_Y - mean_lower_Y`
 
-#### Bézier forumula
+#### Bézier formula
 
 ```{r}
 kable(mean_curve_points, format = "latex", booktabs = TRUE, caption = "Control points of mean bezier curve", label = "mean_curve_points") |> kable_styling(latex_options = "HOLD_position")
