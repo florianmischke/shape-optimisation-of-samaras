@@ -25,7 +25,7 @@ header-includes:
   - \titleformat{\paragraph}[block]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
   #- \usepackage{wrapfig}
   - \usepackage{subcaption}
-  #- \usepackage[font=small,labelfont=bf]{caption}
+  - \usepackage[font=small]{caption}
 ---
 
 ```{r setup, include=FALSE}
@@ -163,7 +163,7 @@ knitr::include_graphics("img/introduction/Ezra_et_al__tipuana_tipu.png")
 \vspace{-\baselineskip}
 ```
 
-Source: [@ezra_load-bearing_2023]
+\small Source: [@ezra_load-bearing_2023]
 
 ```{=latex}
 \end{minipage}
@@ -185,7 +185,7 @@ There has already been done a lot of work on this. Liu et al designed an abstrac
 ```{r Liu_et_al__msi_rotochute, echo=FALSE, out.width="75%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Design process of an artificial samara-like flyer.} (Original caption: 'Fabrication of the MSI rotochute.') (a) CT-Image of a maple samara; (b) mass distribution \"root\" (seed), \"counterweight\" (leading edge), and wing of a samara; (c) two level of abstraction of a maple samara; and (d) images of a constructed MSI rotochute."}
 knitr::include_graphics("img/introduction/Liu_et_al__msi_rotochute.png")
 ```
-\vspace{-2em}Source: [@liu_maple-seed-inspired_2026]
+\vspace{-2em} \small Source: [@liu_maple-seed-inspired_2026]
 
 ## Leading-edge vortex (LEV)
 
@@ -202,7 +202,7 @@ knitr::include_graphics(
     "img/introduction/leaf_a_pseudoplatanus.png")
 )
 ```
-\vspace{-2em}Images modified from: [@roloff_enzyklopaholzgewachse_2014]
+\vspace{-2em} \small Images modified from: [@roloff_enzyklopaholzgewachse_2014]
 
 All *Acer* fruits are schizocarp: when ripe, the individual carpels separate along their sutures and break down into single-seeded, nut-like, winged mericarps  [@schmeil_flora_2024] - the two (or, less commonly, three) samaras.
 All three maple species in this study are *incompletely monoecious*; the flowers are hermaphroditic or functionally unisexual, while rudiments of the opposite sex are usually present [@schmeil_flora_2024].
@@ -237,7 +237,7 @@ knitr::include_graphics(
   "img/introduction/maple_samaras_lea.png"
 )
 ```
-\vspace{-2em}Drawing by Lea von Soosten, based on photos by: [@noauthor_baumkunde-_nodate]
+\vspace{-2em} \small Drawing by Lea von Soosten, based on photos by: [@noauthor_baumkunde-_nodate]
 
 ## Tensile triangles after Mattheck
 
@@ -255,7 +255,7 @@ knitr::include_graphics("img/introduction/mattheck_tensile_triangles.jpg")
 \vspace{-\baselineskip}
 ```
 
-Images modified from: [@mattheck_mattheck_nodate]
+\small Images modified from: [@mattheck_mattheck_nodate]
 
 ```{=latex}
 \end{minipage}
@@ -338,7 +338,7 @@ This thesis aims to improve artificial samara design and thereby suggesting desi
 ```{r atmospheric_density_comparison, echo=FALSE, out.width="80%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Atmospheric Density Comparison} of the planets Earth, Mars, Neptun, Venus, and Titan, one of Saturn's moons."}
 knitr::include_graphics("img/introduction/atmospheric_density_comparison.png")
 ```
-\vspace{-2em}Source: [@justus_atmospheric_2007]
+\vspace{-2em} \small Source: [@justus_atmospheric_2007]
 
 # Methods and materials
 
@@ -357,7 +357,7 @@ All samples were gathered between June 22nd and June 28th 2026.
 ```{r maple_leaves_schmeil, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Leaves of native maple species in Germany.} (A) \\textit{A. campestre}, (B) \\textit{A. platanoides}, (C) \\textit{A. pseudoplatanus}."}
 knitr::include_graphics("img/methods/maple_leaves_schmeil.png")
 ```
-\vspace{-2em}Image modified from: [@schmeil_flora_2024]
+\vspace{-2em} \small Image modified from: [@schmeil_flora_2024]
 
 ## Photos for measuring and geometry experiments
 
