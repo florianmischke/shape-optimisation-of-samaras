@@ -535,10 +535,6 @@ df_bezier_points |> ggplot(
   theme_minimal()
 ```
 
-## Stained sections
-
-Two fresh samaras each of *Acer campestre* and *A. pseudoplatanus* were conserved in 60% Ethanol.
-
 # Results
 
 ## FIJI measurements
