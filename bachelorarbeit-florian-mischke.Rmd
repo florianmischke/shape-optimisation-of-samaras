@@ -1882,7 +1882,7 @@ plot_bezier_df_mean_curves +
   annotate("text", x = mean_lower_X, y = (target_lower$Y+mean_lower_Y)/2, label = label_lower) +
   
   # horizontal distance
-  annotate("text", x = (mean_lower_X+mean_upper_X)/2, y = (2*target_upper$Y+mean_upper_Y)/3, label = label_horizontal)
+  annotate("text", x = (mean_lower_X+mean_upper_X)/2, y = (3*target_upper$Y+mean_upper_Y)/4, label = label_horizontal)
   
 ```
 
