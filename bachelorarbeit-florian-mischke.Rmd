@@ -705,9 +705,6 @@ my_data |> ggplot(
 
 ### Shapiro-Wilk test
 
-H0: sample comes from a normally distributed population.
-HA: no normal distribution.
-
 ```{r}
 shapiro_Acampestre <- shapiro.test(my_data$ratio[my_data$Species == "Acer campestre"])
 
@@ -723,7 +720,11 @@ shapiro_table <- data.frame(
   p = c(shapiro_Acampestre$p.value, shapiro_Aplatanoides_IPM$p.value, shapiro_Aplatanoides_Spannskamp$p.value, shapiro_Apseudoplatanus$p.value),
   normality = c("no, p < 0.001","no, p < 0.01", "yes, p > 0.5", "no, p < 0.01")
 )
+```
 
+The Shapiro-Wilk tests (table \ref{tab:shapiro}) show that of the four samples only *\acs{A} platanoides* (Spannskamp) comes from a normally distributed population (p $\approx$ `r round(shapiro_Aplatanoides_Spannskamp$p.value,3)`). For *\acs{A} campestre* (p < 0.001), *\acs{A} campestre* (p < 0.01), and *\acs{A} campestre* (p < 0.01) no normal distribution can be assumed.
+
+```{r}
 kable(shapiro_table,
   format = "latex",
   booktabs = TRUE,
@@ -731,15 +732,20 @@ kable(shapiro_table,
   label = "shapiro") |> kable_styling(latex_options = "HOLD_position")
 ```
 
+
 ### Levene test
 
-H0: homogeneity of variance.
-HA: at least one group with variance unequal to others.
-
-```{r}
+```{r echo=FALSE}
 my_data$sample <- as.factor(my_data$sample)
 levene_results <- car::leveneTest(ratio ~ sample, my_data)
 
+levene_results$`Pr(>F)` <- format.pval(levene_results$`Pr(>F)`, digits = 4, na.form="")
+levene_p <- levene_results$`Pr(>F)`[1]
+```
+
+The Levene test (table \ref{tab:levene}) shows that there is no homogeneity of variance of the groups (p `r levene_p`).
+
+```{r}
 #levene_table <- data.frame(
 #  c("Df", "F value", "Pr(>F)")
 #)
