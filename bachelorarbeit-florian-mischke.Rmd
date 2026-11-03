@@ -877,8 +877,6 @@ $$
 \label{bezier_dummy}\end{equation}
 $$
 
-Figure \ref{fig:bezier_curve_simulation}
-
 ```{r bezier_curve_simulation, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve simulation. Source: own work"}
 
 df_bezier_points |> ggplot(
@@ -902,6 +900,10 @@ data_curve_points_merged <- data_curve_points |> mutate(
 ), by = "key"
 )
 ```
+
+Figure \ref{fig:bezier_curve_simulation} shows 18 Bézier curves of samples of samaras (six per species) in one plot.
+Figure \ref{fig:bezier_curves_3species_raw} shows these curves with a common starting point for better comparison of lengths and amplitude.
+With common starting and end points, thus equal lengths, the samara's topologies can be compared (figure \ref{fig:bezier_curves_transformed}).
 
 ```{r bezier_curves_3species_raw, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve simulation of three Acer species, raw data - not adjusted to same origin. Source: own work"}
 bezier_df_unadjusted <- data_curve_points_merged |> 
