@@ -535,6 +535,8 @@ df_bezier_points |> ggplot(
   theme_minimal()
 ```
 
+Amplitudes of Bézier curves were calculated by using the first derivative: `slope = c(NA, diff(Y) / diff(X))` and `slope_change = c(NA, diff(sign(slope)))`.
+
 # Results
 
 ## FIJI measurements
@@ -1131,8 +1133,7 @@ bezier_df_transformed |> group_by(Species) |> mutate(
   )
 ```
 
-```{r bezier_curves_transformed_with_lines, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Horizontal lines with mean amplitudes (dotted), vertical lines with mean x values of amplitudes (dashed). Source: own work"}
-
+```{r echo=FALSE}
 bezier_extrema <- bezier_df_transformed |>
   group_by(FileName.x) |>
   arrange(X) |>
@@ -1158,7 +1159,14 @@ mean_upper_Y <- mean(bezier_extrema$Y_upper, na.rm = TRUE)
 
 vlines = c(mean_lower_X,mean_upper_X)
 hlines = c(mean_lower_Y,mean_upper_Y)
+```
 
+X- and Y-Coordinates of mean amplitudes have been calculated and drawn into a plot with transformed Bézier curves (figure \ref{fig:bezier_curves_transformed_with_lines}).
+
+First amplitude (maximum): X = `r mean_upper_X`; Y = `r mean_upper_Y`\
+Second amplitude (minimum): X = `r mean_lower_X`; Y = `r mean_lower_Y`\
+
+```{r bezier_curves_transformed_with_lines, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Horizontal lines with mean amplitudes (dotted), vertical lines with mean x values of amplitudes (dashed). Source: own work"}
 # Kurven plotten
 bezier_df_transformed |> group_by(Species) |> mutate(
   n = n_distinct(FileName.x),
@@ -1175,6 +1183,8 @@ bezier_df_transformed |> group_by(Species) |> mutate(
     values = v_linetypes
   )
 ```
+
+An average (mean) Bézier curve was calculated for all samples (figure \ref{fig:bezier_mean_curve}) and for each species individually (figure \ref{fig:bezier_mean_curves2}).
 
 ```{r bezier_mean_curve, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Mean curve (red) calculated by means of control points of transformed data. Source: own work"}
 mean_curve_points <- data_curve_points_transformed |> 
