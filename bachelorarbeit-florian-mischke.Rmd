@@ -714,15 +714,28 @@ shapiro_Aplatanoides_Spannskamp <- shapiro.test(my_data$ratio[my_data$Species ==
 
 shapiro_Apseudoplatanus <- shapiro.test(my_data$ratio[my_data$Species == "Acer pseudoplatanus"])
 
+shapiro_p <- c(shapiro_Acampestre$p.value, shapiro_Aplatanoides_IPM$p.value, shapiro_Aplatanoides_Spannskamp$p.value, shapiro_Apseudoplatanus$p.value)
+
+pretty_p <- ifelse(shapiro_p < 0.0001, "< 0.0001",
+             ifelse(shapiro_p < 0.001, "< 0.001",
+             ifelse(shapiro_p < 0.01, "< 0.01",
+             ifelse(shapiro_p < 0.05, "< 0.05", "> 0.05"))))
+
+pretty_p2 <- ifelse(shapiro_p < 0.0001, "no, p < 0.0001",
+             ifelse(shapiro_p < 0.001, "no, p < 0.001",
+             ifelse(shapiro_p < 0.01, "no, p < 0.01",
+             ifelse(shapiro_p < 0.05, "no, p < 0.05", "yes, p > 0.05"))))
+
 shapiro_table <- data.frame(
   Sample = c("Acer campestre", "Acer platanoides (IPM)", "Acer platanoides (Spannskamp)", "Acer pseudoplatanus"),
   Statistic = c(shapiro_Acampestre$statistic, shapiro_Aplatanoides_IPM$statistic, shapiro_Aplatanoides_Spannskamp$statistic, shapiro_Apseudoplatanus$statistic),
-  p = c(shapiro_Acampestre$p.value, shapiro_Aplatanoides_IPM$p.value, shapiro_Aplatanoides_Spannskamp$p.value, shapiro_Apseudoplatanus$p.value),
-  normality = c("no, p < 0.001","no, p < 0.01", "yes, p > 0.5", "no, p < 0.01")
+  p = shapiro_p,
+  #normality = c("no, p < 0.001","no, p < 0.01", "yes, p > 0.05", "no, p < 0.01"),
+  normality = pretty_p2
 )
 ```
 
-The Shapiro-Wilk tests (table \ref{tab:shapiro}) show that of the four samples only *\acs{A} platanoides* (Spannskamp) comes from a normally distributed population (p $\approx$ `r round(shapiro_Aplatanoides_Spannskamp$p.value,3)`). For *\acs{A} campestre* (p < 0.001), *\acs{A} campestre* (p < 0.01), and *\acs{A} campestre* (p < 0.01) no normal distribution can be assumed.
+The Shapiro-Wilk tests (table \ref{tab:shapiro}) show that of the four samples only *\acs{A} platanoides* (Spannskamp) comes from a normally distributed population (p $\approx$ `r round(shapiro_Aplatanoides_Spannskamp$p.value,3)`). For *\acs{A} campestre* (p `r pretty_p[1]`), *\acs{A} platanoides* (IPM, p `r pretty_p[2]`), and *\acs{A} pseudoplatanus* (p `r pretty_p[4]`) no normal distribution can be assumed.
 
 ```{r}
 kable(shapiro_table,
@@ -810,9 +823,9 @@ First positive results in experiments with tensile triangles (figures \ref{fig:m
 
 ## Bézier curves
 
-### Trailing Edge
+Figures \ref{fig:geogebra_bezier} and \ref{fig:bezier_pseudoplatanus_affinity} shows that the shapes of all three maple species can be described by Bézier curves.
 
-Figures \ref{fig:bezier_pseudoplatanus_affinity} and \ref{fig:geogebra_bezier} shows that the shapes of all three maple species can be described by Bézier curves.
+### Trailing Edge
 
 #### Bézier curve simulation
 
