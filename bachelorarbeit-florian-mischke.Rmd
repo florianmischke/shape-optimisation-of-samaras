@@ -25,6 +25,7 @@ header-includes:
   - \titleformat{\paragraph}[block]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
   #- \usepackage{wrapfig}
   - \usepackage{subcaption}
+  #- \usepackage[font=small,labelfont=bf]{caption}
 ---
 
 ```{r setup, include=FALSE}
