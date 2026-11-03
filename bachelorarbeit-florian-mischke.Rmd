@@ -1410,9 +1410,16 @@ Variance of minima: `r var(bezier_extrema$Y_lower)`
 
 #### Distances of mean amplitudes
 
-Horizontal distance between mean amplitudes: `r mean_upper_X - mean_lower_Y`
+```{r echo=FALSE}
+amplitude_distance_horizontal <- mean_upper_X - mean_lower_Y
+amplitude_distance_vertical <- mean_upper_Y - mean_lower_Y
+amplitude_distance_horizontal_mm <- amplitude_distance_horizontal / px_per_mm
+amplitude_distance_vertical_mm <- amplitude_distance_vertical / px_per_mm
+```
 
-Vertical distance between mean amplitudes: `r mean_upper_Y - mean_lower_Y`
+Horizontal distance between mean amplitudes: `r round(amplitude_distance_horizontal, 2)` = `r round(amplitude_distance_horizontal_mm, 2)` mm
+
+Vertical distance between mean amplitudes: `r round(amplitude_distance_vertical ,2)` = `r round(amplitude_distance_vertical_mm, 2)` mm
 
 #### Bézier formula
 
