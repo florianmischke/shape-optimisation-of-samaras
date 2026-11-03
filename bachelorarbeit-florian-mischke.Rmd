@@ -1440,33 +1440,13 @@ $$
 \label{mean_bezier}
 \end{equation}
 $$
-Because $A=\begin{pmatrix}0\\0\end{pmatrix}$, it can be omitted:
+
+Or in two terms (formulas \ref{mean_bezier_x} and \ref{mean_bezier_y}):
 
 $$
 \begin{align}
-\mathbf{P}(t) = 3(1-t)^2t
-\begin{pmatrix}
-`r v["B_X"]`\\`r v["B_Y"]`
-\end{pmatrix}
-+ 3(1-t)t^2
-\begin{pmatrix}
-`r v["C_X"]`\\`r v["C_Y"]`
-\end{pmatrix}
-+ t^3
-\begin{pmatrix}
-`r v["D_X"]`\\`r v["D_Y"]`
-\end{pmatrix}
-\label{mean_bezier_Aomitted}
-\end{align}
-$$
-
-Or in two terms:
-
-$$
-\begin{align}
-x(t)&=3(1-t)^2t(`r v["B_X"]`)+3(1-t)t^2(`r v["C_X"]`)+`r v["D_X"]`t^3 \\
-y(t)&=3(1-t)^2t(`r v["B_Y"]`)+3(1-t)t^2(`r v["C_Y"]`)
-\label{mean_bezier_xy}
+x(t)&=(1-t)^3(`r v["A_X"]`)+3(1-t)^2t(`r v["B_X"]`)+3(1-t)t^2(`r v["C_X"]`)+(`r v["D_X"]`)t^3 \label{mean_bezier_x}\\
+y(t)&=(1-t)^3(`r v["A_Y"]`)+3(1-t)^2t(`r v["B_Y"]`)+3(1-t)t^2(`r v["C_Y"]`)+(`r v["D_Y"]`)t^3 \label{mean_bezier_y}
 \end{align}
 $$
 
