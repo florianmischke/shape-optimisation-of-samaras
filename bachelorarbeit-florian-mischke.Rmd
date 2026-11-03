@@ -1825,7 +1825,7 @@ ggplot() +
 ### Both mean edges in one plot
 
 ```{r bezier_mean_curves_both_edges, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Plots of leading and trailing edge mean bezier curves. Source: own work"}
-plot_bezier_df_mean_curves <- ggplot() +
+plot_bezier_df_mean_curves_raw <- ggplot() +
   geom_path(data = mean_curve,
             aes(x = X, y = Y), color = "red", linewidth = 1) +
   geom_path(data = mean_curve_le,
@@ -1840,12 +1840,14 @@ plot_bezier_df_mean_curves <- ggplot() +
     # Add a second axis and specify its features
     sec.axis = sec_axis( transform = ~ (. - min(mean_curve$Y)) * mm_per_px, name="Width [mm]", breaks = seq(0,10, by = 2))
   ) +
-  geom_hline(yintercept = seq(min(mean_curve$Y), max(mean_curve_le$Y), by=px_per_mm), color="steelblue", alpha=0.35) +
-  geom_vline(xintercept = seq(min(mean_curve$X), max(mean_curve_le$X), by=px_per_mm), color="steelblue", alpha=0.35) +
   coord_equal() +
   theme_minimal() +
   theme(legend.position = 'bottom') +
   guides(linetype = "none")
+
+plot_bezier_df_mean_curves <- plot_bezier_df_mean_curves_raw +
+  geom_hline(yintercept = seq(min(mean_curve$Y), max(mean_curve_le$Y), by=px_per_mm), color="steelblue", alpha=0.35) +
+  geom_vline(xintercept = seq(min(mean_curve$X), max(mean_curve_le$X), by=px_per_mm), color="steelblue", alpha=0.35)
 
 plot_bezier_df_mean_curves
 ```
@@ -1896,6 +1898,25 @@ plot_bezier_df_mean_curves +
 ## Tensile triangles after Mattheck
 
 ## Bézier curves
+
+```{r}
+t <- seq(0, 1, length=100)
+p_tip <- matrix(c(3.43,3.08, 5.22,-0.27, 5.49,-3.2, 1.62,-6.4), nrow=4, ncol=2, byrow=TRUE)
+
+p_tip <- p_tip*6.72
+
+bezier_points_tip <- bezier(t=t, p=p_tip)
+colnames(bezier_points_tip) <- c("X","Y")
+
+plot_bezier_df_mean_curves_raw +
+  geom_path(data = bezier_points_tip,
+            aes(x = X+2770, y = Y-1668), color = "blue", linewidth = 1) +
+  
+  theme(line = element_blank(),
+        text = element_blank(),
+        title = element_blank())
+```
+
 
 Probleme: 
 
