@@ -754,15 +754,18 @@ kable(
 
 ### ANOVA
 
-Ratio \~ sample
-
-```{r}
+```{r echo=FALSE}
 mod <- aov(formula = my_data$ratio ~ my_data$sample, data = my_data)
 
-#summary(mod)
-
 anova_tab <- summary(mod)[[1]]
+rownames(anova_tab)[1] <- "Sample"
 anova_tab$`Pr(>F)` <- format.pval(anova_tab$`Pr(>F)`, digits = 4, na.form="")
+anova_p <- anova_tab$`Pr(>F)`[1]
+```
+
+The ANOVA (Ratio \~ sample, table \ref{tab:anova}) shows, there is a difference between at least two groups (p `r anova_p`).
+
+```{r}
 kable(anova_tab,
   format = "latex",
   booktabs = TRUE,
@@ -770,11 +773,9 @@ kable(anova_tab,
   label = "anova") |> kable_styling(latex_options = "HOLD_position")
 ```
 
-Table \ref{tab:anova} shows Anova results.
-
 ### Kruskal-Wallis test
 
-```{r}
+```{r echo=FALSE}
 kruskal <- kruskal.test(ratio ~ sample, data = my_data)
 
 kruskal_table <- data.frame(
@@ -783,7 +784,11 @@ kruskal_table <- data.frame(
   Degrees_of_Freedom = unname(kruskal$parameter),
   P_value = format.pval(kruskal$p.value, digits = 4)
 )
+```
 
+The Kruskal-Wallis test (Ratio \~ sample, table \ref{tab:kruskal}) shows, there is a difference between at least two groups (p `r kruskal_table$P_value`).
+
+```{r}
 kable(kruskal_table,
   format = "latex",
   booktabs = TRUE,
@@ -791,9 +796,6 @@ kable(kruskal_table,
   caption = "Kruskal-Wallis test",
   label = "kruskal") |> kable_styling(latex_options = "HOLD_position")
 ```
-
-* p-value $< 0.05$: Evidence of a statistically significant difference between at least two groups.
-* p-value $\geq 0.05$: Insufficient evidence to conclude that the groups differ.
 
 ## Topology Optimization after Mattheck
 
