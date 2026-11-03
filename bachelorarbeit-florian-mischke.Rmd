@@ -404,24 +404,24 @@ The results were processed in R code in a `.Rmd` file in RStudio by Posit Softwa
 
 ### Shapiro-Wilk test
 
-H0: sample comes from a normally distributed population.
+H0: sample comes from a normally distributed population.\
 HA: no normal distribution.
 
 ### Levene test
 
-H0: homogeneity of variance.
+H0: homogeneity of variance.\
 HA: at least one group with variance unequal to others.
 
 ### ANOVA
 
-H0: no difference between the expected values of the groups.
+H0: no difference between the expected values of the groups.\
 HA: difference between at least two expected values.
 
-### Kruskal-Wallis-Test
+### Kruskal-Wallis test
 
 Nonparametric statistics
 
-H0: There is no difference between the groups.
+H0: There is no difference between the groups.\
 HA: Difference between at least two groups.
 
 ## Geometry experiments in GeoGebra and Affinity
