@@ -465,7 +465,75 @@ knitr::include_graphics(
 knitr::include_graphics("img/affinity/bezier_pseudoplatanus_affinity.png")
 ```
 
-For calculating and drawing of Bezíer curves, R packages [bezier](https://cran.r-project.org/web/packages/bezier/index.html) and [tidyverse](https://tidyverse.org/) were used.
+#### Bézier curve simulation
+
+For calculating and drawing of Bezíer curves, the R packages [bezier](https://cran.r-project.org/web/packages/bezier/index.html) and [tidyverse](https://tidyverse.org/) were used.
+
+```{r}
+v_linetypes = c(
+      "1" = "solid",
+      "2" = "dashed",
+      "3" = "dotted",
+      "4" = "dotdash",
+      "5" = "longdash",
+      "6" = "twodash"
+    )
+
+library(bezier)
+t <- seq(0, 1, length=100)
+p <- matrix(c(0.48,6.04, 9.56,13.54, 9.22,-4.65, 25.58,6.54), nrow=4, ncol=2, byrow=TRUE)
+bezier_points <- bezier(t=t, p=p)
+
+df_bezier_points <- data.frame(bezier_points)
+colnames(df_bezier_points) <- c("X","Y")
+
+colnames(p) <- c("X","Y")
+rownames(p) <- c("A","B","C","D")
+```
+
+In the development of this method, the first attempt (figure \ref{fig:geogebra_bezier} (C)) gave the **relative** control points A (`r p["A",]`), B (`r p["B",]`), C (`r p["C",]`), and D (`r p["D",]`) (table \ref{tab:control_points}).
+
+```{r}
+kable(p, format = "latex", booktabs = TRUE, caption = "Control points of first attempt of bezier curve on sample of \\textit{A. pseudoplatanus}.", label = "control_points") |> kable_styling(latex_options = "HOLD_position")
+```
+
+Control points put into a cubic Bézier formula (\ref{bezier_dummy}), it shows as follows:
+
+$$
+\begin{equation}
+\mathbf{P}(t) = (1-t)^3
+\begin{pmatrix}
+`r p["A","X"]`\\`r p["A","Y"]`
+\end{pmatrix}
++3(1-t)^2t
+\begin{pmatrix}
+`r p["B","X"]`\\`r p["B","Y"]`
+\end{pmatrix}
++ 3(1-t)t^2
+\begin{pmatrix}
+`r p["C","X"]`\\`r p["C","Y"]`
+\end{pmatrix}
++ t^3
+\begin{pmatrix}
+`r p["D","X"]`\\`r p["D","Y"]`
+\end{pmatrix}
+\label{bezier_dummy}\end{equation}
+$$
+
+With the R package `bezier`, a Bézier curve can be drawn in `ggplot` (figure \ref{fig:bezier_curve_simulation}). Using the control points, the `bezier(t=t, p=p)` function (`t`: sequence from 1 to 100, `p`: matrix of control points) generates a 100 points (`t`) to be plotted (`geom_line`).
+
+```{r bezier_curve_simulation, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Bézier curve simulation} of first attempt on sample of \\textit{A. pseudoplatanus}. Source: own work"}
+
+df_bezier_points |> ggplot(
+  mapping = aes(
+    x = X,
+    y = Y
+  )
+) + 
+  geom_line(color = "red") + 
+  coord_fixed(ratio = 1) + 
+  theme_minimal()
+```
 
 ## Stained sections
 
@@ -826,69 +894,6 @@ First positive results in experiments with tensile triangles (figures \ref{fig:m
 Figures \ref{fig:geogebra_bezier} and \ref{fig:bezier_pseudoplatanus_affinity} shows that the shapes of all three maple species can be described by Bézier curves.
 
 ### Trailing Edge
-
-#### Bézier curve simulation
-
-```{r}
-v_linetypes = c(
-      "1" = "solid",
-      "2" = "dashed",
-      "3" = "dotted",
-      "4" = "dotdash",
-      "5" = "longdash",
-      "6" = "twodash"
-    )
-```
-
-```{r}
-library(bezier)
-t <- seq(0, 1, length=100)
-p <- matrix(c(0.48,6.04, 9.56,13.54, 9.22,-4.65, 25.58,6.54), nrow=4, ncol=2, byrow=TRUE)
-bezier_points <- bezier(t=t, p=p)
-
-df_bezier_points <- data.frame(bezier_points)
-colnames(df_bezier_points) <- c("X","Y")
-
-colnames(p) <- c("X","Y")
-rownames(p) <- c("A","B","C","D")
-kable(p, format = "latex", booktabs = TRUE, caption = "Control points of first attempt of bezier curve on sample of A. pseudoplatanus", label = "control_points") |> kable_styling(latex_options = "HOLD_position")
-```
-
-Formula \ref{bezier_dummy}
-
-$$
-\begin{equation}
-\mathbf{P}(t) = (1-t)^3
-\begin{pmatrix}
-`r p["A","X"]`\\`r p["A","Y"]`
-\end{pmatrix}
-+3(1-t)^2t
-\begin{pmatrix}
-`r p["B","X"]`\\`r p["B","Y"]`
-\end{pmatrix}
-+ 3(1-t)t^2
-\begin{pmatrix}
-`r p["C","X"]`\\`r p["C","Y"]`
-\end{pmatrix}
-+ t^3
-\begin{pmatrix}
-`r p["D","X"]`\\`r p["D","Y"]`
-\end{pmatrix}
-\label{bezier_dummy}\end{equation}
-$$
-
-```{r bezier_curve_simulation, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve simulation. Source: own work"}
-
-df_bezier_points |> ggplot(
-  mapping = aes(
-    x = X,
-    y = Y
-  )
-) + 
-  geom_line(color = "red") + 
-  coord_fixed(ratio = 1) + 
-  theme_minimal()
-```
 
 ```{r}
 data_curve_points <- read.csv("svg/svg_points.csv")
