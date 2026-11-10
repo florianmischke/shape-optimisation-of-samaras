@@ -1877,6 +1877,9 @@ plot_bezier_df_mean_curves +
   geom_segment(aes(x = mean_lower_X, y = mean_lower_Y, xend = target_lower$X, yend = target_lower$Y), alpha = 0.5) +
   
   # horizontal distance
+  annotate("point", x = mean_upper_X, y = (2*target_upper$Y+mean_upper_Y)/3) +
+  annotate("point", x = mean_lower_X, y = (2*target_upper$Y+mean_upper_Y)/3) +
+  
   geom_segment(aes(x = mean_upper_X, y = (2*target_upper$Y+mean_upper_Y)/3, xend = mean_lower_X, yend = (2*target_upper$Y+mean_upper_Y)/3), alpha = 0.5) +
   
   # vertical distance
