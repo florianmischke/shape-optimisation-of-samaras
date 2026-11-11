@@ -125,8 +125,9 @@ geboren am \\
     \acro{px}[px]{pixel}
     \acro{sd}[SD]{standard deviation}
     \acro{se}[SE]{standard error}
-    \acro{vdi}[VDI]{Verein Deutscher Ingenieure e.V. - The Association of German Engineers e.V.}
     \acro{te}[TE]{trailing edge}
+    \acro{UKE}[UKE]{Universitätsklinikum Hamburg-Eppendorf}
+    \acro{vdi}[VDI]{Verein Deutscher Ingenieure e.V. - The Association of German Engineers e.V.}
     \acro{zarm}[ZARM]{Zentrum für angewandte Raumfahrttechnologie und Mikrogravitation - Center of Applied Space Technology and Microgravity}
 \end{acronym}
 
@@ -239,7 +240,7 @@ knitr::include_graphics(
   "img/introduction/maple_samaras_lea.png"
 )
 ```
-\vspace{-2em} \small Drawing by Lea von Soosten, based on photos by: [@noauthor_baumkunde-_nodate]
+\vspace{-2em} \small Drawing by Lea von Soosten, \ac{UKE}, based on photos by: [@noauthor_baumkunde-_nodate]
 
 ## Tensile triangles after Mattheck
 
