@@ -426,6 +426,13 @@ Nonparametric statistics
 H0: There is no difference between the groups.\
 HA: Difference between at least two groups.
 
+### Mann-Whitney *U* test
+
+Nonparametric statistics
+
+H0: selected values X and Y from two groups have the same distribution.\
+HA: difference between the two groups.
+
 ## Geometry experiments in GeoGebra and Affinity
 
 ### Tensile triangles
@@ -877,6 +884,8 @@ kruskal_table <- data.frame(
 The Kruskal-Wallis test (Ratio \~ sample, table \ref{tab:kruskal}) shows, there is a difference between at least two groups (p `r kruskal_table$P_value`).
 
 ```{r}
+colnames(kruskal_table)[3] <- "Degrees of Freedom"
+colnames(kruskal_table)[4] <- "P value"
 kable(kruskal_table,
   format = "latex",
   booktabs = TRUE,
@@ -884,6 +893,34 @@ kable(kruskal_table,
   caption = "Kruskal-Wallis test",
   label = "kruskal") |> kable_styling(latex_options = "HOLD_position")
 ```
+
+### Mann-Whitney *U* test
+
+```{r echo=FALSE}
+my_data_platanoides <- my_data |> filter(Species == "Acer platanoides")
+my_data_platanoides_IPM <- my_data_platanoides |> filter(Location == "IPM")
+my_data_platanoides_Spannskamp <- my_data_platanoides |> filter(Location == "Spannskamp")
+wilcox <- wilcox.test(my_data_platanoides_IPM$ratio, my_data_platanoides_Spannskamp$ratio)
+
+wilcox_table <- data.frame(
+  Method = wilcox$method,
+  Statistic = unname(wilcox$statistic),
+  P_value = format.pval(wilcox$p.value, digits = 4)
+)
+```
+
+The Mann-Whitney *U* test, comparing length-to-width ratios of samples of *\acs{A} platanoides* from the locations IPM and Spannskamp, shows there is a difference between the two samples.
+
+```{r}
+colnames(wilcox_table)[2] <- "P value"
+kable(wilcox_table,
+  format = "latex",
+  booktabs = TRUE,
+  digits = 3,
+  caption = "Mann-Whitney \\textit{U} test",
+  label = "wilcox") |> kable_styling(latex_options = "HOLD_position")
+```
+
 
 ## Tensile triangles after Mattheck
 
@@ -1925,7 +1962,7 @@ The results of the measurements done in FIJI give a first impression about lengt
 The samples of *\acs{A} platanoides* (Spannskamp) are the longest with a mean Feret length of `r round(summary_detailed |> filter(Location == "Spannskamp") |> select(mean_feret_mm),2)` mm, as expected (see [Introduction](#platanoides-norway-maple)). With a mean Feret length of `r round(summary_detailed |> filter(Location == "IPM") |> select(mean_feret_mm),2)`, the samples of *\acs{A} platanoides* (IPM) are unusually small.
 The samaras of *\acs{A} campestre* and *\acs{A} pseudoplatanus*, with mean Feret lengths of `r round(summary_detailed |> filter(Species == "Acer campestre") |> select(mean_feret_mm),2)` mm and `r round(summary_detailed |> filter(Species == "Acer pseudoplatanus") |> select(mean_feret_mm),2)` mm respectively are smaller than those of *\acs{A} platanoides* (Spannskamp), as expected.
 
-Better — that is, independent — data is needed, \acs{eg} 10 fruits from 5 trees of each species. 
+Better — that is, independent — data is needed for reliable results, \acs{eg} 10 fruits from 5 trees of each species. 
 
 ## Length/width ratios
 
@@ -1991,6 +2028,7 @@ While this research could support improving artificial samara-like flyers and th
 More research needed:
 
 - better data, multiple trees of same species
+- Further progress depends on access to independent, higher-quality data.
 - compare to fall velocity / stability
 - print artificial samara after these design parameters and compare
 
