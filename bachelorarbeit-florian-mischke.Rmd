@@ -4,6 +4,7 @@ bibliography: bib/literature.bib
 output:
   pdf_document: 
     latex_engine: pdflatex
+    keep_tex: no
     includes:
       in_header: inc/preamble.tex
       #in_header: includes/import.sty
@@ -121,6 +122,7 @@ geboren am \\
     \acro{lev}[LEV]{leading-edge vortex}
     \acroplural{lev}[LEV]{leading-edge vortices}
     \acro{lib}[LIB]{Leibniz-Institut zur Analyse des Biodiversitätswandels - Leibniz Institute for the Analysis of Biodiversity Change}
+    \acro{px}[px]{pixel}
     \acro{sd}[SD]{standard deviation}
     \acro{se}[SE]{standard error}
     \acro{vdi}[VDI]{Verein Deutscher Ingenieure e.V. - The Association of German Engineers e.V.}
@@ -1919,7 +1921,11 @@ plot_bezier_df_mean_curves +
 ## FIJI measurements
 
 WORK IN PROGRESS!! \
-Measurements give a first impression. Better data needed: independent, e.g. 10 fruits from 5 trees per species. 
+The results of the measurements done in FIJI give a first impression about lengths, widths, and length-to-width ratios. 
+The samples of *\acs{A} platanoides* (Spannskamp) are the longest with a mean Feret length of `r round(summary_detailed |> filter(Location == "Spannskamp") |> select(mean_feret_mm),2)` mm, as expected (see [Introduction](#platanoides-norway-maple)). With a mean Feret length of `r round(summary_detailed |> filter(Location == "IPM") |> select(mean_feret_mm),2)`, the samples of *\acs{A} platanoides* (IPM) are unusually small.
+The samaras of *\acs{A} campestre* and *\acs{A} pseudoplatanus*, with mean Feret lengths of `r round(summary_detailed |> filter(Species == "Acer campestre") |> select(mean_feret_mm),2)` mm and `r round(summary_detailed |> filter(Species == "Acer pseudoplatanus") |> select(mean_feret_mm),2)` mm respectively are smaller than those of *\acs{A} platanoides* (Spannskamp), as expected.
+
+Better — that is, independent — data is needed, \acs{eg} 10 fruits from 5 trees of each species. 
 
 ## Length/width ratios
 
