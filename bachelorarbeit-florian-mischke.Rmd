@@ -949,6 +949,8 @@ bezier_df_unadjusted |> group_by(Species) |> mutate(
 ) |> ggplot(aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample))) +
   geom_path(linewidth = 0.5, alpha = 0.5) +
   coord_equal() +
+  scale_x_continuous(name = "Length (pixel)") +
+  scale_y_continuous(name = "Width (pixel)") +
   theme_minimal() +
   theme(legend.position = 'bottom') +
   guides(linetype = "none") +
@@ -1027,6 +1029,8 @@ bezier_df |> group_by(Species) |> mutate(
 ) |> ggplot(aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample))) +
   geom_path(linewidth = 0.5, alpha = 0.5) +
   coord_equal() +
+  scale_x_continuous(name = "Length (pixel)") +
+  scale_y_continuous(name = "Width (pixel)") +
   theme_minimal() +
   theme(legend.position = 'bottom') +
   guides(linetype = "none") +
@@ -1125,6 +1129,8 @@ bezier_df_transformed |> group_by(Species) |> mutate(
 ) |> ggplot(aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample))) +
   geom_path(linewidth = 0.5, alpha = 0.5) +
   coord_equal() +
+  scale_x_continuous(name = "Length (pixel)") +
+  scale_y_continuous(name = "Width (pixel)") +
   theme_minimal() +
   theme(legend.position = 'bottom') +
   guides(linetype = "none") +
@@ -1176,6 +1182,8 @@ bezier_df_transformed |> group_by(Species) |> mutate(
   geom_vline(xintercept = vlines, color = "#666", linetype = "dashed") +
   geom_hline(yintercept = hlines, color = "#666", linetype = "dotted") +
   coord_equal() +
+  scale_x_continuous(name = "Length (pixel)") +
+  scale_y_continuous(name = "Width (pixel)") +
   theme_minimal() +
   theme(legend.position = 'bottom') +
   guides(linetype = "none") +
@@ -1235,6 +1243,8 @@ ggplot() +
   geom_path(data = mean_curve,
             aes(x = X, y = Y), color = "red", linewidth = 1) +
   coord_equal() +
+  scale_x_continuous(name = "Length (pixel)") +
+  scale_y_continuous(name = "Width (pixel)") +
   theme_minimal() +
   theme(legend.position = 'bottom') +
   guides(linetype = "none") +
@@ -1394,6 +1404,8 @@ ggplot() +
   geom_path(data = mean_curve_pseudoplatanus,
             aes(x = X, y = Y), color = "blue", linewidth = 0.5, alpha = 0.75) +
   coord_equal() +
+  scale_x_continuous(name = "Length (pixel)") +
+  scale_y_continuous(name = "Width (pixel)") +
   theme_minimal() +
   theme(legend.position = 'bottom') +
   guides(linetype = "none") +
@@ -1521,8 +1533,10 @@ plot_bezier_df_le_unadjusted <- bezier_df_le_unadjusted |> group_by(Species) |> 
 ) |> ggplot(aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample))) +
   geom_path(linewidth = 0.5, alpha = 0.5) +
   coord_equal() +
+  scale_x_continuous(name = "Length [px]") +
+  scale_y_continuous(name = "Width [px]") +
   theme_minimal() +
-  theme(legend.position = 'none') +
+  theme(legend.position = 'none', axis.title = element_text(size = 8)) +
   guides(linetype = "none") +
   scale_linetype_manual(
     values = v_linetypes
@@ -1596,8 +1610,10 @@ plot_bezier_df_le <- bezier_df_le |> group_by(Species) |> mutate(
 ) |> ggplot(aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample))) +
   geom_path(linewidth = 0.5, alpha = 0.5) +
   coord_equal() +
+  scale_x_continuous(name = "Length [px]") +
+  scale_y_continuous(name = "Width [px]") +
   theme_minimal() +
-  theme(legend.position = 'none') +
+  theme(legend.position = 'none', axis.title = element_text(size = 8)) +
   guides(linetype = "none") +
   scale_linetype_manual(
     values = v_linetypes
@@ -1690,8 +1706,10 @@ plot_bezier_df_le_transformed <- bezier_df_le_transformed |> group_by(Species) |
 ) |> ggplot(aes(x = X, y = Y, group = FileName.x, color = label, linetype = factor(Sample))) +
   geom_path(linewidth = 0.5, alpha = 0.5) +
   coord_equal() +
+  scale_x_continuous(name = "Length [px]") +
+  scale_y_continuous(name = "Width [px]") +
   theme_minimal() +
-  theme(legend.position = 'none') +
+  theme(legend.position = 'none', axis.title = element_text(size = 8)) +
   guides(linetype = "none") +
   scale_linetype_manual(
     values = v_linetypes
@@ -1732,8 +1750,10 @@ plot_bezier_df_le_transformed2 <- bezier_df_le_transformed |> group_by(Species) 
   geom_vline(xintercept = vlines_le[2], color = "#666", linetype = "dashed") +
   geom_hline(yintercept = hlines_le[2], color = "#666", linetype = "dotted") +
   coord_equal() +
+  scale_x_continuous(name = "Length [px]") +
+  scale_y_continuous(name = "Width [px]") +
   theme_minimal() +
-  theme(legend.position = 'none') +
+  theme(legend.position = 'none', axis.title = element_text(size = 8)) +
   guides(linetype = "none") +
   scale_linetype_manual(
     values = v_linetypes
@@ -1789,6 +1809,8 @@ plot_bezier_df_le_mean_curve <- ggplot() +
   geom_path(data = mean_curve_le,
             aes(x = X, y = Y), color = "red", linewidth = 1) +
   coord_equal() +
+  scale_x_continuous(name = "Length (pixel)") +
+  scale_y_continuous(name = "Width (pixel)") +
   theme_minimal() +
   theme(legend.position = 'bottom') +
   guides(linetype = "none") +
