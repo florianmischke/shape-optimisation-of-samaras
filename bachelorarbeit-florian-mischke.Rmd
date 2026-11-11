@@ -437,11 +437,17 @@ HA: difference between the two groups.
 
 ### Tensile triangles
 
+```{r mattheck_vein, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Tensile triangle method (biaxial) applied to a single vein of a sample of \\textit{A. pseudoplatanus}.} Source: own work"}
+knitr::include_graphics("img/mattheck/A pseudoplatanus Mattheck vein.png")
+```
+
+!!! ToDo: Zugdreicke an Adern erklären.
+
 For experiments with tensile triangles on maple fruits, photos of samples were selected randomly, then [uniaxial](#uniaxial-loading) and [biaxial](#biaxial-loading) methods were attempted in GeoGebra.
 In the uniaxial attempt, a straight line was drawn at the \ac{le} and a line perpendicular to that, touching the tip. Tensile triangles were then drawn into the right angle.
 In the biaxial attempt, straight lines were drawn at the \ac{le} and the \ac{te}, fitted as close as possible. Then, an Angle Bisector was used to draw three triangles each on either sides perpendiculars, the angle then adjusted to best fit the tensile triangles (figure \ref{fig:mattheck1}).
 
-```{r mattheck1, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Tensile triangle method applied to wing tip of a sample of \\textit{A. platanoides}.} Source: own work"}
+```{r mattheck1, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Tensile triangle method (biaxial) applied to wing tip of a sample of \\textit{A. platanoides}.} Source: own work"}
 knitr::include_graphics("img/mattheck/A platanoides Mattheck 1.png")
 ```
 
@@ -924,7 +930,7 @@ kable(wilcox_table,
 
 ## Tensile triangles after Mattheck
 
-First positive results in experiments with tensile triangles (figures \ref{fig:mattheck1} and !!!) could not be reproduced.
+First positive results in experiments with tensile triangles (figures \ref{fig:mattheck_vein} and \ref{fig:mattheck1}) could not be reproduced.
 
 ## Bézier curves
 
