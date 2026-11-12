@@ -336,12 +336,42 @@ Titan$^1$   $0.135 \cdot 10^{24}$               5,149.4                     1.4
 
 Table \ref{tab:planetary_parameters} compares planetary (and other celestial body) parameters, figure \ref{fig:atmospheric_density_comparison} compares atmospheric density among planets and Titan. These parameters greatly impact samara behavior.
 
-This thesis aims to improve artificial samara design and thereby suggesting design parameters for novel experiments on landing technologies, mainly for Mars exploration.
+This thesis aims to improve artificial samara design and thereby suggesting design parameters for novel experiments on landing technologies, mainly for Mars exploration (figure \ref{fig:mars_landing}).
 
-```{r atmospheric_density_comparison, echo=FALSE, out.width="80%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Atmospheric Density Comparison} of the planets Earth, Mars, Neptun, Venus, and Titan, one of Saturn's moons."}
+```{=latex}
+\noindent
+\begin{minipage}[t]{0.49\textwidth}
+\vspace{-\baselineskip}
+```
+
+```{r atmospheric_density_comparison, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Atmospheric Density Comparison} of the planets Earth, Mars, Neptun, Venus, and Titan, one of Saturn's moons."}
 knitr::include_graphics("img/introduction/atmospheric_density_comparison.png")
 ```
-\vspace{-2em} \small Source: [@justus_atmospheric_2007]
+
+```{=latex}
+\vspace{-\baselineskip}
+```
+\small Source: [@justus_atmospheric_2007]
+
+```{=latex}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\textwidth}
+\vspace{-\baselineskip/2}
+```
+
+```{r mars_landing, echo=FALSE, out.width="69.5%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Illustration of autorotating devices (technical samaras) for small payload landing on Mars.}"}
+knitr::include_graphics("img/introduction/mars_landing.png")
+```
+
+```{=latex}
+\vspace{-\baselineskip}
+```
+\small Source: [@knorr_biomimetic_2025]
+
+```{=latex}
+\end{minipage}
+```
 
 # Methods and materials
 
@@ -783,6 +813,27 @@ my_data |> ggplot(
 ) + geom_histogram(bins=50,na.rm = TRUE) +
   facet_wrap(~label) +
   theme_minimal()
+```
+
+```{r}
+mean_ratios <- my_data |> group_by(Species, Location) |> summarise(
+  mean_ratio = mean(ratio, na.rm = TRUE),
+  n = n(), 
+  .groups = "drop"
+)
+
+colnames(mean_ratios)[3] <- "Mean ratio"
+colnames(mean_ratios)[4] <- "Sample size (n)"
+
+kable(mean_ratios,
+  format = "latex",
+  booktabs = TRUE,
+  caption = "Mean length-to-width ratios by species and location",
+  label = "mean_ratios",
+  digits = 3) |> kable_styling(
+    latex_options = c("HOLD_position")
+  )
+
 ```
 
 ### Shapiro-Wilk test
