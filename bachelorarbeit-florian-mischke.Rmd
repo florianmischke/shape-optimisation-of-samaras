@@ -822,10 +822,12 @@ mean_ratios <- my_data |> group_by(Species, Location) |> summarise(
   .groups = "drop"
 )
 
-colnames(mean_ratios)[3] <- "Mean ratio"
-colnames(mean_ratios)[4] <- "Sample size (n)"
+tbl_mean_ratios <- mean_ratios
 
-kable(mean_ratios,
+colnames(tbl_mean_ratios)[3] <- "Mean ratio"
+colnames(tbl_mean_ratios)[4] <- "Sample size (n)"
+
+kable(tbl_mean_ratios,
   format = "latex",
   booktabs = TRUE,
   caption = "Mean length-to-width ratios by species and location",
@@ -2015,30 +2017,33 @@ plot_bezier_df_mean_curves +
 
 ## FIJI measurements
 
-WORK IN PROGRESS!! \
 The results of the measurements done in FIJI give a first impression about lengths, widths, and length-to-width ratios. 
 The samples of *\acs{A} platanoides* (Spannskamp) are the longest with a mean Feret length of `r round(summary_detailed |> filter(Location == "Spannskamp") |> select(mean_feret_mm),2)` mm, as expected (see [Introduction](#platanoides-norway-maple)). With a mean Feret length of `r round(summary_detailed |> filter(Location == "IPM") |> select(mean_feret_mm),2)`, the samples of *\acs{A} platanoides* (IPM) are unusually small.
 The samaras of *\acs{A} campestre* and *\acs{A} pseudoplatanus*, with mean Feret lengths of `r round(summary_detailed |> filter(Species == "Acer campestre") |> select(mean_feret_mm),2)` mm and `r round(summary_detailed |> filter(Species == "Acer pseudoplatanus") |> select(mean_feret_mm),2)` mm respectively are smaller than those of *\acs{A} platanoides* (Spannskamp), as expected.
 
 Better — that is, independent — data is needed for reliable results, \acs{eg} 10 fruits from 5 trees of each species. 
 
-## Length/width ratios
+As for the measurement method, the transition between the seed and the wing is not always consistent: sometimes it is clearly defined, and sometimes it is a gradual transition. To avoid uncertainty, the entire fruit was measured.
 
-WORK IN PROGRESS!! \
-ties in Kolmogorov-Smirnov test, so Shapiro-Wilk test was used
- 
-Homogeneity of variance and normal distribution preferred.
+## Length-to-width ratios
 
-WORK IN PROGRESS!! \
-ANOVA should not be used because of heterogeneity of variance and no normal distributed samples. Kruskal-Wallis test used, ANOVA to compare
+Due to their special shape, samaras of *\acs{A} pseudoplatanus* are expected to have the greatest length-to-width ratios, which was confirmed by these measurements and calculations (figure \ref{fig:ratios_boxplot} and table \ref{tab:mean_ratios}). The mean ratio of *\acs{A} pseudoplatanus* is `r round(mean_ratios |> filter(Species == "Acer pseudoplatanus") |> select(mean_ratio),2)`, that of *\acs{A} campestre* is lowest with `r round(mean_ratios |> filter(Species == "Acer campestre") |> select(mean_ratio),2)`, *\acs{A} campestre* samaras' ratios fall inbetween that with `r round(mean_ratios |> filter(Location == "IPM") |> select(mean_ratio),2)` (IPM) and `r round(mean_ratios |> filter(Location == "Spannskamp") |> select(mean_ratio),2)` (Spannskamp).
 
-nur eine Stichprobe normalverteilt
+As there were ties in Kolmogorov-Smirnov test, Shapiro-Wilk test was used (table \ref{tab:shapiro}). The tests show, that only the sample of *\acs{A} platanoides* (Spannskamp) comes from a normally distributed population (p $\approx$ `r round(shapiro_Aplatanoides_Spannskamp$p.value,3)`).
+
+Again, normally distributed populations would have been preferred and more data collection is encouraged.
+
+The Levene test showed no homogeneity of variance, so Kruskal-Wallis test was used to compare the groups, an ANOVA to see if it gives the same result, even though it's a parametric test.
+
+Arithmetic means were calculated and used for comparison, although three out of four samples did not come from normally distributed populations. So their confidence is not high.
 
 ## Tensile triangles after Mattheck
 
+The method of tensile triangles, uniaxial as well as biaxial, could not reasonably be used to describe wing veins nor wing tips of maple samaras. To complete the shape of an average samara wing, the wing tip was nevertheless designed using tensile triangles (symmetrical-biaxial) and a closely fitted Bézier curve (figure \ref{fig:complete_samara}, blue curve).
+
 ## Bézier curves
 
-```{r}
+```{r complete_samara, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Complete artificial samara.} Average mean curves (red) and fitted tensile triangle curve (blue)."}
 t <- seq(0, 1, length=100)
 p_tip <- matrix(c(3.43,3.08, 5.22,-0.27, 5.49,-3.2, 1.62,-6.4), nrow=4, ncol=2, byrow=TRUE)
 
@@ -2049,32 +2054,12 @@ colnames(bezier_points_tip) <- c("X","Y")
 
 plot_bezier_df_mean_curves_raw +
   geom_path(data = bezier_points_tip,
-            aes(x = X+2770, y = Y-1668), color = "blue", linewidth = 1) +
+            aes(x = X+2770, y = Y-1669), color = "blue", linewidth = 1) +
   
   theme(line = element_blank(),
         text = element_blank(),
         title = element_blank())
 ```
-
-
-Probleme: 
-
-- beim Messen: Übergang zwischen Same und Flügel nicht immer gleich. Mal klar abgegrenzt, mal mit fließendem Übergang; Lösung: ganze Frucht ausmessen
-- Auslösen an der Kamera führt zu verwackeltem Bild, Remote Control App löst das Problem. (Verzögerung auch Option, aber Zeitverlust.)
-- Stichprobe mit 50 Früchten pro Spezies groß genug, besser wären unabhängiere Daten. Z.B. 5 Bäume pro Spezies, jeweils 10 Früchte aus verschiedenen Blütenständen.
-
-- Since Geogebra can't handle large images and downscales them, screenshots were taken and experiments done on them. As the screenshots were not the same size, Geogebra treated them differently. From then on, Affinity suite was used for all measurements. Cubic Beziér curves were drawn manually with the Pen tool and fitted to the shape of the samara's trailing edge and leading edge respectively with the Node tool. The curve was exported as SVG and all SVG files handled by a custom Python script, resulting in a machine-readable CSV file, that was imported by R.
-
-- ties in Kolmogorov-Smirnov test, so Shapiro-Wilk test was used
-
-- nur eine Stichprobe normalverteilt
-
-- keine Varianzhomogenität
-
-- ANOVA nicht aussagekräftig, trotzdem gemacht
-
-- erneut: bessere Stichproben für weitere Untersuchungen
-
 
 # Conclusion
 
