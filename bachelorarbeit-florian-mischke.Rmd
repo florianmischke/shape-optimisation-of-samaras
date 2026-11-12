@@ -967,7 +967,7 @@ wilcox_table <- data.frame(
 )
 ```
 
-The Mann-Whitney *U* test, comparing length-to-width ratios of samples of *\acs{A} platanoides* from the locations IPM and Spannskamp, shows there is a difference between the two samples.
+The Mann-Whitney *U* test, comparing length-to-width ratios of samples of *\acs{A} platanoides* from the locations IPM and Spannskamp, shows there is a difference between the two samples (p = `r wilcox_table$P_value`).
 
 ```{r}
 colnames(wilcox_table)[2] <- "P value"
