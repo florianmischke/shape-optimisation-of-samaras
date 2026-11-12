@@ -2082,13 +2082,14 @@ While this research could support improving artificial samara-like flyers and th
 
 First and foremost, many thanks to Noah Knorr for his scientific guidance and support. 
 Also many thanks to Prof. Linnea Hesse for being an awesome professor and for encouraging me to live my potential. 
-Additional thanks go to Prof. Dominik Begerow for being the second examiner of this work and for asking good questions about my research.
+Additional thanks go to Prof. Dominik Begerow for being the second examiner of this work and for asking good questions about my research. 
 I thank Johannes Beruda for his assistance in my camera setup - I still owe you cake for the hint with the smartphone app for remote control. 
 I thank Olaf Polak for his help in the lab. 
 Thanks go to Niklas Groth for his tip regarding FIJI macros. 
 Thank you, Lea, for drawing the most awesome and beautiful samaras. 
 Also thanks go to my friend Rebecca, who helped me gather maple samaras and ENTErtained (inside joke for you) me through the process. 
-I also thank Dr. Karina Lucas Silva-Brandão and Jan-Henrik Pamin from \ac{lib} for showing me the 3D scanner and allowing me to scan one of my samaras.
+I also thank Dr. Karina Lucas Silva-Brandão and Jan-Henrik Pamin from \ac{lib} for showing me the 3D scanner and allowing me to scan one of my samaras. 
+Finally, thanks to all of you who have asked great and inspiring questions after I've told you about what I'm writing my thesis.
 
 # Bibliography {.unnumbered}
 
