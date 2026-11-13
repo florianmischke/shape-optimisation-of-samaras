@@ -2043,7 +2043,7 @@ Again, normally distributed populations would have been preferred and more data 
 
 The Levene test showed no homogeneity of variance, so Kruskal-Wallis test was used to compare the groups, an ANOVA to see if it gives the same result, even though it's a parametric test.
 
-Arithmetic means were calculated and used for comparison, although three out of four samples did not come from normally distributed populations. So their confidence is not high.
+Arithmetic means were calculated for comparison. However, because three of the four samples did not follow a normal distribution, the associated confidence intervals should be interpreted with caution.
 
 ## Tensile triangles after Mattheck
 
