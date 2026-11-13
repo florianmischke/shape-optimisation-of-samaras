@@ -181,6 +181,19 @@ Figure \ref{fig:Ezra_et_al__tipuana_tipu} shows what samaras consist of, using *
 
 There has already been done a lot of work on this. Liu et al designed an abstracted rectangular artificial samara, which they call *maple-seed-inspired (MSI) rotochute*, claiming it had better efficacy than a natural maple seed (figure \ref{fig:Liu_et_al__msi_rotochute}). The maple samara's leading edge was replaced by a counterweight, the seed (or *root* as seen in figure \ref{fig:Liu_et_al__msi_rotochute}) by the *payload*.
 
+### Leading-edge vortex (LEV)
+
+Samara-bearing trees and shrubs depend on wind to succesfully disperse their seeds (*anemochory*). Samaras generate an unusually high lift that can be explained by the autorotation resulting in a \ac{lev} [@lentink_leading-edge_2009] and thus a reduced rate of descent, giving the samara more air time to be affected by the wind and reaching higher dispersal distances. The \acs{lev} is most prominent near the base of the samara, where the seed is located, at around 25% span, and merges with another vortex formed by the tip of the wing [@lentink_leading-edge_2009].
+
+```{r Lentink_et_al__lev, echo=FALSE, out.width="75%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Leading-edge vortex over the upper side and near the base of an autorotating samara.}"}
+knitr::include_graphics("img/introduction/Lentink_et_al__lev.png")
+```
+
+```{=latex}
+\vspace{-\baselineskip}
+```
+\small Source: [@lentink_leading-edge_2009]
+
 ```{=latex}
 \end{minipage}
 ```
@@ -189,10 +202,6 @@ There has already been done a lot of work on this. Liu et al designed an abstrac
 knitr::include_graphics("img/introduction/Liu_et_al__msi_rotochute.png")
 ```
 \vspace{-2em} \small Source: [@liu_maple-seed-inspired_2026]
-
-## Leading-edge vortex (LEV)
-
-Samara-bearing trees and shrubs depend on wind to succesfully disperse their seeds (*anemochory*). Samaras generate an unusually high lift that can be explained by the autorotation resulting in a \ac{lev} [@lentink_leading-edge_2009] and thus a reduced rate of descent, giving the samara more air time to be affected by the wind and reaching higher dispersal distances. The \acs{lev} is most prominent near the base of the samara, where the seed is located, at around 25% span, and merges with another vortex formed by the tip of the wing [@lentink_leading-edge_2009]. 
 
 ## Native maple species in Germany
 
@@ -2045,7 +2054,7 @@ The method of tensile triangles, uniaxial as well as biaxial, could not reasonab
 
 The Bézier curves for this work were done manually by fitting the shape of the curve as closely as possible to the outline of the samara wing. Though this was done with care, it is not really that precise. Due to the biodiversity of maple samaras, inaccuracies should be less relevant, and the curves give a good-enough representation of the overall topology.
 
-The specific samara's flight behaviour was not taken into account in this thesis. An average curve of just one species of maple might outperform the average curve of all samples, as \ac{eg} *\ac{A} platanoides* has a slower rate of descent than *\ac{A} campestre* and *\ac{A} pseudoplatanus* [@reinersmann_analysis_2026{}, not yet published].
+The specific samara's flight behaviour was not taken into account in this thesis. An average curve of just one species of maple might outperform the average curve of all samples, as \acs{eg} *\acs{A} platanoides* has a slower rate of descent than *\acs{A} campestre* and *\acs{A} pseudoplatanus* [@reinersmann_analysis_2026{}, not yet published].
 
 Also, with a sample size of six for each species, the shape of the artificial samara has room for improvement (see [Conclusion](#conclusion)).
 
