@@ -323,7 +323,7 @@ Sun et al designed microfliers by drawing Beziér curves at pappi [@sun_adaptive
 
 ## Motivation: space exploration / landing technologies on Mars and other bodies
 
-By simulating autorotational descend on multiple celestial bodies, Riegler et al came to the conclusion that \enquote{autorotation is not well suited to land large payloads on [Mars]} [@riegler_comparison_2025]. The simulation used vehicle parameters of 1000kg and a 4 rotor blade design. Experiments done in a drop tower at [\acs{zarm}](https://www.zarm.uni-bremen.de/en/) (\acl{zarm}) showed that samaras get into stable autoration in a Mars-like atmosphere (to be published).
+By simulating autorotational descend on multiple celestial bodies, Riegler et al came to the conclusion that \enquote{autorotation is not well suited to land large payloads on [Mars]} [@riegler_comparison_2025]. The simulation used vehicle parameters of 1000kg and a 4 rotor blade design. Experiments done in a drop tower at [\acs{zarm}](https://www.zarm.uni-bremen.de/en/) (\acl{zarm}) showed that samaras get into stable autoration in a Mars-like atmosphere [@reinersmann_analysis_2026{}, not yet published].
 
 **Body**          **Mass** [$kg$]   **Diameter** [$km$]   **Gravity** [$m/s^2$]
 ---------  ----------------------  --------------------  ----------------------
@@ -2045,6 +2045,8 @@ The method of tensile triangles, uniaxial as well as biaxial, could not reasonab
 
 The Bézier curves for this work were done manually by fitting the shape of the curve as closely as possible to the outline of the samara wing. Though this was done with care, it is not really that precise. Due to the biodiversity of maple samaras, inaccuracies should be less relevant, and the curves give a good-enough representation of the overall topology.
 
+The specific samara's flight behaviour was not taken into account in this thesis. An average curve of just one species of maple might outperform the average curve of all samples, as \ac{eg} *\ac{A} platanoides* has a slower rate of descent than *\ac{A} campestre* and *\ac{A} pseudoplatanus* [@reinersmann_analysis_2026{}, not yet published].
+
 Also, with a sample size of six for each species, the shape of the artificial samara has room for improvement (see [Conclusion](#conclusion)).
 
 ```{r complete_samara, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Complete artificial samara.} Average mean curves (red) and fitted tensile triangle curve (blue)."}
@@ -2067,7 +2069,7 @@ plot_bezier_df_mean_curves_raw +
 
 # Conclusion
 
-This work sets a start for analysis of samara topology and is a proof of concept for this methodology. It is in no way sure, if these findings help improve flight stability and controllability.
+This work sets a start for analysis of samara topology and is a proof of concept for this methodology. It is left to be seen, if these findings help improve flight stability and controllability.
 
 ## Outlook
 
