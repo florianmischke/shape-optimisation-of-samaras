@@ -948,9 +948,11 @@ kruskal_table <- data.frame(
   Degrees_of_Freedom = unname(kruskal$parameter),
   P_value = format.pval(kruskal$p.value, digits = 4)
 )
+
+p_kruskal <- kruskal_table$P_value
 ```
 
-The Kruskal-Wallis test (Ratio \~ sample, table \ref{tab:kruskal}) shows, there is a difference between at least two groups (p `r kruskal_table$P_value`).
+The Kruskal-Wallis test (Ratio \~ sample, table \ref{tab:kruskal}) shows, there is a difference between at least two groups (p `r p_kruskal`).
 
 ```{r}
 colnames(kruskal_table)[3] <- "Degrees of Freedom"
@@ -976,9 +978,11 @@ wilcox_table <- data.frame(
   Statistic = unname(wilcox$statistic),
   P_value = format.pval(wilcox$p.value, digits = 4)
 )
+
+p_wilcox <- wilcox_table$P_value
 ```
 
-The Mann-Whitney *U* test, comparing length-to-width ratios of samples of *\acs{A} platanoides* from the locations IPM and Spannskamp, shows there is a difference between the two samples (p = `r wilcox_table$P_value`).
+The Mann-Whitney *U* test, comparing length-to-width ratios of samples of *\acs{A} platanoides* from the locations IPM and Spannskamp, shows there is a difference between the two samples (p = `r p_wilcox`).
 
 ```{r}
 colnames(wilcox_table)[2] <- "P value"
@@ -2042,6 +2046,8 @@ As there were ties in Kolmogorov-Smirnov test, Shapiro-Wilk test was used (table
 Again, normally distributed populations would have been preferred and more data collection is encouraged.
 
 The Levene test showed no homogeneity of variance, so Kruskal-Wallis test was used to compare the groups, an ANOVA to see if it gives the same result, even though it's a parametric test.
+
+The Kruskal-Wallis test shows, there is a difference between at least two groups (p `r p_kruskal`, table \ref{tab:kruskal}). According to the Mann-Whitney *U* test, the two samples of *\acs{A} platanoides* differ (p = `r p_wilcox`, table \ref{tab:wilcox}).
 
 Arithmetic means were calculated for comparison. However, because three of the four samples did not follow a normal distribution, the associated confidence intervals should be interpreted with caution.
 
