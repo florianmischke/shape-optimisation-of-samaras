@@ -2110,9 +2110,10 @@ Finally, thanks to all of you who have asked great and inspiring questions after
 
 ## Use of AI/GenAI (generative Artificial Intelligence) {.unnumbered}
 
-- ChatGPT for help at coding a FIJI macro
-- ChatGPT for help at R coding
-- DeepL for translating German to English
+- ChatGPT (OpenAI, Inc.) for help at coding a FIJI macro
+- ChatGPT and Claude (Anthropic) for help at R coding
+- DeepL (DeepL SE) for translating German to English
+- Perplexity.AI (Perplexity AI, Inc.) for proofreading
 
 # List of Figures {.unnumbered}
 
