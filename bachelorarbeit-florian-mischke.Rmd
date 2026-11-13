@@ -2057,7 +2057,7 @@ The method of tensile triangles, uniaxial as well as biaxial, could not reasonab
 
 ## Bézier curves
 
-The Bézier curves for this work were done manually by fitting the shape of the curve as closely as possible to the outline of the samara wing. Though this was done with care, it is not really that precise. Due to the biodiversity of maple samaras, inaccuracies should be less relevant, and the curves give a good-enough representation of the overall topology.
+The Bézier curves for this work were fitted manually to the outline of the samara wing as closely as possible. Although this was performed with care, there remains a degree of inaccuracy. However, given the natural morphological variability of maple samaras, such deviations are expected to have limited influence on the results. The resulting curves therefore provide a sufficiently representative approximation of the wing’s overall topology.
 
 The specific samara's flight behaviour was not taken into account in this thesis. An average curve of just one species of maple might outperform the average curve of all samples, as \acs{eg} *\acs{A} platanoides* has a slower rate of descent than *\acs{A} campestre* and *\acs{A} pseudoplatanus* [@reinersmann_analysis_2026{}, not yet published].
 
