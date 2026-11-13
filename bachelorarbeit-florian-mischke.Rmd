@@ -590,6 +590,8 @@ df_bezier_points |> ggplot(
   theme_minimal()
 ```
 
+The Bézier curves of multiple samaras were normalized and an average curve created by calculating the arithmetic means of curve points.
+
 Amplitudes of Bézier curves were calculated by using the first derivative: `slope = c(NA, diff(Y) / diff(X))` and `slope_change = c(NA, diff(sign(slope)))`.
 
 # Results
