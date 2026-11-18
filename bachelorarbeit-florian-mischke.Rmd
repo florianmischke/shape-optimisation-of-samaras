@@ -2037,7 +2037,7 @@ The samaras of *\acs{A} campestre* and *\acs{A} pseudoplatanus*, with mean Feret
 
 Better—that is, independent—data is needed for reliable results, \acs{eg} 10 fruits from 5 trees of each species. 
 
-As for the measurement method, the transition between the seed and the wing is not always consistent: sometimes it is clearly defined, and sometimes it is a gradual transition. To avoid uncertainty, the entire fruit was measured.
+As for the measurement method, the transition between the seed and the wing is not always consistent: sometimes it is clearly defined, and sometimes it is a gradual transition. To avoid further inaccuracy, the entire fruit was measured.
 
 ## Length-to-width ratios
 
@@ -2047,21 +2047,21 @@ As there were ties in Kolmogorov-Smirnov test, Shapiro-Wilk test was used (table
 
 Again, normally distributed populations would have been preferred and more data collection is encouraged.
 
-The Levene test showed no homogeneity of variance, so Kruskal-Wallis test was used to compare the groups, an ANOVA to see if it gives the same result, even though it's a parametric test.
+The Levene test showed no homogeneity of variance, so Kruskal-Wallis test was used to compare the groups, an ANOVA to examine if it gives the same result, even though it's a parametric test.
 
-The Kruskal-Wallis test shows, there is a difference between at least two groups (p `r p_kruskal`, table \ref{tab:kruskal}). According to the Mann-Whitney *U* test, the two samples of *\acs{A} platanoides* differ (p = `r p_wilcox`, table \ref{tab:wilcox}).
+The Kruskal-Wallis test and the ANOVA show, that there is a difference between at least two groups (p `r p_kruskal`, table \ref{tab:kruskal}). According to the Mann-Whitney *U* test, the two samples of *\acs{A} platanoides* differ (p = `r p_wilcox`, table \ref{tab:wilcox}).
 
-Arithmetic means were calculated for comparison. However, because three of the four samples did not follow a normal distribution, the associated confidence intervals should be interpreted with caution.
+Arithmetic means were calculated for comparison. However, because three of the four samples did not follow a normal distribution, the results should be interpreted with caution.
 
 ## Tensile triangles after Mattheck
 
-The method of tensile triangles, uniaxial as well as biaxial, could not reasonably be used to describe wing veins nor wing tips of maple samaras. To complete the shape of an average samara wing, the wing tip was nevertheless designed using tensile triangles (symmetrical-biaxial) and a closely fitted Bézier curve (figure \ref{fig:complete_samara}, blue curve).
+The method of tensile triangles, uniaxial as well as biaxial, could not reasonably be used to describe wing veins nor wing tips of maple samaras, as the first successful attempts could not be reproduced. To complete the shape of an average samara wing, the wing tip was nevertheless designed using tensile triangles (symmetrical-biaxial) and a closely fitted Bézier curve (figure \ref{fig:complete_samara}, blue curve).
 
 ## Bézier curves
 
 The Bézier curves for this work were fitted manually to the outline of the samara wing as closely as possible. Although this was performed with care, there remains a degree of inaccuracy. However, given the natural morphological variability of maple samaras, such deviations are expected to have limited influence on the results. The resulting curves therefore provide a sufficiently representative approximation of the wing’s overall topology.
 
-The specific samara's flight behaviour was not taken into account in this thesis. An average curve of just one species of maple might outperform the average curve of all samples, as \acs{eg} *\acs{A} platanoides* has a slower rate of descent than *\acs{A} campestre* and *\acs{A} pseudoplatanus* [@reinersmann_analysis_2026{}, not yet published].
+The specific samara's flight behaviour was not taken into account in this thesis. An average curve of just one species of maple might outperform the average curve of all samples, as \acs{eg} *\acs{A} platanoides* has a slower rate of descent than *\acs{A} campestre* and *\acs{A} pseudoplatanus* [@reinersmann_analysis_2026{}, not yet published]. The significance of these findings remains to be examined.
 
 Also, with a sample size of six for each species, the shape of the artificial samara has room for improvement (see [Conclusion](#conclusion)).
 
