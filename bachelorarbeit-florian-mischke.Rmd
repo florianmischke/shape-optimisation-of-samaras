@@ -2126,13 +2126,13 @@ plot_bezier_df_mean_curves_raw +
 
 [@zhang_evolution_2025]
 
-# Conclusion
+## Conclusion
 
 This work sets a start for analysis of samara topology by utilizing Bézier curves and is a proof of concept for this methodology. It is yet to be seen, if these findings help improve flight stability and controllability.
 
 Only the wings were analysed in this thesis. In order to be able to construct a complete biomimetic samara, more parameters are necessary: weight distribution between the seed, \acs{le} and wing; center of gravity; shape of the seed or payload, respectively. 
 
-## Outlook
+### Outlook
 
 Firstly, these findings encourage experimenting in designing actual technical samaras. Following this work, the author is motivated to build demonstrators using 3D printing, CNC milling machines, and laser cutting, then comparing these flyers with natural samaras and rectangular samaras (figure \ref{fig:Liu_et_al__msi_rotochute}) regarding fall velocity and stability.
 
