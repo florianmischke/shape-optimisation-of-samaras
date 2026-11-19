@@ -1940,6 +1940,37 @@ grid.arrange(
   plot_bezier_df_le_mean_curve + labs(tag = "(E)") + theme(plot.tag = element_text(size = 8),plot.tag.position = c(0.01, 1)), ncol = 1.2)
 ```
 
+```{r}
+v_le <- c(
+  setNames(round(mean_curve_points_le$X, 3), paste0(mean_curve_points_le$Point, "_X")),
+  setNames(round(mean_curve_points_le$Y, 3), paste0(mean_curve_points_le$Point, "_Y"))
+)
+```
+
+Put into a Bézier formula (Formula \ref{mean_bezier_le}):
+
+$$
+\begin{equation}
+\mathbf{P}(t) = (1-t)^3
+\begin{pmatrix}
+`r v_le["A_X"]`\\`r v_le["A_Y"]`
+\end{pmatrix}
++3(1-t)^2t
+\begin{pmatrix}
+`r v_le["B_X"]`\\`r v_le["B_Y"]`
+\end{pmatrix}
++ 3(1-t)t^2
+\begin{pmatrix}
+`r v_le["C_X"]`\\`r v_le["C_Y"]`
+\end{pmatrix}
++ t^3
+\begin{pmatrix}
+`r v_le["D_X"]`\\`r v_le["D_Y"]`
+\end{pmatrix}
+\label{mean_bezier_le}
+\end{equation}
+$$
+
 ### Combining leading- and trailing-edge curves
 
 ```{r all_curves, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{All Bézier curves combined in one plot}. Leading-edge curves on the top, trailing-edge curves on the bottom. Source: own work"}
