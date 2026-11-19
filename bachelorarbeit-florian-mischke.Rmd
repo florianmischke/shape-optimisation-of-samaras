@@ -2124,7 +2124,11 @@ plot_bezier_df_mean_curves_raw +
 
 ## Comparing results to literature
 
-[@zhang_evolution_2025]
+Zhang and Huang described the topology of samaras on the basis of 14 distinct points, distinguishing between the seed and the wing [-@zhang_evolution_2025]. While their work provides a methodology that allows for more precise comparability, the Bézier curves in this work provide a reproducible method to construct biomimetic samaras.
+
+## Mars exploration
+
+
 
 ## Conclusion
 
