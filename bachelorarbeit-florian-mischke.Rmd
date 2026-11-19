@@ -2091,6 +2091,10 @@ plot_bezier_df_mean_curves_raw +
         title = element_blank())
 ```
 
+## Comparing results to literature
+
+[@zhang_evolution_2025]
+
 # Conclusion
 
 This work sets a start for analysis of samara topology by utilizing Bézier curves and is a proof of concept for this methodology. It is yet to be seen, if these findings help improve flight stability and controllability.
