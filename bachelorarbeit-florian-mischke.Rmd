@@ -142,7 +142,7 @@ Samaras (Flügelnussfrüchte) sind ein faszinierendes Phänomen, das in der Natu
 # Introduction
 
 ## Samaras and their potential use in biomimetics
-*Samaras* (figure \ref{fig:samara_denmark}) are winged autorotating diaspores (dispersal units) [@fauli_effect_2019]. Examples of these dispersal units can be found in maple species, among other plants.
+Dispersal by wind is a common strategy amongst plants, and many seed-bearing plants have developed specialised structures that make use of the wind [@zhang_evolution_2025], including samaras. *Samaras* (figure \ref{fig:samara_denmark}) are winged autorotating diaspores (dispersal units) [@fauli_effect_2019], examples of which can be found in maple species, among other plants.
 
 ```{r samara_denmark, echo=FALSE, out.width="100%", fig.align="left", fig.cap="\\textbf{Photo of a ripe samara found in Denmark,} \\textit{Acer} sp., probably \\textit{A. pseudoplatanus}. Own work"}
 knitr::include_graphics("img/introduction/maple_samara.png")
