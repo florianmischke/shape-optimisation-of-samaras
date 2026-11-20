@@ -2124,9 +2124,7 @@ plot_bezier_df_mean_curves_raw +
 
 ## Complete samara wing
 
-!!! WORK IN PROGRESS !!!
-
-The distance between the first trailing-edge amplitude and the leading edge is `r label_upper`. The distance between the second trailing-edge amplitude and leading edge is `r label_lower`. The horizontal distance between the two amplitudes is `r label_horizontal`.
+The first trailing-edge amplitude sits `r label_upper` behind the leading edge, the second `r label_lower` behind it, while the two amplitudes span `r label_horizontal` horizontally (see figure \ref{fig:bezier_mean_curves_both_edges_with_measurements}).
 
 ## Comparing results to literature
 
