@@ -2122,13 +2122,19 @@ plot_bezier_df_mean_curves_raw +
         title = element_blank())
 ```
 
+## Complete samara wing
+
+!!! WORK IN PROGRESS !!!
+
+The distance between the first trailing-edge amplitude and the leading edge is `r label_upper`. The distance between the second trailing-edge amplitude and leading edge is `r label_lower`. The horizontal distance between the two amplitudes is `r label_horizontal`.
+
 ## Comparing results to literature
 
 Zhang and Huang described the topology of samaras on the basis of 14 distinct points, distinguishing between the seed and the wing [-@zhang_evolution_2025]. While their work provides a methodology that allows for more precise comparability, the Bézier curves in this work provide a reproducible method to construct biomimetic samaras.
 
 ## Mars exploration
 
-
+!!! WORK IN PROGRESS !!!
 
 ## Conclusion
 
