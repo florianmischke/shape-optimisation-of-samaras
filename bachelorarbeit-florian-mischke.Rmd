@@ -2126,6 +2126,21 @@ plot_bezier_df_mean_curves_raw +
 
 The first trailing-edge amplitude sits `r label_upper` behind the leading edge, the second `r label_lower` behind it, while the two amplitudes span `r label_horizontal` horizontally (see figure \ref{fig:bezier_mean_curves_both_edges_with_measurements}).
 
+```{r}
+total <- results |> summarise(feret = mean(Feret*10, na.rm = FALSE), width = mean(maxWidth*10, na.rm = FALSE), n = n())
+```
+
+With a mean total length of `r round(total$feret,2)` mm and a mean width of  `r round(total$width,2)` mm among all four species (n = `r total$n`), those parameters give a design proposal for wings of artificial samaras.
+
+!!! WORK IN PROGRESS!!!
+With the seed (or nutlet) missing, the samara design is not complete. Also, the leading edge is a bit too short. Experiments with just adding payload are encouraged. The leading edge should be thicker than the rest of the wing to add the counterweight (see figure \ref{fig:Liu_et_al__msi_rotochute}). 
+
+### Hypotheses
+
+1. Since the \acs{lev} is most prominent near the base of the samara [@lentink_leading-edge_2009], less wing surface area is needed to generate lift. Therefore, with a weaker relative low-pressure area along the wing, wing surface area needs to increase.
+
+2. ...
+
 ## Comparing results to literature
 
 Zhang and Huang described the topology of samaras on the basis of 14 distinct points, distinguishing between the seed and the wing [-@zhang_evolution_2025]. While their work provides a methodology that allows for more precise comparability, the Bézier curves in this work provide a reproducible method to construct biomimetic samaras.
