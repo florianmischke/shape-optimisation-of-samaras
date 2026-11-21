@@ -166,7 +166,11 @@ knitr::include_graphics("img/introduction/Ezra_et_al__tipuana_tipu.png")
 \vspace{-\baselineskip}
 ```
 
-\small Source: [@ezra_load-bearing_2023]
+\small Source: [@ezra_load-bearing_2023]\
+
+When looking at samaras flying or rather falling while autorotating thus slowing down the fall, one can easily come to the conclusion humankind can learn from these objects. Potential use cases are substitutes for parachutes, differently designed rotor blades for \acs{eg} helicopters, or a way to safely land sensor packages on the surface of the planet Mars. The latter is the reason for this bachelor thesis.\
+
+Figure \ref{fig:Ezra_et_al__tipuana_tipu} shows what samaras consist of, using *Tipuana tipu* (not a species of maple) as an example.\
 
 ```{=latex}
 \end{minipage}
@@ -175,11 +179,18 @@ knitr::include_graphics("img/introduction/Ezra_et_al__tipuana_tipu.png")
 \vspace{0pt}
 ```
 
-When looking at samaras flying or rather falling while autorotating thus slowing down the fall, one can easily come to the conclusion humankind can learn from these objects. Potential use cases are substitutes for parachutes, differently designed rotor blades for \acs{eg} helicopters, or a way to safely land sensor packages on the surface of the planet Mars. The latter is the reason for this bachelor thesis.\
+There has already been done a lot of work on this. Liu et al [-@liu_maple-seed-inspired_2026] designed an abstracted rectangular artificial samara, which they call *maple-seed-inspired (MSI) rotochute*, claiming it had better efficacy than a natural maple seed (Figure \ref{fig:Liu_et_al__msi_rotochute}). The maple samara's leading edge was replaced by a counterweight, the seed (or *root* as seen in Figure \ref{fig:Liu_et_al__msi_rotochute}) by the *payload*.
+Nave et al [-@nave_wind_2021] produced artificial samaras using 3D printing in a trial-and-error process (Figure \ref{fig:Nave_et_al__samaras}).
 
-Figure \ref{fig:Ezra_et_al__tipuana_tipu} shows what samaras consist of, using *Tipuana tipu* (not a species of maple) as an example.\
+```{r Nave_et_al__samaras, echo=FALSE, out.width="100%", fig.align="left", fig.cap="\\textbf{3D-printed samaras and their natural counterparts Norway maple (left) and Silver maple (right).}"}
+knitr::include_graphics("img/introduction/Nave_et_al__samaras.png")
+```
 
-There has already been done a lot of work on this. Liu et al designed an abstracted rectangular artificial samara, which they call *maple-seed-inspired (MSI) rotochute*, claiming it had better efficacy than a natural maple seed (Figure \ref{fig:Liu_et_al__msi_rotochute}). The maple samara's leading edge was replaced by a counterweight, the seed (or *root* as seen in Figure \ref{fig:Liu_et_al__msi_rotochute}) by the *payload*.
+```{=latex}
+\vspace{-\baselineskip}
+```
+
+\small Source: [@nave_wind_2021]
 
 ### Leading-edge vortex (LEV)
 
@@ -2107,7 +2118,14 @@ With the absence of the seed (or nutlet), the samara design is incomplete. In ad
 
 ## Comparing results to literature
 
-Zhang and Huang described the topology of samaras on the basis of 14 distinct standardized points, distinguishing between the seed and the wing [-@zhang_evolution_2025]. While their work provides a methodology that allows for more precise comparability, the Bézier curves in this work provide a reproducible method to construct biomimetic samaras.
+Zhang and Huang [-@zhang_evolution_2025] described the topology of samaras on the basis of 14 distinct standardized points, distinguishing between the seed and the wing. While their work provides a methodology that allows for more precise comparability, the Bézier curves in this work provide a reproducible method to construct biomimetic samaras.
+
+Liu et al [-@liu_maple-seed-inspired_2026] designed rectangular autorotating samara-like flyers (Figure \ref{fig:Liu_et_al__msi_rotochute}). Combining their findings regarding weight-distribution and this research, new designs should be attempted.
+
+Nave et al [-@nave_wind_2021] produced artificial samaras using 3D printing in a trial-and-error process (Figure \ref{fig:Nave_et_al__samaras}).
+This method lacks understanding of the function and the process of abstraction, therefore can't be described as an example of biomimetics.
+
+Nave_et_al__samaras.png
 
 ## Mars exploration
 
