@@ -179,7 +179,7 @@ When looking at samaras flying or rather falling while autorotating thus slowing
 
 Figure \ref{fig:Ezra_et_al__tipuana_tipu} shows what samaras consist of, using *Tipuana tipu* (not a species of maple) as an example.\
 
-There has already been done a lot of work on this. Liu et al designed an abstracted rectangular artificial samara, which they call *maple-seed-inspired (MSI) rotochute*, claiming it had better efficacy than a natural maple seed (Figure \ref{fig:Liu_et_al__msi_rotochute}). The maple samara's leading edge was replaced by a counterweight, the seed (or *root* as seen in figure \ref{fig:Liu_et_al__msi_rotochute}) by the *payload*.
+There has already been done a lot of work on this. Liu et al designed an abstracted rectangular artificial samara, which they call *maple-seed-inspired (MSI) rotochute*, claiming it had better efficacy than a natural maple seed (Figure \ref{fig:Liu_et_al__msi_rotochute}). The maple samara's leading edge was replaced by a counterweight, the seed (or *root* as seen in Figure \ref{fig:Liu_et_al__msi_rotochute}) by the *payload*.
 
 ### Leading-edge vortex (LEV)
 
@@ -232,7 +232,7 @@ The fruits therefore have a thousand-grain weight of about 182 g.
 ### *\acs{A} platanoides* (Norway maple)
 *\acs{A} platanoides* occurs in mixed deciduous forests, but in some areas it is only naturalized and is commonly used as park or street tree [@schmeil_flora_2024]. It presents as tree, blossoms April to May, usually grows up to 20 (sometimes up to 35) m high [@schmeil_flora_2024], and gets to live for about 180 years [@roloff_enzyklopaholzgewachse_2014]. When growing in open areas, *\acs{A} platanoides* reaches sexual maturity as early as 10 to 15 years, but not until 25 to 30 years when growing in a stand [@roloff_enzyklopaholzgewachse_2014].
 
-*\acs{A} platanoides* bears fruit abundantly almost every year and the samaras ripen in fall [@roloff_enzyklopaholzgewachse_2014]. They get to be about 5 cm long, hang down in pairs (sometimes in groups of three or more), and the upper edges of the two wings form an obtuse angle, which is a distinguishing feature from *\acs{A} campestre* (horizontal) and *\acs{A} pseudoplatanus* (acute angle), as seen in figure \ref{fig:maple_samaras_lea} [@roloff_enzyklopaholzgewachse_2014].
+*\acs{A} platanoides* bears fruit abundantly almost every year and the samaras ripen in fall [@roloff_enzyklopaholzgewachse_2014]. They get to be about 5 cm long, hang down in pairs (sometimes in groups of three or more), and the upper edges of the two wings form an obtuse angle, which is a distinguishing feature from *\acs{A} campestre* (horizontal) and *\acs{A} pseudoplatanus* (acute angle), as seen in Figure \ref{fig:maple_samaras_lea} [@roloff_enzyklopaholzgewachse_2014].
 
 The fruits have a thousand-grain weight (without wings) of 120 to 150 g [@roloff_enzyklopaholzgewachse_2014].
 
@@ -343,7 +343,7 @@ Titan$^1$   $0.135 \cdot 10^{24}$               5,149.4                     1.4
       
 : Celestial body parameters [@noauthor_planetary_nodate]; [1] [@riegler_comparison_2025].  {#tab:planetary_parameters .class key="value"}
 
-Table \ref{tab:planetary_parameters} compares planetary (and other celestial body) parameters, figure \ref{fig:atmospheric_density_comparison} compares atmospheric density among planets and Titan. These parameters greatly impact samara behavior.
+Table \ref{tab:planetary_parameters} compares planetary (and other celestial body) parameters, Figure \ref{fig:atmospheric_density_comparison} compares atmospheric density among planets and Titan. These parameters greatly impact samara behavior.
 
 This thesis aims to improve artificial samara design and thereby suggesting design parameters for novel experiments on landing technologies, mainly for Mars exploration (Figure \ref{fig:mars_landing}).
 
@@ -404,7 +404,7 @@ knitr::include_graphics("img/methods/maple_leaves_schmeil.png")
 ## Photos for measuring and geometry experiments
 
 An A3 sheet of millimeter paper was placed on the ground and secured with transparent sticky tape. A 10x4 cm cutout of white printer paper was taped on it. One samara at a time was placed on that paper and a sticky note with date/time and species name was placed below.\
-A digital camera (Panasonic Lumix G, Model No. DC-FZ100002) was secured on a tripod stand at maximum height, pointed down and leveled via spirit level. Distance from ground to camera lens was measured 134cm. The following settings were chosen to take photos: Focal length 400, S 4, F 11, ISO 125; manual mode. Photos of the setup were taken, see figure \ref{fig:camera_setup}.
+A digital camera (Panasonic Lumix G, Model No. DC-FZ100002) was secured on a tripod stand at maximum height, pointed down and leveled via spirit level. Distance from ground to camera lens was measured 134cm. The following settings were chosen to take photos: Focal length 400, S 4, F 11, ISO 125; manual mode. Photos of the setup were taken, see Figure \ref{fig:camera_setup}.
 
 50 photos for *Acer pseudoplatanus* and *\acs{A} campestre* and 100 photos for *\acs{A} platanoides* (50 for each of the two samples) were taken by remote control with the Panasonic Image App. The photos were copied to a Laptop and backed up to cloud storage and an external SSD.
 
@@ -569,7 +569,7 @@ Amplitudes of Bézier curves were calculated by using the first derivative: `slo
 
 Figures \ref{fig:feret_width_three_acer_species}, \ref{fig:feret_width_two_platanoides_samples}, \ref{fig:feret_width_four_acer_samples}, \ref{fig:ratios_boxplot}, and \ref{fig:ratios_hist} show distributions of length and width measurements done by FIJI, as well as length/width ratios of those measurements.
 
-Figure \ref{fig:feret_width_three_acer_species} compares length and width of three maple species, figure \ref{fig:feret_width_two_platanoides_samples} compares two samples of *\acs{A} platanoides*, figure \ref{fig:feret_width_four_acer_samples} shows these comparisons in one plot.
+Figure \ref{fig:feret_width_three_acer_species} compares length and width of three maple species, Figure \ref{fig:feret_width_two_platanoides_samples} compares two samples of *\acs{A} platanoides*, Figure \ref{fig:feret_width_four_acer_samples} shows these comparisons in one plot.
 
 ```{r echo=FALSE}
 results <- read.csv("data/2026-07-14--09-56--Results.csv")
@@ -2095,7 +2095,7 @@ plot_bezier_df_mean_curves_raw +
 
 ## Complete samara wing
 
-The first trailing-edge amplitude sits `r label_upper` behind the leading edge, the second `r label_lower` behind it, while the two amplitudes span `r label_horizontal` horizontally (see figure \ref{fig:bezier_mean_curves_both_edges_with_measurements}).
+The first trailing-edge amplitude sits `r label_upper` behind the leading edge, the second `r label_lower` behind it, while the two amplitudes span `r label_horizontal` horizontally (see Figure \ref{fig:bezier_mean_curves_both_edges_with_measurements}).
 
 ```{r}
 total <- results |> summarise(feret = mean(Feret*10, na.rm = FALSE), width = mean(maxWidth*10, na.rm = FALSE), n = n())
