@@ -2132,8 +2132,7 @@ total <- results |> summarise(feret = mean(Feret*10, na.rm = FALSE), width = mea
 
 With a mean total length of `r round(total$feret,2)` mm and a mean width of  `r round(total$width,2)` mm among all four species (n = `r total$n`), those parameters give a design proposal for wings of artificial samaras.
 
-!!! WORK IN PROGRESS!!!
-With the seed (or nutlet) missing, the samara design is not complete. Also, the leading edge is a bit too short. Experiments with just adding payload are encouraged. The leading edge should be thicker than the rest of the wing to add the counterweight (see figure \ref{fig:Liu_et_al__msi_rotochute}). 
+With the absence of the seed (or nutlet), the samara design is incomplete. In addition, the leading edge is somewhat too short. Experiments involving the addition of a payload are encouraged. The leading edge should be thicker than the remainder of the wing to provide the necessary counterweight, as shown in Figure \ref{fig:Liu_et_al__msi_rotochute}.
 
 ## Comparing results to literature
 
