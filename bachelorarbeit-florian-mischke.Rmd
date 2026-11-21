@@ -259,7 +259,7 @@ The inflorescence is racemose with 40.000–170.000 fruits per 40 year old tree 
 
 The fruits have a thousand-grain weight of 800 g, the average fruit weight is 128 mg and consists of 63% embryo, 22% pericarp, and 14% wing [@roloff_enzyklopaholzgewachse_2014].
 
-```{r maple_samaras_lea, echo=FALSE, out.width="70%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Samaras of native maple species in Germany.} (A) \\textit{A. campestre}, (B) \\textit{A. platanoides}, (C) \\textit{A. pseudoplatanus}."}
+```{r maple_samaras_lea, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Samaras of native maple species in Germany.} (A) \\textit{A. campestre}, (B) \\textit{A. platanoides}, (C) \\textit{A. pseudoplatanus}."}
 knitr::include_graphics(
   "img/introduction/maple_samaras_lea.png"
 )
