@@ -2137,7 +2137,7 @@ With the seed (or nutlet) missing, the samara design is not complete. Also, the 
 
 ## Comparing results to literature
 
-Zhang and Huang described the topology of samaras on the basis of 14 distinct points, distinguishing between the seed and the wing [-@zhang_evolution_2025]. While their work provides a methodology that allows for more precise comparability, the Bézier curves in this work provide a reproducible method to construct biomimetic samaras.
+Zhang and Huang described the topology of samaras on the basis of 14 distinct standardized points, distinguishing between the seed and the wing [-@zhang_evolution_2025]. While their work provides a methodology that allows for more precise comparability, the Bézier curves in this work provide a reproducible method to construct biomimetic samaras.
 
 ## Mars exploration
 
