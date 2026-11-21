@@ -276,7 +276,7 @@ knitr::include_graphics("img/introduction/mattheck_tensile_triangles.jpg")
 \vspace{0pt}
 ```
 
-Prof. Dr. Claus Mattheck, \ac{kit}, found out that shapes of a significant number of biological structures and other structures found in nature (figure \ref{fig:mattheck_tensile_triangles}) can be described using so-called **tensile triangles**:\
+Prof. Dr. Claus Mattheck of the \ac{kit} discovered that the shapes of many biological structures—and other structures found in nature (figure \ref{fig:mattheck_tensile_triangles})—can be described using so-called **tensile triangles**:\
 
 \begin{quote}
 \enquote{The tensile triangles curve appears to be a general design rule in nature with yet unknown limitations and potential.} 
