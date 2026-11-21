@@ -142,7 +142,7 @@ Samaras (Flügelnussfrüchte) sind ein faszinierendes Phänomen, das in der Natu
 # Introduction
 
 ## Samaras and their potential use in biomimetics
-Dispersal by wind is a common strategy amongst plants, and many seed-bearing plants have developed specialised structures that make use of the wind [@zhang_evolution_2025], including samaras. *Samaras* (figure \ref{fig:samara_denmark}) are winged autorotating diaspores (dispersal units) [@fauli_effect_2019], examples of which can be found in maple species, among other plants.
+Dispersal by wind is a common strategy amongst plants, and many seed-bearing plants have developed specialised structures that make use of the wind [@zhang_evolution_2025], including samaras. *Samaras* (Figure \ref{fig:samara_denmark}) are winged autorotating diaspores (dispersal units) [@fauli_effect_2019], examples of which can be found in maple species, among other plants.
 
 ```{r samara_denmark, echo=FALSE, out.width="100%", fig.align="left", fig.cap="\\textbf{Photo of a ripe samara found in Denmark,} \\textit{Acer} sp., probably \\textit{A. pseudoplatanus}. Own work"}
 knitr::include_graphics("img/introduction/maple_samara.png")
@@ -179,7 +179,7 @@ When looking at samaras flying or rather falling while autorotating thus slowing
 
 Figure \ref{fig:Ezra_et_al__tipuana_tipu} shows what samaras consist of, using *Tipuana tipu* (not a species of maple) as an example.\
 
-There has already been done a lot of work on this. Liu et al designed an abstracted rectangular artificial samara, which they call *maple-seed-inspired (MSI) rotochute*, claiming it had better efficacy than a natural maple seed (figure \ref{fig:Liu_et_al__msi_rotochute}). The maple samara's leading edge was replaced by a counterweight, the seed (or *root* as seen in figure \ref{fig:Liu_et_al__msi_rotochute}) by the *payload*.
+There has already been done a lot of work on this. Liu et al designed an abstracted rectangular artificial samara, which they call *maple-seed-inspired (MSI) rotochute*, claiming it had better efficacy than a natural maple seed (Figure \ref{fig:Liu_et_al__msi_rotochute}). The maple samara's leading edge was replaced by a counterweight, the seed (or *root* as seen in figure \ref{fig:Liu_et_al__msi_rotochute}) by the *payload*.
 
 ### Leading-edge vortex (LEV)
 
@@ -205,7 +205,7 @@ knitr::include_graphics("img/introduction/Liu_et_al__msi_rotochute.png")
 
 ## Native maple species in Germany
 
-Three maple species (figure \ref{fig:leaves_maple_species}) of the family Sapindaceae are considered to be native in Germany: *\acs{A} campestre* (\acs{engl} field maple, \acs{ger} Feld-Ahorn), *\acs{A} platanoides* (\acs{engl} Norway maple, \acs{ger} Spitz-Ahorn) and *\acs{A} pseudoplatanus* (\acs{engl} sycamore, \acs{ger} Berg-Ahorn) [@schmeil_flora_2024; @roloff_enzyklopaholzgewachse_2014].
+Three maple species (Figure \ref{fig:leaves_maple_species}) of the family Sapindaceae are considered to be native in Germany: *\acs{A} campestre* (\acs{engl} field maple, \acs{ger} Feld-Ahorn), *\acs{A} platanoides* (\acs{engl} Norway maple, \acs{ger} Spitz-Ahorn) and *\acs{A} pseudoplatanus* (\acs{engl} sycamore, \acs{ger} Berg-Ahorn) [@schmeil_flora_2024; @roloff_enzyklopaholzgewachse_2014].
 
 ```{r leaves_maple_species, echo=FALSE, out.width="30%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Leaves of native maple species in Germany.} (A) \\textit{A. campestre}, (B) \\textit{A. platanoides}, (C) \\textit{A. pseudoplatanus}."}
 knitr::include_graphics(
@@ -276,7 +276,7 @@ knitr::include_graphics("img/introduction/mattheck_tensile_triangles.jpg")
 \vspace{0pt}
 ```
 
-Prof. Dr. Claus Mattheck of the \ac{kit} discovered that the shapes of many biological structures—and other structures found in nature (figure \ref{fig:mattheck_tensile_triangles})—can be described using so-called **tensile triangles**:\
+Prof. Dr. Claus Mattheck of the \ac{kit} discovered that the shapes of many biological structures—and other structures found in nature (Figure \ref{fig:mattheck_tensile_triangles})—can be described using so-called **tensile triangles**:\
 
 \begin{quote}
 \enquote{The tensile triangles curve appears to be a general design rule in nature with yet unknown limitations and potential.} 
@@ -287,7 +287,7 @@ Shapes following the tensile triangles curve have shown to reduce stress in notc
 
 ### Uniaxial loading
 
-In short, the method for uniaxial loading is as follows: an isosceles right triangle (figure \ref{fig:tensile_triangles_tree}, points EGF) is drawn at the base, \acs{eg} at the intercept of trunk and ground level. Using corner point G and center of the hypotenuse H, a second isosceles triangle is drawn. Repeating with corner point I and center point J, a third and final triangle is drawn.
+In short, the method for uniaxial loading is as follows: an isosceles right triangle (Figure \ref{fig:tensile_triangles_tree}, points EGF) is drawn at the base, \acs{eg} at the intercept of trunk and ground level. Using corner point G and center of the hypotenuse H, a second isosceles triangle is drawn. Repeating with corner point I and center point J, a third and final triangle is drawn.
 The method is further explained in [Methods and Materials](#methods-and-materials).
 
 ```{r tensile_triangles_tree, echo=FALSE, out.width="100%", fig.align="center", fig.cap="\\textbf{Example of tensile triangles at a tree}. Own work."}
@@ -304,7 +304,7 @@ knitr::include_graphics("img/introduction/tensile_triangles_tree.png")
 knitr::include_graphics("img/introduction/tensile_triangles_prickle.png")
 ```
 
-The method of tensile triangles on biaxial loading (figure \ref{fig:tensile_triangles_prickle}) requires lines drawn (thick black lines) at the structure to be examined, perpendicular lines (thin black lines), and an angle bisector (dashed line) passing the intersection of the perpendiculars. In case of symmetric forces, the bisected angles are equal. In an asymmetric case, the angles differ from another. Then tensile triangles are drawn as described above in the uniaxial loading method, but on either side of the angle bisector.
+The method of tensile triangles on biaxial loading (Figure \ref{fig:tensile_triangles_prickle}) requires lines drawn (thick black lines) at the structure to be examined, perpendicular lines (thin black lines), and an angle bisector (dashed line) passing the intersection of the perpendiculars. In case of symmetric forces, the bisected angles are equal. In an asymmetric case, the angles differ from another. Then tensile triangles are drawn as described above in the uniaxial loading method, but on either side of the angle bisector.
 
 ## Bézier curves
 
@@ -313,7 +313,7 @@ The method of tensile triangles on biaxial loading (figure \ref{fig:tensile_tria
 Every Bézier curve has a unique set of **control points** [@baydas_defining_2019].
 Using the *Bernstein polynomial* and *De Castaljeu algorithm*, with given control points, a Bézier curve can be drawn [@baydas_defining_2019].
 
-**Cubic** Bézier curves are established by four control points (figure \ref{fig:basic_bezier}). 
+**Cubic** Bézier curves are established by four control points (Figure \ref{fig:basic_bezier}). 
 
 ```{r basic_bezier, echo=FALSE, out.width="100%", fig.align="left", fig.cap="\\textbf{Simple cubic bezier curve} with four control points in GeoGebra. Source: geogebra.org"}
 knitr::include_graphics("img/introduction/basic_bezier.png")
@@ -345,7 +345,7 @@ Titan$^1$   $0.135 \cdot 10^{24}$               5,149.4                     1.4
 
 Table \ref{tab:planetary_parameters} compares planetary (and other celestial body) parameters, figure \ref{fig:atmospheric_density_comparison} compares atmospheric density among planets and Titan. These parameters greatly impact samara behavior.
 
-This thesis aims to improve artificial samara design and thereby suggesting design parameters for novel experiments on landing technologies, mainly for Mars exploration (figure \ref{fig:mars_landing}).
+This thesis aims to improve artificial samara design and thereby suggesting design parameters for novel experiments on landing technologies, mainly for Mars exploration (Figure \ref{fig:mars_landing}).
 
 ```{=latex}
 \noindent
@@ -386,7 +386,7 @@ knitr::include_graphics("img/introduction/mars_landing.png")
 
 ## Samples
 
-More than 200 mostly intact samaras of native maple species were gathered (\>50 per species/location), defective samaras have been discarded so that at least 50 intact samples could be used. The sample's species were identified based on the shape of the leaves (figures \ref{fig:leaves_maple_species}, \ref{fig:maple_leaves_schmeil}), cross-referenced with the samara topology (figure \ref{fig:maple_samaras_lea}) of the closest tree, and it was made sure that no other species of maple were near the gathering site. The four species and locations were as follows:
+More than 200 mostly intact samaras of native maple species were gathered (\>50 per species/location), defective samaras have been discarded so that at least 50 intact samples could be used. The sample's species were identified based on the shape of the leaves (Figures \ref{fig:leaves_maple_species}, \ref{fig:maple_leaves_schmeil}), cross-referenced with the samara topology (Figure \ref{fig:maple_samaras_lea}) of the closest tree, and it was made sure that no other species of maple were near the gathering site. The four species and locations were as follows:
 
 1.  *Acer campestre* \acs{l}- Loki Schmidt Garten, Hamburg - what3words: [///kennels.slippery.hears](https://w3w.co/kennels.slippery.hears)
 2.  *Acer pseudoplatanus* \acs{l}- Stadtpark, Hamburg - what3words: [///engaging.survey.spout](https://w3w.co/engaging.survey.spout)
@@ -420,7 +420,7 @@ knitr::include_graphics(
 
 ## Measuring samaras in FIJI
 
-After opening a photo of a samara in FIJI, four centimeteres were marked using the millimeter sheet (figure \ref{fig:P1116384}). The scale was then set via *Set Scale...* which autofilled the marked pixels. The output was recorded in the macro that was used to measure all the samples, as shown below:
+After opening a photo of a samara in FIJI, four centimeteres were marked using the millimeter sheet (Figure \ref{fig:P1116384}). The scale was then set via *Set Scale...* which autofilled the marked pixels. The output was recorded in the macro that was used to measure all the samples, as shown below:
 \begin{verbatim}
 // Set Scale
 run("Set Scale...", "distance=1457.0124 known=4 unit=cm");
@@ -436,7 +436,7 @@ mm_per_px <- 40/1457.0124
 knitr::include_graphics("img/fiji/P1116384.JPG")
 ```
 
-A FIJI macro was written and used to automatically measure the samara's dimensions. The macro first converted the image to a mask with a set threshold of `0,140`, then cropped, then started a particle analysis in which the biggest length of the largest found area was measured. After that the greatest width perpendicular to that length was measured. Lines were drawn onto the mask and results written into the top left corner of the image (figure \ref{fig:P1116384_processed}) as well as written into a CSV (comma-separated values) file.
+A FIJI macro was written and used to automatically measure the samara's dimensions. The macro first converted the image to a mask with a set threshold of `0,140`, then cropped, then started a particle analysis in which the biggest length of the largest found area was measured. After that the greatest width perpendicular to that length was measured. Lines were drawn onto the mask and results written into the top left corner of the image (Figure \ref{fig:P1116384_processed}) as well as written into a CSV (comma-separated values) file.
 
 ```{r P1116384_processed, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Sample of \\textit{A. pseudoplatanus} after processing with FIJI macro.} Source: own work"}
 knitr::include_graphics("img/fiji/P1116384_processed.jpg")
@@ -450,7 +450,7 @@ The results were processed in R code in a `.Rmd` file in RStudio by Posit Softwa
 
 For experiments with tensile triangles on maple fruits, photos of samples were selected randomly, then [uniaxial](#uniaxial-loading) and [biaxial](#biaxial-loading) methods were attempted in GeoGebra.
 In the uniaxial attempt, a straight line was drawn at the \ac{le} and a line perpendicular to that, touching the tip. Tensile triangles were then drawn into the right angle.
-In the biaxial attempt, straight lines were drawn at the \ac{le} and the \ac{te}, fitted as close as possible. Then, an Angle Bisector was used to draw three triangles each on either sides perpendiculars, the angle then adjusted to best fit the tensile triangles (figure \ref{fig:mattheck1}). Similarly, these methods were also attempted at wing veins (figure \ref{fig:mattheck_vein}).
+In the biaxial attempt, straight lines were drawn at the \ac{le} and the \ac{te}, fitted as close as possible. Then, an Angle Bisector was used to draw three triangles each on either sides perpendiculars, the angle then adjusted to best fit the tensile triangles (Figure \ref{fig:mattheck1}). Similarly, these methods were also attempted at wing veins (Figure \ref{fig:mattheck_vein}).
 
 ```{r mattheck1, echo=FALSE, out.width="90%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Tensile triangle method (biaxial) applied to wing tip of a sample of \\textit{A. platanoides}.} Source: own work"}
 knitr::include_graphics("img/mattheck/A platanoides Mattheck 1.png")
@@ -462,8 +462,8 @@ knitr::include_graphics("img/mattheck/A pseudoplatanus Mattheck vein.png")
 
 ### Bézier curves
 
-The first Bézier curve experiments were done in Geogebra (figure \ref{fig:geogebra_bezier}; [geogebra.org](https://www.geogebra.org/)). Since this web service can't handle large images and downscales them, cropped sections were used. As the sections were not the same size, Geogebra treated them differently. Therefore the results were not comparable. \par
-\indent From then on, Affinity suite ([affinity.studio](https://www.affinity.studio/)) was used for all measurements. Cubic Beziér curves were drawn manually with the Pen tool and fitted to the shape of the samara's trailing edge and leading edge respectively with the Node tool (figure \ref{fig:bezier_pseudoplatanus_affinity}). The curve was exported as SVG and all SVG files handled by a custom Python script, resulting in a machine-readable CSV file, that was imported by R code.
+The first Bézier curve experiments were done in Geogebra (Figure \ref{fig:geogebra_bezier}; [geogebra.org](https://www.geogebra.org/)). Since this web service can't handle large images and downscales them, cropped sections were used. As the sections were not the same size, Geogebra treated them differently. Therefore the results were not comparable. \par
+\indent From then on, Affinity suite ([affinity.studio](https://www.affinity.studio/)) was used for all measurements. Cubic Beziér curves were drawn manually with the Pen tool and fitted to the shape of the samara's trailing edge and leading edge respectively with the Node tool (Figure \ref{fig:bezier_pseudoplatanus_affinity}). The curve was exported as SVG and all SVG files handled by a custom Python script, resulting in a machine-readable CSV file, that was imported by R code.
 
 ```{r P1116641_bezier, echo=FALSE, out.width="70%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer platanoides Source: own work"}
 #knitr::include_graphics("img/bezier/P1116641.JPG-bezier.png")
@@ -515,7 +515,7 @@ colnames(p) <- c("X","Y")
 rownames(p) <- c("A","B","C","D")
 ```
 
-In the development of this method, the first attempt (figure \ref{fig:geogebra_bezier} (C)) gave the **relative** control points A (`r p["A",]`), B (`r p["B",]`), C (`r p["C",]`), and D (`r p["D",]`) (table \ref{tab:control_points}).
+In the development of this method, the first attempt (Figure \ref{fig:geogebra_bezier} (C)) gave the **relative** control points A (`r p["A",]`), B (`r p["B",]`), C (`r p["C",]`), and D (`r p["D",]`) (table \ref{tab:control_points}).
 
 ```{r}
 kable(p, format = "latex", booktabs = TRUE, caption = "Control points of first attempt of bezier curve on sample of \\textit{A. pseudoplatanus}.", label = "control_points") |> kable_styling(latex_options = "HOLD_position")
@@ -544,7 +544,7 @@ $$
 \label{bezier_dummy}\end{equation}
 $$
 
-With the R package `bezier`, a Bézier curve can be drawn in `ggplot` (figure \ref{fig:bezier_curve_simulation}). Using the control points, the `bezier(t=t, p=p)` function (`t`: sequence from 1 to 100, `p`: matrix of control points) generates a 100 points (`t`) to be plotted (`geom_line`).
+With the R package `bezier`, a Bézier curve can be drawn in `ggplot` (Figure \ref{fig:bezier_curve_simulation}). Using the control points, the `bezier(t=t, p=p)` function (`t`: sequence from 1 to 100, `p`: matrix of control points) generates a 100 points (`t`) to be plotted (`geom_line`).
 
 ```{r bezier_curve_simulation, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Bézier curve simulation} of first attempt on sample of \\textit{A. pseudoplatanus}. Source: own work"}
 
@@ -968,7 +968,7 @@ kable(wilcox_table,
 
 ## Tensile triangles after Mattheck
 
-First positive results in experiments with tensile triangles (figures \ref{fig:mattheck_vein} and \ref{fig:mattheck1}) could not be reproduced.
+First positive results in experiments with tensile triangles (Figures \ref{fig:mattheck_vein} and \ref{fig:mattheck1}) could not be reproduced.
 
 ## Bézier curves
 
@@ -989,7 +989,7 @@ data_curve_points_merged <- data_curve_points |> mutate(
 
 Figure \ref{fig:bezier_curve_simulation} shows 18 Bézier curves of samples of samaras (six per species) in one plot.
 Figure \ref{fig:bezier_curves_3species_raw} shows these curves with a common starting point for better comparison of lengths and amplitude.
-With common starting and end points, thus equal lengths, the samara's topologies can be compared (figure \ref{fig:bezier_curves_transformed}).
+With common starting and end points, thus equal lengths, the samara's topologies can be compared (Figure \ref{fig:bezier_curves_transformed}).
 
 ```{r bezier_curves_3species_raw, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve simulation of three Acer species, raw data - not adjusted to same origin. Source: own work"}
 bezier_df_unadjusted <- data_curve_points_merged |> 
@@ -1250,7 +1250,7 @@ vlines = c(mean_lower_X,mean_upper_X)
 hlines = c(mean_lower_Y,mean_upper_Y)
 ```
 
-X- and Y-Coordinates of mean amplitudes have been calculated and drawn into a plot with transformed Bézier curves (figure \ref{fig:bezier_curves_transformed_with_lines}).
+X- and Y-Coordinates of mean amplitudes have been calculated and drawn into a plot with transformed Bézier curves (Figure \ref{fig:bezier_curves_transformed_with_lines}).
 
 First amplitude (maximum): X = `r mean_upper_X`; Y = `r mean_upper_Y`\
 Second amplitude (minimum): X = `r mean_lower_X`; Y = `r mean_lower_Y`\
@@ -1275,7 +1275,7 @@ bezier_df_transformed |> group_by(Species) |> mutate(
   )
 ```
 
-An average (mean) Bézier curve was calculated for all samples (figure \ref{fig:bezier_mean_curve}) and for each species individually (figure \ref{fig:bezier_mean_curves2}).
+An average (mean) Bézier curve was calculated for all samples (Figure \ref{fig:bezier_mean_curve}) and for each species individually (Figure \ref{fig:bezier_mean_curves2}).
 
 ```{r bezier_mean_curve, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Mean curve (red) calculated by means of control points of transformed data. Source: own work"}
 mean_curve_points <- data_curve_points_transformed |> 
@@ -2051,7 +2051,7 @@ The FIJI macro used in this work was written by the author with genAI support an
 
 ## Length-to-width ratios
 
-Due to their special shape, samaras of *\acs{A} pseudoplatanus* are expected to have the greatest length-to-width ratios, which was confirmed by these measurements and calculations (figure \ref{fig:ratios_boxplot} and table \ref{tab:mean_ratios}). The mean ratio of *\acs{A} pseudoplatanus* is `r round(mean_ratios |> filter(Species == "Acer pseudoplatanus") |> select(mean_ratio),2)`, that of *\acs{A} campestre* is lowest with `r round(mean_ratios |> filter(Species == "Acer campestre") |> select(mean_ratio),2)`, *\acs{A} platanoides* samaras' ratios fall inbetween that with `r round(mean_ratios |> filter(Location == "IPM") |> select(mean_ratio),2)` (IPM) and `r round(mean_ratios |> filter(Location == "Spannskamp") |> select(mean_ratio),2)` (Spannskamp).
+Due to their special shape, samaras of *\acs{A} pseudoplatanus* are expected to have the greatest length-to-width ratios, which was confirmed by these measurements and calculations (Figure \ref{fig:ratios_boxplot} and table \ref{tab:mean_ratios}). The mean ratio of *\acs{A} pseudoplatanus* is `r round(mean_ratios |> filter(Species == "Acer pseudoplatanus") |> select(mean_ratio),2)`, that of *\acs{A} campestre* is lowest with `r round(mean_ratios |> filter(Species == "Acer campestre") |> select(mean_ratio),2)`, *\acs{A} platanoides* samaras' ratios fall inbetween that with `r round(mean_ratios |> filter(Location == "IPM") |> select(mean_ratio),2)` (IPM) and `r round(mean_ratios |> filter(Location == "Spannskamp") |> select(mean_ratio),2)` (Spannskamp).
 
 As there were ties in Kolmogorov-Smirnov test, Shapiro-Wilk test was used (table \ref{tab:shapiro}). The tests show, that only the sample of *\acs{A} platanoides* (Spannskamp) comes from a normally distributed population (p $\approx$ `r round(shapiro_Aplatanoides_Spannskamp$p.value,3)`).
 
@@ -2065,7 +2065,7 @@ Arithmetic means were calculated for comparison. However, because three of the f
 
 ## Tensile triangles after Mattheck
 
-The method of tensile triangles, uniaxial as well as biaxial, could not reasonably be used to describe wing veins nor wing tips of maple samaras, as the first successful attempts could not be reproduced. To complete the shape of an average samara wing, the wing tip was nevertheless designed using tensile triangles (symmetrical-biaxial) and a closely fitted Bézier curve (figure \ref{fig:complete_samara}, blue curve).
+The method of tensile triangles, uniaxial as well as biaxial, could not reasonably be used to describe wing veins nor wing tips of maple samaras, as the first successful attempts could not be reproduced. To complete the shape of an average samara wing, the wing tip was nevertheless designed using tensile triangles (symmetrical-biaxial) and a closely fitted Bézier curve (Figure \ref{fig:complete_samara}, blue curve).
 
 ## Bézier curves
 
@@ -2129,7 +2129,7 @@ The following hypotheses were concluded from these findings and are encouraged t
 
 ### Outlook
 
-Firstly, these findings encourage experimenting in designing actual technical samaras. Following this work, the author is motivated to build demonstrators using 3D printing, CNC milling machines, and laser cutting, then comparing these flyers with natural samaras and rectangular samaras (figure \ref{fig:Liu_et_al__msi_rotochute}) regarding fall velocity and stability.
+Firstly, these findings encourage experimenting in designing actual technical samaras. Following this work, the author is motivated to build demonstrators using 3D printing, CNC milling machines, and laser cutting, then comparing these flyers with natural samaras and rectangular samaras (Figure \ref{fig:Liu_et_al__msi_rotochute}) regarding fall velocity and stability.
 
 Secondly, if the results of these experiments are promising, more research could be done: As mentioned before, further progress depends on access to independent, higher-quality—that is, independent—data (see [Discussion](#discussion)). 
 
