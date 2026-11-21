@@ -442,36 +442,7 @@ A FIJI macro was written and used to automatically measure the samara's dimensio
 knitr::include_graphics("img/fiji/P1116384_processed.jpg")
 ```
 
-The results were processed in R code in a `.Rmd` file in RStudio by Posit Software. Mean, standard deviation, standard error and variance were calculated for all samples and for each species/sample separately. Length/width ratios were calculated and tests (Shapiro-Wilk, Levene, ANOVA, Kruskal-Wallis) performed.
-
-### Shapiro-Wilk test
-
-H0: sample comes from a normally distributed population.\
-HA: no normal distribution.
-
-### Levene test
-
-H0: homogeneity of variance.\
-HA: at least one group with variance unequal to others.
-
-### ANOVA
-
-H0: no difference between the expected values of the groups.\
-HA: difference between at least two expected values.
-
-### Kruskal-Wallis test
-
-Nonparametric statistics
-
-H0: There is no difference between the groups.\
-HA: Difference between at least two groups.
-
-### Mann-Whitney *U* test
-
-Nonparametric statistics
-
-H0: selected values X and Y from two groups have the same distribution.\
-HA: difference between the two groups.
+The results were processed in R code in a `.Rmd` file in RStudio by Posit Software. Mean, standard deviation, standard error and variance were calculated for all samples and for each species/sample separately. Length/width ratios were calculated and tests (Shapiro-Wilk, Levene, ANOVA, Kruskal-Wallis, Mann–Whitney *U* test) performed.
 
 ## Geometry experiments in GeoGebra and Affinity
 
