@@ -2135,12 +2135,6 @@ With a mean total length of `r round(total$feret,2)` mm and a mean width of  `r 
 !!! WORK IN PROGRESS!!!
 With the seed (or nutlet) missing, the samara design is not complete. Also, the leading edge is a bit too short. Experiments with just adding payload are encouraged. The leading edge should be thicker than the rest of the wing to add the counterweight (see figure \ref{fig:Liu_et_al__msi_rotochute}). 
 
-### Hypotheses
-
-1. Since the \acs{lev} is most prominent near the base of the samara [@lentink_leading-edge_2009], less wing surface area is needed to generate lift. Therefore, with a weaker relative low-pressure area along the wing, wing surface area needs to increase.
-
-2. ...
-
 ## Comparing results to literature
 
 Zhang and Huang described the topology of samaras on the basis of 14 distinct points, distinguishing between the seed and the wing [-@zhang_evolution_2025]. While their work provides a methodology that allows for more precise comparability, the Bézier curves in this work provide a reproducible method to construct biomimetic samaras.
@@ -2154,6 +2148,14 @@ Zhang and Huang described the topology of samaras on the basis of 14 distinct po
 This work sets a start for analysis of samara topology by utilizing Bézier curves and is a proof of concept for this methodology. It is yet to be seen, if these findings help improve flight stability and controllability.
 
 Only the wings were analysed in this thesis. In order to be able to construct a complete biomimetic samara, more parameters are necessary: weight distribution between the seed, \acs{le} and wing; center of gravity; shape of the seed or payload, respectively. 
+
+### Hypotheses
+
+The following hypotheses were concluded from these findings and are encouraged to be tested:
+
+1. Since the \acs{lev} is most prominent near the base of the samara [@lentink_leading-edge_2009], less wing surface area is needed to generate lift. Therefore, with a weaker relative low-pressure area along the wing, wing surface area needs to increase. The areas need to be balanced for stable autorotation.
+
+2. ...
 
 ### Outlook
 
@@ -2176,8 +2178,10 @@ I thank Olaf Polak for his help in the lab.
 Thanks go to Niklas Groth for his tip regarding FIJI macros. 
 Thank you, Lea, for drawing the most awesome and beautiful samaras. 
 Also thanks go to my friend Rebecca, who helped me gather maple samaras and ENTErtained (inside joke for you) me through the process. 
-I also thank Dr. Karina Lucas Silva-Brandão and Jan-Henrik Pamin from \ac{lib} for showing me the 3D scanner and allowing me to scan one of my samaras. 
-Finally, thanks to all of you who have asked great and inspiring questions after I've told you about what I'm writing my thesis.
+```{r eval=FALSE}
+#I also thank Dr. Karina Lucas Silva-Brandão and Jan-Henrik Pamin from \ac{lib} for showing me the 3D scanner and allowing me to scan one of my samaras. 
+```
+Finally, thanks to all of you who have asked great and inspiring questions after I've told you about what I'm writing my thesis, and those who told me the mistakes I made.
 
 # Bibliography {.unnumbered}
 
