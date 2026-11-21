@@ -2129,8 +2129,6 @@ Liu et al [-@liu_maple-seed-inspired_2026] designed rectangular autorotating sam
 Nave et al [-@nave_wind_2021] produced artificial samaras using 3D printing in a trial-and-error process (Figure \ref{fig:Nave_et_al__samaras}).
 This method lacks understanding of the function and the process of abstraction, therefore can't be described as an example of biomimetics.
 
-Nave_et_al__samaras.png
-
 ## Mars exploration
 
 Because of Mars' lower gravity (Table \ref{tab:planetary_parameters}) and less dense atmosphere (Figure \ref{fig:atmospheric_density_comparison}), autorotation is of limited use [@riegler_comparison_2025]. These findings might help designing functioning autorotating Mars landers, since they provide an understanding of the actual samara topology.
