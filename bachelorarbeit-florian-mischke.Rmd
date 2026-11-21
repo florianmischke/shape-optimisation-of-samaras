@@ -515,7 +515,7 @@ colnames(p) <- c("X","Y")
 rownames(p) <- c("A","B","C","D")
 ```
 
-In the development of this method, the first attempt (Figure \ref{fig:geogebra_bezier} (C)) gave the **relative** control points A (`r p["A",]`), B (`r p["B",]`), C (`r p["C",]`), and D (`r p["D",]`) (table \ref{tab:control_points}).
+In the development of this method, the first attempt (Figure \ref{fig:geogebra_bezier} (C)) gave the **relative** control points A (`r p["A",]`), B (`r p["B",]`), C (`r p["C",]`), and D (`r p["D",]`) (Table \ref{tab:control_points}).
 
 ```{r}
 kable(p, format = "latex", booktabs = TRUE, caption = "Control points of first attempt of bezier curve on sample of \\textit{A. pseudoplatanus}.", label = "control_points") |> kable_styling(latex_options = "HOLD_position")
@@ -850,7 +850,7 @@ shapiro_table <- data.frame(
 )
 ```
 
-The Shapiro-Wilk tests (table \ref{tab:shapiro}) show that of the four samples only *\acs{A} platanoides* (Spannskamp) comes from a normally distributed population (p $\approx$ `r round(shapiro_Aplatanoides_Spannskamp$p.value,3)`). For *\acs{A} campestre* (p `r pretty_p[1]`), *\acs{A} platanoides* (IPM, p `r pretty_p[2]`), and *\acs{A} pseudoplatanus* (p `r pretty_p[4]`) no normal distribution can be assumed.
+The Shapiro-Wilk tests (Table \ref{tab:shapiro}) show that of the four samples only *\acs{A} platanoides* (Spannskamp) comes from a normally distributed population (p $\approx$ `r round(shapiro_Aplatanoides_Spannskamp$p.value,3)`). For *\acs{A} campestre* (p `r pretty_p[1]`), *\acs{A} platanoides* (IPM, p `r pretty_p[2]`), and *\acs{A} pseudoplatanus* (p `r pretty_p[4]`) no normal distribution can be assumed.
 
 ```{r}
 kable(shapiro_table,
@@ -871,7 +871,7 @@ levene_results$`Pr(>F)` <- format.pval(levene_results$`Pr(>F)`, digits = 4, na.f
 levene_p <- levene_results$`Pr(>F)`[1]
 ```
 
-The Levene test (table \ref{tab:levene}) shows that there is no homogeneity of variance of the groups (p `r levene_p`).
+The Levene test (Table \ref{tab:levene}) shows that there is no homogeneity of variance of the groups (p `r levene_p`).
 
 ```{r}
 #levene_table <- data.frame(
@@ -898,7 +898,7 @@ anova_tab$`Pr(>F)` <- format.pval(anova_tab$`Pr(>F)`, digits = 4, na.form="")
 anova_p <- anova_tab$`Pr(>F)`[1]
 ```
 
-The ANOVA (Ratio \~ sample, table \ref{tab:anova}) shows, there is a difference between at least two groups (p `r anova_p`).
+The ANOVA (Ratio \~ sample, Table \ref{tab:anova}) shows, there is a difference between at least two groups (p `r anova_p`).
 
 ```{r}
 kable(anova_tab,
@@ -2053,13 +2053,13 @@ The FIJI macro used in this work was written by the author with genAI support an
 
 Due to their special shape, samaras of *\acs{A} pseudoplatanus* are expected to have the greatest length-to-width ratios, which was confirmed by these measurements and calculations (Figure \ref{fig:ratios_boxplot} and table \ref{tab:mean_ratios}). The mean ratio of *\acs{A} pseudoplatanus* is `r round(mean_ratios |> filter(Species == "Acer pseudoplatanus") |> select(mean_ratio),2)`, that of *\acs{A} campestre* is lowest with `r round(mean_ratios |> filter(Species == "Acer campestre") |> select(mean_ratio),2)`, *\acs{A} platanoides* samaras' ratios fall inbetween that with `r round(mean_ratios |> filter(Location == "IPM") |> select(mean_ratio),2)` (IPM) and `r round(mean_ratios |> filter(Location == "Spannskamp") |> select(mean_ratio),2)` (Spannskamp).
 
-As there were ties in Kolmogorov-Smirnov test, Shapiro-Wilk test was used (table \ref{tab:shapiro}). The tests show, that only the sample of *\acs{A} platanoides* (Spannskamp) comes from a normally distributed population (p $\approx$ `r round(shapiro_Aplatanoides_Spannskamp$p.value,3)`).
+As there were ties in Kolmogorov-Smirnov test, Shapiro-Wilk test was used (Table \ref{tab:shapiro}). The tests show, that only the sample of *\acs{A} platanoides* (Spannskamp) comes from a normally distributed population (p $\approx$ `r round(shapiro_Aplatanoides_Spannskamp$p.value,3)`).
 
 Again, normally distributed populations would have been preferred and more data collection is encouraged.
 
 The Levene test showed no homogeneity of variance, so Kruskal-Wallis test was used to compare the groups, an ANOVA to examine if it gives the same result, even though it's a parametric test.
 
-The Kruskal-Wallis test and the ANOVA show, that there is a difference between at least two groups (p `r p_kruskal`, table \ref{tab:kruskal}). According to the Mann-Whitney *U* test, the two samples of *\acs{A} platanoides* differ (p = `r p_wilcox`, table \ref{tab:wilcox}).
+The Kruskal-Wallis test and the ANOVA show, that there is a difference between at least two groups (p `r p_kruskal`, Table \ref{tab:kruskal}). According to the Mann-Whitney *U* test, the two samples of *\acs{A} platanoides* differ (p = `r p_wilcox`, table \ref{tab:wilcox}).
 
 Arithmetic means were calculated for comparison. However, because three of the four samples did not follow a normal distribution, the results should be interpreted with caution.
 
