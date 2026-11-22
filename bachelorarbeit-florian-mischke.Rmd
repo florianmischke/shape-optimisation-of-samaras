@@ -2172,7 +2172,7 @@ The following hypotheses were concluded from these findings and are encouraged t
 
 1. Since the \acs{lev} is most prominent near the base of the samara [@lentink_leading-edge_2009], less wing surface area is needed to generate lift. Therefore, with a weaker relative low-pressure area along the wing, wing surface area needs to increase. The areas need to be balanced for stable autorotation.
 
-2. Since rectangular artificial samara-like flyers get into stable autorotation [@liu_maple-seed-inspired_2026], given a reasonable weight distribution, the topology is of limited relevance. 
+2. Although rectangular artificial samara-like flyers can achieve stable autorotation under a reasonable weight distribution [@liu_maple-seed-inspired_2026], the topology is likely to remain relevant.
 
 ### Outlook
 
