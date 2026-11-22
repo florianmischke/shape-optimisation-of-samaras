@@ -485,7 +485,7 @@ knitr::include_graphics("img/mattheck/A pseudoplatanus Mattheck vein.png")
 
 ### Bézier curves
 
-Six specimen of each species were chosen at random, so that distinct curves could be plotted and clearly examined.\par
+Six specimens of each species were selected at random, so that distinct curves could be plotted and clearly examined. For *\acs{A} platanoides*, only the specimens collected at the \acs{ipm} were included in the selection.\par
 The first Bézier curve experiments were done in GeoGebra (Figure \ref{fig:geogebra_bezier}; [geogebra.org](https://www.geogebra.org/)). Since this web service can't handle large images and downscales them, cropped sections were used. As the sections were not the same size, GeoGebra treated them differently. Therefore the results were not comparable. \par
 \indent From then on, Affinity suite (\acs{v} 3.3.0, [affinity.studio](https://www.affinity.studio/)) was used for all measurements. Cubic Beziér curves were drawn manually with the Pen tool and fitted to the shape of the samara's trailing edge and leading edge respectively with the Node tool (Figure \ref{fig:bezier_pseudoplatanus_affinity}). The curve was exported as \ac{svg} and all \ac{svg} files handled by a custom Python script, resulting in a machine-readable \ac{csv} file, that was imported by R code.
 
