@@ -728,7 +728,7 @@ tab <- as.data.frame(
 tab[] <- lapply(tab, as.numeric)
 ```
 
-Tables \ref{tab:feret} and \ref{tab:widths} show mean, variance, \ac{sd}, and \ac{se} of feret length and perpendicular width, respectively: The measured samaras have a mean feret length of `r round(summary$mean_feret_mm, 2)` ± `r round(summary$sd_feret_mm, 2)` mm and a mean width of `r round(summary$mean_width_mm, 2)` ± `r round(summary$sd_width_mm, 2)` mm.
+Tables \ref{tab:feret} and \ref{tab:widths} show mean, variance, \ac{sd}, and \ac{se} of Feret length and perpendicular width, respectively: The measured samaras have a mean Feret length of `r round(summary$mean_feret_mm, 2)` ± `r round(summary$sd_feret_mm, 2)` mm and a mean width of `r round(summary$mean_width_mm, 2)` ± `r round(summary$sd_width_mm, 2)` mm.
 
 ```{r echo=FALSE}
 colnames(summary) <- c("Mean Feret length", "Variance of Feret lengths", "SD of Feret lengths", "SE of Feret lengths",
@@ -739,10 +739,10 @@ kable(summary[5:8], format = "latex", booktabs = TRUE, caption = "Results of max
 ```
 
 Table \ref{tab:summary_detailed} shows mean, variance, \ac{sd}, and \ac{se} broken down by sample:\
-Samaras of *\acs{A} campestre* have a average feret length of `r round(summary_detailed$mean_feret_mm[1], 2)` ± `r round(summary_detailed$sd_feret_mm[1], 2)` mm and a average width of `r round(summary_detailed$mean_width_mm[1], 2)` ± `r round(summary_detailed$sd_width_mm[1], 2)` mm. 
-Samaras of *\acs{A} platanoides* (`r summary_detailed$Location[2]`) have a average feret length of `r round(summary_detailed$mean_feret_mm[2], 2)` ± `r round(summary_detailed$sd_feret_mm[2], 2)` mm and a average width of `r round(summary_detailed$mean_width_mm[2], 2)` ± `r round(summary_detailed$sd_width_mm[2], 2)` mm. 
-Samaras of *\acs{A} platanoides* (`r summary_detailed$Location[3]`) have a average feret length of `r round(summary_detailed$mean_feret_mm[3], 2)` ± `r round(summary_detailed$sd_feret_mm[3], 2)` mm and a average width of `r round(summary_detailed$mean_width_mm[3], 2)` ± `r round(summary_detailed$sd_width_mm[3], 2)` mm. 
-Samaras of *\acs{A} pseudoplatanus* have a average feret length of `r round(summary_detailed$mean_feret_mm[4], 2)` ± `r round(summary_detailed$sd_feret_mm[4], 2)` mm and a average width of `r round(summary_detailed$mean_width_mm[4], 2)` ± `r round(summary_detailed$sd_width_mm[4], 2)` mm. 
+Samaras of *\acs{A} campestre* have a average Feret length of `r round(summary_detailed$mean_feret_mm[1], 2)` ± `r round(summary_detailed$sd_feret_mm[1], 2)` mm and a average width of `r round(summary_detailed$mean_width_mm[1], 2)` ± `r round(summary_detailed$sd_width_mm[1], 2)` mm. 
+Samaras of *\acs{A} platanoides* (`r summary_detailed$Location[2]`) have a average Feret length of `r round(summary_detailed$mean_feret_mm[2], 2)` ± `r round(summary_detailed$sd_feret_mm[2], 2)` mm and a average width of `r round(summary_detailed$mean_width_mm[2], 2)` ± `r round(summary_detailed$sd_width_mm[2], 2)` mm. 
+Samaras of *\acs{A} platanoides* (`r summary_detailed$Location[3]`) have a average Feret length of `r round(summary_detailed$mean_feret_mm[3], 2)` ± `r round(summary_detailed$sd_feret_mm[3], 2)` mm and a average width of `r round(summary_detailed$mean_width_mm[3], 2)` ± `r round(summary_detailed$sd_width_mm[3], 2)` mm. 
+Samaras of *\acs{A} pseudoplatanus* have a average Feret length of `r round(summary_detailed$mean_feret_mm[4], 2)` ± `r round(summary_detailed$sd_feret_mm[4], 2)` mm and a average width of `r round(summary_detailed$mean_width_mm[4], 2)` ± `r round(summary_detailed$sd_width_mm[4], 2)` mm. 
 
 ```{r echo=FALSE}
 # Zeilenbezeichnungen lesbar gestalten
