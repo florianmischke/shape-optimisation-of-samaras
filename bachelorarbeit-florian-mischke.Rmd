@@ -2188,8 +2188,9 @@ Finally, thanks to all of you who have asked great and inspiring questions after
 
 - ChatGPT (OpenAI, Inc.) for help at coding a FIJI macro
 - ChatGPT and Claude (Anthropic) for help at R coding
+- Claude for image generation
 - DeepL (DeepL SE) for translating German to English
-- Perplexity.AI (Perplexity AI, Inc.) for proofreading
+- Perplexity.AI (Perplexity AI, Inc.) and Claude for proofreading
 
 # List of Figures {.unnumbered}
 
