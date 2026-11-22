@@ -335,7 +335,7 @@ The method of tensile triangles on biaxial loading (Figure \ref{fig:tensile_tria
 **Bézier curves** are commonly used in computer graphics because of their easy implementation and editing capabilities, their main use is in vector-based (opposed to pixel-based) graphics [@chang_vectorization_1998]. 
 
 Every Bézier curve has a unique set of **control points** [@baydas_defining_2019].
-Using the *Bernstein polynomial* and *de Casteljeu algorithm*, with given control points, a Bézier curve can be drawn [@baydas_defining_2019].
+Using the *Bernstein polynomial* and *de Casteljau algorithm*, with given control points, a Bézier curve can be drawn [@baydas_defining_2019].
 
 **Cubic** Bézier curves are established by four control points (Figure \ref{fig:basic_bezier}). 
 
