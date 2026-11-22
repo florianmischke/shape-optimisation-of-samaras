@@ -2062,6 +2062,18 @@ plot_bezier_df_mean_curves +
   
 ```
 
+```{r}
+total_wing_length_v <- c(
+  min(mean_curve$X),
+  max(mean_curve$X),
+  min(mean_curve_le$X),
+  max(mean_curve_le$X)
+)
+
+total_wing_length <- (max(total_wing_length_v) - min(total_wing_length_v)) / px_per_mm
+```
+
+Total wing length (without tip): `r round(total_wing_length,2)` mm
 
 # Discussion
 
@@ -2088,6 +2100,8 @@ The samaras of *\acs{A} campestre* and *\acs{A} pseudoplatanus*, with mean Feret
 As for the measurement method, the transition between the seed and the wing is not always consistent: sometimes it is clearly defined, and sometimes it is a gradual transition. To avoid further inaccuracy, the entire fruit was measured, which is less helpful in designing biomimetic samaras.
 
 The FIJI macro used in this work was written by the author with genAI support and wasn't code reviewed by peers. The method might be faulty, due to time limitations only a few measurements were cross-checked on a random basis. Errors may not have been noticed. To improve confidence, all measurements should be cross-checked.
+
+Two photos of *\acs{A} campestre* could not be measured by the macro, therefore sample size in plots differs from the number of photographs taken.
 
 ## Length-to-width ratios
 
@@ -2143,7 +2157,7 @@ The first trailing-edge amplitude sits `r label_upper` behind the leading edge, 
 total <- results |> summarise(feret = mean(Feret*10, na.rm = FALSE), width = mean(maxWidth*10, na.rm = FALSE), n = n())
 ```
 
-With a mean total length of `r round(total$feret,2)` mm and a mean width of  `r round(total$width,2)` mm among all four species (n = `r total$n`), those parameters give a design proposal for wings of artificial samaras.
+With a mean total length of `r round(total$feret,2)` mm, a mean width of  `r round(total$width,2)` mm among all four species (n = `r total$n`), and a total wing length without tip of `r round(total_wing_length,2)` mm, those parameters give a design proposal for wings of artificial samaras.
 
 With the absence of the seed (or nutlet), the samara design is incomplete. In addition, the leading edge is somewhat too short. Experiments involving the addition of a payload are encouraged. The leading edge should be thicker than the remainder of the wing to provide the necessary counterweight, as shown in Figure \ref{fig:Liu_et_al__msi_rotochute}.
 
