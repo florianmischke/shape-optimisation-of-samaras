@@ -124,6 +124,7 @@ geboren am \\
     \acro{lev}[LEV]{leading-edge vortex}
     \acroplural{lev}[LEV]{leading-edge vortices}
     \acro{lib}[LIB]{Leibniz-Institut zur Analyse des Biodiversitätswandels - Leibniz Institute for the Analysis of Biodiversity Change}
+    \acro{msi}[MSI]{maple-seed-inspired}
     \acro{px}[px]{pixel}
     \acro{sd}[SD]{standard deviation}
     \acro{se}[SE]{standard error}
@@ -191,7 +192,7 @@ Figure \ref{fig:Ezra_et_al__tipuana_tipu} shows what samaras consist of, using *
 \vspace{0pt}
 ```
 
-Substantial work has already been carried out in this area. Liu et al [-@liu_maple-seed-inspired_2026] designed an abstracted rectangular artificial samara, which they call *maple-seed-inspired (MSI) rotochute*, claiming it had better efficacy than a natural maple seed (Figure \ref{fig:Liu_et_al__msi_rotochute}). The maple samara's leading edge was replaced by a counterweight, the seed (or *root* as seen in Figure \ref{fig:Liu_et_al__msi_rotochute}) by the *payload*.
+Substantial work has already been carried out in this area. Liu et al [-@liu_maple-seed-inspired_2026] designed an abstracted rectangular artificial samara, which they call *\ac{msi} rotochute*, claiming it had better efficacy than a natural maple seed (Figure \ref{fig:Liu_et_al__msi_rotochute}). The maple samara's leading edge was replaced by a counterweight, the seed (or *root* as seen in Figure \ref{fig:Liu_et_al__msi_rotochute}) by the *payload*.
 Nave et al [-@nave_wind_2021] produced artificial samaras using 3D printing in a trial-and-error process (Figure \ref{fig:Nave_et_al__samaras}).
 
 ```{r Nave_et_al__samaras, echo=FALSE, out.width="100%", fig.align="left", fig.cap="\\textbf{3D-printed samaras and their natural counterparts Norway maple (left) and Silver maple (right).}"}
@@ -334,7 +335,7 @@ The method of tensile triangles on biaxial loading (Figure \ref{fig:tensile_tria
 **Bézier curves** are commonly used in computer graphics because of their easy implementation and editing capabilities, their main use is in vector-based (opposed to pixel-based) graphics [@chang_vectorization_1998]. 
 
 Every Bézier curve has a unique set of **control points** [@baydas_defining_2019].
-Using the *Bernstein polynomial* and *de Castaljeu algorithm*, with given control points, a Bézier curve can be drawn [@baydas_defining_2019].
+Using the *Bernstein polynomial* and *de Casteljeu algorithm*, with given control points, a Bézier curve can be drawn [@baydas_defining_2019].
 
 **Cubic** Bézier curves are established by four control points (Figure \ref{fig:basic_bezier}). 
 
