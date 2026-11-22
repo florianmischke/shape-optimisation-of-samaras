@@ -1019,7 +1019,7 @@ Figure \ref{fig:bezier_curves_3species_raw} shows 18 Bézier curves of samples o
 Figure \ref{fig:bezier_curves_3species} shows these curves with a common starting point for better comparison of lengths and amplitude.
 With common starting and end points, thus equal lengths, the samara's topologies can be compared (Figure \ref{fig:bezier_curves_transformed}).
 
-```{r bezier_curves_3species_raw, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve simulation of three Acer species, raw data - not adjusted to same origin. Source: own work"}
+```{r bezier_curves_3species_raw, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Bézier curve simulation of three Acer species,} raw data - not adjusted to same origin. Source: own work"}
 bezier_df_unadjusted <- data_curve_points_merged |> 
   group_by(FileName.x, Species) |> 
   group_modify(~ {
@@ -1070,7 +1070,7 @@ bezier_df_unadjusted |> group_by(Species) |> mutate(
   )
 ```
 
-```{r bezier_curves_3species, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve simulation of three Acer species. Source: own work"}
+```{r bezier_curves_3species, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Bézier curve simulation of three Acer species,} adjusted to common origin. Source: own work"}
 # Globalen Mittelpunkt aller ursprünglichen A-Punkte berechnen
 A_global <- data_curve_points_merged |> 
   filter(Point == "A") |> 
@@ -1150,7 +1150,7 @@ bezier_df |> group_by(Species) |> mutate(
   )
 ```
 
-```{r bezier_curves_transformed, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve simulation with transformed data of three Acer species. Source: own work"}
+```{r bezier_curves_transformed, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Bézier curve simulation with transformed data of three Acer species.} Source: own work"}
 target_length <- 100
 
 mean_angle <- atan2(
@@ -1283,7 +1283,7 @@ X- and Y-Coordinates of mean amplitudes have been calculated and drawn into a pl
 First amplitude (maximum): X = `r round(mean_upper_X,0)`; Y = `round(r mean_upper_Y,0)`\
 Second amplitude (minimum): X = `r round(mean_lower_X,0)`; Y = `r round(mean_lower_Y,0)`\
 
-```{r bezier_curves_transformed_with_lines, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Horizontal lines with mean amplitudes (dotted), vertical lines with mean x values of amplitudes (dashed). Source: own work"}
+```{r bezier_curves_transformed_with_lines, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Horizontal lines with mean amplitudes (dotted), vertical lines with mean x values of amplitudes (dashed).} Source: own work"}
 # Kurven plotten
 bezier_df_transformed |> group_by(Species) |> mutate(
   n = n_distinct(FileName.x),
@@ -1305,7 +1305,7 @@ bezier_df_transformed |> group_by(Species) |> mutate(
 
 An average (mean) Bézier curve was calculated for all samples (Figure \ref{fig:bezier_mean_curve}) and for each species individually (Figure \ref{fig:bezier_mean_curves2}).
 
-```{r bezier_mean_curve, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Mean curve (red) calculated by means of control points of transformed data. Source: own work"}
+```{r bezier_mean_curve, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Mean curve (red) calculated by means of control points of transformed data.} Source: own work"}
 mean_curve_points <- data_curve_points_transformed |> 
   group_by(Point) |>
   summarise(
@@ -1364,7 +1364,7 @@ ggplot() +
   )
 ```
 
-```{r bezier_mean_curves2, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Mean curve (black) calculated by means of control points of transformed data. Mean curves of A. campestre (red), A. platanoides (green) and A. pseudoplatanus (blue). Source: own work"}
+```{r bezier_mean_curves2, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Mean curve (black) calculated by means of control points of transformed data.} Mean curves of A. campestre (red), A. platanoides (green) and A. pseudoplatanus (blue). Source: own work"}
 mean_curve_points <- data_curve_points_transformed |> 
   group_by(Point) |>
   summarise(
@@ -1879,7 +1879,7 @@ plot_bezier_df_le_transformed2 <- bezier_df_le_transformed |> group_by(Species) 
   )
 ```
 
-```{r bezier_mean_curve_le, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Plots of leading edge bezier curves. (A) raw data; (B) data adjusted to common origin; (C) transformed data; (D) mean amplitude; (E) Mean curve (red) calculated by means of control points of transformed data. Source: own work"}
+```{r bezier_mean_curve_le, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Plots of leading edge bezier curves.} (A) raw data; (B) data adjusted to common origin; (C) transformed data; (D) mean amplitude; (E) Mean curve (red) calculated by means of control points of transformed data. Source: own work"}
 mean_curve_points_le <- data_curve_points_le_adjusted |> 
   group_by(Point) |>
   summarise(
@@ -1995,7 +1995,7 @@ ggplot() +
   )
 ```
 
-```{r bezier_mean_curves_both_edges, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Plots of leading and trailing edge mean bezier curves. Source: own work"}
+```{r bezier_mean_curves_both_edges, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Plots of leading and trailing edge mean bezier curves.} Source: own work"}
 plot_bezier_df_mean_curves_raw <- ggplot() +
   geom_path(data = mean_curve,
             aes(x = X, y = Y), color = "red", linewidth = 1) +
@@ -2117,7 +2117,7 @@ The \acs{le} and \acs{te} were normalised independently, which is another source
 
 Also, with a sample size of six for each species, the shape of the artificial samara has room for improvement (see [Conclusion](#conclusion)).
 
-```{r complete_samara, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Complete artificial samara wing.} Average mean curves (red) and fitted tensile triangle curve (blue)."}
+```{r complete_samara, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Suggestion for a complete artificial samara wing.} Average mean curves (red) and fitted tensile triangle curve (blue). Scales have been omitted because this suggestion was created manually."}
 t <- seq(0, 1, length=100)
 p_tip <- matrix(c(3.43,3.08, 5.22,-0.27, 5.49,-3.2, 1.62,-6.4), nrow=4, ncol=2, byrow=TRUE)
 
