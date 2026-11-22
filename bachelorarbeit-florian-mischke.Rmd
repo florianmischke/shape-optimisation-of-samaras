@@ -419,7 +419,7 @@ More than 200 mostly intact samaras of native maple species were gathered (\>50 
 The web service what3words was used as an easy way to keep track of locations.
 All samples were gathered between June 22nd and June 28th 2026.
 
-```{r maple_leaves_schmeil, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Leaves of native maple species in Germany.} (A) \\textit{A. campestre}, (B) \\textit{A. platanoides}, (C) \\textit{A. pseudoplatanus}."}
+```{r maple_leaves_schmeil, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Stylised leaves of native maple species in Germany}, for systematic identification of plants. (A) \\textit{A. campestre}, (B) \\textit{A. platanoides}, (C) \\textit{A. pseudoplatanus}."}
 knitr::include_graphics("img/methods/maple_leaves_schmeil.png")
 ```
 \vspace{-2em} \small Image modified from: [@schmeil_flora_2024]
@@ -1276,8 +1276,8 @@ hlines = c(mean_lower_Y,mean_upper_Y)
 
 X- and Y-Coordinates of mean amplitudes have been calculated and drawn into a plot with transformed Bézier curves (Figure \ref{fig:bezier_curves_transformed_with_lines}).
 
-First amplitude (maximum): X = `r mean_upper_X`; Y = `r mean_upper_Y`\
-Second amplitude (minimum): X = `r mean_lower_X`; Y = `r mean_lower_Y`\
+First amplitude (maximum): X = `r round(mean_upper_X,0)`; Y = `round(r mean_upper_Y,0)`\
+Second amplitude (minimum): X = `r round(mean_lower_X,0)`; Y = `r round(mean_lower_Y,0)`\
 
 ```{r bezier_curves_transformed_with_lines, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Horizontal lines with mean amplitudes (dotted), vertical lines with mean x values of amplitudes (dashed). Source: own work"}
 # Kurven plotten
@@ -1523,9 +1523,17 @@ ggplot() +
 
 #### Variance of amplitudes
 
-Variance of maxima: `r var(bezier_extrema$Y_upper)`
+```{r}
+variance_maxima <- var(bezier_extrema$Y_upper)
+variance_minima <- var(bezier_extrema$Y_lower)
+variance_maxima_mm <- var(bezier_extrema$Y_upper / px_per_mm)
+variance_minima_mm <- var(bezier_extrema$Y_lower / px_per_mm)
+```
 
-Variance of minima: `r var(bezier_extrema$Y_lower)`
+
+Variance of maxima: `r round(variance_maxima,2)` \acs{px}$^2$ $\widehat{=}$ `r round(variance_maxima_mm,2)` mm$^2$
+
+Variance of minima: `r round(variance_minima,2)` \acs{px}$^2$ $\widehat{=}$ `r round(variance_minima_mm,2)` mm$^2$
 
 #### Distances of mean amplitudes
 
@@ -1536,9 +1544,9 @@ amplitude_distance_horizontal_mm <- amplitude_distance_horizontal / px_per_mm
 amplitude_distance_vertical_mm <- amplitude_distance_vertical / px_per_mm
 ```
 
-Horizontal distance between mean amplitudes: `r round(amplitude_distance_horizontal, 2)` = `r round(amplitude_distance_horizontal_mm, 2)` mm
+Horizontal distance between mean amplitudes: `r round(amplitude_distance_horizontal, 0)` \acs{px} $\widehat{=}$ `r round(amplitude_distance_horizontal_mm, 1)` mm
 
-Vertical distance between mean amplitudes: `r round(amplitude_distance_vertical ,2)` = `r round(amplitude_distance_vertical_mm, 2)` mm
+Vertical distance between mean amplitudes: `r round(amplitude_distance_vertical, 0)` \acs{px} $\widehat{=}$ `r round(amplitude_distance_vertical_mm, 1)` mm
 
 #### Bézier formula
 
