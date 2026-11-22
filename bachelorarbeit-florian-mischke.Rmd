@@ -331,7 +331,7 @@ The method of tensile triangles on biaxial loading (Figure \ref{fig:tensile_tria
 
 ## Bézier curves
 
-**Beziér curves** are commonly used in computer graphics because of their easy implementation and editing capabilities, their main use is in vector-based (opposed to pixel-based) graphics [@chang_vectorization_1998]. 
+**Bézier curves** are commonly used in computer graphics because of their easy implementation and editing capabilities, their main use is in vector-based (opposed to pixel-based) graphics [@chang_vectorization_1998]. 
 
 Every Bézier curve has a unique set of **control points** [@baydas_defining_2019].
 Using the *Bernstein polynomial* and *de Castaljeu algorithm*, with given control points, a Bézier curve can be drawn [@baydas_defining_2019].
@@ -342,7 +342,7 @@ Using the *Bernstein polynomial* and *de Castaljeu algorithm*, with given contro
 knitr::include_graphics("img/introduction/basic_bezier.png")
 ```
 
-Beziér curves can be described by a formula, formula \ref{basic_bezier} gives a cubic Beziér curve with control points A, B, C, and D.
+Bézier curves can be described by a formula, formula \ref{basic_bezier} gives a cubic Bézier curve with control points A, B, C, and D.
 
 $$
 \begin{equation}
@@ -350,8 +350,8 @@ $$
 \qquad 0\leq t\leq1.\label{basic_bezier}\end{equation}
 $$
 
-To the author's knowledge, describing samaras by Beziér curves has not yet been attempted.
-Sun et al designed microfliers by drawing Beziér curves at pappi [@sun_adaptive_2025].
+To the author's knowledge, describing samaras by Bézier curves has not yet been attempted.
+Sun et al designed microfliers by drawing Bézier curves at pappi [@sun_adaptive_2025].
 
 ## Motivation: space exploration / landing technologies on Mars and other bodies
 
@@ -487,7 +487,7 @@ knitr::include_graphics("img/mattheck/A pseudoplatanus Mattheck vein.png")
 
 Six specimens of each species were selected at random, so that distinct curves could be plotted and clearly examined. For *\acs{A} platanoides*, only the specimens collected at the \acs{ipm} were included in the selection.\par
 The first Bézier curve experiments were done in GeoGebra (Figure \ref{fig:geogebra_bezier}; [geogebra.org](https://www.geogebra.org/)). Since this web service can't handle large images and downscales them, cropped sections were used. As the sections were not the same size, GeoGebra treated them differently. Therefore the results were not comparable. \par
-\indent From then on, Affinity suite (\acs{v} 3.3.0, [affinity.studio](https://www.affinity.studio/)) was used for all measurements. Cubic Beziér curves were drawn manually with the Pen tool and fitted to the shape of the samara's trailing edge and leading edge respectively with the Node tool (Figure \ref{fig:bezier_pseudoplatanus_affinity}). The curve was exported as \ac{svg} and all \ac{svg} files handled by a custom Python script, resulting in a machine-readable \ac{csv} file, that was imported by R code.
+\indent From then on, Affinity suite (\acs{v} 3.3.0, [affinity.studio](https://www.affinity.studio/)) was used for all measurements. Cubic Bézier curves were drawn manually with the Pen tool and fitted to the shape of the samara's trailing edge and leading edge respectively with the Node tool (Figure \ref{fig:bezier_pseudoplatanus_affinity}). The curve was exported as \ac{svg} and all \ac{svg} files handled by a custom Python script, resulting in a machine-readable \ac{csv} file, that was imported by R code.
 
 ```{r P1116641_bezier, echo=FALSE, out.width="70%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer platanoides Source: own work"}
 #knitr::include_graphics("img/bezier/P1116641.JPG-bezier.png")
