@@ -735,8 +735,10 @@ Tables \ref{tab:feret} and \ref{tab:widths} show mean, variance, \ac{sd}, and \a
 colnames(summary) <- c("Mean Feret length", "Variance of Feret lengths", "SD of Feret lengths", "SE of Feret lengths",
                        "Mean max width", "Variance of max widths", "SD of max widths", "SE of max widths")
 
-kable(summary[1:4], format = "latex", booktabs = TRUE, caption = "Results of Feret lengths (mm)", label = "feret") |> kable_styling(latex_options = "HOLD_position")
-kable(summary[5:8], format = "latex", booktabs = TRUE, caption = "Results of max widths (mm)", label = "widths") |> kable_styling(latex_options = "HOLD_position")
+kable(summary[1:4], format = "latex", booktabs = TRUE, caption = "Results of Feret lengths (mm)", label = "feret",
+  digits = 2) |> kable_styling(latex_options = "HOLD_position")
+kable(summary[5:8], format = "latex", booktabs = TRUE, caption = "Results of max widths (mm)", label = "widths",
+  digits = 2) |> kable_styling(latex_options = "HOLD_position")
 ```
 
 Table \ref{tab:summary_detailed} shows mean, variance, \ac{sd}, and \ac{se} broken down by sample:\
@@ -748,14 +750,14 @@ Samaras of *\acs{A} pseudoplatanus* have a average Feret length of `r round(summ
 ```{r echo=FALSE}
 # Zeilenbezeichnungen lesbar gestalten
 rownames(tab) <- c(
-  "Mean Feret diameter (mm)",
-  "Variance Feret diameter (mm)",
-  "SD Feret diameter (mm)",
-  "SE Feret diameter (mm)",
-  "Mean width (mm)",
-  "Variance width (mm)",
-  "SD width (mm)",
-  "SE width (mm)",
+  "Mean Feret diameter [mm]",
+  "Variance Feret diameter [mm²]",
+  "SD Feret diameter [mm]",
+  "SE Feret diameter [mm]",
+  "Mean width [mm]",
+  "Variance width [mm²]",
+  "SD width [mm]",
+  "SE width [mm]",
   "Sample size (n)"
 )
 
@@ -770,17 +772,19 @@ header <- c(
   )
 )
 
+tab_fmt <- apply(tab, 2, function(x) c(sprintf("%.2f", x[1:8]), sprintf("%.0f", x[9])))
+rownames(tab_fmt) <- rownames(tab)
+
 # Tabelle erstellen
 kbl(
-  tab,
+  tab_fmt,
   format = "latex",
   booktabs = TRUE,
   linesep = "",
   caption = "Summary of FIJI measurements by species and location",
   label = "summary_detailed",
   col.names = location,
-  align = c("l", rep("c", ncol(tab))),
-  digits = 3
+  align = "r"
 ) |>
   add_header_above(header, escape = TRUE) |>
   row_spec(4, extra_latex_after = "\\addlinespace") |>
