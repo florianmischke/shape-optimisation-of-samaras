@@ -114,7 +114,7 @@ geboren am \\
     \setlength{\itemsep}{0ex}
     \acro{A}[A.]{Acer, scientific name of Maple}
     \acro{csv}[CSV]{Comma-separated values}
-    \acro{eg}[e.g.]{abbreviation for exempli gratia, a Latin phrase meaning "for example"}
+    \acro{eg}[e.g.]{exempli gratia, a Latin phrase meaning "for example"}
     \acro{engl}[engl.]{English}
     \acro{ger}[ger.]{German}
     \acro{ipm}[IPM]{Institute of Plant Sciences and Microbiology}
