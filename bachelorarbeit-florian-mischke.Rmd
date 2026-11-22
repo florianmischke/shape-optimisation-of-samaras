@@ -2177,7 +2177,7 @@ This method does not appear to account for the biological function or the proces
 
 ## Mars exploration
 
-Because of Mars' lower gravity (Table \ref{tab:planetary_parameters}) and less dense atmosphere (Figure \ref{fig:atmospheric_density_comparison}), autorotation is of limited use [@riegler_comparison_2025]. These findings might help designing functioning autorotating Mars landers, since they provide an understanding of the actual samara topology.
+Because of Mars' thin atmosphere (about 1–2 % of Earth's surface density, Figure \ref{fig:atmospheric_density_comparison}), autorotation is of limited use for large payloads [@riegler_comparison_2025]; the lower gravity (Table \ref{tab:planetary_parameters}) partly offsets this. These findings might help designing functioning autorotating Mars landers, since they provide an understanding of the actual samara topology.
 
 ## Conclusion
 
