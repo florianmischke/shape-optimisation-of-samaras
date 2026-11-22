@@ -2052,6 +2052,8 @@ plot_bezier_df_mean_curves +
 
 Samples were gathered from four trees of three species, which is not enough to get high-quality independent data, but has been deemed sufficient for these first experiments. For future work, better—that is, independent—data is needed for more reliable results, \acs{eg} 10 fruits from 5 trees of each species. 
 
+Some of the samaras examined in this study come from the same schizocarp, whilst others do not. Due to pseudoreplication, all variations can be explained as a result of tree effects rather than species effects.
+
 Inter-specific variation found in this work can also be explained by lack of higher quality data, location parameters such as neighbouring plants and sun exposition were documented but not assessed. Soil conditions and hours of daylight were neglected even though they are of significance when comparing individuals.
 
 ## Photos
