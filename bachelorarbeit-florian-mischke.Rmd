@@ -117,6 +117,7 @@ geboren am \\
     \acro{eg}[e.g.]{abbreviation for exempli gratia, a Latin phrase meaning "for example"}
     \acro{engl}[engl.]{English}
     \acro{ger}[ger.]{German}
+    \acro{ipm}[IPM]{Institute of Plant Sciences and Microbiology}
     \acro{kit}[KIT]{Karlsruhe Institute of Technology}
     \acro{l}[L.]{Carl Linnaeus, also known as Carl von Linné}
     \acro{le}[LE]{leading edge}
@@ -412,7 +413,7 @@ More than 200 mostly intact samaras of native maple species were gathered (\>50 
 1.  *Acer campestre* \acs{l}- Loki Schmidt Garten, Hamburg - what3words: [///kennels.slippery.hears](https://w3w.co/kennels.slippery.hears)
 2.  *Acer pseudoplatanus* \acs{l}- Stadtpark, Hamburg - what3words: [///engaging.survey.spout](https://w3w.co/engaging.survey.spout)
 3.  *Acer platanoides* \acs{l}- Spannskamp, Hamburg - what3words: [///bristle.ruins.curated](https://w3w.co/bristle.ruins.curated)
-4.  *Acer platanoides* \acs{l}- IPM, Hamburg - what3words: [///gardens.rattled.yappy](https://w3w.co/gardens.rattled.yappy)
+4.  *Acer platanoides* \acs{l}- \ac{ipm}, Hamburg - what3words: [///gardens.rattled.yappy](https://w3w.co/gardens.rattled.yappy)
 
 The web service what3words was used as an easy way to keep track of locations.
 All samples were gathered between June 22nd and June 28th 2026.
@@ -872,7 +873,7 @@ shapiro_table <- data.frame(
 )
 ```
 
-The Shapiro-Wilk tests (Table \ref{tab:shapiro}) show that of the four samples only *\acs{A} platanoides* (Spannskamp) comes from a normally distributed population (p $\approx$ `r round(shapiro_Aplatanoides_Spannskamp$p.value,3)`). For *\acs{A} campestre* (p `r pretty_p[1]`), *\acs{A} platanoides* (IPM, p `r pretty_p[2]`), and *\acs{A} pseudoplatanus* (p `r pretty_p[4]`) no normal distribution can be assumed.
+The Shapiro-Wilk tests (Table \ref{tab:shapiro}) show that of the four samples only *\acs{A} platanoides* (Spannskamp) comes from a normally distributed population (p $\approx$ `r round(shapiro_Aplatanoides_Spannskamp$p.value,3)`). For *\acs{A} campestre* (p `r pretty_p[1]`), *\acs{A} platanoides* (\ac{ipm}, p `r pretty_p[2]`), and *\acs{A} pseudoplatanus* (p `r pretty_p[4]`) no normal distribution can be assumed.
 
 ```{r}
 kable(shapiro_table,
@@ -975,7 +976,7 @@ wilcox_table <- data.frame(
 p_wilcox <- wilcox_table$P_value
 ```
 
-The Mann-Whitney *U* test, comparing length-to-width ratios of samples of *\acs{A} platanoides* from the locations IPM and Spannskamp, shows there is a difference between the two samples (p = `r p_wilcox`).
+The Mann-Whitney *U* test, comparing length-to-width ratios of samples of *\acs{A} platanoides* from the locations \ac{ipm} and Spannskamp, shows there is a difference between the two samples (p = `r p_wilcox`).
 
 ```{r}
 colnames(wilcox_table)[2] <- "P value"
@@ -2068,7 +2069,7 @@ Although the maximum possible distance and the longest focal length were selecte
 ## FIJI measurements
 
 The results of the measurements done in FIJI give a first impression about lengths, widths, and length-to-width ratios. 
-The samples of *\acs{A} platanoides* (Spannskamp) are the longest with a mean Feret length of `r round(summary_detailed |> filter(Location == "Spannskamp") |> select(mean_feret_mm),2)` mm, as expected (see [Introduction](#platanoides-norway-maple)). With a mean Feret length of `r round(summary_detailed |> filter(Location == "IPM") |> select(mean_feret_mm),2)`, the samples of *\acs{A} platanoides* (IPM) are unusually small.
+The samples of *\acs{A} platanoides* (Spannskamp) are the longest with a mean Feret length of `r round(summary_detailed |> filter(Location == "Spannskamp") |> select(mean_feret_mm),2)` mm, as expected (see [Introduction](#platanoides-norway-maple)). With a mean Feret length of `r round(summary_detailed |> filter(Location == "IPM") |> select(mean_feret_mm),2)`, the samples of *\acs{A} platanoides* (\ac{ipm}) are unusually small.
 The samaras of *\acs{A} campestre* and *\acs{A} pseudoplatanus*, with mean Feret lengths of `r round(summary_detailed |> filter(Species == "Acer campestre") |> select(mean_feret_mm),2)` mm and `r round(summary_detailed |> filter(Species == "Acer pseudoplatanus") |> select(mean_feret_mm),2)` mm respectively are smaller than those of *\acs{A} platanoides* (Spannskamp), as expected.
 
 As for the measurement method, the transition between the seed and the wing is not always consistent: sometimes it is clearly defined, and sometimes it is a gradual transition. To avoid further inaccuracy, the entire fruit was measured, which is less helpful in designing biomimetic samaras.
@@ -2077,7 +2078,7 @@ The FIJI macro used in this work was written by the author with genAI support an
 
 ## Length-to-width ratios
 
-Due to their special shape, samaras of *\acs{A} pseudoplatanus* are expected to have the greatest length-to-width ratios, which was confirmed by these measurements and calculations (Figure \ref{fig:ratios_boxplot} and table \ref{tab:mean_ratios}). The mean ratio of *\acs{A} pseudoplatanus* is `r round(mean_ratios |> filter(Species == "Acer pseudoplatanus") |> select(mean_ratio),2)`, that of *\acs{A} campestre* is lowest with `r round(mean_ratios |> filter(Species == "Acer campestre") |> select(mean_ratio),2)`, *\acs{A} platanoides* samaras' ratios fall inbetween that with `r round(mean_ratios |> filter(Location == "IPM") |> select(mean_ratio),2)` (IPM) and `r round(mean_ratios |> filter(Location == "Spannskamp") |> select(mean_ratio),2)` (Spannskamp).
+Due to their special shape, samaras of *\acs{A} pseudoplatanus* are expected to have the greatest length-to-width ratios, which was confirmed by these measurements and calculations (Figure \ref{fig:ratios_boxplot} and table \ref{tab:mean_ratios}). The mean ratio of *\acs{A} pseudoplatanus* is `r round(mean_ratios |> filter(Species == "Acer pseudoplatanus") |> select(mean_ratio),2)`, that of *\acs{A} campestre* is lowest with `r round(mean_ratios |> filter(Species == "Acer campestre") |> select(mean_ratio),2)`, *\acs{A} platanoides* samaras' ratios fall inbetween that with `r round(mean_ratios |> filter(Location == "IPM") |> select(mean_ratio),2)` (\ac{ipm}) and `r round(mean_ratios |> filter(Location == "Spannskamp") |> select(mean_ratio),2)` (Spannskamp).
 
 As there were ties in Kolmogorov-Smirnov test, Shapiro-Wilk test was used (Table \ref{tab:shapiro}). The tests show, that only the sample of *\acs{A} platanoides* (Spannskamp) comes from a normally distributed population (p $\approx$ `r round(shapiro_Aplatanoides_Spannskamp$p.value,3)`).
 
