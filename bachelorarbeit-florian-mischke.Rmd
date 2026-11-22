@@ -113,6 +113,7 @@ geboren am \\
     \setlength{\parskip}{0ex}
     \setlength{\itemsep}{0ex}
     \acro{A}[A.]{Acer, scientific name of Maple}
+    \acro{csv}[CSV]{Comma-separated values}
     \acro{eg}[e.g.]{abbreviation for exempli gratia, a Latin phrase meaning "for example"}
     \acro{engl}[engl.]{English}
     \acro{ger}[ger.]{German}
@@ -125,6 +126,7 @@ geboren am \\
     \acro{px}[px]{pixel}
     \acro{sd}[SD]{standard deviation}
     \acro{se}[SE]{standard error}
+    \acro{svg}[SVG]{Scalable Vector Graphics}
     \acro{te}[TE]{trailing edge}
     \acro{UKE}[UKE]{Universitätsklinikum Hamburg-Eppendorf}
     \acro{vdi}[VDI]{Verein Deutscher Ingenieure e.V. - The Association of German Engineers e.V.}
@@ -455,7 +457,7 @@ mm_per_px <- 40/1457.0124
 knitr::include_graphics("img/fiji/P1116384.JPG")
 ```
 
-A FIJI macro was written and used to automatically measure the samara's dimensions. The macro first converted the image to a mask with a set threshold of `0,140`, then cropped, then started a particle analysis in which the biggest length of the largest found area was measured. After that the greatest width perpendicular to that length was measured. Lines were drawn onto the mask and results written into the top left corner of the image (Figure \ref{fig:P1116384_processed}) as well as written into a CSV (comma-separated values) file.
+A FIJI macro was written and used to automatically measure the samara's dimensions. The macro first converted the image to a mask with a set threshold of `0,140`, then cropped, then started a particle analysis in which the biggest length of the largest found area was measured. After that the greatest width perpendicular to that length was measured. Lines were drawn onto the mask and results written into the top left corner of the image (Figure \ref{fig:P1116384_processed}) as well as written into a \ac{csv} file.
 
 ```{r P1116384_processed, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Sample of \\textit{A. pseudoplatanus} after processing with FIJI macro.} Source: own work"}
 knitr::include_graphics("img/fiji/P1116384_processed.jpg")
@@ -483,7 +485,7 @@ knitr::include_graphics("img/mattheck/A pseudoplatanus Mattheck vein.png")
 
 Six specimen of each species were chosen at random, so that distinct curves could be plotted and clearly examined.\par
 The first Bézier curve experiments were done in Geogebra (Figure \ref{fig:geogebra_bezier}; [geogebra.org](https://www.geogebra.org/)). Since this web service can't handle large images and downscales them, cropped sections were used. As the sections were not the same size, Geogebra treated them differently. Therefore the results were not comparable. \par
-\indent From then on, Affinity suite ([affinity.studio](https://www.affinity.studio/)) was used for all measurements. Cubic Beziér curves were drawn manually with the Pen tool and fitted to the shape of the samara's trailing edge and leading edge respectively with the Node tool (Figure \ref{fig:bezier_pseudoplatanus_affinity}). The curve was exported as SVG and all SVG files handled by a custom Python script, resulting in a machine-readable CSV file, that was imported by R code.
+\indent From then on, Affinity suite ([affinity.studio](https://www.affinity.studio/)) was used for all measurements. Cubic Beziér curves were drawn manually with the Pen tool and fitted to the shape of the samara's trailing edge and leading edge respectively with the Node tool (Figure \ref{fig:bezier_pseudoplatanus_affinity}). The curve was exported as \ac{svg} and all \ac{svg} files handled by a custom Python script, resulting in a machine-readable \ac{csv} file, that was imported by R code.
 
 ```{r P1116641_bezier, echo=FALSE, out.width="70%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer platanoides Source: own work"}
 #knitr::include_graphics("img/bezier/P1116641.JPG-bezier.png")
