@@ -2059,6 +2059,8 @@ Some of the samaras examined in this study come from the same schizocarp, whilst
 
 Inter-specific variation found in this work can also be explained by lack of higher quality data, location parameters such as neighbouring plants and sun exposition were documented but not assessed. Soil conditions and hours of daylight were neglected even though they are of significance when comparing individuals.
 
+Also, the degrees of ripeness of the fruits varied. All native maple species' samaras usually ripen in Autumn (see [Introduction](#native-maple-species-in-germany)), but samples for this work were collected in June.
+
 ## Photos
 
 Although the maximum possible distance and the longest focal length were selected, minor inaccuracies in taking the photos may occur. Samaras are three-dimensional objects and won't lay perfectly flat on the piece of paper, so the two-dimensional images are distorted to some degree, therefore skewing the results of measuring. Because of variations in the samples, the aforementioned inaccuracies are considered to be negligible.
