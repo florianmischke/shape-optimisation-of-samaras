@@ -305,7 +305,7 @@ Prof. Dr. Claus Mattheck of the \ac{kit} discovered that the shapes of many biol
 \end{quote}
 \hfill [&ndash; [@mattheck_pauli_2018]]{style="float:right"}\
 
-Shapes following the tensile triangles curve have shown to reduce stress in notches [@mattheck_pauli_2018] and allow for efficient use of \enquote{building material} (\acs{eg} wood), and thereby confirming nature's optimized architecture through evolution.\
+Shapes following the tensile triangles curve have shown to reduce stress in notches [@mattheck_pauli_2018] and allow for efficient use of \enquote{building material} (\acs{eg} wood), and thereby suggesting nature's optimized architecture through evolution. As well as structures in which the tension triangles are on the inside (Figure \ref{fig:mattheck_tensile_triangles} A-D), there are also those in which the tension triangles can be drawn on the outside (Figure \ref{fig:mattheck_tensile_triangles} E-F).
 
 ### Uniaxial loading
 
@@ -471,7 +471,7 @@ The results were processed in R code in a `.Rmd` file in RStudio by Posit Softwa
 ### Tensile triangles
 
 For experiments with tensile triangles on maple fruits, photos of samples were selected randomly, then [uniaxial](#uniaxial-loading) and [biaxial](#biaxial-loading) methods were attempted in GeoGebra.
-In the uniaxial attempt, a straight line was drawn at the \ac{le} and a line perpendicular to that, touching the tip. Tensile triangles were then drawn into the right angle.
+In the uniaxial attempt, a straight line was drawn at the \ac{le} and a line perpendicular to that, touching the tip. Tensile triangles were then drawn into the right angle (compare with Figure \ref{fig:mattheck_tensile_triangles} E-F).
 In the biaxial attempt, straight lines were drawn at the \ac{le} and the \ac{te}, fitted as close as possible. Then, an Angle Bisector was used to draw three triangles each on either sides perpendiculars, the angle then adjusted to best fit the tensile triangles (Figure \ref{fig:mattheck1}). Similarly, these methods were also attempted at wing veins (Figure \ref{fig:mattheck_vein}).
 
 ```{r mattheck1, echo=FALSE, out.width="90%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Tensile triangle method (biaxial) applied to wing tip of a sample of \\textit{A. platanoides}.} Source: own work"}
