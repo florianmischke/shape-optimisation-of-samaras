@@ -139,9 +139,9 @@ geboren am \\
 
 # Abstract
 
-Samaras are a fascinating phenomenon observable in nature and inspire researchers and engineers to mimic them in technology, \acs{eg} space travel. Their behaviour as autorotating diaspores is well-examined, yet quantitive descriptions of wing-outline topology remain limited. For the first time, samara topology is examined by utilizing Bézier curves and tensile triangles. At least 50 samples each of three trees of native German maple species were collected, photographed under standardized conditions, and examined with graphics softwares FIJI and Affinity. *Acer campestre*, *\acs{A} platanoides* and *\acs{A} pseudoplatanus* differ in overall topology and length-to-width ratios, and can be described using average Bézier curves, whereas tensile-triangle models could not be used reliably. The significance of these findings remains to be studied, but this work provides a basis for parameterized design of biomimetic samaras. Future work should test whether variation in these parameters affects autorotation, descent rate, and dispersal performance in physical prototypes.
+Samaras are a fascinating phenomenon observable in nature and inspire researchers and engineers to mimic them in technology, \acs{eg} space travel. Their behaviour as autorotating diaspores is well-examined, yet quantitative descriptions of wing-outline topology remain limited. For the first time, samara topology is examined by utilizing Bézier curves and tensile triangles. At least 50 samples each of three trees of native German maple species were collected, photographed under standardized conditions, and examined with graphics software FIJI and Affinity. *Acer campestre*, *\acs{A} platanoides* and *\acs{A} pseudoplatanus* differ in overall topology and length-to-width ratios, and can be described using average Bézier curves, whereas tensile-triangle models could not be used reliably. The significance of these findings remains to be studied, but this work provides a basis for parameterized design of biomimetic samaras. Future work should test whether variation in these parameters affects autorotation, descent rate, and dispersal performance in physical prototypes.
 
-Samaras (Flügelnussfrüchte) sind ein faszinierendes Phänomen in der Natur, das Forschende sowie Ingenieur\*innen dazu inspiriert, sie in der Technik nachzuahmen, z. B. in der Raumfahrt. Ihr Verhalten als autorotierende Diasporen ist gut untersucht, doch quantitative Beschreibungen der Topologie der Flügelumrisse sind nach wie vor begrenzt. Zum ersten Mal wird die Topologie von Samaras unter Verwendung von Bézier-Kurven und Zugdreiecken untersucht. Von drei Bäumen heimischer Ahornarten wurden jeweils mindestens 50 Exemplare gesammelt, unter standardisierten Bedingungen fotografiert und mit den Grafikprogrammen FIJI und Affinity untersucht. *Acer campestre*, *\acs{A} platanoides* and *\acs{A} pseudoplatanus* unterscheiden sich in ihrer Gesamttopologie und ihren Längen-Breiten-Verhältnissen und lassen sich anhand durchschnittlicher Bézier-Kurven beschreiben, während Modelle mit Zugdreiecken nicht zuverlässig verwendet werden konnten. Die Bedeutung dieser Ergebnisse muss noch untersucht werden, doch diese Arbeit liefert eine Grundlage für die parametrisierte Konstruktion biomimetischer Samaras. Zukünftige Arbeiten sollten prüfen, ob Variationen dieser Parameter die Autorotation, die Fallgeschwindigkeit und die Ausbreitungsleistung bei physikalischen Prototypen beeinflussen.
+Samaras (Flügelnussfrüchte) sind ein faszinierendes Phänomen in der Natur, das Forschende sowie Ingenieur\*innen dazu inspiriert, sie in der Technik nachzuahmen, z. B. in der Raumfahrt. Ihr Verhalten als autorotierende Diasporen ist gut untersucht, doch quantitative Beschreibungen der Topologie der Flügelumrisse sind nach wie vor begrenzt. Zum ersten Mal wird die Topologie von Samaras unter Verwendung von Bézier-Kurven und Zugdreiecken untersucht. Von drei Bäumen heimischer Ahornarten wurden jeweils mindestens 50 Exemplare gesammelt, unter standardisierten Bedingungen fotografiert und mit den Grafikprogrammen FIJI und Affinity untersucht. *Acer campestre*, *\acs{A} platanoides* und *\acs{A} pseudoplatanus* unterscheiden sich in ihrer Gesamttopologie und ihren Längen-Breiten-Verhältnissen und lassen sich anhand durchschnittlicher Bézier-Kurven beschreiben, während Modelle mit Zugdreiecken nicht zuverlässig verwendet werden konnten. Die Bedeutung dieser Ergebnisse muss noch untersucht werden, doch diese Arbeit liefert eine Grundlage für die parametrisierte Konstruktion biomimetischer Samaras. Zukünftige Arbeiten sollten prüfen, ob Variationen dieser Parameter die Autorotation, die Fallgeschwindigkeit und die Ausbreitungsleistung bei physikalischen Prototypen beeinflussen.
 
 # Introduction
 
@@ -152,7 +152,7 @@ Dispersal by wind is a common strategy amongst plants, and many seed-bearing pla
 knitr::include_graphics("img/introduction/maple_samara.png")
 ```
 
-The term **biomimetics** is derived from the greek word *biomimesis*: [βίος (bios)]{.class lang="el"}, life, and [μίμησις (mīmēsis)]{.class lang="el"} [@noauthor_biomimetics_2026], imitation, meaning mimicking or imitating biology or living nature or organisms [@bhushan_introduction_2018]. Biomimetics is an interdisciplinary field at the interface of biology and engineering that seeks to address technical challenges through the understanding, abstraction, transfer, and application of insights derived from biological systems [@speck_process_2008{}, see Figure \ref{fig:biomimetics_bottom_up_vs_top_down}]. The German term *Bionik* (not to be confused with *bionics*, which describes biomimetic electronics or robotics) is a portmanteau from the German words **Bio**logie (biology) and Tech**nik** (engineering).
+The term **biomimetics** is derived from the Greek word *biomimesis*: [βίος (bios)]{.class lang="el"}, life, and [μίμησις (mīmēsis)]{.class lang="el"} [@noauthor_biomimetics_2026], imitation, meaning mimicking or imitating biology or living nature or organisms [@bhushan_introduction_2018]. Biomimetics is an interdisciplinary field at the interface of biology and engineering that seeks to address technical challenges through the understanding, abstraction, transfer, and application of insights derived from biological systems [@speck_process_2008{}, see Figure \ref{fig:biomimetics_bottom_up_vs_top_down}]. The German term *Bionik* (not to be confused with *bionics*, which describes biomimetic electronics or robotics) is a portmanteau from the German words **Bio**logie (biology) and Tech**nik** (engineering).
 According to Wikipedia, *bionics* is the application of biological systems in engineering and technology whereas the term *biomimetics* describes chemical reactions in a lab where smaller molecules than the macromolecules found in nature are used while being able to replicate the biochemistry of living organisms.
 In this thesis though, the first definition is being used in accordance with \acs{vdi} (\acl{vdi}) [@noauthor_bionik_nodate].
 
@@ -191,7 +191,7 @@ Figure \ref{fig:Ezra_et_al__tipuana_tipu} shows what samaras consist of, using *
 \vspace{0pt}
 ```
 
-There has already been done a lot of work on this. Liu et al [-@liu_maple-seed-inspired_2026] designed an abstracted rectangular artificial samara, which they call *maple-seed-inspired (MSI) rotochute*, claiming it had better efficacy than a natural maple seed (Figure \ref{fig:Liu_et_al__msi_rotochute}). The maple samara's leading edge was replaced by a counterweight, the seed (or *root* as seen in Figure \ref{fig:Liu_et_al__msi_rotochute}) by the *payload*.
+Substantial work has already been carried out in this area. Liu et al [-@liu_maple-seed-inspired_2026] designed an abstracted rectangular artificial samara, which they call *maple-seed-inspired (MSI) rotochute*, claiming it had better efficacy than a natural maple seed (Figure \ref{fig:Liu_et_al__msi_rotochute}). The maple samara's leading edge was replaced by a counterweight, the seed (or *root* as seen in Figure \ref{fig:Liu_et_al__msi_rotochute}) by the *payload*.
 Nave et al [-@nave_wind_2021] produced artificial samaras using 3D printing in a trial-and-error process (Figure \ref{fig:Nave_et_al__samaras}).
 
 ```{r Nave_et_al__samaras, echo=FALSE, out.width="100%", fig.align="left", fig.cap="\\textbf{3D-printed samaras and their natural counterparts Norway maple (left) and Silver maple (right).}"}
@@ -206,7 +206,7 @@ knitr::include_graphics("img/introduction/Nave_et_al__samaras.png")
 
 ### Leading-edge vortex (LEV)
 
-Samara-bearing trees and shrubs depend on wind to succesfully disperse their seeds (*anemochory*). Samaras generate an unusually high lift that can be explained by the autorotation resulting in a \ac{lev} [@lentink_leading-edge_2009] and thus a reduced rate of descent, giving the samara more air time to be affected by the wind and reaching higher dispersal distances. The \acs{lev} is most prominent near the base of the samara, where the seed is located, at around 25% span, and merges with another vortex formed by the tip of the wing [@lentink_leading-edge_2009].
+Samara-bearing trees and shrubs depend on wind to successfully disperse their seeds (*anemochory*). Samaras generate an unusually high lift that can be explained by the autorotation resulting in a \ac{lev} [@lentink_leading-edge_2009] and thus a reduced rate of descent, giving the samara more air time to be affected by the wind and reaching higher dispersal distances. The \acs{lev} is most prominent near the base of the samara, where the seed is located, at around 25% span, and merges with another vortex formed by the tip of the wing [@lentink_leading-edge_2009].
 
 ```{r Lentink_et_al__lev, echo=FALSE, out.width="75%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Leading-edge vortex over the upper side and near the base of an autorotating samara.}"}
 knitr::include_graphics("img/introduction/Lentink_et_al__lev.png")
@@ -334,7 +334,7 @@ The method of tensile triangles on biaxial loading (Figure \ref{fig:tensile_tria
 **Beziér curves** are commonly used in computer graphics because of their easy implementation and editing capabilities, their main use is in vector-based (opposed to pixel-based) graphics [@chang_vectorization_1998]. 
 
 Every Bézier curve has a unique set of **control points** [@baydas_defining_2019].
-Using the *Bernstein polynomial* and *De Castaljeu algorithm*, with given control points, a Bézier curve can be drawn [@baydas_defining_2019].
+Using the *Bernstein polynomial* and *de Castaljeu algorithm*, with given control points, a Bézier curve can be drawn [@baydas_defining_2019].
 
 **Cubic** Bézier curves are established by four control points (Figure \ref{fig:basic_bezier}). 
 
@@ -355,7 +355,7 @@ Sun et al designed microfliers by drawing Beziér curves at pappi [@sun_adaptive
 
 ## Motivation: space exploration / landing technologies on Mars and other bodies
 
-By simulating autorotational descend on multiple celestial bodies, Riegler et al came to the conclusion that \enquote{autorotation is not well suited to land large payloads on [Mars]} [@riegler_comparison_2025]. The simulation used vehicle parameters of 1000kg and a 4 rotor blade design. Experiments done in a drop tower at [\acs{zarm}](https://www.zarm.uni-bremen.de/en/) (\acl{zarm}) showed that samaras get into stable autoration in a Mars-like atmosphere [@reinersmann_analysis_2026{}, not yet published].
+By simulating autorotational descent on multiple celestial bodies, Riegler et al came to the conclusion that \enquote{autorotation is not well suited to land large payloads on [Mars]} [@riegler_comparison_2025]. The simulation used vehicle parameters of 1000kg and a 4 rotor blade design. Experiments done in a drop tower at [\acs{zarm}](https://www.zarm.uni-bremen.de/en/) (\acl{zarm}) showed that samaras get into stable autorotation in a Mars-like atmosphere [@reinersmann_analysis_2026{}, not yet published].
 
 **Body**          **Mass** [$kg$]   **Diameter** [$km$]   **Gravity** [$m/s^2$]
 ---------  ----------------------  --------------------  ----------------------
@@ -376,7 +376,7 @@ This thesis aims to improve artificial samara design and thereby suggesting desi
 \vspace{-\baselineskip}
 ```
 
-```{r atmospheric_density_comparison, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Atmospheric Density Comparison} of the planets Earth, Mars, Neptun, Venus, and Titan, one of Saturn's moons."}
+```{r atmospheric_density_comparison, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Atmospheric Density Comparison} of the planets Earth, Mars, Neptune, Venus, and Titan, one of Saturn's moons."}
 knitr::include_graphics("img/introduction/atmospheric_density_comparison.png")
 ```
 
@@ -443,7 +443,7 @@ knitr::include_graphics(
 
 ## Measuring samaras in FIJI
 
-After opening a photo of a samara in FIJI (ImageJ \acs{v} 1.54p), four centimeteres were marked using the millimeter sheet (Figure \ref{fig:P1116384}). The scale was then set via *Set Scale...* which autofilled the marked pixels. The output was recorded in the macro that was used to measure all the samples, as shown below:
+After opening a photo of a samara in FIJI (ImageJ \acs{v} 1.54p), four centimeters were marked using the millimeter sheet (Figure \ref{fig:P1116384}). The scale was then set via *Set Scale...* which autofilled the marked pixels. The output was recorded in the macro that was used to measure all the samples, as shown below:
 \begin{verbatim}
 // Set Scale
 run("Set Scale...", "distance=1457.0124 known=4 unit=cm");
@@ -515,7 +515,7 @@ knitr::include_graphics("img/affinity/bezier_pseudoplatanus_affinity.png")
 
 #### Bézier curve simulation
 
-For calculating and drawing of Bezíer curves, the R packages [bezier](https://cran.r-project.org/web/packages/bezier/index.html) and [tidyverse](https://tidyverse.org/) were used.
+For calculating and drawing of Bézier curves, the R packages [bezier](https://cran.r-project.org/web/packages/bezier/index.html) and [tidyverse](https://tidyverse.org/) were used.
 
 ```{r}
 v_linetypes = c(
@@ -742,10 +742,10 @@ kable(summary[5:8], format = "latex", booktabs = TRUE, caption = "Results of max
 ```
 
 Table \ref{tab:summary_detailed} shows mean, variance, \ac{sd}, and \ac{se} broken down by sample:\
-Samaras of *\acs{A} campestre* have a average Feret length of `r round(summary_detailed$mean_feret_mm[1], 2)` ± `r round(summary_detailed$sd_feret_mm[1], 2)` mm and a average width of `r round(summary_detailed$mean_width_mm[1], 2)` ± `r round(summary_detailed$sd_width_mm[1], 2)` mm. 
-Samaras of *\acs{A} platanoides* (`r summary_detailed$Location[2]`) have a average Feret length of `r round(summary_detailed$mean_feret_mm[2], 2)` ± `r round(summary_detailed$sd_feret_mm[2], 2)` mm and a average width of `r round(summary_detailed$mean_width_mm[2], 2)` ± `r round(summary_detailed$sd_width_mm[2], 2)` mm. 
-Samaras of *\acs{A} platanoides* (`r summary_detailed$Location[3]`) have a average Feret length of `r round(summary_detailed$mean_feret_mm[3], 2)` ± `r round(summary_detailed$sd_feret_mm[3], 2)` mm and a average width of `r round(summary_detailed$mean_width_mm[3], 2)` ± `r round(summary_detailed$sd_width_mm[3], 2)` mm. 
-Samaras of *\acs{A} pseudoplatanus* have a average Feret length of `r round(summary_detailed$mean_feret_mm[4], 2)` ± `r round(summary_detailed$sd_feret_mm[4], 2)` mm and a average width of `r round(summary_detailed$mean_width_mm[4], 2)` ± `r round(summary_detailed$sd_width_mm[4], 2)` mm. 
+Samaras of *\acs{A} campestre* have an average Feret length of `r round(summary_detailed$mean_feret_mm[1], 2)` ± `r round(summary_detailed$sd_feret_mm[1], 2)` mm and an average width of `r round(summary_detailed$mean_width_mm[1], 2)` ± `r round(summary_detailed$sd_width_mm[1], 2)` mm. 
+Samaras of *\acs{A} platanoides* (`r summary_detailed$Location[2]`) have an average Feret length of `r round(summary_detailed$mean_feret_mm[2], 2)` ± `r round(summary_detailed$sd_feret_mm[2], 2)` mm and an average width of `r round(summary_detailed$mean_width_mm[2], 2)` ± `r round(summary_detailed$sd_width_mm[2], 2)` mm. 
+Samaras of *\acs{A} platanoides* (`r summary_detailed$Location[3]`) have an average Feret length of `r round(summary_detailed$mean_feret_mm[3], 2)` ± `r round(summary_detailed$sd_feret_mm[3], 2)` mm and an average width of `r round(summary_detailed$mean_width_mm[3], 2)` ± `r round(summary_detailed$sd_width_mm[3], 2)` mm. 
+Samaras of *\acs{A} pseudoplatanus* have an average Feret length of `r round(summary_detailed$mean_feret_mm[4], 2)` ± `r round(summary_detailed$sd_feret_mm[4], 2)` mm and an average width of `r round(summary_detailed$mean_width_mm[4], 2)` ± `r round(summary_detailed$sd_width_mm[4], 2)` mm. 
 
 ```{r echo=FALSE}
 # Zeilenbezeichnungen lesbar gestalten
