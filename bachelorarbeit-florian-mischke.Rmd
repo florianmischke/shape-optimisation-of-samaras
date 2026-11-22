@@ -369,7 +369,13 @@ Titan$^1$   $0.135 \cdot 10^{24}$               5,149.4                     1.4
 
 Table \ref{tab:planetary_parameters} compares planetary (and other celestial body) parameters, Figure \ref{fig:atmospheric_density_comparison} compares atmospheric density among planets and Titan. These parameters greatly impact samara behavior.
 
-This thesis aims to improve artificial samara design and thereby suggesting design parameters for novel experiments on landing technologies, mainly for Mars exploration (Figure \ref{fig:mars_landing}).
+## Aim, terminology and research questions
+
+**Aim.** This thesis aims to describe the outline of maple samara wings in a parameterised form that can serve as a starting point for designing technical samaras (see [Motivation](#motivation-space-exploration-landing-technologies-on-mars-and-other-bodies)).
+
+**Terminology.** In this thesis, **topology** refers mainly to the two-dimensional outline of the wing, formed by the leading edge, trailing edge and wing tip. **Optimisation** refers to the long-term aim of deriving improved technical samara designs and. Natural outlines are not assumed to be functional optima; their potential advantage for autorotation remains a hypothesis for future work (see [Hypotheses](#hypotheses)).
+
+**Research questions.** (1) How do length, width and length-to-width ratio differ among the sampled trees? (2) Can the wing outline be described by cubic Bézier curves? (3) Can Mattheck's tensile triangles describe wing tips and veins?
 
 ```{=latex}
 \noindent
@@ -2177,7 +2183,7 @@ Because of Mars' lower gravity (Table \ref{tab:planetary_parameters}) and less d
 
 ## Conclusion
 
-This work sets a start for analysis of samara topology by utilizing Bézier curves and is a proof of concept for this methodology. It is yet to be seen, if these findings help improve flight stability and controllability.
+This work sets a start for analysis of samara wing outlines by utilizing Bézier curves and is a proof of concept for this methodology. It is yet to be seen, if these findings help improve flight stability and controllability.
 
 Only the wings were analysed in this thesis. In order to be able to construct a complete biomimetic samara, more parameters are necessary: weight distribution between the seed, \acs{le} and wing; center of gravity; shape of the seed or payload, respectively. 
 
@@ -2195,7 +2201,7 @@ Firstly, these findings encourage experimenting in designing actual technical sa
 
 Secondly, if the results of these experiments are promising, more research could be done: As mentioned before, further progress depends on access to independent, higher-quality—that is, independent—data (see [Discussion](#discussion)). 
 
-Lastly, the three-dimensional topology is of great interest. It is yet to be seen, if curves among the \acs{le} and \acs{te} are of significance in constructing technical samaras.
+Lastly, the three-dimensional shape is of great interest. It is yet to be seen, if curves among the \acs{le} and \acs{te} are of significance in constructing technical samaras.
 
 ## Dual-use concerns
 While this research could support improving artificial samara-like flyers and thereby optimize the deployment and distribution of monitoring stations and sensors, it could in principle be adapted for military applications, \acs{eg} in development of drones or airdropped explosives. This thesis doesn't provide any instructions on construction, and the findings are presented at a level of abstraction intended to limit misuse while preserving scientific value. The residual risk is assessed low, since a slow rate of descent and a  non-self-propelled aircraft are unlikely to be of much use in warfare. The potential benefits outweigh the minor risks mentioned here.
