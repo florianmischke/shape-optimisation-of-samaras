@@ -1529,7 +1529,7 @@ Variance of minima: `r var(bezier_extrema$Y_lower)`
 #### Distances of mean amplitudes
 
 ```{r echo=FALSE}
-amplitude_distance_horizontal <- mean_upper_X - mean_lower_Y
+amplitude_distance_horizontal <- mean_lower_X - mean_upper_X
 amplitude_distance_vertical <- mean_upper_Y - mean_lower_Y
 amplitude_distance_horizontal_mm <- amplitude_distance_horizontal / px_per_mm
 amplitude_distance_vertical_mm <- amplitude_distance_vertical / px_per_mm
