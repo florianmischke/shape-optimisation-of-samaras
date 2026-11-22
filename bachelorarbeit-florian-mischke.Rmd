@@ -130,6 +130,7 @@ geboren am \\
     \acro{svg}[SVG]{Scalable Vector Graphics}
     \acro{te}[TE]{trailing edge}
     \acro{UKE}[UKE]{Universitätsklinikum Hamburg-Eppendorf}
+    \acro{v}[v.]{version}
     \acro{vdi}[VDI]{Verein Deutscher Ingenieure e.V. - The Association of German Engineers e.V.}
     \acro{zarm}[ZARM]{Zentrum für angewandte Raumfahrttechnologie und Mikrogravitation - Center of Applied Space Technology and Microgravity}
 \end{acronym}
@@ -442,7 +443,7 @@ knitr::include_graphics(
 
 ## Measuring samaras in FIJI
 
-After opening a photo of a samara in FIJI, four centimeteres were marked using the millimeter sheet (Figure \ref{fig:P1116384}). The scale was then set via *Set Scale...* which autofilled the marked pixels. The output was recorded in the macro that was used to measure all the samples, as shown below:
+After opening a photo of a samara in FIJI (ImageJ \acs{v} 1.54p), four centimeteres were marked using the millimeter sheet (Figure \ref{fig:P1116384}). The scale was then set via *Set Scale...* which autofilled the marked pixels. The output was recorded in the macro that was used to measure all the samples, as shown below:
 \begin{verbatim}
 // Set Scale
 run("Set Scale...", "distance=1457.0124 known=4 unit=cm");
@@ -486,7 +487,7 @@ knitr::include_graphics("img/mattheck/A pseudoplatanus Mattheck vein.png")
 
 Six specimen of each species were chosen at random, so that distinct curves could be plotted and clearly examined.\par
 The first Bézier curve experiments were done in GeoGebra (Figure \ref{fig:geogebra_bezier}; [geogebra.org](https://www.geogebra.org/)). Since this web service can't handle large images and downscales them, cropped sections were used. As the sections were not the same size, GeoGebra treated them differently. Therefore the results were not comparable. \par
-\indent From then on, Affinity suite ([affinity.studio](https://www.affinity.studio/)) was used for all measurements. Cubic Beziér curves were drawn manually with the Pen tool and fitted to the shape of the samara's trailing edge and leading edge respectively with the Node tool (Figure \ref{fig:bezier_pseudoplatanus_affinity}). The curve was exported as \ac{svg} and all \ac{svg} files handled by a custom Python script, resulting in a machine-readable \ac{csv} file, that was imported by R code.
+\indent From then on, Affinity suite (\acs{v} 3.3.0, [affinity.studio](https://www.affinity.studio/)) was used for all measurements. Cubic Beziér curves were drawn manually with the Pen tool and fitted to the shape of the samara's trailing edge and leading edge respectively with the Node tool (Figure \ref{fig:bezier_pseudoplatanus_affinity}). The curve was exported as \ac{svg} and all \ac{svg} files handled by a custom Python script, resulting in a machine-readable \ac{csv} file, that was imported by R code.
 
 ```{r P1116641_bezier, echo=FALSE, out.width="70%", fig.align = "center", fig.show='hold', fig.cap="Bézier curve on a sample of Acer platanoides Source: own work"}
 #knitr::include_graphics("img/bezier/P1116641.JPG-bezier.png")
