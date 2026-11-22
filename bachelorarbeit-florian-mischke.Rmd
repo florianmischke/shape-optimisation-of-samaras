@@ -465,7 +465,7 @@ A FIJI macro was written and used to automatically measure the samara's dimensio
 knitr::include_graphics("img/fiji/P1116384_processed.jpg")
 ```
 
-The results were processed in R code in a `.Rmd` file in RStudio by Posit Software. Mean, standard deviation, standard error and variance were calculated for all samples and for each species/sample separately. Length/width ratios were calculated and tests (Shapiro-Wilk, Levene, ANOVA, Kruskal-Wallis, Mann–Whitney *U* test) performed.
+The results were processed in R code in a `.Rmd` file in RStudio by Posit Software. Mean, standard deviation, standard error and variance were calculated for all samples and for each species/sample separately. Length/width ratios were calculated and tests (Kolmogorov-Smirnov, Shapiro-Wilk, Levene, ANOVA, Kruskal-Wallis, Mann–Whitney *U* test) performed.
 
 ## Geometry experiments in GeoGebra and Affinity
 
@@ -899,7 +899,7 @@ levene_results$`Pr(>F)` <- format.pval(levene_results$`Pr(>F)`, digits = 4, na.f
 levene_p <- levene_results$`Pr(>F)`[1]
 ```
 
-The Levene test (Table \ref{tab:levene}) shows that there is no homogeneity of variance of the groups (p `r levene_p`).
+The Levene test (Table \ref{tab:levene}) shows that there is no homogeneity of variance of the groups (p = `r levene_p`).
 
 ```{r}
 #levene_table <- data.frame(
@@ -984,7 +984,7 @@ p_wilcox <- wilcox_table$P_value
 The Mann-Whitney *U* test, comparing length-to-width ratios of samples of *\acs{A} platanoides* from the locations \ac{ipm} and Spannskamp, shows there is a difference between the two samples (p = `r p_wilcox`).
 
 ```{r}
-colnames(wilcox_table)[2] <- "P value"
+colnames(wilcox_table)[3] <- "P value"
 kable(wilcox_table,
   format = "latex",
   booktabs = TRUE,
