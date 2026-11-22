@@ -409,7 +409,7 @@ knitr::include_graphics("img/introduction/mars_landing.png")
 
 ## Samples
 
-More than 200 mostly intact samaras of native maple species were gathered (\>50 per species/location), defective samaras have been discarded so that at least 50 intact samples could be used. The sample's species were identified based on the shape of the leaves (Figures \ref{fig:leaves_maple_species}, \ref{fig:maple_leaves_schmeil}), cross-referenced with the samara topology (Figure \ref{fig:maple_samaras_lea}) of the closest tree, and it was made sure that no other species of maple were in the immediate vicinity of the gathering site. The four species and locations were as follows:
+More than 250 mostly intact samaras of native maple species were gathered (\>50 per species/location), defective samaras have been discarded so that at least 50 intact samples could be used. The sample's species were identified based on the shape of the leaves (Figures \ref{fig:leaves_maple_species}, \ref{fig:maple_leaves_schmeil}), cross-referenced with the samara topology (Figure \ref{fig:maple_samaras_lea}) of the closest tree, and it was made sure that no other species of maple were in the immediate vicinity of the gathering site. The four species and locations were as follows:
 
 1.  *Acer campestre* \acs{l}- Loki Schmidt Garten / Botanischer Garten, Hamburg - what3words: [///kennels.slippery.hears](https://w3w.co/kennels.slippery.hears)
 2.  *Acer pseudoplatanus* \acs{l}- Stadtpark, Hamburg - what3words: [///engaging.survey.spout](https://w3w.co/engaging.survey.spout)
@@ -429,7 +429,7 @@ knitr::include_graphics("img/methods/maple_leaves_schmeil.png")
 An A3 sheet of millimeter paper was placed on the ground and secured with transparent sticky tape. A 10x4 cm cutout of white printer paper was taped on it. One samara at a time was placed on that paper and a sticky note with date/time and species name was placed below.\
 A digital camera (Panasonic Lumix G, Model No. DC-FZ100002) was secured on a tripod stand at maximum height, pointed down and leveled via spirit level. Distance from ground to camera lens was measured 134cm. The following settings were chosen to take photos: Focal length 400, S 4, F 11, ISO 125; manual mode. Photos of the setup were taken, see Figure \ref{fig:camera_setup}.
 
-50 photos for *Acer pseudoplatanus* and *\acs{A} campestre* and 100 photos for *\acs{A} platanoides* (50 for each of the two samples) were taken by remote control with the Panasonic Image App. The photos were copied to a Laptop and backed up to cloud storage and an external SSD.
+100 photos for *Acer pseudoplatanus*, 54 photos for *\acs{A} campestre* and 103 photos for *\acs{A} platanoides* (52 for Spannskamp, 51 for IPM) were taken by remote control with the Panasonic Image App. The photos were copied to a Laptop and backed up to cloud storage and an external SSD.
 
 ```{r, echo=FALSE, out.width="45%", fig.align = "center", fig.show='hold', fig.cap="\\label{fig:camera_setup}\\textbf{Camera setup.} Camera on tripod pointed down on millimeter sheet of paper. Samara is positioned on the white paper strip (left). View of a samara (A. platanoides) through the camera lens/display (right). Source: own work"}
 # Source - https://stackoverflow.com/a/63866499
