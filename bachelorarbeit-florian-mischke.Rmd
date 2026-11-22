@@ -2099,6 +2099,8 @@ The Bézier curves for this work were fitted manually to the outline of the sama
 
 The specific samara's flight behaviour was not taken into account in this thesis. An average curve of just one species of maple might outperform the average curve of all samples, as \acs{eg} *\acs{A} platanoides* has a slower rate of descent than *\acs{A} campestre* and *\acs{A} pseudoplatanus* [@reinersmann_analysis_2026{}, not yet published]. The significance of these findings remains to be examined.
 
+The \acs{le} and \acs{te} were normalised independently, which is another source of potential error. In the next version, and for higher accuracy, normalisation should be done in one step. 
+
 Also, with a sample size of six for each species, the shape of the artificial samara has room for improvement (see [Conclusion](#conclusion)).
 
 ```{r complete_samara, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Complete artificial samara wing.} Average mean curves (red) and fitted tensile triangle curve (blue)."}
