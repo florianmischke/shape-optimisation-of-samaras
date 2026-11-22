@@ -2151,7 +2151,7 @@ plot_bezier_df_mean_curves_raw +
 
 ## Complete samara wing
 
-The first trailing-edge amplitude sits `r label_upper` behind the leading edge, the second `r label_lower` behind it, while the two amplitudes span `r label_horizontal` horizontally (see Figure \ref{fig:bezier_mean_curves_both_edges_with_measurements}).
+Based on the available measurements, the first trailing-edge amplitude appears to lie `r label_upper` behind the leading edge, the second `r label_lower` behind it, while the two amplitudes appear to span `r label_horizontal` horizontally (see Figure \ref{fig:bezier_mean_curves_both_edges_with_measurements}).
 
 ```{r}
 total <- results |> summarise(feret = mean(Feret*10, na.rm = FALSE), width = mean(maxWidth*10, na.rm = FALSE), n = n())
