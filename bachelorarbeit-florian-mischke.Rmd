@@ -142,7 +142,7 @@ geboren am \\
 
 Samaras are a fascinating phenomenon observable in nature and inspire researchers and engineers to mimic them in technology, \acs{eg} space travel. Their behaviour as autorotating diaspores is well-examined, yet quantitative descriptions of wing-outline topology remain limited. For the first time, samara topology is examined by utilizing Bézier curves and tensile triangles. At least 50 samples each of four trees of three native German maple species were collected, photographed under standardized conditions, and examined with graphics software FIJI and Affinity. The samples of *Acer campestre*, *\acs{A} platanoides* and *\acs{A} pseudoplatanus* differ in overall topology and length-to-width ratios, and can be described using average Bézier curves, whereas tensile-triangle models could not be used reliably. The significance of these findings remains to be studied, but this work provides a basis for parameterized design of biomimetic samaras. Future work should test whether variation in these parameters affects autorotation, descent rate, and dispersal performance in physical prototypes.
 
-Samaras (Flügelnussfrüchte) sind ein faszinierendes Phänomen in der Natur, das Forschende sowie Ingenieur\*innen dazu inspiriert, sie in der Technik nachzuahmen, z. B. in der Raumfahrt. Ihr Verhalten als autorotierende Diasporen ist gut untersucht, doch quantitative Beschreibungen der Topologie der Flügelumrisse sind nach wie vor begrenzt. Zum ersten Mal wird die Topologie von Samaras unter Verwendung von Bézier-Kurven und Zugdreiecken untersucht. Von drei Bäumen vier heimischer Ahornarten wurden jeweils mindestens 50 Exemplare gesammelt, unter standardisierten Bedingungen fotografiert und mit den Grafikprogrammen FIJI und Affinity untersucht. Die Exemplare *Acer campestre*, *\acs{A} platanoides* und *\acs{A} pseudoplatanus* unterscheiden sich in ihrer Gesamttopologie und ihren Längen-Breiten-Verhältnissen und lassen sich anhand durchschnittlicher Bézier-Kurven beschreiben, während Modelle mit Zugdreiecken nicht zuverlässig verwendet werden konnten. Die Bedeutung dieser Ergebnisse muss noch untersucht werden, doch diese Arbeit liefert eine Grundlage für die parametrisierte Konstruktion biomimetischer Samaras. Zukünftige Arbeiten sollten prüfen, ob Variationen dieser Parameter die Autorotation, die Fallgeschwindigkeit und die Ausbreitungsleistung bei physikalischen Prototypen beeinflussen.
+Samaras (Flügelnussfrüchte) sind ein faszinierendes Phänomen in der Natur, das Forschende sowie Ingenieur\*innen dazu inspiriert, sie in der Technik nachzuahmen, z. B. in der Raumfahrt. Ihr Verhalten als autorotierende Diasporen ist gut untersucht, doch quantitative Beschreibungen der Topologie der Flügelumrisse sind nach wie vor begrenzt. Zum ersten Mal wird die Topologie von Samaras unter Verwendung von Bézier-Kurven und Zugdreiecken untersucht. Von vier Bäumen dreier heimischer Ahornarten wurden jeweils mindestens 50 Exemplare gesammelt, unter standardisierten Bedingungen fotografiert und mit den Grafikprogrammen FIJI und Affinity untersucht. Die Exemplare *Acer campestre*, *\acs{A} platanoides* und *\acs{A} pseudoplatanus* unterscheiden sich in ihrer Gesamttopologie und ihren Längen-Breiten-Verhältnissen und lassen sich anhand durchschnittlicher Bézier-Kurven beschreiben, während Modelle mit Zugdreiecken nicht zuverlässig verwendet werden konnten. Die Bedeutung dieser Ergebnisse muss noch untersucht werden, doch diese Arbeit liefert eine Grundlage für die parametrisierte Konstruktion biomimetischer Samaras. Zukünftige Arbeiten sollten prüfen, ob Variationen dieser Parameter die Autorotation, die Fallgeschwindigkeit und die Ausbreitungsleistung bei physikalischen Prototypen beeinflussen.
 
 # Introduction
 
@@ -373,7 +373,7 @@ Table \ref{tab:planetary_parameters} compares planetary (and other celestial bod
 
 **Aim.** This thesis aims to describe the outline of maple samara wings in a parameterised form that can serve as a starting point for designing technical samaras (see [Motivation](#motivation-space-exploration-landing-technologies-on-mars-and-other-bodies)).
 
-**Terminology.** In this thesis, **topology** refers mainly to the two-dimensional outline of the wing, formed by the leading edge, trailing edge and wing tip. **Optimisation** refers to the long-term aim of deriving improved technical samara designs and. Natural outlines are not assumed to be functional optima; their potential advantage for autorotation remains a hypothesis for future work (see [Hypotheses](#hypotheses)).
+**Terminology.** In this thesis, **topology** refers mainly to the two-dimensional outline of the wing, formed by the leading edge, trailing edge and wing tip. **Optimisation** refers to the long-term aim of deriving improved technical samara designs. Natural outlines are not assumed to be functional optima; their potential advantage for autorotation remains a hypothesis for future work (see [Hypotheses](#hypotheses)).
 
 **Research questions.** (1) How do length, width and length-to-width ratio differ among the sampled trees? (2) Can the wing outline be described by cubic Bézier curves? (3) Can Mattheck's tensile triangles describe wing tips and veins?
 
@@ -2030,7 +2030,18 @@ plot_bezier_df_mean_curves <- plot_bezier_df_mean_curves_raw +
 plot_bezier_df_mean_curves
 ```
 
-```{r bezier_mean_curves_both_edges_with_measurements, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="Plots of leading and trailing edge mean bezier curves. Distances between leading edge and upper amplitude of trailing edge as well as leading edge and lower amplitude of trailing edge were drawn in. Source: own work"}
+```{r}
+total_wing_length_v <- c(
+  min(mean_curve$X),
+  max(mean_curve$X),
+  min(mean_curve_le$X),
+  max(mean_curve_le$X)
+)
+
+total_wing_length <- (max(total_wing_length_v) - min(total_wing_length_v)) / px_per_mm
+```
+
+```{r bezier_mean_curves_both_edges_with_measurements, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap=paste("Plots of leading and trailing edge mean bezier curves. Distances between leading edge and upper amplitude of trailing edge as well as leading edge and lower amplitude of trailing edge were drawn in. Total wing length (without tip):", round(total_wing_length,2),"mm. Source: own work")}
 target_upper <- data.frame(
   X = mean_upper_X,
   Y = approx(x = mean_curve_le$X, y = mean_curve_le$Y, xout = mean_upper_X)$y
@@ -2068,19 +2079,6 @@ plot_bezier_df_mean_curves +
   annotate("text", x = (mean_lower_X+mean_upper_X)/2, y = (3*target_upper$Y+mean_upper_Y)/4, label = label_horizontal)
   
 ```
-
-```{r}
-total_wing_length_v <- c(
-  min(mean_curve$X),
-  max(mean_curve$X),
-  min(mean_curve_le$X),
-  max(mean_curve_le$X)
-)
-
-total_wing_length <- (max(total_wing_length_v) - min(total_wing_length_v)) / px_per_mm
-```
-
-Total wing length (without tip): `r round(total_wing_length,2)` mm
 
 # Discussion
 
@@ -2164,7 +2162,7 @@ Based on the available measurements, the first trailing-edge amplitude appears t
 total <- results |> summarise(feret = mean(Feret*10, na.rm = FALSE), width = mean(maxWidth*10, na.rm = FALSE), n = n())
 ```
 
-With a mean total length of `r round(total$feret,2)` mm, a mean width of  `r round(total$width,2)` mm among all four species (n = `r total$n`), and a total wing length without tip of `r round(total_wing_length,2)` mm, those parameters give a design proposal for wings of artificial samaras.
+With a mean total length of `r round(total$feret,2)` mm, a mean width of  `r round(total$width,2)` mm among all four species (n = `r total$n`), and a total wing length without tip of `r round(total_wing_length,2)` mm (Figure \ref{fig:bezier_mean_curves_both_edges_with_measurements}), those parameters give a design proposal for wings of artificial samaras.
 
 With the absence of the seed (or nutlet), the samara design is incomplete. In addition, the leading edge is somewhat too short. Experiments involving the addition of a payload are encouraged. The leading edge should be thicker than the remainder of the wing to provide the necessary counterweight, as shown in Figure \ref{fig:Liu_et_al__msi_rotochute}.
 
