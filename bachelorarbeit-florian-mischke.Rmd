@@ -1989,11 +1989,18 @@ $$
 
 ```{r all_curves, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{All Bézier curves combined in one plot}. Leading-edge curves on the top, trailing-edge curves on the bottom."}
 ggplot() +
-  geom_path(data = bezier_df_unadjusted, aes(x = X, y = Y, group = FileName.x, linetype = factor(Sample)),linewidth = 0.5, alpha = 0.5) +
-  geom_path(data = bezier_df_le_unadjusted, aes(x = X, y = Y, group = FileName.x, linetype = factor(Sample)),linewidth = 0.5, alpha = 0.5) +
+  geom_path(data = bezier_df_unadjusted |> group_by(Species) |> mutate(
+  n = n_distinct(FileName.x),
+  label = paste0(Species,'\nn = ',n)
+) , aes(x = X, y = Y, group = FileName.x, linetype = factor(Sample), color = label),linewidth = 0.5, alpha = 0.5) +
+  geom_path(data = bezier_df_le_unadjusted |> group_by(Species) |> mutate(
+  n = n_distinct(FileName.x),
+  label = paste0(Species,'\nn = ',n)
+) , aes(x = X, y = Y, group = FileName.x, linetype = factor(Sample), color = label),linewidth = 0.5, alpha = 0.5) +
   coord_equal() +
   theme_minimal() +
-  theme(legend.position = 'none') +
+  theme(legend.position = 'bottom') +
+  labs(color = "Sample") +
   guides(linetype = "none") +
   scale_x_continuous(name = "Length (pixel)") +
   scale_y_continuous(name = "Width (pixel)") +
