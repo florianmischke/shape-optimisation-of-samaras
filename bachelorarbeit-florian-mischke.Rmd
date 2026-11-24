@@ -2034,7 +2034,7 @@ plot_bezier_df_mean_curves <- plot_bezier_df_mean_curves_raw +
   geom_hline(yintercept = seq(min(mean_curve$Y), max(mean_curve_le$Y), by=px_per_mm), color="steelblue", alpha=0.35) +
   geom_vline(xintercept = seq(min(mean_curve$X), max(mean_curve_le$X), by=px_per_mm), color="steelblue", alpha=0.35)
 
-plot_bezier_df_mean_curves
+#plot_bezier_df_mean_curves
 ```
 
 ```{r}
