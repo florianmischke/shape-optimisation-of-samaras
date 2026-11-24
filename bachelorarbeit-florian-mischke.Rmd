@@ -339,7 +339,7 @@ Using the *Bernstein polynomial* and *de Casteljau algorithm*, with given contro
 
 **Cubic** Bézier curves are established by four control points (Figure \ref{fig:basic_bezier}). 
 
-```{r basic_bezier, echo=FALSE, out.width="100%", fig.align="left", fig.cap="\\textbf{Simple cubic bezier curve} with four control points in GeoGebra. Source: geogebra.org"}
+```{r basic_bezier, echo=FALSE, out.width="100%", fig.align="left", fig.cap="\\textbf{Simple cubic Bézier curve} with four control points in GeoGebra. Source: geogebra.org"}
 knitr::include_graphics("img/introduction/basic_bezier.png")
 ```
 
