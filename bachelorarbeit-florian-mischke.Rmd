@@ -508,7 +508,7 @@ The first Bézier curve experiments were done in GeoGebra (Figure \ref{fig:geoge
 #nitr::include_graphics("img/bezier/P1116384.JPG-bezier.png")
 ```
 
-```{r geogebra_bezier, echo=FALSE, out.width="32%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Bézier curves} on samples of (A) \\textit{A. campestre}; (B) \\textit{A. platanoides}; and (C) \\textit{A. pseudoplatanus}; in GeoGebra. Source: own work"}
+```{r geogebra_bezier, echo=FALSE, out.width="32%", fig.align = "center", fig.show='hold', fig.cap="\\textbf{Bézier curves on three samples of maple species.} (A) \\textit{A. campestre}; (B) \\textit{A. platanoides}; and (C) \\textit{A. pseudoplatanus}; in GeoGebra. Source: own work"}
 knitr::include_graphics(
   c("img/geogebra/bezier_campestre_geogebra_.png",
     "img/geogebra/bezier_platanoides_geogebra_.png",
@@ -2048,7 +2048,7 @@ total_wing_length_v <- c(
 total_wing_length <- (max(total_wing_length_v) - min(total_wing_length_v)) / px_per_mm
 ```
 
-```{r bezier_mean_curves_both_edges_with_measurements, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap=paste("Plots of leading and trailing edge mean bezier curves. Distances between leading edge and upper amplitude of trailing edge as well as leading edge and lower amplitude of trailing edge were drawn in. Total wing length (without tip):", round(total_wing_length,2),"mm.")}
+```{r bezier_mean_curves_both_edges_with_measurements, echo=FALSE, out.width="100%", fig.align = "center", fig.show='hold', fig.cap=paste("\\textbf{Plots of leading and trailing edge mean bezier curves.} Distances between leading edge and upper amplitude of trailing edge as well as leading edge and lower amplitude of trailing edge were drawn in. Total wing length (without tip):", round(total_wing_length,2),"mm.")}
 target_upper <- data.frame(
   X = mean_upper_X,
   Y = approx(x = mean_curve_le$X, y = mean_curve_le$Y, xout = mean_upper_X)$y
